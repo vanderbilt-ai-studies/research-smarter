@@ -12,6 +12,87 @@ work of engaging with the research process. The goal is for the skill to
 develop the user's critical thinking skills as AI becomes more prevalent as
 a research tool.
 
+## What I built
+
+After my consult, we agreed to build two connected parts:
+
+1. **The Research Smarter skill** (`research-smarter/`). Claude coaches a
+   student through a research project in six phases. Claude does the
+   searching and summarizing; the student makes every decision and writes
+   every word.
+2. **The Research Notebook** (`notebook/notebook.html`), an interactive
+   page published from Claude. It holds the student's research record:
+   their phase, their question and position in their own words, and a
+   source library where they mark how far they've read each source and
+   whether it supports or complicates their position. It also has a
+   separate **Read a Source** mode for reading one article critically. A
+   coach asks six fixed questions, one at a time, and checks the student's
+   answers against the article. It corrects misread facts with quotes the
+   page verifies, questions interpretations, and never explains the
+   article for them. The result is a reading card in the student's words.
+
+The two connect through the research log the skill already writes, so the
+skill's coaching flow didn't have to change.
+
+## How to try it
+
+- **The skill:** see [GUIDE.md](GUIDE.md) to install it, then say "I want
+  to research…" in a new chat.
+- **The notebook:** it's a Claude page that has to be shared with you
+  before you can open it. Load a research log, or click **See an example**,
+  and use **Read a source** with the fictional test article in
+  `notebook/tests/fixtures/`.
+
+## What the evidence shows
+
+- **The skill:** across ten test cases, the skill passed 68 of 68 checks;
+  plain Claude passed 31 of 68 ([SPEC.md](SPEC.md)).
+- **The Reader's coach vs plain Claude:** same article, same student
+  answers, 3 runs each. The coach passed every check in **14 of 15**
+  replies; plain Claude passed **0 of 15**. Plain Claude summarized the
+  study every time, wrote answers for the student, and answered "just tell
+  me what it says" with a full summary
+  ([results](notebook/results/issue-5-reader-tests.md)).
+- **Checking the checks:** the tests catch deliberately broken versions of
+  the notebook and two deliberately bad coach replies. Two flawed checks
+  were found and fixed before the results were trusted.
+- **Iteration:** I decided the coach shouldn't hint at parts of the article
+  a student hadn't raised. Fixing that took two rounds of revision: the
+  first fix caused extra questions (12/15), and the second brought it back
+  to 14/15. All rounds are kept.
+- **Bugs that live testing caught:**
+  - the file picker was blocked inside Claude's page frame
+  - the notebook invented a "found" reading status that misled the skill
+  - the coach silently didn't run when Claude access wasn't granted
+  - a save said "Saved" before storage confirmed
+
+  Each was diagnosed and fixed. The build history is in the
+  [closed issues](https://github.com/vanderbilt-ai-studies/research-smarter/issues?q=is%3Aissue)
+  and each issue's results file in `notebook/results/`.
+
+## Limits and what's still open
+
+- **Single replies, not whole projects:** the tests check one reply at a
+  time, on a short fictional article. There hasn't been a trial with a
+  real student yet.
+- **The grader is also Claude:** coach replies were graded by a separate
+  Claude grader that quotes its evidence, and checked by hand.
+- **One known coach failure in 15:** a correction can quote a second
+  passage that gives away the next part of the answer.
+- **Not yet confirmed live:** saving a reading card in the live notebook,
+  and privacy against a second person's account.
+- **Who can use it:** the notebook needs a Claude account with access to the
+  page, and the coach uses the student's own Claude usage.
+- **Activation isn't confirmed in Cowork:** in early tests, "I want to
+  research matcha" didn't bring up the skill, possibly because it wasn't
+  installed there yet.
+
+All requirements, coverage and known issues are in [SPEC.md](SPEC.md).
+
+---
+
+*The proposal I brought to my consult follows.*
+
 ## What I want to make possible, and why it matters
 
 Right now, the easiest way for a student to use AI for a research paper is to
