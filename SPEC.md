@@ -355,11 +355,16 @@ R6.4, R8.1, R8.2, and all of R10 and R11.
 - **Question framework is provisional.**
   `research-smarter/references/question-framework.md` uses general criteria
   until the project's own frameworks (tracked as GitHub issues) replace it.
-- **Notebook and Reader are not built or tested yet.** R10 and R11 (19
-  requirements) have no tests. The first build step is a feasibility check.
-  A Claude page should be able to ask Claude questions (which runs the
-  Reader's coach), keep each student's record private, and let the student
-  save a file, but none of this has been tried on a published page.
+- **Notebook and Reader are not built yet.** R10 and R11 (19 requirements)
+  have no tests. The feasibility check (issue #1,
+  `notebook/results/feasibility.md`) confirmed that a published page can ask
+  Claude, save a private record, and save a Markdown file. Still untested:
+  privacy against a second person's account, and the message shown when a
+  capability is missing (R10.7).
+- **Who can use the notebook.** Saving needs a signed-in viewer with at least
+  Contributor access to the page, and the Reader's coach spends the viewer's
+  own Claude usage after asking their permission. People outside the
+  organization can only view the notebook, not save in it.
 - **No live link between the skill and the notebook.** The skill runs in
   chat and can't read or write the notebook directly, so the two connect
   through the research log: the student loads it into the notebook and saves
@@ -401,3 +406,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-11 | Seven new test cases; R1.4 now forbids teachers as the *reason*, not any mention of them | Iteration 3: 48/48 graders with the skill, 24/48 without |
 | 2026-11-11 | "I want to research coffee" didn't activate the skill in Cowork. Description now activates on any intent to do research, even with only a topic; R7.1 and R7.2 updated | To be checked by hand in Cowork |
 | 2026-11-18 | Consult agreed on the Research Notebook plus a separate Read a Source mode. Added notebook inputs/outputs, R10 (notebook), R11 (Reader), acceptance criterion 6, and known issues | Not built yet |
+| 2026-11-18 | Feasibility check (issue #1) on a published test page | Asking Claude, saving a private record, and saving a Markdown file all worked for the owner; second-person privacy and the missing-capability message not yet tested |

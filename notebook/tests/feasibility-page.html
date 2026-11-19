@@ -1,0 +1,163 @@
+<title>Notebook Feasibility Check</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: one narrow column of check cards, status chip on each. */
+  :root {
+    --bg: #f5f6f8; --surface: #ffffff; --fg: #1d2330; --muted: #5d6576;
+    --line: #dde1e8; --accent: #2f5bd3;
+    --ok: #1d7a46; --ok-bg: #e3f4ea; --warn: #8a5a00; --warn-bg: #fbf0d9;
+    --bad: #a3262a; --bad-bg: #f8e3e3; --idle-bg: #eceff4;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #12151c; --surface: #1b2029; --fg: #e6e9ef; --muted: #9aa3b5;
+    --line: #2c3340; --accent: #8aa8ff;
+    --ok: #7fd6a3; --ok-bg: #173325; --warn: #f0c46b; --warn-bg: #3a2e14;
+    --bad: #f19a9c; --bad-bg: #3d1c1e; --idle-bg: #242a35; color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --bg: #12151c; --surface: #1b2029; --fg: #e6e9ef; --muted: #9aa3b5;
+    --line: #2c3340; --accent: #8aa8ff;
+    --ok: #7fd6a3; --ok-bg: #173325; --warn: #f0c46b; --warn-bg: #3a2e14;
+    --bad: #f19a9c; --bad-bg: #3d1c1e; --idle-bg: #242a35; color-scheme: dark }
+  body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--font-body); }
+  main { max-width: 680px; margin: 0 auto; display: grid; gap: 16px;
+    padding-block: 28px 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  h1 { font-size: 22px; margin: 0; text-wrap: balance; }
+  .lede { color: var(--muted); margin: 0; max-width: 62ch; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px; display: grid; gap: 10px; min-width: 0; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .head h2 { font-size: 16px; margin: 0; }
+  .req { font: 12px var(--font-mono); color: var(--muted); }
+  .chip { font-size: 12px; font-weight: 600; letter-spacing: .02em; padding: 2px 10px;
+    border-radius: 999px; background: var(--idle-bg); color: var(--muted); white-space: nowrap; }
+  .chip.ok { background: var(--ok-bg); color: var(--ok); }
+  .chip.warn { background: var(--warn-bg); color: var(--warn); }
+  .chip.bad { background: var(--bad-bg); color: var(--bad); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  button { font: inherit; font-weight: 600; color: #fff; background: var(--accent);
+    border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+  :root:not([data-theme="light"]) button { color: var(--bg); }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) button { color: #fff; } }
+  :root[data-theme="light"] button { color: #fff; }
+  button:disabled { opacity: .5; cursor: default; }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  input[type="text"] { font: inherit; color: var(--fg); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 0; flex: 1 1 220px; }
+  .out { font: 13px/1.5 var(--font-mono); background: var(--bg); border: 1px solid var(--line);
+    border-radius: 8px; padding: 10px; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; min-height: 1.5em; }
+  .note { font-size: 13px; color: var(--muted); margin: 0; }
+</style>
+
+<main>
+  <h1>Notebook Feasibility Check</h1>
+  <p class="lede">A throwaway test page for issue #1 of Research Smarter. Each card checks one thing the
+    Research Notebook depends on. Click each button once and leave the results on screen.</p>
+
+  <section class="card" aria-labelledby="h-coach">
+    <div class="head"><h2 id="h-coach">1. Ask Claude from the page</h2><span class="req">R11 coach</span>
+      <span class="chip" id="chip-coach">Not run</span></div>
+    <p class="note">Sends one short question to Claude. Claude will ask your permission the first time.</p>
+    <div class="row"><button id="btn-coach" type="button">Ask Claude</button></div>
+    <pre class="out" id="out-coach"></pre>
+  </section>
+
+  <section class="card" aria-labelledby="h-save">
+    <div class="head"><h2 id="h-save">2. Save a private record and read it back</h2><span class="req">R10.2</span>
+      <span class="chip" id="chip-save">Not run</span></div>
+    <p class="note">Saves the note below to your own private space, then reads it back. Reload the page
+      afterward: the saved note should appear here on its own.</p>
+    <div class="row">
+      <input type="text" id="note" value="Feasibility test note" aria-label="Note to save">
+      <button id="btn-save" type="button">Save note</button>
+    </div>
+    <pre class="out" id="out-save"></pre>
+  </section>
+
+  <section class="card" aria-labelledby="h-file">
+    <div class="head"><h2 id="h-file">3. Save a Markdown file</h2><span class="req">R10.4</span>
+      <span class="chip" id="chip-file">Not run</span></div>
+    <p class="note">Offers a small research-log-style file. Claude will ask you to confirm the save.</p>
+    <div class="row"><button id="btn-file" type="button">Save file</button></div>
+    <pre class="out" id="out-file"></pre>
+  </section>
+
+  <p class="note">Checks that a capability is missing show here as "Unavailable" with the reason, instead of
+    breaking the page (R10.7).</p>
+</main>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  function chip(name, cls, text) { var c = $("chip-" + name); c.className = "chip " + cls; c.textContent = text; }
+  function out(name, text) { $("out-" + name).textContent = text; }
+  function stamp() { return new Date().toISOString(); }
+  var has = !!(window.claude && window.claude.use);
+
+  // 1. sample
+  var samplePromise = has ? window.claude.use("sample") : Promise.resolve(null);
+  samplePromise.then(function (sample) {
+    if (!sample) { chip("coach", "bad", "Unavailable"); out("coach", "This view can't ask Claude (sample capability returned null)."); $("btn-coach").disabled = true; return; }
+    $("btn-coach").onclick = function () {
+      $("btn-coach").disabled = true; chip("coach", "", "Running"); out("coach", "Thinking...");
+      sample("You are part of a feasibility test. Reply with exactly this sentence and nothing else: Reader coach online.",
+             { modelTier: "quick", cache: false, onText: function (u) { out("coach", u.text); } })
+        .then(function (r) {
+          var good = /reader coach online/i.test(r.text);
+          chip("coach", good ? "ok" : "warn", good ? "Works" : "Replied, unexpected text");
+          out("coach", "Reply: " + r.text + "\nModel tier: " + r.modelTierApplied + "\nAt: " + stamp());
+        })
+        .catch(function (e) { chip("coach", "bad", "Failed"); out("coach", "Error code: " + (e && e.code) + "\n" + (e && e.message)); })
+        .finally(function () { $("btn-coach").disabled = false; });
+    };
+  });
+
+  // 2. db + user
+  Promise.all([has ? window.claude.use("db") : null, has ? window.claude.use("user") : null]).then(function (pair) {
+    var db = pair[0], user = pair[1];
+    if (!db || !user) { chip("save", "bad", "Unavailable"); out("save", "This view can't save data (" + (!db ? "db" : "user") + " capability returned null)."); $("btn-save").disabled = true; return; }
+    user.id().then(function (uid) {
+      if (!uid) { chip("save", "bad", "Unavailable"); out("save", "No private space: you aren't signed in, or this view gives no identity."); $("btn-save").disabled = true; return; }
+      var ref = db.doc("data/users/" + uid + "/probe");
+      ref.get().then(function (snap) {
+        if (snap.exists) {
+          var d = snap.data();
+          chip("save", "ok", "Found after reload");
+          out("save", "Saved note found from an earlier visit:\n\"" + d.note + "\"\nSaved at: " + d.savedAt);
+        }
+      }).catch(function (e) { out("save", "Couldn't read your saved note. Error code: " + e.code); });
+      $("btn-save").onclick = function () {
+        var note = $("note").value.trim() || "Feasibility test note";
+        $("btn-save").disabled = true; chip("save", "", "Saving"); out("save", "Saving...");
+        var body = { note: note, savedAt: stamp() };
+        ref.set(body).then(function () { return ref.get(); }).then(function (snap) {
+          var d = snap.exists ? snap.data() : null;
+          var match = d && d.note === note;
+          chip("save", match ? "ok" : "warn", match ? "Saved and read back" : "Saved, read-back differs");
+          out("save", "Wrote and read back:\n\"" + (d ? d.note : "(nothing)") + "\"\nSaved at: " + (d ? d.savedAt : "-") + "\nNow reload the page to check it persists.");
+        }).catch(function (e) { chip("save", "bad", "Failed"); out("save", "Error code: " + e.code + "\n" + e.message); })
+          .finally(function () { $("btn-save").disabled = false; });
+      };
+    });
+  });
+
+  // 3. downloads
+  (has ? window.claude.use("downloads") : Promise.resolve(null)).then(function (dl) {
+    if (!dl) { chip("file", "bad", "Unavailable"); out("file", "This view can't offer files (downloads capability returned null)."); $("btn-file").disabled = true; return; }
+    $("btn-file").onclick = function () {
+      var text = "# Research Smarter · Research log\n\n**Last updated:** " + stamp().slice(0, 10) +
+        "\n\n## Where I am\n\n- **Current phase and step:** feasibility test\n";
+      $("btn-file").disabled = true; chip("file", "", "Waiting for you"); out("file", "Confirm the save in the dialog.");
+      dl.save({ filename: "research-log-test.md", data: text })
+        .then(function (r) { chip("file", "ok", "Saved"); out("file", "Status: " + r.status + "\nFile: research-log-test.md (" + text.length + " characters)"); })
+        .catch(function (e) { chip("file", e.code === "declined" ? "warn" : "bad", e.code === "declined" ? "Declined" : "Failed"); out("file", "Error code: " + e.code + "\n" + e.message); })
+        .finally(function () { $("btn-file").disabled = false; });
+    };
+  });
+
+  if (!has) { ["coach", "save", "file"].forEach(function (n) { chip(n, "bad", "Unavailable"); out(n, "Open this page in Claude to run the checks."); }); }
+})();
+</script>
