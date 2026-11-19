@@ -1,7 +1,7 @@
 # Research Smarter · Specification
 
-This file defines what the Research Smarter skill must do, in terms that can
-be checked. `DESIGN.md` explains the reasoning behind the design; this spec is
+This file defines what the Research Smarter skill and its Research Notebook
+must do, in terms that can be checked. `DESIGN.md` explains the reasoning behind the design; this spec is
 the contract. Every requirement below is written so that a reviewer reading a
 conversation transcript can mark it **pass** or **fail**.
 
@@ -11,6 +11,9 @@ Students increasingly hand the thinking part of research to AI. Research
 Smarter is a Claude skill that does the searching and summarizing while
 requiring the user to make every decision and write every word, so that using
 AI for research builds the user's critical thinking instead of replacing it.
+A companion Research Notebook, an interactive page, holds the student's
+research record and has a separate Read a Source mode, where the student can
+pause at any time to read one article critically with a coach.
 
 ---
 
@@ -38,6 +41,24 @@ assignment comes from intake (Phase 0).
 | Mind map | Phase 1 | Interactive 3D HTML page built from `templates/mind-map.html`, or an indented text tree |
 | Source list | Phase 4 | Each source with a citation in the user's style, a link or DOI, and a 1–2 sentence neutral summary |
 | Research log | When a session ends or the user asks | Markdown following `templates/research-log.md` |
+
+### Research Notebook inputs and outputs
+
+The notebook is separate from the skill and connects to it through the
+research log, the format the skill already reads and writes. The skill's
+behavior does not change.
+
+| Input | Form | Required? |
+|---|---|---|
+| Research log | The skill's Markdown research log, loaded into the notebook | No; the notebook also works with no project |
+| Article to read | Pasted text, or a PDF the student already has access to, opened in the Reader | Only for Read a Source |
+| Student's answers | Typed text in the Reader and the source library | Yes, for reading cards |
+
+| Output | When | Form |
+|---|---|---|
+| Notebook views | Always | My Research (question, position, phase) and Sources (library) |
+| Reading card | When the student finishes reading a source | "What this source can and can't tell me," in the student's words, saved to that source |
+| Updated research log | When the student saves it | Markdown in the skill's log format, including reading cards, that the skill can resume from |
 
 ---
 
@@ -172,6 +193,61 @@ one reply from Claude. "User content" is defined in R1.1.
 - **R9.3** At the end of Phase 4, Claude encourages the user to write their
   own AI-use disclosure, and does not draft it (R1.1).
 
+### R10 · Research Notebook
+
+- **R10.1** The notebook is one interactive page published from Claude. It
+  works without the skill and does not change how the skill behaves.
+- **R10.2** Each student's research record is private to that student: no
+  other student, and not the page's owner, can read it.
+- **R10.3** Loading a research log shows its research question, working
+  position, current phase, and sources, with the question and position
+  matching the log's wording exactly.
+- **R10.4** The student can save an updated research log. Given that log,
+  the skill resumes at the recorded phase and step (R7.4), and the log
+  includes every reading card.
+- **R10.5** The source library shows each source's citation, link or DOI,
+  reading status (found, skimmed, read closely, verified), and the student's
+  own "supports" or "complicates" label. The notebook never assigns that
+  label (R2.4).
+- **R10.6** Read a Source can be opened in one click from every view, and
+  leaving it returns the student to the view they left, unchanged.
+- **R10.7** If saving or Claude access is unavailable (for example, the
+  student isn't signed in), the notebook says so plainly, and the student
+  can still read, take notes, and save a research log.
+- **R10.8** The notebook works at phone width without sideways scrolling.
+
+### R11 · Read a Source (the Reader)
+
+- **R11.1** The student can load an article by pasting its text or opening a
+  PDF they have. The article's full text is never published or shared; only
+  the student's notes and short quoted passages are saved.
+- **R11.2** The coach works through these questions one at a time, in this
+  order: what was measured; who was studied and how they were chosen; what
+  was found; what the result does not show; what limits the authors admit;
+  and how the source relates to the student's question (skipped if there is
+  no project).
+- **R11.3** The coach does not summarize or explain the part of the article a
+  question is about before the student has answered that question.
+- **R11.4** The coach never writes the student's answers or reading card
+  (R1.1 applies to the Reader).
+- **R11.5** When the student misstates a fact the article reports (a number,
+  sample, measure, or finding), the coach's next reply says so and quotes the
+  passage that shows the correct fact.
+- **R11.6** When the student's answer is an interpretation the article
+  doesn't support (for example, treating a correlation as a cause), the
+  coach asks a question that leads them to check it, rather than declaring it
+  wrong.
+- **R11.7** Every passage the coach quotes appears word for word in the
+  loaded article.
+- **R11.8** When the student asks the coach to just say what the article
+  says, it declines, gives ownership as the reason (R1.4), and offers the
+  smallest next step.
+- **R11.9** Each coach reply asks the student at most two questions (R3.2).
+- **R11.10** Finishing a reading saves a card with the student's answers,
+  word for word, to that source in the library.
+- **R11.11** The Reader also works with no project loaded, for a student who
+  just wants help reading one article.
+
 ---
 
 ## 3. Acceptance criteria
@@ -191,6 +267,14 @@ The skill is accepted when all of the following are true.
    (see Known issues).
 5. **No regressions.** After any change to the skill, all of the above are
    rechecked before the change is committed as finished.
+6. **The notebook and Reader meet R10 and R11.** Each requirement is checked
+   by a repeatable test in a fresh session, using the published page. For the
+   Reader, the comparison is the same article read with plain Claude, and the
+   difficult cases include a confident misreading of a key number, a
+   correlation read as a cause, and a request to "just tell me what it says."
+   The checks themselves are checked: a deliberately bad coach reply (one
+   that summarizes first, or quotes a passage that isn't in the article) must
+   fail them.
 
 ### How tests are graded
 
@@ -233,9 +317,9 @@ run only if every grader is true.
 | `rejects-loophole-requests` | No example theses or templates, even with claimed teacher permission | R1.2, R1.3, R1.4, R3.1, R3.2 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 27 of 37 requirements have at least one test.
+**Coverage:** 27 of 56 requirements have at least one test (R1–R9: 27 of 37; R10–R11: 0 of 19).
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
-R6.4, R8.1, R8.2.
+R6.4, R8.1, R8.2, and all of R10 and R11.
 
 ### Environment and tooling constraints
 
@@ -271,6 +355,19 @@ R6.4, R8.1, R8.2.
 - **Question framework is provisional.**
   `research-smarter/references/question-framework.md` uses general criteria
   until the project's own frameworks (tracked as GitHub issues) replace it.
+- **Notebook and Reader are not built or tested yet.** R10 and R11 (19
+  requirements) have no tests. The first build step is a feasibility check.
+  A Claude page should be able to ask Claude questions (which runs the
+  Reader's coach), keep each student's record private, and let the student
+  save a file, but none of this has been tried on a published page.
+- **No live link between the skill and the notebook.** The skill runs in
+  chat and can't read or write the notebook directly, so the two connect
+  through the research log: the student loads it into the notebook and saves
+  an updated one for the skill. A direct link is a later possibility, not a
+  requirement.
+- **The Reader can't open web links itself.** Students paste the article's
+  text or open a PDF they have. Scanned PDFs without a text layer can't be
+  read.
 
 ---
 
@@ -303,3 +400,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-11 | Wrote this spec | — |
 | 2026-11-11 | Seven new test cases; R1.4 now forbids teachers as the *reason*, not any mention of them | Iteration 3: 48/48 graders with the skill, 24/48 without |
 | 2026-11-11 | "I want to research coffee" didn't activate the skill in Cowork. Description now activates on any intent to do research, even with only a topic; R7.1 and R7.2 updated | To be checked by hand in Cowork |
+| 2026-11-18 | Consult agreed on the Research Notebook plus a separate Read a Source mode. Added notebook inputs/outputs, R10 (notebook), R11 (Reader), acceptance criterion 6, and known issues | Not built yet |
