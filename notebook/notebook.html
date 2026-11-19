@@ -96,12 +96,34 @@
   textarea { width: 100%; min-height: 180px; font: 13px/1.5 var(--font-mono); color: var(--fg); background: var(--bg);
     border: 1px solid var(--line); border-radius: 8px; padding: 10px; box-sizing: border-box; resize: vertical; }
   .confirm { display: grid; gap: 10px; }
+
+  nav.tabs { display: flex; gap: 4px; flex: 1 1 auto; }
+  nav.tabs a { font: 600 14px/1 var(--font-body); text-decoration: none; color: var(--muted);
+    padding: 8px 10px; border-radius: 8px; }
+  nav.tabs a[aria-current="page"] { color: var(--fg); background: var(--accent-soft); }
+
+  .src-card { border: 1px solid var(--line); border-radius: 10px; padding: 14px; display: grid; gap: 10px; min-width: 0; overflow-wrap: anywhere; }
+  .src-card .cite { font-weight: 500; }
+  .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+  .controls label, .form label { display: grid; gap: 4px; font-size: 12px; font-weight: 600; color: var(--muted); min-width: 0; }
+  select, input[type="text"] { font: 14px/1.3 var(--font-body); color: var(--fg); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 0; width: 100%; box-sizing: border-box; }
+  select:focus-visible, input[type="text"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .unlabeled { color: var(--warn); }
+  .row-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .form { display: grid; gap: 10px; }
+  .summary { display: flex; gap: 8px; flex-wrap: wrap; }
+  .count { font-size: 13px; padding: 3px 10px; border-radius: 999px; background: var(--quote); font-variant-numeric: tabular-nums; }
   @media (prefers-reduced-motion: no-preference) { button { transition: background-color .15s, border-color .15s; } }
 </style>
 
 <header class="bar">
   <div class="wrap">
     <p class="brand">Research Smarter <span>Notebook</span></p>
+    <nav class="tabs" id="tabs" aria-label="Notebook views" hidden>
+      <a href="#research" id="tab-research" data-view="research">My Research</a>
+      <a href="#sources" id="tab-sources" data-view="sources">Sources</a>
+    </nav>
     <div class="actions" id="actions" hidden>
       <button type="button" id="btn-replace">Load a different log</button>
       <button type="button" class="primary" id="btn-save">Save research log</button>
@@ -118,8 +140,8 @@
 
 <script id="log-format">
 /* Research log parsing and saving. Pure functions, no page access, so they can be
-   tested on their own. The log's text is kept exactly as written; saving only
-   updates the "Last updated" date. */
+   tested on their own. The log's text is kept exactly as written: saving updates
+   the "Last updated" date, and editing sources rewrites only the sources table. */
 var LogFormat = (function () {
   function norm(md) { return String(md).replace(/\r\n?/g, "\n"); }
 
@@ -171,20 +193,112 @@ var LogFormat = (function () {
     return !t || t.indexOf("not written yet") === 0 || /^\[.*\]$/.test(t);
   }
 
+  /* Splits one Markdown table row into cells. A pipe written as \| stays inside its cell. */
+  function cells(l) {
+    var s = l.trim().replace(/^\|/, "").replace(/(^|[^\\])\|$/, "$1");
+    var out = [], cur = "";
+    for (var i = 0; i < s.length; i++) {
+      if (s[i] === "\\" && s[i + 1] === "|") { cur += "|"; i++; continue; }
+      if (s[i] === "|") { out.push(cur.trim()); cur = ""; continue; }
+      cur += s[i];
+    }
+    out.push(cur.trim());
+    return out;
+  }
+
   function table(lines) {
     var rows = lines.filter(function (l) { return /^\s*\|/.test(l); });
-    if (rows.length < 2) return [];
-    function cells(l) {
-      return l.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map(function (c) { return c.trim(); });
-    }
+    if (rows.length < 2) return { head: null, rows: [] };
     var head = cells(rows[0]);
-    return rows.slice(2).map(cells).filter(function (c) {
-      return c.some(function (x) { return x !== ""; });
-    }).map(function (c) {
-      var o = {};
-      head.forEach(function (h, i) { o[h] = c[i] || ""; });
-      return o;
+    return {
+      head: head,
+      rows: rows.slice(2).map(cells).filter(function (c) {
+        return c.some(function (x) { return x !== ""; });
+      }).map(function (c) {
+        var o = {};
+        head.forEach(function (h, i) { o[h] = c[i] || ""; });
+        return o;
+      })
+    };
+  }
+
+  /* ---- Sources: the student's own judgments, kept in the log's sources table ---- */
+  var STATUSES = ["found", "skimmed", "read closely", "verified"];
+  var LABELS = ["supports", "complicates"];
+  var COLS = { citation: "Citation", link: "Link or DOI", subq: "Sub-question",
+               label: "Supports or complicates", verified: "Verified?", status: "Reading status" };
+  var DEFAULT_HEAD = ["Citation", "Link or DOI", "Sub-question", "Supports or complicates", "Verified?"];
+
+  function toSource(row) {
+    var s = { other: {} }, known = {};
+    Object.keys(COLS).forEach(function (k) { s[k] = row[COLS[k]] || ""; known[COLS[k]] = true; });
+    /* A status the log doesn't record stays blank. Filling in a default would put a
+       claim in the student's log they never made (for example "found" on sources
+       they had already evaluated). */
+    var st = s.status.trim().toLowerCase();
+    s.status = STATUSES.indexOf(st) >= 0 ? st : s.status.trim();
+    Object.keys(row).forEach(function (h) { if (!known[h]) s.other[h] = row[h]; });
+    return s;
+  }
+
+  /* A source the student adds in the notebook. It has no "supports or complicates"
+     label: only the student sets that (SPEC R10.5, R2.4). */
+  function newSource(f) {
+    f = f || {};
+    return { citation: String(f.citation || "").trim(), link: String(f.link || "").trim(),
+             subq: String(f.subq || "").trim(), label: "", verified: "", status: "found", other: {} };
+  }
+
+  function escCell(v) { return String(v == null ? "" : v).replace(/\r?\n/g, " ").replace(/\|/g, "\\|").trim(); }
+
+  /* Returns the log with its sources table rewritten from `sources`. Every other
+     line of the log is kept exactly as it was. */
+  function withSources(raw, sources, head) {
+    var md = norm(raw);
+    var header = (head && head.length ? head : DEFAULT_HEAD).slice();
+    if (header.indexOf(COLS.status) < 0) header.push(COLS.status);
+    var byName = {};
+    Object.keys(COLS).forEach(function (k) { byName[COLS[k]] = k; });
+    var tableLines = ["| " + header.join(" | ") + " |", "|" + header.map(function () { return "---"; }).join("|") + "|"];
+    sources.forEach(function (s) {
+      tableLines.push("| " + header.map(function (h) {
+        var k = byName[h];
+        return escCell(k ? s[k] : (s.other || {})[h]);
+      }).join(" | ") + " |");
     });
+
+    var parts = splitSections(md);
+    var sec = findSection(parts.sections, "Sources found");
+    if (sec) {
+      var L = sec.lines, start = -1, end = -1;
+      for (var i = 1; i < L.length; i++) {
+        if (/^\s*\|/.test(L[i])) { if (start < 0) start = i; end = i; }
+        else if (start >= 0) break;
+      }
+      if (start >= 0) {
+        L.splice.apply(L, [start, end - start + 1].concat(tableLines));
+      } else {
+        var at = 1;
+        while (at < L.length && L[at].trim() === "") at++;
+        L.splice.apply(L, [at, 0].concat(tableLines, [""]));
+      }
+    } else {
+      var fresh = { heading: "Sources found so far", lines: ["## Sources found so far", ""].concat(tableLines, [""]) };
+      var idx = -1;
+      for (var j = 0; j < parts.sections.length; j++) {
+        if (/^(stress-tested|key decisions)/i.test(parts.sections[j].heading)) { idx = j; break; }
+      }
+      if (idx < 0) {
+        var last = parts.sections[parts.sections.length - 1];
+        if (last && last.lines[last.lines.length - 1].trim() !== "") last.lines.push("");
+        parts.sections.push(fresh);
+      } else {
+        parts.sections.splice(idx, 0, fresh);
+      }
+    }
+    var all = parts.pre.slice();
+    parts.sections.forEach(function (s) { all = all.concat(s.lines); });
+    return all.join("\n");
   }
 
   function bullets(lines) {
@@ -214,6 +328,7 @@ var LogFormat = (function () {
     var q = unquote(field(mine, "Research question"));
     var p = unquote(field(mine, "Working position"));
     var c = unquote(field(mine, "Strongest counterargument and my response"));
+    var srcTable = table(S("Sources found"));
     return {
       ok: true,
       lastUpdated: lu ? lu[1].trim() : "",
@@ -235,10 +350,11 @@ var LogFormat = (function () {
       question: { text: q.text, quoted: q.quoted, written: !isPlaceholder(q.text) },
       position: { text: p.text, quoted: p.quoted, written: !isPlaceholder(p.text) },
       counter: { text: c.text, quoted: c.quoted, written: !isPlaceholder(c.text) },
-      plan: table(S("Research plan")),
+      plan: table(S("Research plan")).rows,
       planSupport: field(S("Research plan"), "What would support my position"),
       planComplicate: field(S("Research plan"), "What would complicate it"),
-      sources: table(S("Sources found")),
+      sources: srcTable.rows.map(toSource),
+      sourcesHeader: srcTable.head,
       tested: bullets(S("Stress-tested")),
       decisions: bullets(S("Key decisions"))
     };
@@ -259,7 +375,8 @@ var LogFormat = (function () {
     return md.replace(/^(#\s*Research Smarter\s*·\s*Research log\s*\n)/m, "$1\n**Last updated:** " + date + "\n");
   }
 
-  return { parse: parse, save: save, localDate: localDate, isLog: isLog };
+  return { parse: parse, save: save, localDate: localDate, isLog: isLog,
+           withSources: withSources, newSource: newSource, STATUSES: STATUSES, LABELS: LABELS };
 })();
 </script>
 
@@ -286,15 +403,16 @@ var LogFormat = (function () {
     "- **Working position:** \"Phone bans increase face-to-face interaction during the school day, but they don't reduce social conflict, they just move it to after school.\"",
     "- **Strongest counterargument and my response:** \"Students might just be talking more because they're bored, not because they're connecting. I'd answer that even bored conversation builds social skills.\"", "",
     "## Sources found so far", "",
-    "| Citation | Link or DOI | Sub-question | Supports or complicates | Verified? |",
-    "|---|---|---|---|---|",
-    "| Example study of a school phone policy (2025) | | Do students talk more in person? | supports | yes |",
-    "| Example survey of after-school online conflict (2024) | | Does conflict move online? | complicates | yes |", "",
+    "| Citation | Link or DOI | Sub-question | Supports or complicates | Verified? | Reading status |",
+    "|---|---|---|---|---|---|",
+    "| Example study of a school phone policy (2025) | | Do students talk more in person? | supports | yes | read closely |",
+    "| Example survey of after-school online conflict (2024) | | Does conflict move online? | complicates | yes | skimmed |",
+    "| Example news report on a district's phone ban (2025) | | Do students talk more in person? | | | found |", "",
     "## Key decisions and changes of direction", "",
     "- 2026-10-20 Narrowed from \"do bans work\" to social interaction.", ""
   ].join("\n");
 
-  var state = { markdown: null, parsed: null, isExample: false, saved: false };
+  var state = { markdown: null, parsed: null, isExample: false, view: "research", readIndex: null, returnTo: "sources" };
   var cap = { db: null, user: null, uid: null, dl: null, ready: false };
 
   function status(text, kind) {
@@ -325,8 +443,48 @@ var LogFormat = (function () {
 
   /* ---------- Views ---------- */
 
+  /* ---------- Routing: #research, #sources, #read ---------- */
+
+  /* The page's own state decides the view. The address (#sources) is only kept in
+     step where the viewer allows it, so a blocked address change never stops a click. */
+  var VIEWS = ["research", "sources", "read"];
+  document.querySelectorAll("#tabs a[data-view]").forEach(function (a) {
+    a.addEventListener("click", function (e) { e.preventDefault(); go(a.getAttribute("data-view")); });
+  });
+  function go(view) {
+    state.view = VIEWS.indexOf(view) >= 0 ? view : "research";
+    render();
+    try {
+      if (location.protocol !== "data:" && location.hash !== "#" + state.view) {
+        history.replaceState(null, "", "#" + state.view);
+      }
+    } catch (e) { /* address unchanged; the view still switched */ }
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", function () {
+    var h = (location.hash || "").slice(1);
+    if (VIEWS.indexOf(h) >= 0 && h !== state.view) { state.view = h; render(); }
+  });
+  (function () { var h = (location.hash || "").slice(1); if (h === "sources") state.view = h; })();
+
+  function render() {
+    if (!state.parsed) { renderEmpty(); return; }
+    if (state.view === "read" && state.readIndex == null) state.view = "sources";
+    $("tabs").hidden = false;
+    ["research", "sources"].forEach(function (n) {
+      var t = $("tab-" + n);
+      if (n === state.view || (n === "sources" && state.view === "read")) t.setAttribute("aria-current", "page");
+      else t.removeAttribute("aria-current");
+    });
+    $("tab-sources").textContent = "Sources (" + state.parsed.sources.length + ")";
+    if (state.view === "sources") renderSources();
+    else if (state.view === "read") renderRead();
+    else renderProject();
+  }
+
   function renderEmpty() {
     $("actions").hidden = true;
+    $("tabs").hidden = true;
     var v = $("view"); v.textContent = "";
     var box = el("section", "panel empty");
     box.append(el("p", "eyebrow", "Your notebook"));
@@ -351,7 +509,7 @@ var LogFormat = (function () {
     var row = el("div", "choices");
     var bLoad = el("button", "primary", "Load this text"); bLoad.type = "button";
     bLoad.onclick = function () { if (!ta.value.trim()) { status("Paste your log text first.", "warn"); return; } load(ta.value, { name: "pasted text" }); };
-    var bBack = el("button", null, "Cancel"); bBack.type = "button"; bBack.onclick = function () { status(""); state.parsed ? renderProject() : renderEmpty(); };
+    var bBack = el("button", null, "Cancel"); bBack.type = "button"; bBack.onclick = function () { status(""); render(); };
     row.append(bLoad, bBack);
     box.append(ta, row);
     v.append(box);
@@ -417,29 +575,18 @@ var LogFormat = (function () {
     asg.append(dl);
     v.append(asg);
 
-    // Sources
+    // Sources summary
     var src = el("section", "panel");
     src.append(el("p", "eyebrow", "Sources"));
     if (!P.sources.length) {
-      src.append(el("p", "muted", "No sources in this log yet. They'll appear here after Phase 4."));
+      src.append(el("p", "muted", "No sources yet. They'll come from Phase 4, or you can add one yourself."));
     } else {
       src.append(el("h3", null, P.sources.length + (P.sources.length === 1 ? " source" : " sources")));
-      var ul = el("ul", "sources");
-      P.sources.forEach(function (s) {
-        var li = el("li");
-        li.append(el("p", null, s["Citation"] || "(no citation)"));
-        var href = linkFor(s["Link or DOI"]);
-        if (href) { var aEl = el("a", null, s["Link or DOI"]); aEl.href = href; aEl.target = "_blank"; aEl.rel = "noopener"; li.append(aEl); }
-        else if (s["Link or DOI"]) li.append(el("p", "muted", s["Link or DOI"]));
-        var tags = el("div", "tags");
-        if (s["Sub-question"]) tags.append(el("span", "tag", s["Sub-question"]));
-        if (s["Supports or complicates"]) tags.append(el("span", "tag", s["Supports or complicates"]));
-        if (s["Verified?"]) tags.append(el("span", "tag", "verified: " + s["Verified?"]));
-        if (tags.childNodes.length) li.append(tags);
-        ul.append(li);
-      });
-      src.append(ul);
+      src.append(summaryChips(P.sources));
     }
+    var open = el("button", null, P.sources.length ? "Open my sources" : "Add a source"); open.type = "button";
+    open.onclick = function () { go("sources"); };
+    var row = el("div", "row-actions"); row.append(open); src.append(row);
     v.append(src);
 
     // Decisions
@@ -451,6 +598,168 @@ var LogFormat = (function () {
       dec.append(dul);
       v.append(dec);
     }
+  }
+
+  function summaryChips(sources) {
+    var wrap = el("div", "summary");
+    LogFormat.STATUSES.forEach(function (st) {
+      var n = sources.filter(function (s) { return s.status === st; }).length;
+      if (n) wrap.append(el("span", "count", n + " " + st));
+    });
+    var nr = sources.filter(function (s) { return LogFormat.STATUSES.indexOf(s.status) < 0; }).length;
+    if (nr) wrap.append(el("span", "count", nr + " reading status not recorded"));
+    var unl = sources.filter(function (s) { return !s.label; }).length;
+    if (unl) wrap.append(el("span", "count unlabeled", unl + " not labeled yet"));
+    return wrap;
+  }
+
+  var LABEL_TEXT = { "": "Not labeled yet", supports: "Supports my position", complicates: "Complicates my position" };
+
+  function renderSources() {
+    var P = state.parsed, v = $("view"); v.textContent = "";
+    $("actions").hidden = false;
+    if (state.isExample) v.append(el("div", "notice warn", "You're looking at an example project. Changes here aren't kept."));
+
+    var head = el("section", "panel");
+    head.append(el("p", "eyebrow", "Sources"));
+    head.append(el("h2", null, P.sources.length ? "Your sources" : "No sources yet"));
+    head.append(el("p", "muted", "Mark how far you've read each one, and decide for yourself whether it supports or complicates your position. The notebook never decides that for you."));
+    if (P.sources.length) head.append(summaryChips(P.sources));
+    v.append(head);
+
+    var list = el("section", "panel");
+    list.setAttribute("aria-label", "Source list");
+    P.sources.forEach(function (s, i) { list.append(sourceCard(s, i)); });
+    if (!P.sources.length) list.append(el("p", "muted", "Add a source below, or bring in a log from Phase 4."));
+    v.append(list);
+
+    v.append(addForm());
+  }
+
+  function sourceCard(s, i) {
+    var card = el("article", "src-card");
+    card.append(el("p", "cite", s.citation || "(no citation)"));
+    var href = linkFor(s.link);
+    if (href) { var a = el("a", null, s.link); a.href = href; a.target = "_blank"; a.rel = "noopener"; card.append(a); }
+    else if (s.link) card.append(el("p", "muted", s.link));
+    var tags = el("div", "tags");
+    if (s.subq) tags.append(el("span", "tag", s.subq));
+    if (s.verified) tags.append(el("span", "tag", "verified: " + s.verified));
+    if (tags.childNodes.length) card.append(tags);
+
+    var controls = el("div", "controls");
+    var lStatus = el("label", null, "How far I've read it");
+    var selS = el("select"); selS.id = "status-" + i;
+    if (LogFormat.STATUSES.indexOf(s.status) < 0) {
+      var o0 = el("option", null, s.status ? "From your log: " + s.status : "Not recorded"); o0.value = s.status; selS.append(o0);
+    }
+    LogFormat.STATUSES.forEach(function (st) { var o = el("option", null, st.charAt(0).toUpperCase() + st.slice(1)); o.value = st; selS.append(o); });
+    selS.value = s.status;
+    selS.onchange = function () { updateSource(i, { status: selS.value }, "Marked as " + selS.value + "."); };
+    lStatus.append(selS);
+
+    var lLabel = el("label", null, "Supports or complicates my position");
+    var selL = el("select"); selL.id = "label-" + i;
+    ["", "supports", "complicates"].forEach(function (k) { var o = el("option", null, LABEL_TEXT[k]); o.value = k; selL.append(o); });
+    if (s.label && LogFormat.LABELS.indexOf(s.label.toLowerCase()) < 0) {
+      var o = el("option", null, "From your log: " + s.label); o.value = s.label; selL.append(o);
+    }
+    selL.value = LogFormat.LABELS.indexOf(s.label.toLowerCase()) >= 0 ? s.label.toLowerCase() : s.label;
+    if (!s.label) selL.classList.add("unlabeled");
+    selL.onchange = function () {
+      selL.classList.toggle("unlabeled", !selL.value);
+      updateSource(i, { label: selL.value }, selL.value ? "Labeled: " + LABEL_TEXT[selL.value].toLowerCase() + "." : "Label cleared.");
+    };
+    lLabel.append(selL);
+    controls.append(lStatus, lLabel);
+    card.append(controls);
+
+    var actions = el("div", "row-actions");
+    var read = el("button", "primary", "Read this source"); read.type = "button";
+    read.onclick = function () { state.readIndex = i; state.returnTo = "sources"; go("read"); };
+    var rm = el("button", null, "Remove"); rm.type = "button";
+    rm.onclick = function () {
+      actions.textContent = "";
+      actions.append(el("span", null, "Remove this source from your notebook?"));
+      var yes = el("button", null, "Remove it"); yes.type = "button";
+      yes.onclick = function () {
+        var list = state.parsed.sources.slice(); list.splice(i, 1);
+        applySources(list, "Removed. It's gone from your notebook, but not from any log you saved before.");
+        renderSources();
+      };
+      var no = el("button", null, "Keep it"); no.type = "button"; no.onclick = renderSources;
+      actions.append(yes, no); no.focus();
+    };
+    actions.append(read, rm);
+    card.append(actions);
+    return card;
+  }
+
+  function addForm() {
+    var box = el("section", "panel");
+    box.append(el("h3", null, "Add a source"));
+    var form = el("form", "form"); form.noValidate = true;
+    function input(id, label, placeholder) {
+      var l = el("label", null, label); var i = el("input"); i.type = "text"; i.id = id; i.placeholder = placeholder || "";
+      l.append(i); return { label: l, input: i };
+    }
+    var c = input("add-citation", "Citation", "Author, year, title");
+    var k = input("add-link", "Link or DOI (optional)", "https://… or 10.xxxx/…");
+    var q = input("add-subq", "Sub-question it helps with (optional)", "");
+    var subqs = state.parsed.plan.map(function (r) { return r["Sub-question (my words)"] || r["Sub-question"] || ""; }).filter(Boolean);
+    if (subqs.length) {
+      var dl = el("datalist"); dl.id = "subq-list";
+      subqs.forEach(function (t) { var o = el("option"); o.value = t; dl.append(o); });
+      q.input.setAttribute("list", "subq-list"); box.append(dl);
+    }
+    var submit = el("button", "primary", "Add source"); submit.type = "submit";
+    form.append(c.label, k.label, q.label, submit);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!c.input.value.trim()) { status("Add a citation first, so you'll know which source this is.", "warn"); c.input.focus(); return; }
+      var list = state.parsed.sources.concat([LogFormat.newSource({ citation: c.input.value, link: k.input.value, subq: q.input.value })]);
+      applySources(list, "Added. Decide whether it supports or complicates your position once you've read it.");
+      renderSources();
+      var cards = document.querySelectorAll(".src-card");
+      if (cards.length) cards[cards.length - 1].scrollIntoView({ block: "nearest" });
+    });
+    box.append(form);
+    return box;
+  }
+
+  function renderRead() {
+    var P = state.parsed, v = $("view"); v.textContent = "";
+    var s = P.sources[state.readIndex];
+    var box = el("section", "panel");
+    box.append(el("p", "eyebrow", "Read a Source"));
+    box.append(el("h2", null, s ? s.citation || "(no citation)" : "Choose a source"));
+    box.append(el("p", "muted", "The Reader, where a coach helps you work through one article, is being built next. When it's ready, it opens here."));
+    var back = el("button", "primary", "Back to " + (state.returnTo === "research" ? "My Research" : "my sources")); back.type = "button";
+    back.onclick = function () { go(state.returnTo || "sources"); };
+    var row = el("div", "row-actions"); row.append(back); box.append(row);
+    v.append(box);
+    back.focus();
+  }
+
+  function updateSource(i, changes, message) {
+    var list = state.parsed.sources.map(function (s, j) {
+      if (j !== i) return s;
+      var c = {}; Object.keys(s).forEach(function (k) { c[k] = s[k]; });
+      Object.keys(changes).forEach(function (k) { c[k] = changes[k]; });
+      return c;
+    });
+    applySources(list, message);
+    $("tab-sources").textContent = "Sources (" + state.parsed.sources.length + ")";
+    var sum = document.querySelector("#view .summary");
+    if (sum) sum.replaceWith(summaryChips(state.parsed.sources));
+  }
+
+  function applySources(list, message) {
+    state.markdown = LogFormat.withSources(state.markdown, list, state.parsed.sourcesHeader);
+    state.parsed = LogFormat.parse(state.markdown);
+    $("tab-sources").textContent = "Sources (" + state.parsed.sources.length + ")";
+    if (state.isExample) { status(message + " (Example only, not kept.)", "warn"); return; }
+    persist(message);
   }
 
   /* ---------- Loading ---------- */
@@ -475,21 +784,30 @@ var LogFormat = (function () {
     state.markdown = String(text).replace(/\r\n?/g, "\n");
     state.parsed = parsed;
     state.isExample = !!opts.example;
-    renderProject();
+    state.readIndex = null;
+    go("research");
     if (opts.example) { status(""); return; }
-    status("Loaded " + (opts.name || "your log") + ".", "ok");
-    persist();
+    persist("Loaded " + (opts.name || "your log") + ".");
   }
 
-  function persist() {
+  /* One write at a time: a change made while a save is running is saved right after it. */
+  var writing = false, pending = null;
+  function persist(message) {
     if (!cap.db || !cap.uid) {
-      status("Loaded. This view can't keep your notebook between visits, so save your research log before you leave.", "warn");
+      status(message + " This view can't keep your notebook between visits, so save your research log before you leave.", "warn");
       return;
     }
+    if (writing) { pending = message; return; }
+    writing = true;
     cap.db.doc("data/users/" + cap.uid + "/project").set({
       markdown: state.markdown, savedOn: LogFormat.localDate()
+    }).then(function () {
+      status(message, "ok");
     }).catch(function (e) {
-      status("Loaded, but your notebook couldn't be kept for next time (" + e.code + "). Save your research log before you leave.", "warn");
+      status(message + " But your notebook couldn't be kept for next time (" + e.code + "). Save your research log before you leave.", "warn");
+    }).finally(function () {
+      writing = false;
+      if (pending !== null) { var m = pending; pending = null; persist(m); }
     });
   }
 
@@ -504,7 +822,7 @@ var LogFormat = (function () {
     var row = el("div", "choices");
     var go = fileButton("Choose a log file", true);
     var paste = el("button", null, "Paste log text"); paste.type = "button"; paste.onclick = showPaste;
-    var no = el("button", null, "Cancel"); no.type = "button"; no.onclick = renderProject;
+    var no = el("button", null, "Cancel"); no.type = "button"; no.onclick = render;
     row.append(go, paste, no); box.append(row);
     v.prepend(box);
     go.focus();
@@ -547,7 +865,7 @@ var LogFormat = (function () {
 
   /* ---------- Start ---------- */
 
-  renderEmpty();
+  render();
 
   var has = !!(window.claude && window.claude.use);
   if (!has) {
@@ -577,7 +895,7 @@ var LogFormat = (function () {
         var parsed = d && d.markdown ? LogFormat.parse(d.markdown) : { ok: false };
         if (parsed.ok) {
           state.markdown = d.markdown; state.parsed = parsed; state.isExample = false;
-          renderProject(); status("Welcome back. Your project is where you left it.", "ok");
+          render(); status("Welcome back. Your project is where you left it.", "ok");
           return;
         }
       }
