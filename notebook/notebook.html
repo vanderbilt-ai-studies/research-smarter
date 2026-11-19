@@ -1,0 +1,591 @@
+<title>Research Smarter Notebook</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+  /* Layout: a sticky top bar, then one reading column of project panels; the
+     phase track mirrors the skill's six phases. Colors echo the mind map's
+     blue-to-red saturation scale. */
+  :root {
+    --bg: #f4f6fa; --surface: #ffffff; --fg: #18202f; --muted: #5a6478;
+    --line: #dce2ec; --accent: #2457c5; --accent-soft: #e5edfc;
+    --done: #1f7a52; --done-soft: #e0f3ea; --warn: #8a5a00; --warn-soft: #fbf0d9;
+    --bad: #a3262a; --bad-soft: #f8e3e3; --quote: #f0f3f9;
+    --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #0f1420; --surface: #171e2c; --fg: #e5e9f1; --muted: #9aa4b8;
+    --line: #2a3346; --accent: #86a8ff; --accent-soft: #1d2a47;
+    --done: #79d1a4; --done-soft: #16352a; --warn: #f0c46b; --warn-soft: #3a2e14;
+    --bad: #f19a9c; --bad-soft: #3d1c1e; --quote: #1c2436; color-scheme: dark } }
+  :root[data-theme="dark"] {
+    --bg: #0f1420; --surface: #171e2c; --fg: #e5e9f1; --muted: #9aa4b8;
+    --line: #2a3346; --accent: #86a8ff; --accent-soft: #1d2a47;
+    --done: #79d1a4; --done-soft: #16352a; --warn: #f0c46b; --warn-soft: #3a2e14;
+    --bad: #f19a9c; --bad-soft: #3d1c1e; --quote: #1c2436; color-scheme: dark }
+
+  html, body { background: var(--bg); }
+  body { color: var(--fg); font: 15px/1.6 var(--font-body); }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+  .wrap { max-width: 760px; margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  header.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    background: var(--surface); border-bottom: 1px solid var(--line); }
+  header.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    flex-wrap: wrap; padding-block: 10px; }
+  .brand { font: 600 17px/1.2 var(--font-display); letter-spacing: -0.01em; margin: 0; }
+  .brand span { color: var(--muted); font-weight: 500; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  main.wrap { display: grid; gap: 18px; padding-block: 22px 48px; }
+
+  button, label.button { font: 600 14px/1 var(--font-body); border-radius: 8px; padding: 9px 14px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--surface); color: var(--fg); display: inline-block; }
+  button.primary, label.button.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+  button:disabled { opacity: .5; cursor: default; }
+  button:focus-visible, textarea:focus-visible, a:focus-visible, label.button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0; opacity: 0; }
+
+  .notice { border-radius: 10px; padding: 10px 14px; font-size: 14px; background: var(--accent-soft); color: var(--fg); }
+  .notice.warn { background: var(--warn-soft); }
+  .notice.bad { background: var(--bad-soft); }
+  .notice.ok { background: var(--done-soft); }
+
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px;
+    display: grid; gap: 12px; min-width: 0; }
+  .eyebrow { font: 500 12px/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0; }
+  h2 { font: 600 20px/1.25 var(--font-display); margin: 0; text-wrap: balance; }
+  h3 { font: 600 15px/1.3 var(--font-display); margin: 0; }
+  p { margin: 0; }
+  .muted { color: var(--muted); }
+
+  .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px 18px; margin: 0; }
+  .meta div { min-width: 0; }
+  .meta dt { font-size: 12px; color: var(--muted); }
+  .meta dd { margin: 0; overflow-wrap: anywhere; }
+
+  .track { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; list-style: none; margin: 0; padding: 0; }
+  .track li { display: grid; gap: 6px; font-size: 12px; color: var(--muted); min-width: 0; }
+  .track li::before { content: ""; height: 6px; border-radius: 3px; background: var(--line); }
+  .track li.done::before { background: var(--done); }
+  .track li.current::before { background: var(--accent); }
+  .track li.current { color: var(--fg); font-weight: 600; }
+  .track li .name { overflow-wrap: normal; }
+  @media (max-width: 560px) { .track li .name { display: none; } .track li { text-align: center; } }
+
+  blockquote.words { margin: 0; padding: 12px 14px; background: var(--quote); border-radius: 8px;
+    font-size: 16px; line-height: 1.55; overflow-wrap: anywhere; }
+  .words.empty { color: var(--muted); font-style: italic; font-size: 15px; }
+  .label { font-size: 13px; font-weight: 600; color: var(--muted); }
+
+  .sources { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .sources li { border-top: 1px solid var(--line); padding-top: 10px; display: grid; gap: 4px; min-width: 0; overflow-wrap: anywhere; }
+  .sources li:first-child { border-top: 0; padding-top: 0; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { font-size: 12px; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); }
+  a { color: var(--accent); }
+
+  ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+
+  .empty { text-align: left; display: grid; gap: 14px; }
+  .empty h2 { font-size: 24px; }
+  .choices { display: flex; gap: 10px; flex-wrap: wrap; }
+  textarea { width: 100%; min-height: 180px; font: 13px/1.5 var(--font-mono); color: var(--fg); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 8px; padding: 10px; box-sizing: border-box; resize: vertical; }
+  .confirm { display: grid; gap: 10px; }
+  @media (prefers-reduced-motion: no-preference) { button { transition: background-color .15s, border-color .15s; } }
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <p class="brand">Research Smarter <span>Notebook</span></p>
+    <div class="actions" id="actions" hidden>
+      <button type="button" id="btn-replace">Load a different log</button>
+      <button type="button" class="primary" id="btn-save">Save research log</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+  <div class="notice" id="status" role="status" aria-live="polite" hidden></div>
+  <div id="view"></div>
+</main>
+
+<input type="file" id="file" class="visually-hidden" accept=".md,.markdown,.txt,text/markdown,text/plain" tabindex="-1">
+
+<script id="log-format">
+/* Research log parsing and saving. Pure functions, no page access, so they can be
+   tested on their own. The log's text is kept exactly as written; saving only
+   updates the "Last updated" date. */
+var LogFormat = (function () {
+  function norm(md) { return String(md).replace(/\r\n?/g, "\n"); }
+
+  function isLog(md) {
+    return /^#\s*Research Smarter\s*·\s*Research log\s*$/m.test(md) ||
+      (/^##\s*Where I am\s*$/m.test(md) && /^##\s*My research question/m.test(md));
+  }
+
+  function splitSections(md) {
+    var lines = md.split("\n"), pre = [], sections = [], cur = null;
+    lines.forEach(function (line) {
+      var m = /^##\s+(.+?)\s*$/.exec(line);
+      if (m && !/^###/.test(line)) { cur = { heading: m[1], lines: [line] }; sections.push(cur); }
+      else if (cur) { cur.lines.push(line); }
+      else { pre.push(line); }
+    });
+    return { pre: pre, sections: sections };
+  }
+
+  function findSection(sections, startsWith) {
+    var key = startsWith.toLowerCase();
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].heading.toLowerCase().indexOf(key) === 0) return sections[i];
+    }
+    return null;
+  }
+
+  function field(lines, label) {
+    var re = new RegExp("^-\\s*\\*\\*" + label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ":\\*\\*\\s*(.*)$");
+    for (var i = 0; i < lines.length; i++) {
+      var m = re.exec(lines[i]);
+      if (m) {
+        var parts = [m[1]];
+        for (var j = i + 1; j < lines.length && /^\s{2,}\S/.test(lines[j]); j++) parts.push(lines[j].trim());
+        return parts.join(" ").trim();
+      }
+    }
+    return "";
+  }
+
+  function unquote(s) {
+    var t = (s || "").trim();
+    var m = /^["“]([\s\S]*)["”]$/.exec(t);
+    return m ? { text: m[1], quoted: true } : { text: t, quoted: false };
+  }
+
+  function isPlaceholder(s) {
+    var t = (s || "").trim().toLowerCase();
+    return !t || t.indexOf("not written yet") === 0 || /^\[.*\]$/.test(t);
+  }
+
+  function table(lines) {
+    var rows = lines.filter(function (l) { return /^\s*\|/.test(l); });
+    if (rows.length < 2) return [];
+    function cells(l) {
+      return l.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map(function (c) { return c.trim(); });
+    }
+    var head = cells(rows[0]);
+    return rows.slice(2).map(cells).filter(function (c) {
+      return c.some(function (x) { return x !== ""; });
+    }).map(function (c) {
+      var o = {};
+      head.forEach(function (h, i) { o[h] = c[i] || ""; });
+      return o;
+    });
+  }
+
+  function bullets(lines) {
+    return lines.filter(function (l) { return /^-\s+\S/.test(l); }).map(function (l) { return l.replace(/^-\s+/, "").trim(); });
+  }
+
+  function phases(s) {
+    var out = [], re = /Phase\s*(\d)/gi, m;
+    while ((m = re.exec(s || ""))) { var n = Number(m[1]); if (out.indexOf(n) < 0) out.push(n); }
+    return out;
+  }
+
+  function parse(raw) {
+    var md = norm(raw);
+    if (!isLog(md)) return { ok: false, reason: "not_log" };
+    var parts = splitSections(md);
+    var S = function (h) { var s = findSection(parts.sections, h); return s ? s.lines : []; };
+    var where = S("Where I am"), asg = S("Assignment"), mine = S("My research question");
+    var lu = /\*\*Last updated:\*\*\s*(.*)$/m.exec(parts.pre.join("\n"));
+    var phaseText = field(where, "Current phase and step");
+    var cur = phases(phaseText);
+    var number = cur.length ? cur[0] : null;
+    var complete = /complete/i.test(phaseText);
+    /* "Phase 0 complete; ready to start Phase 1": the current step is the next
+       core phase. After Phase 4 the only phase left is optional, so none is current. */
+    var current = number === null ? null : (complete ? (number < 4 ? number + 1 : null) : number);
+    var q = unquote(field(mine, "Research question"));
+    var p = unquote(field(mine, "Working position"));
+    var c = unquote(field(mine, "Strongest counterargument and my response"));
+    return {
+      ok: true,
+      lastUpdated: lu ? lu[1].trim() : "",
+      phase: {
+        text: phaseText,
+        number: number,
+        complete: complete,
+        current: current,
+        exitChecks: phases(field(where, "Exit checks passed")),
+        middle: field(where, "What I was in the middle of")
+      },
+      assignment: {
+        assignment: field(asg, "Assignment"),
+        discipline: field(asg, "Discipline"),
+        sources: field(asg, "Source requirements and citation style"),
+        researchType: field(asg, "Research type and working position"),
+        challenge: field(asg, "Challenge level")
+      },
+      question: { text: q.text, quoted: q.quoted, written: !isPlaceholder(q.text) },
+      position: { text: p.text, quoted: p.quoted, written: !isPlaceholder(p.text) },
+      counter: { text: c.text, quoted: c.quoted, written: !isPlaceholder(c.text) },
+      plan: table(S("Research plan")),
+      planSupport: field(S("Research plan"), "What would support my position"),
+      planComplicate: field(S("Research plan"), "What would complicate it"),
+      sources: table(S("Sources found")),
+      tested: bullets(S("Stress-tested")),
+      decisions: bullets(S("Key decisions"))
+    };
+  }
+
+  function localDate(d) {
+    d = d || new Date();
+    var p = function (n) { return (n < 10 ? "0" : "") + n; };
+    return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+  }
+
+  /* Returns the log with only its "Last updated" date changed to `date`. */
+  function save(raw, date) {
+    var md = norm(raw);
+    if (/\*\*Last updated:\*\*/.test(md)) {
+      return md.replace(/(\*\*Last updated:\*\*)[ \t]*[^\n]*/, "$1 " + date);
+    }
+    return md.replace(/^(#\s*Research Smarter\s*·\s*Research log\s*\n)/m, "$1\n**Last updated:** " + date + "\n");
+  }
+
+  return { parse: parse, save: save, localDate: localDate, isLog: isLog };
+})();
+</script>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var PHASES = ["Intake", "Explore", "Stress test", "Plan", "Research", "Ongoing (optional)"];
+
+  var EXAMPLE = [
+    "# Research Smarter · Research log", "",
+    "**Last updated:** 2026-11-10", "",
+    "## Where I am", "",
+    "- **Current phase and step:** Phase 4, reflecting (last step)",
+    "- **Exit checks passed:** Phase 0, Phase 1, Phase 2, Phase 3",
+    "- **What I was in the middle of:** finished the reflection questions; ready to wrap up research", "",
+    "## Assignment (from intake)", "",
+    "- **Assignment:** argumentative essay, 8 pages",
+    "- **Discipline:** sociology",
+    "- **Source requirements and citation style:** at least 5 peer-reviewed sources, APA",
+    "- **Research type and working position:** argumentative essay, thesis",
+    "- **Challenge level:** moderate", "",
+    "## My research question and position (in my own words)", "",
+    "- **Research question:** \"How have school-day phone bans changed how high school students interact with each other in person?\"",
+    "- **Working position:** \"Phone bans increase face-to-face interaction during the school day, but they don't reduce social conflict, they just move it to after school.\"",
+    "- **Strongest counterargument and my response:** \"Students might just be talking more because they're bored, not because they're connecting. I'd answer that even bored conversation builds social skills.\"", "",
+    "## Sources found so far", "",
+    "| Citation | Link or DOI | Sub-question | Supports or complicates | Verified? |",
+    "|---|---|---|---|---|",
+    "| Example study of a school phone policy (2025) | | Do students talk more in person? | supports | yes |",
+    "| Example survey of after-school online conflict (2024) | | Does conflict move online? | complicates | yes |", "",
+    "## Key decisions and changes of direction", "",
+    "- 2026-10-20 Narrowed from \"do bans work\" to social interaction.", ""
+  ].join("\n");
+
+  var state = { markdown: null, parsed: null, isExample: false, saved: false };
+  var cap = { db: null, user: null, uid: null, dl: null, ready: false };
+
+  function status(text, kind) {
+    var s = $("status");
+    if (!text) { s.hidden = true; return; }
+    s.className = "notice" + (kind ? " " + kind : ""); s.textContent = text; s.hidden = false;
+  }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  /* A real <label for="file"> opens the file picker on the student's own click.
+     Opening it from script (input.click()) can be blocked inside Claude's page frame. */
+  function fileButton(text, primary) {
+    var l = el("label", "button" + (primary ? " primary" : ""), text);
+    l.htmlFor = "file"; l.tabIndex = 0; l.setAttribute("role", "button");
+    l.addEventListener("click", function () { $("file").value = ""; });
+    l.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("file").value = ""; $("file").click(); }
+    });
+    return l;
+  }
+
+  function linkFor(v) {
+    var t = (v || "").trim();
+    if (/^https?:\/\//i.test(t)) return t;
+    var doi = /^(?:doi:\s*)?(10\.\d{4,9}\/\S+)$/i.exec(t);
+    return doi ? "https://doi.org/" + doi[1] : null;
+  }
+
+  /* ---------- Views ---------- */
+
+  function renderEmpty() {
+    $("actions").hidden = true;
+    var v = $("view"); v.textContent = "";
+    var box = el("section", "panel empty");
+    box.append(el("p", "eyebrow", "Your notebook"));
+    box.append(el("h2", null, "Bring in your research log"));
+    box.append(el("p", "muted", "Load the research log Research Smarter gave you, and your question, position, phase and sources appear here. Your log stays in your words, exactly as you wrote it."));
+    var choices = el("div", "choices");
+    var bFile = fileButton("Load a log file", true);
+    var bPaste = el("button", null, "Paste log text"); bPaste.type = "button"; bPaste.onclick = showPaste;
+    var bEx = el("button", null, "See an example"); bEx.type = "button"; bEx.onclick = function () { load(EXAMPLE, { example: true }); };
+    choices.append(bFile, bPaste, bEx);
+    box.append(choices);
+    box.append(el("p", "muted", "No log yet? Start a project with the Research Smarter skill by saying “I want to research…”, and ask it for your research log when you stop."));
+    v.append(box);
+  }
+
+  function showPaste() {
+    var v = $("view"); v.textContent = "";
+    var box = el("section", "panel");
+    box.append(el("h2", null, "Paste your research log"));
+    var ta = el("textarea"); ta.id = "paste-text"; ta.setAttribute("aria-label", "Research log text");
+    ta.placeholder = "# Research Smarter · Research log\n\n**Last updated:** …";
+    var row = el("div", "choices");
+    var bLoad = el("button", "primary", "Load this text"); bLoad.type = "button";
+    bLoad.onclick = function () { if (!ta.value.trim()) { status("Paste your log text first.", "warn"); return; } load(ta.value, { name: "pasted text" }); };
+    var bBack = el("button", null, "Cancel"); bBack.type = "button"; bBack.onclick = function () { status(""); state.parsed ? renderProject() : renderEmpty(); };
+    row.append(bLoad, bBack);
+    box.append(ta, row);
+    v.append(box);
+    ta.focus();
+  }
+
+  function words(label, item, emptyText) {
+    var wrap = el("div"); wrap.style.display = "grid"; wrap.style.gap = "6px";
+    wrap.append(el("p", "label", label));
+    var q = el("blockquote", "words" + (item.written ? "" : " empty"), item.written ? item.text : emptyText);
+    wrap.append(q);
+    return wrap;
+  }
+
+  function renderProject() {
+    var P = state.parsed, v = $("view"); v.textContent = "";
+    $("actions").hidden = false;
+
+    if (state.isExample) {
+      var n = el("div", "notice warn", "You're looking at an example project, not your own. Load your research log to start.");
+      v.append(n);
+    }
+
+    // Where I am
+    var where = el("section", "panel");
+    where.append(el("p", "eyebrow", "Where I am"));
+    where.append(el("h2", null, P.phase.text || "Phase not recorded"));
+    var track = el("ol", "track"); track.setAttribute("aria-label", "Research Smarter phases");
+    PHASES.forEach(function (name, i) {
+      var li = el("li"); var label = el("span");
+      label.append(el("span", "num", String(i)), el("span", "name", " · " + name));
+      li.title = "Phase " + i + " · " + name;
+      var done = P.phase.exitChecks.indexOf(i) >= 0 || (P.phase.complete && P.phase.number === i);
+      var current = P.phase.current === i;
+      if (done) li.className = "done"; else if (current) li.className = "current";
+      li.append(label);
+      if (current) li.setAttribute("aria-current", "step");
+      track.append(li);
+    });
+    where.append(track);
+    if (P.phase.middle) where.append(el("p", null, "In the middle of: " + P.phase.middle));
+    if (P.lastUpdated) where.append(el("p", "muted", "Log last updated " + P.lastUpdated));
+    v.append(where);
+
+    // In my own words
+    var mine = el("section", "panel");
+    mine.append(el("p", "eyebrow", "In my own words"));
+    mine.append(words("Research question", P.question, "Not written yet. You'll write it in Phase 1."));
+    mine.append(words("Working position", P.position, "Not written yet. You'll form it in Phase 2."));
+    mine.append(words("Strongest counterargument and my response", P.counter, "Not written yet."));
+    v.append(mine);
+
+    // Assignment
+    var a = P.assignment;
+    var asg = el("section", "panel");
+    asg.append(el("p", "eyebrow", "Assignment"));
+    var dl = el("dl", "meta");
+    [["Assignment", a.assignment], ["Discipline", a.discipline], ["Sources and citation style", a.sources],
+     ["Research type", a.researchType], ["Challenge level", a.challenge]].forEach(function (pair) {
+      if (!pair[1]) return;
+      var d = el("div"); d.append(el("dt", null, pair[0]), el("dd", null, pair[1])); dl.append(d);
+    });
+    asg.append(dl);
+    v.append(asg);
+
+    // Sources
+    var src = el("section", "panel");
+    src.append(el("p", "eyebrow", "Sources"));
+    if (!P.sources.length) {
+      src.append(el("p", "muted", "No sources in this log yet. They'll appear here after Phase 4."));
+    } else {
+      src.append(el("h3", null, P.sources.length + (P.sources.length === 1 ? " source" : " sources")));
+      var ul = el("ul", "sources");
+      P.sources.forEach(function (s) {
+        var li = el("li");
+        li.append(el("p", null, s["Citation"] || "(no citation)"));
+        var href = linkFor(s["Link or DOI"]);
+        if (href) { var aEl = el("a", null, s["Link or DOI"]); aEl.href = href; aEl.target = "_blank"; aEl.rel = "noopener"; li.append(aEl); }
+        else if (s["Link or DOI"]) li.append(el("p", "muted", s["Link or DOI"]));
+        var tags = el("div", "tags");
+        if (s["Sub-question"]) tags.append(el("span", "tag", s["Sub-question"]));
+        if (s["Supports or complicates"]) tags.append(el("span", "tag", s["Supports or complicates"]));
+        if (s["Verified?"]) tags.append(el("span", "tag", "verified: " + s["Verified?"]));
+        if (tags.childNodes.length) li.append(tags);
+        ul.append(li);
+      });
+      src.append(ul);
+    }
+    v.append(src);
+
+    // Decisions
+    if (P.decisions.length) {
+      var dec = el("section", "panel");
+      dec.append(el("p", "eyebrow", "Key decisions"));
+      var dul = el("ul", "plain");
+      P.decisions.forEach(function (d) { dul.append(el("li", null, d)); });
+      dec.append(dul);
+      v.append(dec);
+    }
+  }
+
+  /* ---------- Loading ---------- */
+
+  $("file").addEventListener("change", function () {
+    var f = this.files && this.files[0];
+    if (!f) return;
+    if (f.size > 200000) { status("That file is too large to be a research log.", "bad"); return; }
+    var r = new FileReader();
+    r.onload = function () { load(String(r.result), { name: f.name }); };
+    r.onerror = function () { status("That file couldn't be read. Try pasting its text instead.", "bad"); };
+    r.readAsText(f);
+  });
+
+  function load(text, opts) {
+    opts = opts || {};
+    var parsed = LogFormat.parse(text);
+    if (!parsed.ok) {
+      status("That doesn't look like a Research Smarter research log, so nothing was changed. A log starts with “# Research Smarter · Research log”.", "bad");
+      return;
+    }
+    state.markdown = String(text).replace(/\r\n?/g, "\n");
+    state.parsed = parsed;
+    state.isExample = !!opts.example;
+    renderProject();
+    if (opts.example) { status(""); return; }
+    status("Loaded " + (opts.name || "your log") + ".", "ok");
+    persist();
+  }
+
+  function persist() {
+    if (!cap.db || !cap.uid) {
+      status("Loaded. This view can't keep your notebook between visits, so save your research log before you leave.", "warn");
+      return;
+    }
+    cap.db.doc("data/users/" + cap.uid + "/project").set({
+      markdown: state.markdown, savedOn: LogFormat.localDate()
+    }).catch(function (e) {
+      status("Loaded, but your notebook couldn't be kept for next time (" + e.code + "). Save your research log before you leave.", "warn");
+    });
+  }
+
+  /* ---------- Replace with confirm ---------- */
+
+  $("btn-replace").onclick = function () {
+    if (state.isExample) { renderEmpty(); status(""); return; }
+    var v = $("view");
+    var box = el("section", "panel confirm");
+    box.append(el("h2", null, "Load a different log?"));
+    box.append(el("p", null, "This replaces the project in your notebook. Your log files aren't changed. Save your current log first if you've changed anything here."));
+    var row = el("div", "choices");
+    var go = fileButton("Choose a log file", true);
+    var paste = el("button", null, "Paste log text"); paste.type = "button"; paste.onclick = showPaste;
+    var no = el("button", null, "Cancel"); no.type = "button"; no.onclick = renderProject;
+    row.append(go, paste, no); box.append(row);
+    v.prepend(box);
+    go.focus();
+  };
+
+  /* ---------- Saving ---------- */
+
+  $("btn-save").onclick = function () {
+    if (!state.markdown) return;
+    var date = LogFormat.localDate();
+    var text = LogFormat.save(state.markdown, date);
+    var name = "research-log-" + date + ".md";
+    if (!cap.dl) { showCopy(text, name); return; }
+    $("btn-save").disabled = true;
+    cap.dl.save({ filename: name, data: text })
+      .then(function () { status("Saved " + name + ". Upload it to Research Smarter next time and say “continue my research”.", "ok"); })
+      .catch(function (e) {
+        if (e && e.code === "declined") { status("Save cancelled.", "warn"); return; }
+        showCopy(text, name);
+      })
+      .finally(function () { $("btn-save").disabled = false; });
+  };
+
+  function showCopy(text, name) {
+    var v = $("view");
+    var box = el("section", "panel");
+    box.append(el("h2", null, "Copy your research log"));
+    box.append(el("p", "muted", "This view can't save files, so copy the text below into a file named " + name + "."));
+    var ta = el("textarea"); ta.readOnly = true; ta.value = text; ta.id = "copy-text"; ta.setAttribute("aria-label", "Research log text to copy");
+    var b = el("button", "primary", "Copy text"); b.type = "button";
+    b.onclick = function () {
+      var done = function () { status("Copied.", "ok"); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { ta.select(); status("Select all and copy the text.", "warn"); });
+      } else { ta.select(); status("Select all and copy the text.", "warn"); }
+    };
+    box.append(ta, b);
+    v.prepend(box);
+  }
+
+  /* ---------- Start ---------- */
+
+  renderEmpty();
+
+  var has = !!(window.claude && window.claude.use);
+  if (!has) {
+    status("Open this notebook in Claude to keep your project between visits. You can still load and save a log here.", "warn");
+    return;
+  }
+  window.claude.use("downloads").then(function (dl) { cap.dl = dl; });
+  Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (pair) {
+    cap.db = pair[0]; cap.user = pair[1];
+    if (!cap.db || !cap.user) {
+      status("This view can't keep your notebook between visits. You can still load a log and save it as a file.", "warn");
+      return null;
+    }
+    return cap.user.id();
+  }).then(function (uid) {
+    if (!cap.db || !cap.user) return;
+    if (!uid) {
+      status("Sign in to Claude to keep your notebook between visits. You can still load a log and save it as a file.", "warn");
+      return;
+    }
+    cap.uid = uid;
+    var timer = setTimeout(function () { status("Still looking for your saved notebook…", "warn"); }, 10000);
+    return cap.db.doc("data/users/" + uid + "/project").get().then(function (snap) {
+      clearTimeout(timer);
+      if (snap.exists && !state.parsed) {
+        var d = snap.data();
+        var parsed = d && d.markdown ? LogFormat.parse(d.markdown) : { ok: false };
+        if (parsed.ok) {
+          state.markdown = d.markdown; state.parsed = parsed; state.isExample = false;
+          renderProject(); status("Welcome back. Your project is where you left it.", "ok");
+          return;
+        }
+      }
+      if (!state.parsed) status("");
+    }).catch(function (e) {
+      clearTimeout(timer);
+      status("Your saved notebook couldn't be loaded (" + e.code + "). You can load your log file again.", "warn");
+    });
+  });
+})();
+</script>

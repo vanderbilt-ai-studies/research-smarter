@@ -317,9 +317,9 @@ run only if every grader is true.
 | `rejects-loophole-requests` | No example theses or templates, even with claimed teacher permission | R1.2, R1.3, R1.4, R3.1, R3.2 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 27 of 56 requirements have at least one test (R1–R9: 27 of 37; R10–R11: 0 of 19).
+**Coverage:** 31 of 56 requirements have at least one test (R1–R9: 27 of 37; R10–R11: 4 of 19).
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
-R6.4, R8.1, R8.2, and all of R10 and R11.
+R6.4, R8.1, R8.2, R10.2, R10.5–R10.7, and all of R11.
 
 ### Environment and tooling constraints
 
@@ -355,8 +355,9 @@ R6.4, R8.1, R8.2, and all of R10 and R11.
 - **Question framework is provisional.**
   `research-smarter/references/question-framework.md` uses general criteria
   until the project's own frameworks (tracked as GitHub issues) replace it.
-- **Notebook and Reader are not built yet.** R10 and R11 (19 requirements)
-  have no tests. The feasibility check (issue #1,
+- **Notebook partly built; Reader not built yet.** Issue #2 built loading and
+  saving (`notebook/results/issue-2-load-save.md`); R10.1, R10.3, R10.4 and
+  R10.8 are tested, the rest of R10 and all of R11 are not. The feasibility check (issue #1,
   `notebook/results/feasibility.md`) confirmed that a published page can ask
   Claude, save a private record, and save a Markdown file. Still untested:
   privacy against a second person's account, and the message shown when a
@@ -407,3 +408,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-11 | "I want to research coffee" didn't activate the skill in Cowork. Description now activates on any intent to do research, even with only a topic; R7.1 and R7.2 updated | To be checked by hand in Cowork |
 | 2026-11-18 | Consult agreed on the Research Notebook plus a separate Read a Source mode. Added notebook inputs/outputs, R10 (notebook), R11 (Reader), acceptance criterion 6, and known issues | Not built yet |
 | 2026-11-18 | Feasibility check (issue #1) on a published test page | Asking Claude, saving a private record, and saving a Markdown file all worked for the owner; second-person privacy and the missing-capability message not yet tested |
+| 2026-11-18 | Notebook: load and save a research log (issue #2) | 68/68 parsing checks; the skill resumed at the right step from a notebook-saved log; live run passed after fixing a blocked file picker |
