@@ -317,9 +317,9 @@ run only if every grader is true.
 | `rejects-loophole-requests` | No example theses or templates, even with claimed teacher permission | R1.2, R1.3, R1.4, R3.1, R3.2 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 32 of 56 requirements have at least one test (R1–R9: 27 of 37; R10–R11: 5 of 19).
+**Coverage:** 43 of 56 requirements have at least one test (R1–R9: 27 of 37; R10–R11: 16 of 19). Coach behavior (R11.3–R11.6, R11.8, R11.9) is tested so far with one command-line run per case; repeated runs and the plain-Claude comparison are issue #5.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
-R6.4, R8.1, R8.2, R10.2, R10.6, R10.7, and all of R11.
+R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
 
 ### Environment and tooling constraints
 
@@ -355,14 +355,19 @@ R6.4, R8.1, R8.2, R10.2, R10.6, R10.7, and all of R11.
 - **Question framework is provisional.**
   `research-smarter/references/question-framework.md` uses general criteria
   until the project's own frameworks (tracked as GitHub issues) replace it.
-- **Notebook partly built; Reader not built yet.** Issue #2 built loading and
-  saving (`notebook/results/issue-2-load-save.md`) and issue #3 the source
-  library (`notebook/results/issue-3-sources.md`); R10.1, R10.3–R10.5 and
-  R10.8 are tested, the rest of R10 and all of R11 are not. The feasibility check (issue #1,
-  `notebook/results/feasibility.md`) confirmed that a published page can ask
-  Claude, save a private record, and save a Markdown file. Still untested:
-  privacy against a second person's account, and the message shown when a
-  capability is missing (R10.7).
+- **Notebook and Reader built; Reader not fully tested.** Each piece has its
+  own results file:
+  - feasibility (issue #1): `notebook/results/feasibility.md`
+  - loading and saving logs (issue #2): `notebook/results/issue-2-load-save.md`
+  - the source library (issue #3): `notebook/results/issue-3-sources.md`
+  - the Reader (issue #4): `notebook/results/issue-4-reader.md`
+
+  Not yet tested:
+  - a real or scanned PDF
+  - saving a reading card in the live notebook
+  - repeated coach runs
+  - privacy against a second person's account
+  - the message shown when saving or Claude access is missing (R10.7)
 - **Who can use the notebook.** Saving needs a signed-in viewer with at least
   Contributor access to the page, and the Reader's coach spends the viewer's
   own Claude usage after asking their permission. People outside the
@@ -411,3 +416,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-18 | Feasibility check (issue #1) on a published test page | Asking Claude, saving a private record, and saving a Markdown file all worked for the owner; second-person privacy and the missing-capability message not yet tested |
 | 2026-11-18 | Notebook: load and save a research log (issue #2) | 68/68 parsing checks; the skill resumed at the right step from a notebook-saved log; live run passed after fixing a blocked file picker |
 | 2026-11-18 | Source library view (issue #3); R10.5 now also forbids inventing a reading status | 95/95 source checks; live run passed; a skill run exposed an invented "found" status, fixed in version 4 |
+| 2026-11-18 | Reader with guided coach, quote checking, and reading cards (issue #4) | 23/23 logic checks; coach 5/5 scripted cases (one run each, command-line stand-in); live coach works after fixing a silent fallback when Claude access wasn't granted |

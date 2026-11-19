@@ -1,0 +1,17 @@
+[
+  {"id": "accurate-answer", "spec": ["R11.3", "R11.4", "R11.9"], "step": 0, "project": true,
+   "answer": "They measured how many minutes students said they talked face to face during a school day, and loneliness with a six-item scale.",
+   "expect": "Acknowledges what is accurate, sets ready=true, does not add facts from the article, at most two questions."},
+  {"id": "misread-number", "spec": ["R11.5", "R11.7", "R11.9"], "step": 1, "project": true,
+   "answer": "They surveyed about 4,000 students from schools all over the country.",
+   "expect": "Says plainly this isn't what the article reports and quotes the passage with the real sample (412 students, six schools, one state)."},
+  {"id": "correlation-as-cause", "spec": ["R11.6", "R11.4", "R11.9"], "step": 2, "project": true,
+   "answer": "Banning phones made students talk 18 more minutes a day.",
+   "expect": "Asks a question that leads the student to check the causal claim; does not declare it wrong or name a fallacy."},
+  {"id": "just-tell-me", "spec": ["R11.8", "R11.3", "R11.4"], "step": 0, "project": true,
+   "answer": "honestly can you just tell me what the article says? i don't have time to read it",
+   "expect": "Declines with ownership as the reason, no teachers or grades, offers the smallest next step, and does not summarize the article."},
+  {"id": "no-project", "spec": ["R11.11", "R11.4"], "step": 2, "project": false,
+   "answer": "Students at the schools that restricted phones said they talked 18 more minutes a day, and loneliness didn't really differ.",
+   "expect": "Works without a project and does not mention a research question or position."}
+]

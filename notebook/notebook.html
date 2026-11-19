@@ -114,6 +114,25 @@
   .form { display: grid; gap: 10px; }
   .summary { display: flex; gap: 8px; flex-wrap: wrap; }
   .count { font-size: 13px; padding: 3px 10px; border-radius: 999px; background: var(--quote); font-variant-numeric: tabular-nums; }
+
+  /* Reader */
+  .article { max-height: 42vh; overflow: auto; white-space: pre-wrap; font: 14px/1.65 var(--font-body);
+    background: var(--quote); border-radius: 8px; padding: 12px 14px; overflow-wrap: anywhere; }
+  .steps { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+  .steps li { font: 600 12px/1 var(--font-mono); padding: 6px 9px; border-radius: 999px; background: var(--quote); color: var(--muted); }
+  .steps li.done { background: var(--done-soft); color: var(--done); }
+  .steps li.current { background: var(--accent); color: var(--surface); }
+  .ask { font: 600 19px/1.3 var(--font-display); margin: 0; text-wrap: balance; }
+  .thread { display: grid; gap: 10px; }
+  .msg { border-radius: 10px; padding: 10px 12px; overflow-wrap: anywhere; white-space: pre-wrap; display: grid; gap: 8px; }
+  .msg.student { background: var(--accent-soft); justify-self: end; max-width: 92%; }
+  .msg.coach { background: var(--surface); border: 1px solid var(--line); max-width: 96%; }
+  .msg .who { font: 600 11px/1 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .msg blockquote { margin: 0; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--quote); border-radius: 0 6px 6px 0; font-size: 14px; }
+  textarea.answer { min-height: 110px; font: 15px/1.55 var(--font-body); }
+  .card-qa { display: grid; gap: 12px; margin: 0; }
+  .card-qa dt { font-size: 13px; font-weight: 600; color: var(--muted); }
+  .card-qa dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
   @media (prefers-reduced-motion: no-preference) { button { transition: background-color .15s, border-color .15s; } }
 </style>
 
@@ -124,6 +143,7 @@
       <a href="#research" id="tab-research" data-view="research">My Research</a>
       <a href="#sources" id="tab-sources" data-view="sources">Sources</a>
     </nav>
+    <button type="button" id="btn-read">Read a source</button>
     <div class="actions" id="actions" hidden>
       <button type="button" id="btn-replace">Load a different log</button>
       <button type="button" class="primary" id="btn-save">Save research log</button>
@@ -137,6 +157,7 @@
 </main>
 
 <input type="file" id="file" class="visually-hidden" accept=".md,.markdown,.txt,text/markdown,text/plain" tabindex="-1">
+<input type="file" id="pdf" class="visually-hidden" accept=".pdf,application/pdf,.txt,text/plain" tabindex="-1">
 
 <script id="log-format">
 /* Research log parsing and saving. Pure functions, no page access, so they can be
@@ -355,9 +376,75 @@ var LogFormat = (function () {
       planComplicate: field(S("Research plan"), "What would complicate it"),
       sources: srcTable.rows.map(toSource),
       sourcesHeader: srcTable.head,
+      readingCards: parseCards(S("Reading cards")),
       tested: bullets(S("Stress-tested")),
       decisions: bullets(S("Key decisions"))
     };
+  }
+
+  /* ---- Reading cards: "what this source can and can't tell me", in the student's words ---- */
+
+  function parseCards(lines) {
+    var cards = [], cur = null;
+    lines.slice(1).forEach(function (l) {
+      var h = /^###\s+(.+?)\s*$/.exec(l);
+      if (h) { cur = { citation: h[1], date: "", answers: [] }; cards.push(cur); return; }
+      if (!cur) return;
+      var d = /^\*Read on ([^*]+)\*\s*$/.exec(l.trim());
+      if (d) { cur.date = d[1].trim(); return; }
+      var m = /^-\s*\*\*(.+?):\*\*\s?(.*)$/.exec(l);
+      if (m) { cur.answers.push({ label: m[1], answer: m[2] }); return; }
+      if (/^\s{2,}\S/.test(l) && cur.answers.length) {
+        var a = cur.answers[cur.answers.length - 1]; a.answer += "\n" + l.replace(/^\s{2}/, "");
+      }
+    });
+    return cards;
+  }
+
+  function cardLines(card) {
+    var out = ["### " + String(card.citation || "Untitled source").replace(/\s+/g, " ").trim(),
+               "*Read on " + card.date + "*", ""];
+    card.answers.forEach(function (a) {
+      var ls = String(a.answer || "").replace(/\r\n?/g, "\n").split("\n");
+      out.push("- **" + a.label + ":** " + ls[0]);
+      ls.slice(1).forEach(function (l) { out.push("  " + l); });
+    });
+    out.push("");
+    return out;
+  }
+
+  /* Adds one reading card to the log's "Reading cards" section (creating the
+     section if needed). Every other line of the log is kept exactly. */
+  function withReadingCard(raw, card) {
+    var md = norm(raw), parts = splitSections(md);
+    var sec = findSection(parts.sections, "Reading cards");
+    if (sec) {
+      var L = sec.lines;
+      while (L.length > 1 && L[L.length - 1].trim() === "") L.pop();
+      L.push("");
+      L.push.apply(L, cardLines(card));
+    } else {
+      var fresh = { heading: "Reading cards", lines: ["## Reading cards", ""].concat(cardLines(card)) };
+      var idx = -1;
+      for (var j = 0; j < parts.sections.length; j++) {
+        if (/^(stress-tested|key decisions)/i.test(parts.sections[j].heading)) { idx = j; break; }
+      }
+      if (idx < 0) {
+        var last = parts.sections[parts.sections.length - 1];
+        if (last && last.lines[last.lines.length - 1].trim() !== "") last.lines.push("");
+        parts.sections.push(fresh);
+      } else {
+        parts.sections.splice(idx, 0, fresh);
+      }
+    }
+    var all = parts.pre.slice();
+    parts.sections.forEach(function (s) { all = all.concat(s.lines); });
+    return all.join("\n");
+  }
+
+  /* A reading card on its own, for a student reading without a project. */
+  function cardFile(card) {
+    return ["# Research Smarter · Reading card", ""].concat(cardLines(card)).join("\n");
   }
 
   function localDate(d) {
@@ -376,7 +463,107 @@ var LogFormat = (function () {
   }
 
   return { parse: parse, save: save, localDate: localDate, isLog: isLog,
-           withSources: withSources, newSource: newSource, STATUSES: STATUSES, LABELS: LABELS };
+           withSources: withSources, newSource: newSource, STATUSES: STATUSES, LABELS: LABELS,
+           withReadingCard: withReadingCard, cardFile: cardFile };
+})();
+</script>
+
+<script id="coach">
+/* The Reader's coach. Pure functions, no page access, so they can be tested on
+   their own. The questions are fixed text: the coach only ever speaks after the
+   student has answered (SPEC R11.2, R11.3). */
+var Coach = (function () {
+  var QUESTIONS = [
+    { key: "What was measured", ask: "What did the study actually measure?",
+      hint: "Look at the methods. Name the specific things the researchers counted, observed or asked about." },
+    { key: "Who was studied", ask: "Who was studied, and how were they chosen?",
+      hint: "Look for who took part, how many, where, and how they were picked." },
+    { key: "What was found", ask: "What did the study find?",
+      hint: "Look at the results. Say the main finding in your own words, with any key number." },
+    { key: "What it doesn't show", ask: "What does this result not show?",
+      hint: "Think about what someone might wrongly conclude from it." },
+    { key: "Limits the authors admit", ask: "What limits do the authors admit?",
+      hint: "Look for a limitations section or words like “however” and “cannot”." },
+    { key: "How it relates to my question", ask: "How does this source relate to your research question?",
+      hint: "Does it help answer your question? Does it support or complicate your position?", needsProject: true }
+  ];
+
+  function questionsFor(hasProject) {
+    return QUESTIONS.filter(function (q) { return hasProject || !q.needsProject; });
+  }
+
+  var MAX_ARTICLE = 100000;
+
+  var RULES = [
+    "You are the reading coach inside Research Smarter, a tool that helps a student read one research article critically. The student does all the thinking and writing. Your job is to check their reading against the article and help them look more closely. You never do the reading for them.",
+    "",
+    "Rules:",
+    "1. Never summarize, explain or paraphrase what the article says, about this question or any other. Never write an answer, a sentence or wording the student could copy into their notes.",
+    "2. If the student misstates a fact the article reports (a number, the sample, what was measured, or a finding), say plainly that this isn't what the article reports, and put the passage that shows the correct fact in \"quotes\". Then ask them to look at it again.",
+    "3. If the student's answer is an interpretation the article doesn't support (for example treating a correlation as a cause, or generalizing beyond who was studied), do not tell them they are wrong and do not name a fallacy. Ask one question that leads them to check it themselves.",
+    "4. If the student asks you to just tell them what the article says, summarize it, or answer for them, decline kindly. The reason is that the reading needs to be theirs. Never mention teachers, grades, cheating or getting caught. Offer the smallest next step, such as where in the article to look. Set \"kind\" to \"decline\".",
+    "5. If the answer is accurate and answers the question, say briefly what is strong about it, and set \"ready\" to true. If something important is missing, ask about it without supplying it.",
+    "6. Ask at most two questions. Keep \"reply\" under 90 words, warm and direct.",
+    "7. Put article text only in \"quotes\", never in \"reply\". Each quote must be copied character for character from the article, at most 40 words, at most two quotes. If you can't quote exactly, leave \"quotes\" empty.",
+    "",
+    "Reply with only a JSON object, no other text:",
+    "{\"reply\": string, \"quotes\": [string], \"kind\": \"correction\" | \"question\" | \"acknowledge\" | \"decline\", \"ready\": boolean}"
+  ].join("\n");
+
+  /* Builds the whole prompt for one coach turn. `turns` is this question's
+     conversation so far: [{who: "student" | "coach", text}], ending with the
+     student's newest message. */
+  function buildInput(o) {
+    var article = String(o.article || "").slice(0, MAX_ARTICLE);
+    var parts = [RULES, "", "=== ARTICLE (" + (o.citation || "untitled") + ") ===", article, "=== END ARTICLE ===", ""];
+    if (o.project && (o.project.question || o.project.position)) {
+      parts.push("The student's research question, in their words: " + (o.project.question || "(not written yet)"));
+      parts.push("The student's working position, in their words: " + (o.project.position || "(not written yet)"));
+      parts.push("");
+    }
+    parts.push("The question the student is answering now: " + o.question);
+    parts.push("");
+    parts.push("Conversation about this question so far:");
+    (o.turns || []).forEach(function (t) {
+      parts.push((t.who === "coach" ? "Coach: " : "Student: ") + t.text);
+    });
+    parts.push("");
+    parts.push("Write the coach's next reply as the JSON object described above.");
+    return parts.join("\n");
+  }
+
+  function squash(s) {
+    return String(s || "").replace(/[‘’]/g, "'").replace(/[“”]/g, "\"")
+      .replace(/[‐-―]/g, "-").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  /* Keeps only quotes that appear in the article (ignoring spacing, line breaks,
+     curly vs straight quotes and dash styles). SPEC R11.7. */
+  function verifyQuotes(article, quotes) {
+    var hay = squash(article), ok = [], dropped = 0;
+    (Array.isArray(quotes) ? quotes : []).forEach(function (q) {
+      var t = String(q || "").trim().replace(/^["“]|["”]$/g, "").trim();
+      if (t.length >= 8 && hay.indexOf(squash(t)) >= 0) ok.push(t); else if (t) dropped++;
+    });
+    return { quotes: ok.slice(0, 2), dropped: dropped };
+  }
+
+  /* Turns the model's answer into something safe to show. */
+  function clean(res, article) {
+    var r = res && typeof res === "object" ? res : {};
+    var v = verifyQuotes(article, r.quotes);
+    var kinds = ["correction", "question", "acknowledge", "decline"];
+    return {
+      reply: String(r.reply || "").trim(),
+      quotes: v.quotes,
+      dropped: v.dropped,
+      kind: kinds.indexOf(r.kind) >= 0 ? r.kind : "question",
+      ready: r.ready === true
+    };
+  }
+
+  return { QUESTIONS: QUESTIONS, questionsFor: questionsFor, buildInput: buildInput,
+           verifyQuotes: verifyQuotes, clean: clean, MAX_ARTICLE: MAX_ARTICLE };
 })();
 </script>
 
@@ -413,7 +600,8 @@ var LogFormat = (function () {
   ].join("\n");
 
   var state = { markdown: null, parsed: null, isExample: false, view: "research", readIndex: null, returnTo: "sources" };
-  var cap = { db: null, user: null, uid: null, dl: null, ready: false };
+  var cap = { db: null, user: null, uid: null, dl: null, sample: null,
+              sampleWhy: (window.claude && window.claude.use) ? "checking" : "no_claude" };
 
   function status(text, kind) {
     var s = $("status");
@@ -468,8 +656,12 @@ var LogFormat = (function () {
   (function () { var h = (location.hash || "").slice(1); if (h === "sources") state.view = h; })();
 
   function render() {
-    if (!state.parsed) { renderEmpty(); return; }
-    if (state.view === "read" && state.readIndex == null) state.view = "sources";
+    if (state.view === "read" && !state.reader) state.view = state.parsed ? "sources" : "research";
+    if (!state.parsed) {
+      $("tabs").hidden = true;
+      if (state.view === "read") renderRead(); else renderEmpty();
+      return;
+    }
     $("tabs").hidden = false;
     ["research", "sources"].forEach(function (n) {
       var t = $("tab-" + n);
@@ -676,7 +868,7 @@ var LogFormat = (function () {
 
     var actions = el("div", "row-actions");
     var read = el("button", "primary", "Read this source"); read.type = "button";
-    read.onclick = function () { state.readIndex = i; state.returnTo = "sources"; go("read"); };
+    read.onclick = function () { openReader(i, "sources"); };
     var rm = el("button", null, "Remove"); rm.type = "button";
     rm.onclick = function () {
       actions.textContent = "";
@@ -727,18 +919,317 @@ var LogFormat = (function () {
     return box;
   }
 
+  /* ================= Read a Source (the Reader) ================= */
+
+  var VIEW_NAMES = { research: "My Research", sources: "my sources", empty: "the start page" };
+
+  function openReader(index, returnTo) {
+    var P = state.parsed;
+    var src = P && index != null ? P.sources[index] : null;
+    state.readIndex = index;
+    state.returnTo = returnTo;
+    state.reader = {
+      index: index, citation: src ? src.citation : "", article: null,
+      qs: Coach.questionsFor(!!P),
+      step: 0, threads: [], answers: [], finished: false, saved: false, busy: false
+    };
+    go("read");
+  }
+
+  function leaveReader() {
+    var R = state.reader;
+    var unsaved = R && !R.saved && R.answers.some(function (a) { return a && a.trim(); });
+    var target = state.returnTo === "empty" || !state.parsed ? "research" : state.returnTo;
+    if (!unsaved) { state.reader = null; state.readIndex = null; go(target); return; }
+    var v = $("view");
+    var box = el("section", "panel confirm");
+    box.append(el("h2", null, "Leave this reading?"));
+    box.append(el("p", null, "Your answers so far aren't saved yet. If you leave now, they're gone. Finish the reading to save your card."));
+    var row = el("div", "choices");
+    var stay = el("button", "primary", "Keep reading"); stay.type = "button"; stay.onclick = renderRead;
+    var leave = el("button", null, "Leave without saving"); leave.type = "button";
+    leave.onclick = function () { state.reader = null; state.readIndex = null; go(target); };
+    row.append(stay, leave); box.append(row);
+    v.prepend(box); stay.focus(); window.scrollTo(0, 0);
+  }
+
+  function backButton() {
+    var b = el("button", null, "Back to " + (VIEW_NAMES[state.parsed ? state.returnTo : "empty"] || "my sources")); b.type = "button";
+    b.onclick = leaveReader;
+    return b;
+  }
+
   function renderRead() {
-    var P = state.parsed, v = $("view"); v.textContent = "";
-    var s = P.sources[state.readIndex];
+    var R = state.reader;
+    if (!R) { go(state.parsed ? "sources" : "research"); return; }
+    $("actions").hidden = !state.parsed;
+    if (!R.article) renderReaderLoad();
+    else if (R.finished) renderReaderCard();
+    else renderReaderStep();
+  }
+
+  /* --- Stage 1: bring in the article --- */
+  function renderReaderLoad() {
+    var R = state.reader, v = $("view"); v.textContent = "";
     var box = el("section", "panel");
     box.append(el("p", "eyebrow", "Read a Source"));
-    box.append(el("h2", null, s ? s.citation || "(no citation)" : "Choose a source"));
-    box.append(el("p", "muted", "The Reader, where a coach helps you work through one article, is being built next. When it's ready, it opens here."));
-    var back = el("button", "primary", "Back to " + (state.returnTo === "research" ? "My Research" : "my sources")); back.type = "button";
-    back.onclick = function () { go(state.returnTo || "sources"); };
-    var row = el("div", "row-actions"); row.append(back); box.append(row);
+    box.append(el("h2", null, R.citation || "Read an article closely"));
+    box.append(el("p", "muted", "A coach will ask you " + R.qs.length + " questions, one at a time, and check your answers against the article. It won't explain the article for you. Your answers become a reading card in your words."));
+    if (!R.citation) {
+      var l = el("label", null, "What are you reading? (citation or title)");
+      l.className = "label"; l.style.display = "grid"; l.style.gap = "4px";
+      var c = el("input"); c.type = "text"; c.id = "read-citation"; c.placeholder = "Author, year, title";
+      c.oninput = function () { R.citation = c.value; };
+      l.append(c); box.append(l);
+    }
+    box.append(el("p", "label", "Bring in the article's text"));
+    var ta = el("textarea"); ta.id = "article-text"; ta.setAttribute("aria-label", "Article text");
+    ta.placeholder = "Paste the article's text here.";
+    var row = el("div", "choices");
+    var use = el("button", "primary", "Use this text"); use.type = "button";
+    use.onclick = function () {
+      if (!R.citation.trim()) { status("Add what you're reading first, so your card is labeled.", "warn"); var ci = $("read-citation"); if (ci) ci.focus(); return; }
+      setArticle(ta.value, "pasted text");
+    };
+    var pdf = el("label", "button", "Open a PDF");
+    pdf.htmlFor = "pdf"; pdf.tabIndex = 0; pdf.setAttribute("role", "button");
+    pdf.addEventListener("click", function (e) {
+      if (!R.citation.trim()) { e.preventDefault(); status("Add what you're reading first, so your card is labeled.", "warn"); var ci = $("read-citation"); if (ci) ci.focus(); return; }
+      $("pdf").value = "";
+    });
+    pdf.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pdf.click(); } });
+    row.append(use, pdf, backButton());
+    box.append(ta, row);
+    box.append(el("p", "muted", "The article stays on this device while you read. It's never saved or shared; only your answers and short quotes are kept."));
     v.append(box);
-    back.focus();
+  }
+
+  function setArticle(text, name) {
+    var R = state.reader, t = String(text || "").replace(/\r\n?/g, "\n").trim();
+    if (t.length < 400) { status("That's too short to be an article. Paste the full text, or open the PDF.", "warn"); return; }
+    R.article = { text: t.slice(0, Coach.MAX_ARTICLE), name: name, truncated: t.length > Coach.MAX_ARTICLE };
+    R.threads = R.qs.map(function () { return []; });
+    R.answers = R.qs.map(function () { return ""; });
+    status(R.article.truncated ? "Loaded. The article is very long, so the coach sees about the first 100,000 characters." : "Loaded. Start with question 1.", R.article.truncated ? "warn" : "ok");
+    renderRead();
+  }
+
+  var PDFJS = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/";
+  function loadScript(src) {
+    return new Promise(function (res, rej) {
+      var s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = rej; document.head.append(s);
+    });
+  }
+  var pdfReady = null;
+  function pdfLib() {
+    if (!pdfReady) {
+      /* Loading the worker script first lets pdf.js run on the page itself,
+         since a separate worker can't load inside Claude's page frame. */
+      pdfReady = loadScript(PDFJS + "pdf.worker.min.js").then(function () { return loadScript(PDFJS + "pdf.min.js"); })
+        .then(function () { window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS + "pdf.worker.min.js"; return window.pdfjsLib; });
+      pdfReady.catch(function () { pdfReady = null; });
+    }
+    return pdfReady;
+  }
+
+  $("pdf").addEventListener("change", function () {
+    var f = this.files && this.files[0];
+    if (!f) return;
+    if (/\.txt$/i.test(f.name) || f.type === "text/plain") {
+      var tr = new FileReader(); tr.onload = function () { setArticle(String(tr.result), f.name); }; tr.readAsText(f); return;
+    }
+    status("Reading the PDF…");
+    var fr = new FileReader();
+    fr.onload = function () {
+      pdfLib().then(function (lib) {
+        return lib.getDocument({ data: new Uint8Array(fr.result) }).promise;
+      }).then(function (doc) {
+        var pages = [];
+        var chain = Promise.resolve();
+        for (var i = 1; i <= doc.numPages; i++) {
+          (function (n) {
+            chain = chain.then(function () { return doc.getPage(n); }).then(function (p) { return p.getTextContent(); })
+              .then(function (tc) { pages.push(tc.items.map(function (it) { return it.str + (it.hasEOL ? "\n" : " "); }).join("")); });
+          })(i);
+        }
+        return chain.then(function () { return { text: pages.join("\n\n"), n: doc.numPages }; });
+      }).then(function (r) {
+        var chars = r.text.replace(/\s+/g, "").length;
+        if (chars < 200 * Math.min(r.n, 3)) {
+          status("This PDF has almost no text to read. It may be a scanned image. Paste the article's text instead.", "bad");
+          return;
+        }
+        setArticle(r.text, f.name);
+      }).catch(function () {
+        status("That PDF couldn't be opened here. Paste the article's text instead.", "bad");
+      });
+    };
+    fr.readAsArrayBuffer(f);
+  });
+
+  /* --- Stage 2: one question at a time --- */
+  function renderReaderStep() {
+    var R = state.reader, v = $("view"); v.textContent = "";
+    var q = R.qs[R.step];
+    var top = el("section", "panel");
+    top.append(el("p", "eyebrow", "Read a Source · " + (R.citation || "your article")));
+    var steps = el("ol", "steps"); steps.setAttribute("aria-label", "Questions");
+    R.qs.forEach(function (_, i) {
+      var li = el("li", i < R.step ? "done" : (i === R.step ? "current" : ""), String(i + 1));
+      if (i === R.step) li.setAttribute("aria-current", "step");
+      steps.append(li);
+    });
+    top.append(steps);
+    var det = el("details"); det.open = true;
+    det.append(el("summary", "label", "The article"));
+    var art = el("div", "article", R.article.text); art.tabIndex = 0; art.setAttribute("aria-label", "Article text");
+    det.append(art);
+    top.append(det);
+    v.append(top);
+
+    var work = el("section", "panel");
+    work.append(el("p", "label", "Question " + (R.step + 1) + " of " + R.qs.length));
+    work.append(el("p", "ask", q.ask));
+    work.append(el("p", "muted", q.hint));
+    var thread = el("div", "thread"); thread.setAttribute("aria-live", "polite");
+    R.threads[R.step].forEach(function (t) { thread.append(message(t)); });
+    work.append(thread);
+
+    var ta = el("textarea", "answer"); ta.id = "answer-" + R.step; ta.setAttribute("aria-label", "Your answer");
+    ta.placeholder = R.threads[R.step].length ? "Revise your answer, or reply to the coach." : "Your answer, in your own words.";
+    var row = el("div", "choices");
+    var send = el("button", "primary", cap.sample ? "Send to coach" : "Save my answer"); send.type = "button";
+    var next = el("button", null, R.step === R.qs.length - 1 ? "Finish and see my card" : "Next question"); next.type = "button";
+    next.disabled = !R.answers[R.step].trim();
+    send.onclick = function () { submitAnswer(ta.value); };
+    next.onclick = function () {
+      if (R.step < R.qs.length - 1) { R.step++; status(""); renderRead(); window.scrollTo(0, 0); }
+      else { R.finished = true; status(""); renderRead(); window.scrollTo(0, 0); }
+    };
+    row.append(send, next, backButton());
+    work.append(ta, row);
+    if (!cap.sample) work.append(el("div", "notice warn", coachUnavailableText()));
+    v.append(work);
+  }
+
+  /* Says why the coach isn't running and what the student can do about it. */
+  function coachUnavailableText() {
+    var why = {
+      checking: "The coach is still connecting. Wait a moment, then send your answer.",
+      no_claude: "Open this notebook in Claude to use the coach. Here, your answers are saved without feedback.",
+      not_available: "The coach couldn't connect in this window. Close the notebook completely and open its link again. If it still doesn't connect, Claude access may be turned off for you or your organization. Until then, your answers are saved without feedback.",
+      not_granted: "The coach needs your permission to use Claude, and it wasn't given. Close the notebook, open it again, and choose Allow when Claude asks. Until then, your answers are saved without feedback.",
+      disabled: "Claude isn't available for your account here, so the coach can't run. Your answers are saved without feedback."
+    };
+    return why[cap.sampleWhy] || why.not_available;
+  }
+
+  function message(t) {
+    var m = el("div", "msg " + t.who);
+    m.append(el("span", "who", t.who === "coach" ? "Coach" : "You"));
+    m.append(el("div", null, t.text));
+    (t.quotes || []).forEach(function (q) { m.append(el("blockquote", null, "“" + q + "”")); });
+    if (t.dropped) m.append(el("p", "muted", "(The coach pointed to a passage that isn't in the article word for word, so it isn't shown.)"));
+    return m;
+  }
+
+  function submitAnswer(text) {
+    var R = state.reader, t = String(text || "").trim();
+    if (!t) { status("Write your answer first.", "warn"); return; }
+    if (R.busy) return;
+    if (!cap.sample && cap.sampleWhy === "checking") { status("The coach is still connecting. Send your answer again in a moment.", "warn"); return; }
+    var thread = R.threads[R.step];
+    thread.push({ who: "student", text: t });
+    var lower = t.toLowerCase();
+    var looksLikeRequest = /^(just |can you |could you |please )?(tell me|summari[sz]e|explain|what does it say)/.test(lower);
+    if (!looksLikeRequest) R.answers[R.step] = t;
+    if (!cap.sample) { renderRead(); status("Saved your answer.", "ok"); return; }
+    R.busy = true;
+    renderRead();
+    status("The coach is reading your answer…");
+    var input = Coach.buildInput({
+      article: R.article.text, citation: R.citation, question: R.qs[R.step].ask,
+      project: state.parsed ? {
+        question: state.parsed.question.written ? state.parsed.question.text : "",
+        position: state.parsed.position.written ? state.parsed.position.text : ""
+      } : null,
+      turns: thread
+    });
+    cap.sample.json(input, { cache: false }).then(function (res) {
+      var c = Coach.clean(res, R.article.text);
+      if (!c.reply) throw { code: "empty_completion" };
+      thread.push({ who: "coach", text: c.reply, quotes: c.quotes, dropped: c.dropped, kind: c.kind });
+      status("");
+    }).catch(function (e) {
+      var code = e && e.code;
+      var msg = code === "not_granted" ? "The coach needs your permission to use Claude. Your answer is saved; you can keep going without feedback." :
+        code === "rate_limited" ? "The coach is busy right now. Your answer is saved; try sending again in a minute." :
+        "The coach couldn't reply (" + (code || "error") + "). Your answer is saved; you can try again.";
+      if (code === "not_granted" || code === "sampling_disabled") {
+        cap.sample = null; cap.sampleWhy = code === "not_granted" ? "not_granted" : "disabled";
+      }
+      status(msg, "warn");
+    }).finally(function () { R.busy = false; renderRead(); });
+  }
+
+  /* --- Stage 3: the reading card --- */
+  function cardData() {
+    var R = state.reader;
+    return {
+      citation: R.citation || "Untitled source", date: LogFormat.localDate(),
+      answers: R.qs.map(function (q, i) { return { label: q.key, answer: R.answers[i] || "(no answer)" }; })
+    };
+  }
+
+  function renderReaderCard() {
+    var R = state.reader, v = $("view"); v.textContent = "";
+    var card = cardData();
+    var box = el("section", "panel");
+    box.append(el("p", "eyebrow", "Reading card"));
+    box.append(el("h2", null, "What this source can and can't tell me"));
+    box.append(el("p", "muted", card.citation + " · read on " + card.date));
+    var dl = el("dl", "card-qa");
+    card.answers.forEach(function (a) {
+      var d = el("div"); d.append(el("dt", null, a.label), el("dd", null, a.answer)); dl.append(d);
+    });
+    box.append(dl);
+    var row = el("div", "choices");
+    if (state.parsed && !state.isExample) {
+      var save = el("button", "primary", R.saved ? "Saved to your notebook" : "Save to my notebook"); save.type = "button";
+      save.disabled = R.saved;
+      save.onclick = function () {
+        var md = LogFormat.withReadingCard(state.markdown, card);
+        state.markdown = md; state.parsed = LogFormat.parse(md);
+        if (R.index != null && state.parsed.sources[R.index]) {
+          var list = state.parsed.sources.map(function (s, j) {
+            if (j !== R.index) return s;
+            var c = {}; Object.keys(s).forEach(function (k) { c[k] = s[k]; }); c.status = "read closely"; return c;
+          });
+          state.markdown = LogFormat.withSources(state.markdown, list, state.parsed.sourcesHeader);
+          state.parsed = LogFormat.parse(state.markdown);
+        }
+        R.saved = true;
+        persist("Saved your reading card" + (R.index != null ? " and marked the source as read closely." : "."));
+        renderRead();
+      };
+      row.append(save);
+    } else {
+      var file = el("button", "primary", "Save card as a file"); file.type = "button";
+      file.onclick = function () {
+        var text = LogFormat.cardFile(card), name = "reading-card-" + card.date + ".md";
+        if (!cap.dl) { showCopy(text, name); return; }
+        cap.dl.save({ filename: name, data: text }).then(function () { R.saved = true; status("Saved " + name + ".", "ok"); renderRead(); })
+          .catch(function (e) { if (e && e.code === "declined") status("Save cancelled.", "warn"); else showCopy(text, name); });
+      };
+      row.append(file);
+      if (state.isExample) box.append(el("p", "muted", "This is the example project, so the card isn't added to a notebook."));
+    }
+    var edit = el("button", null, "Go back and revise"); edit.type = "button";
+    edit.onclick = function () { R.finished = false; R.step = R.qs.length - 1; renderRead(); };
+    if (!R.saved) row.append(edit);
+    row.append(backButton());
+    box.append(row);
+    v.append(box);
   }
 
   function updateSource(i, changes, message) {
@@ -865,6 +1356,11 @@ var LogFormat = (function () {
 
   /* ---------- Start ---------- */
 
+  $("btn-read").onclick = function () {
+    if (state.view === "read") return;
+    openReader(null, state.parsed ? state.view : "empty");
+  };
+
   render();
 
   var has = !!(window.claude && window.claude.use);
@@ -873,6 +1369,11 @@ var LogFormat = (function () {
     return;
   }
   window.claude.use("downloads").then(function (dl) { cap.dl = dl; });
+  window.claude.use("sample").then(function (s) {
+    cap.sample = s;
+    cap.sampleWhy = s ? null : "not_available";
+    if (state.view === "read" && state.reader && state.reader.article && !state.reader.finished) renderRead();
+  });
   Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (pair) {
     cap.db = pair[0]; cap.user = pair[1];
     if (!cap.db || !cap.user) {
