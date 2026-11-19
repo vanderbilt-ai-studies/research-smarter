@@ -38,10 +38,10 @@ skill's coaching flow didn't have to change.
 
 - **The skill:** see [GUIDE.md](GUIDE.md) to install it, then say "I want
   to research…" in a new chat.
-- **The notebook:** it's a Claude page that has to be shared with you
-  before you can open it. Load a research log, or click **See an example**,
-  and use **Read a source** with the fictional test article in
-  `notebook/tests/fixtures/`.
+- **The notebook:** https://claude.ai/artifact/NT8int2Sc3zA22P1AXcsha. It's
+  a Claude page, so it opens only for people it's been shared with. Load a
+  research log, or click **See an example**, and use **Read a source** with
+  the fictional test article in `notebook/tests/fixtures/`.
 
 ## What the evidence shows
 
