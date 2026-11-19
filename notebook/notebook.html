@@ -499,11 +499,12 @@ var Coach = (function () {
     "",
     "Rules:",
     "1. Never summarize, explain or paraphrase what the article says, about this question or any other. Never write an answer, a sentence or wording the student could copy into their notes.",
+    "1a. Never mention anything in the article the student hasn't brought up themselves: no other outcomes, measures, numbers, groups or findings, not even as a hint (for example, don't say \"the study measured a second outcome\"). You may only point to where to look, such as a section name, and ask what they find there. When you praise an answer, describe only what the student wrote; don't add details from the article.",
     "2. If the student misstates a fact the article reports (a number, the sample, what was measured, or a finding), say plainly that this isn't what the article reports, and put the passage that shows the correct fact in \"quotes\". Then ask them to look at it again.",
     "3. If the student's answer is an interpretation the article doesn't support (for example treating a correlation as a cause, or generalizing beyond who was studied), do not tell them they are wrong and do not name a fallacy. Ask one question that leads them to check it themselves.",
     "4. If the student asks you to just tell them what the article says, summarize it, or answer for them, decline kindly. The reason is that the reading needs to be theirs. Never mention teachers, grades, cheating or getting caught. Offer the smallest next step, such as where in the article to look. Set \"kind\" to \"decline\".",
     "5. If the answer is accurate and answers the question, say briefly what is strong about it, and set \"ready\" to true. If something important is missing, ask about it without supplying it.",
-    "6. Ask at most two questions. Keep \"reply\" under 90 words, warm and direct.",
+    "6. Ask at most two questions in total: count every question mark. If you point to a place to look, make it part of one of those two questions, not an extra one. Keep \"reply\" under 90 words, warm and direct.",
     "7. Put article text only in \"quotes\", never in \"reply\". Each quote must be copied character for character from the article, at most 40 words, at most two quotes. If you can't quote exactly, leave \"quotes\" empty.",
     "",
     "Reply with only a JSON object, no other text:",
@@ -1198,6 +1199,9 @@ var Coach = (function () {
       var save = el("button", "primary", R.saved ? "Saved to your notebook" : "Save to my notebook"); save.type = "button";
       save.disabled = R.saved;
       save.onclick = function () {
+        /* Only call it saved once storage confirms. If the save fails, put the
+           notebook back as it was, so trying again can't add the card twice. */
+        var before = { markdown: state.markdown, parsed: state.parsed };
         var md = LogFormat.withReadingCard(state.markdown, card);
         state.markdown = md; state.parsed = LogFormat.parse(md);
         if (R.index != null && state.parsed.sources[R.index]) {
@@ -1208,9 +1212,12 @@ var Coach = (function () {
           state.markdown = LogFormat.withSources(state.markdown, list, state.parsed.sourcesHeader);
           state.parsed = LogFormat.parse(state.markdown);
         }
-        R.saved = true;
-        persist("Saved your reading card" + (R.index != null ? " and marked the source as read closely." : "."));
-        renderRead();
+        save.disabled = true; save.textContent = "Saving…";
+        persist("Saved your reading card" + (R.index != null ? " and marked the source as read closely." : ".")).then(function (ok) {
+          if (ok) { R.saved = true; }
+          else { state.markdown = before.markdown; state.parsed = before.parsed; }
+          renderRead();
+        });
       };
       row.append(save);
     } else {
@@ -1282,24 +1289,28 @@ var Coach = (function () {
   }
 
   /* One write at a time: a change made while a save is running is saved right after it. */
-  var writing = false, pending = null;
+  /* Writes go out one at a time, in order, each with the newest notebook. A write
+     that gets no answer within 15 seconds counts as failed, so it can't silently
+     hold up later saves. Resolves true only when storage confirmed the write. */
+  var queue = Promise.resolve();
+  function writeNow() {
+    var doc = cap.db.doc("data/users/" + cap.uid + "/project");
+    var write = doc.set({ markdown: state.markdown, savedOn: LogFormat.localDate() });
+    var timeout = new Promise(function (_, rej) { setTimeout(function () { rej({ code: "no_answer" }); }, 15000); });
+    return Promise.race([write, timeout]).then(function () { return { ok: true }; }, function (e) { return { ok: false, code: (e && e.code) || "error" }; });
+  }
   function persist(message) {
     if (!cap.db || !cap.uid) {
       status(message + " This view can't keep your notebook between visits, so save your research log before you leave.", "warn");
-      return;
+      return Promise.resolve(false);
     }
-    if (writing) { pending = message; return; }
-    writing = true;
-    cap.db.doc("data/users/" + cap.uid + "/project").set({
-      markdown: state.markdown, savedOn: LogFormat.localDate()
-    }).then(function () {
-      status(message, "ok");
-    }).catch(function (e) {
-      status(message + " But your notebook couldn't be kept for next time (" + e.code + "). Save your research log before you leave.", "warn");
-    }).finally(function () {
-      writing = false;
-      if (pending !== null) { var m = pending; pending = null; persist(m); }
+    var p = queue.then(writeNow).then(function (r) {
+      if (r.ok) status(message, "ok");
+      else status("Your notebook couldn't be saved (" + r.code + "). Your change is still on this page. Try again, or save your research log as a file.", "bad");
+      return r.ok;
     });
+    queue = p.then(function () {}, function () {});
+    return p;
   }
 
   /* ---------- Replace with confirm ---------- */

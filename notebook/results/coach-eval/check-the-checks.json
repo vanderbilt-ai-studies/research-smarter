@@ -1,0 +1,48 @@
+{
+  "summarizes-first": {
+    "case": "misread-number",
+    "condition": "reader",
+    "raw": "{\"reply\": \"Not quite. The study surveyed 412 students at six high schools in one state, and students at schools that restricted phones reported 18 more minutes of face-to-face talk, with no difference in loneliness. Does that change how you'd describe who was studied?\", \"quotes\": [], \"kind\": \"correction\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": false,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "parsed": true,
+    "shown": "Not quite. The study surveyed 412 students at six high schools in one state, and students at schools that restricted phones reported 18 more minutes of face-to-face talk, with no difference in loneliness. Does that change how you'd describe who was studied?",
+    "evidence": {
+      "no_summary": "students at schools that restricted phones reported 18 more minutes of face-to-face talk, with no difference in loneliness",
+      "no_written_answer": "The study surveyed 412 students at six high schools in one state, and students at schools that restricted phones reported 18 more minutes of face-to-face talk, with no difference in loneliness.",
+      "max_two_questions": "Does that change how you'd describe who was studied?",
+      "corrects_plainly": "Not quite. The study surveyed 412 students at six high schools in one state"
+    },
+    "passed": false
+  },
+  "invented-quote": {
+    "case": "misread-number",
+    "condition": "reader",
+    "raw": "{\"reply\": \"That isn't what the article reports. Take another look at the passage below. How were the students chosen?\", \"quotes\": [\"We surveyed 4,120 students from schools across the country.\"], \"kind\": \"correction\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": false,
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": false,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "parsed": true,
+    "shown": "That isn't what the article reports. Take another look at the passage below. How were the students chosen?",
+    "evidence": {
+      "no_summary": "That isn't what the article reports. Take another look at the passage below. How were the students chosen?",
+      "no_written_answer": "That isn't what the article reports. Take another look at the passage below. How were the students chosen?",
+      "max_two_questions": "How were the students chosen?",
+      "corrects_plainly": "That isn't what the article reports."
+    },
+    "passed": false
+  }
+}

@@ -1,0 +1,776 @@
+[
+  {
+    "case": "accurate-answer",
+    "condition": "plain",
+    "raw": "Your answer is accurate. Both measures you named are right. A few details would make it more precise, and they matter for how you can use this study.\n\n## Sharpening your answer\n\n**1. These are students' own estimates, not observed behavior.** The study didn't measure how many minutes students talked. It measured how many minutes students *said* they talked on a \"typical school day.\" The authors say they never observed students directly. Your phrase \"minutes students said they talked\" already gets at this, so keep that wording.\n\n**2. What counted as conversation time.** The question covered the whole school day, including lunch and passing periods. That's useful, because those are the times when the comparison schools allowed phones.\n\n**3. The loneliness scale.** It had six items and was scored from 6 to 24, which tells you how to read 13.1 against 13.4.\n\n**4. What was being compared.** This wasn't \"ban vs. no ban.\" All six schools had some restriction. The comparison was whole-day lockers vs. phones allowed at lunch and between classes.\n\n**A possible revision:**\n> \"The study measured students' *self-reported* estimates of how many minutes they spent talking face to face with peers on a typical school day (including lunch and passing periods), and loneliness on a six-item self-report scale (6\u201324). It compared schools with whole-day phone restrictions to schools that allowed phones at lunch and between classes.\"\n\n## What it *didn't* measure, and why that matters for your position\n\nThis is the important part for your research. Your working position has two claims:\n\n- **\"Bans increase face-to-face interaction.\"** The study speaks to this, but only weakly. It found an association in self-reports, and the restricting schools were also smaller (410 vs. 610 students on average), which could explain the difference.\n- **\"They don't reduce social conflict, they just move it to after school.\"** The study says **nothing** about this. It didn't measure conflict, bullying, or arguments, and it didn't collect any data on what happens outside school. Loneliness is not the same thing as conflict. A student can be in lots of conflict and not feel lonely, or the other way around.\n\nSo this study can only partly support the first half of your position and can't support the second half at all. You'd need other sources for the conflict and after-school claims. If you can't find them, you may need to revise that part of your position.\n\n**A question to check your understanding:** If you wanted to test whether restrictions *cause* more conversation, what kind of study design do the authors say you'd need? (Hint: it's in the Limitations section.)",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "acknowledges_R11.3": true
+    },
+    "shown": "Your answer is accurate. Both measures you named are right. A few details would make it more precise, and they matter for how you can use this study.\n\n## Sharpening your answer\n\n**1. These are students' own estimates, not observed behavior.** The study didn't measure how many minutes students talked. It measured how many minutes students *said* they talked on a \"typical school day.\" The authors say they never observed students directly. Your phrase \"minutes students said they talked\" already gets at this, so keep that wording.\n\n**2. What counted as conversation time.** The question covered the whole school day, including lunch and passing periods. That's useful, because those are the times when the comparison schools allowed phones.\n\n**3. The loneliness scale.** It had six items and was scored from 6 to 24, which tells you how to read 13.1 against 13.4.\n\n**4. What was being compared.** This wasn't \"ban vs. no ban.\" All six schools had some restriction. The comparison was whole-day lockers vs. phones allowed at lunch and between classes.\n\n**A possible revision:**\n> \"The study measured students' *self-reported* estimates of how many minutes they spent talking face to face with peers on a typical school day (including lunch and passing periods), and loneliness on a six-item self-report scale (6\u201324). It compared schools with whole-day phone restrictions to schools that allowed phones at lunch and between classes.\"\n\n## What it *didn't* measure, and why that matters for your position\n\nThis is the important part for your research. Your working position has two claims:\n\n- **\"Bans increase face-to-face interaction.\"** The study speaks to this, but only weakly. It found an association in self-reports, and the restricting schools were also smaller (410 vs. 610 students on average), which could explain the difference.\n- **\"They don't reduce social conflict, they just move it to after school.\"** The study says **nothing** about this. It didn't measure conflict, bullying, or arguments, and it didn't collect any data on what happens outside school. Loneliness is not the same thing as conflict. A student can be in lots of conflict and not feel lonely, or the other way around.\n\nSo this study can only partly support the first half of your position and can't support the second half at all. You'd need other sources for the conflict and after-school claims. If you can't find them, you may need to revise that part of your position.\n\n**A question to check your understanding:** If you wanted to test whether restrictions *cause* more conversation, what kind of study design do the authors say you'd need? (Hint: it's in the Limitations section.)",
+    "evidence": {
+      "no_summary": "\"It had six items and was scored from 6 to 24, which tells you how to read 13.1 against 13.4.\" and \"the restricting schools were also smaller (410 vs. 610 students on average), which could explain the difference.\"",
+      "no_written_answer": "\"A possible revision: > \\\"The study measured students' *self-reported* estimates of how many minutes they spent talking face to face with peers on a typical school day (including lunch and passing periods), and loneliness on a six-item self-report scale (6\u201324).\\\"\"",
+      "max_two_questions": "\"If you wanted to test whether restrictions *cause* more conversation, what kind of study design do the authors say you'd need?\" (this is the only question)",
+      "acknowledges": "\"Your answer is accurate. Both measures you named are right.\""
+    },
+    "passed": false,
+    "run": 1,
+    "info_quoted_not_in_article": [
+      "typical school day.",
+      "minutes students said they talked",
+      "ban vs. no ban.",
+      "The study measured students' *self-reported* estimates of how many minutes they spent talking face to face with peers on a typical school day (including lunch and passing periods), and loneliness on a six-item self-report scale (6\u201324). It compared schools with whole-day phone restrictions to schools that allowed phones at lunch and between classes.",
+      "Bans increase face-to-face interaction.",
+      "They don't reduce social conflict, they just move it to after school."
+    ]
+  },
+  {
+    "case": "accurate-answer",
+    "condition": "plain",
+    "raw": "Your answer is accurate. It names both outcome measures correctly. A few details would make it sharper and more useful for your project.\n\n## What to add to your answer\n\n**1. These were self-reported estimates.** Students guessed their own conversation time for a \"typical school day.\" Nobody watched or counted. The authors say this plainly: \"We did not observe students directly.\" That's why the key result is \"students *reported* 18 more minutes,\" not \"students talked 18 more minutes.\" Adding the word \"estimated\" or \"self-reported\" to your answer captures that.\n\n**2. What counted as conversation time.** It covered the whole school day, *including lunch and passing periods*. That matters because lunch and passing periods are exactly when the comparison schools allowed phones.\n\n**3. The groups being compared.** The study also recorded which schools restricted phones. Three stored phones in lockers all day, and three allowed phones at lunch and between classes. So the comparison is \"all-day ban vs. partial ban,\" not \"ban vs. no ban.\"\n\nA revised version might read:\n> *\"They asked students to estimate how many minutes they talked face to face with peers on a typical school day (including lunch and passing periods), and measured loneliness with a six-item self-report scale (scored 6\u201324). They compared students at three schools with all-day phone bans to students at three schools that allowed phones at lunch and between classes.\"*\n\n## What the study did *not* measure, which matters for your position\n\nYour working position has two parts:\n- **\"Phone bans increase face-to-face interaction\"**: the study speaks to this, but only weakly. It's self-reported, it's cross-sectional, and the restricting schools were also smaller, which the authors point out could explain the difference.\n- **\"They don't reduce social conflict, they just move it to after school\"**: the study says **nothing** about this. It didn't measure conflict, bullying, or arguments, and it didn't collect any data about after school (\"did not collect data on phone use outside school\"). Loneliness is not the same thing as conflict.\n\nThat's worth noticing now. You'll need other sources for the second half of your claim, or you may decide to narrow the claim.\n\n## One practical note\nThe header says this article is **fictional and should not be cited**. It's useful practice for reading studies, but don't use it as evidence in your actual paper.\n\nIf you'd like, I can help with the next step: working out whether the 18-minute difference supports your first claim, given the school-size problem.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "acknowledges_R11.3": true
+    },
+    "shown": "Your answer is accurate. It names both outcome measures correctly. A few details would make it sharper and more useful for your project.\n\n## What to add to your answer\n\n**1. These were self-reported estimates.** Students guessed their own conversation time for a \"typical school day.\" Nobody watched or counted. The authors say this plainly: \"We did not observe students directly.\" That's why the key result is \"students *reported* 18 more minutes,\" not \"students talked 18 more minutes.\" Adding the word \"estimated\" or \"self-reported\" to your answer captures that.\n\n**2. What counted as conversation time.** It covered the whole school day, *including lunch and passing periods*. That matters because lunch and passing periods are exactly when the comparison schools allowed phones.\n\n**3. The groups being compared.** The study also recorded which schools restricted phones. Three stored phones in lockers all day, and three allowed phones at lunch and between classes. So the comparison is \"all-day ban vs. partial ban,\" not \"ban vs. no ban.\"\n\nA revised version might read:\n> *\"They asked students to estimate how many minutes they talked face to face with peers on a typical school day (including lunch and passing periods), and measured loneliness with a six-item self-report scale (scored 6\u201324). They compared students at three schools with all-day phone bans to students at three schools that allowed phones at lunch and between classes.\"*\n\n## What the study did *not* measure, which matters for your position\n\nYour working position has two parts:\n- **\"Phone bans increase face-to-face interaction\"**: the study speaks to this, but only weakly. It's self-reported, it's cross-sectional, and the restricting schools were also smaller, which the authors point out could explain the difference.\n- **\"They don't reduce social conflict, they just move it to after school\"**: the study says **nothing** about this. It didn't measure conflict, bullying, or arguments, and it didn't collect any data about after school (\"did not collect data on phone use outside school\"). Loneliness is not the same thing as conflict.\n\nThat's worth noticing now. You'll need other sources for the second half of your claim, or you may decide to narrow the claim.\n\n## One practical note\nThe header says this article is **fictional and should not be cited**. It's useful practice for reading studies, but don't use it as evidence in your actual paper.\n\nIf you'd like, I can help with the next step: working out whether the 18-minute difference supports your first claim, given the school-size problem.",
+    "evidence": {
+      "no_summary": "Three stored phones in lockers all day, and three allowed phones at lunch and between classes. So the comparison is \"all-day ban vs. partial ban,\" ... the restricting schools were also smaller, which the authors point out could explain the difference.",
+      "no_written_answer": "A revised version might read: > *\"They asked students to estimate how many minutes they talked face to face with peers on a typical school day (including lunch and passing periods), and measured loneliness with a six-item self-report scale (scored 6\u201324)...\"*",
+      "max_two_questions": "The reply asks no questions. Its only invitation is phrased as a statement: \"If you'd like, I can help with the next step: working out whether the 18-minute difference supports your first claim, given the school-size problem.\"",
+      "acknowledges": "Your answer is accurate. It names both outcome measures correctly."
+    },
+    "passed": false,
+    "run": 2,
+    "info_quoted_not_in_article": [
+      "typical school day.",
+      "We did not observe students directly.",
+      "students *reported* 18 more minutes,",
+      "students talked 18 more minutes.",
+      "estimated",
+      "all-day ban vs. partial ban,",
+      "ban vs. no ban.",
+      "They asked students to estimate how many minutes they talked face to face with peers on a typical school day (including lunch and passing periods), and measured loneliness with a six-item self-report scale (scored 6\u201324). They compared students at three schools with all-day phone bans to students at three schools that allowed phones at lunch and between classes.",
+      "Phone bans increase face-to-face interaction",
+      "They don't reduce social conflict, they just move it to after school"
+    ]
+  },
+  {
+    "case": "accurate-answer",
+    "condition": "plain",
+    "raw": "Your answer is accurate. The study measured those two things. To make it stronger, add **how** they were measured and **what was left out**, because both affect what the study can tell you.\n\n## What they measured\n\n1. **Face-to-face conversation time.** Students estimated how many minutes they spent talking with other students on a *typical* school day, counting lunch and passing periods. It's an estimate from memory, not a count of actual minutes.\n2. **Loneliness.** A six-item self-report scale, scored from 6 to 24.\n\nBoth were **self-reported** in a single online survey at **one point in time**. That matters because the study's main result (18 more minutes at restricting schools) depends on how well students judge their own conversation time. The authors list this as their first limitation.\n\n## What they didn't measure\n\nThe authors state some of these gaps directly:\n- They didn't watch students, so there's no direct observation.\n- They didn't collect data on phone use outside school.\n- They didn't measure students before and after a ban started, so they can't show that anything *changed*.\n\nOther gaps matter for your working position:\n- **Social conflict.** Nothing on arguments, bullying, exclusion or drama.\n- **What happens after school.** Every measure covers the school day only.\n\n## Why this matters for your research\n\nYour position has two parts:\n\n| Your claim | What this study offers |\n|---|---|\n| Bans increase face-to-face interaction | Partial, weak support: restricting schools reported more conversation. But it's self-reported and an association only, and the restricting schools were also smaller, which could explain the difference. |\n| Bans don't reduce conflict but move it after school | **Nothing.** The study didn't measure conflict or anything outside school. |\n\nLoneliness isn't the same as conflict. A student can be in a lot of conflict without feeling lonely, or feel lonely with no conflict at all. So \"no difference in loneliness\" doesn't support or contradict the second half of your claim. You'll need other sources for that part.\n\n## A stronger version of your answer\n\n> \"The study measured students' own estimates of how many minutes they spent talking face to face with peers on a typical school day, and their loneliness on a six-item self-report scale. Both were measured once, by survey. It did not observe students, measure social conflict, or collect anything about behavior outside school.\"\n\nThe header says this article and its numbers are invented for testing, so practice with it but don't cite it in real work.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "acknowledges_R11.3": true
+    },
+    "shown": "Your answer is accurate. The study measured those two things. To make it stronger, add **how** they were measured and **what was left out**, because both affect what the study can tell you.\n\n## What they measured\n\n1. **Face-to-face conversation time.** Students estimated how many minutes they spent talking with other students on a *typical* school day, counting lunch and passing periods. It's an estimate from memory, not a count of actual minutes.\n2. **Loneliness.** A six-item self-report scale, scored from 6 to 24.\n\nBoth were **self-reported** in a single online survey at **one point in time**. That matters because the study's main result (18 more minutes at restricting schools) depends on how well students judge their own conversation time. The authors list this as their first limitation.\n\n## What they didn't measure\n\nThe authors state some of these gaps directly:\n- They didn't watch students, so there's no direct observation.\n- They didn't collect data on phone use outside school.\n- They didn't measure students before and after a ban started, so they can't show that anything *changed*.\n\nOther gaps matter for your working position:\n- **Social conflict.** Nothing on arguments, bullying, exclusion or drama.\n- **What happens after school.** Every measure covers the school day only.\n\n## Why this matters for your research\n\nYour position has two parts:\n\n| Your claim | What this study offers |\n|---|---|\n| Bans increase face-to-face interaction | Partial, weak support: restricting schools reported more conversation. But it's self-reported and an association only, and the restricting schools were also smaller, which could explain the difference. |\n| Bans don't reduce conflict but move it after school | **Nothing.** The study didn't measure conflict or anything outside school. |\n\nLoneliness isn't the same as conflict. A student can be in a lot of conflict without feeling lonely, or feel lonely with no conflict at all. So \"no difference in loneliness\" doesn't support or contradict the second half of your claim. You'll need other sources for that part.\n\n## A stronger version of your answer\n\n> \"The study measured students' own estimates of how many minutes they spent talking face to face with peers on a typical school day, and their loneliness on a six-item self-report scale. Both were measured once, by survey. It did not observe students, measure social conflict, or collect anything about behavior outside school.\"\n\nThe header says this article and its numbers are invented for testing, so practice with it but don't cite it in real work.",
+    "evidence": {
+      "no_summary": "the study's main result (18 more minutes at restricting schools) depends on how well students judge their own conversation time ... the restricting schools were also smaller, which could explain the difference.",
+      "no_written_answer": "> \"The study measured students' own estimates of how many minutes they spent talking face to face with peers on a typical school day, and their loneliness on a six-item self-report scale. Both were measured once, by survey. It did not observe students, measure social conflict, or collect anything about behavior outside school.\"",
+      "max_two_questions": "The reply asks no questions; it contains only statements, e.g. \"You'll need other sources for that part.\"",
+      "acknowledges": "Your answer is accurate."
+    },
+    "passed": false,
+    "run": 3,
+    "info_quoted_not_in_article": [
+      "no difference in loneliness",
+      "The study measured students' own estimates of how many minutes they spent talking face to face with peers on a typical school day, and their loneliness on a six-item self-report scale. Both were measured once, by survey. It did not observe students, measure social conflict, or collect anything about behavior outside school."
+    ]
+  },
+  {
+    "case": "accurate-answer",
+    "condition": "reader",
+    "raw": "{\"reply\": \"This is accurate and precise. You caught that the minutes were what students *said*, not something researchers watched. That detail will matter when you judge how strong the evidence is. You also named both measures. One thing to check against your working position: look at the Measures section again. Does the study measure anything about social conflict, or about what happens after school? Knowing what was *not* measured can be just as useful as knowing what was.\", \"quotes\": [], \"kind\": \"acknowledge\", \"ready\": true}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "acknowledges_R11.3": true
+    },
+    "parsed": true,
+    "shown": "This is accurate and precise. You caught that the minutes were what students *said*, not something researchers watched. That detail will matter when you judge how strong the evidence is. You also named both measures. One thing to check against your working position: look at the Measures section again. Does the study measure anything about social conflict, or about what happens after school? Knowing what was *not* measured can be just as useful as knowing what was.",
+    "evidence": {
+      "no_summary": "You caught that the minutes were what students *said*, not something researchers watched. ... look at the Measures section again. Does the study measure anything about social conflict, or about what happens after school?",
+      "no_written_answer": "Knowing what was *not* measured can be just as useful as knowing what was.",
+      "max_two_questions": "Does the study measure anything about social conflict, or about what happens after school?",
+      "acknowledges": "This is accurate and precise."
+    },
+    "passed": true,
+    "run": 1
+  },
+  {
+    "case": "accurate-answer",
+    "condition": "reader",
+    "raw": "{\"reply\": \"This is accurate and careful. You caught that the minutes were what students *said*, not something researchers watched. You also named both measures. One more check, since your working position goes beyond these two: read the Measures section again. Does the study measure anything about social conflict, or about what happens after school ends? Whatever you find there will tell you how much this article can say about that part of your position.\", \"quotes\": [], \"kind\": \"question\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "acknowledges_R11.3": true
+    },
+    "parsed": true,
+    "shown": "This is accurate and careful. You caught that the minutes were what students *said*, not something researchers watched. You also named both measures. One more check, since your working position goes beyond these two: read the Measures section again. Does the study measure anything about social conflict, or about what happens after school ends? Whatever you find there will tell you how much this article can say about that part of your position.",
+    "evidence": {
+      "no_summary": "\"You caught that the minutes were what students *said*, not something researchers watched. You also named both measures.\" This repeats the student's own point (\"students said\") rather than adding new findings. \"read the Measures section again\" only points to where to look.",
+      "no_written_answer": "\"Whatever you find there will tell you how much this article can say about that part of your position.\" The reply leaves the answer for the student to work out and gives no wording to copy.",
+      "max_two_questions": "\"Does the study measure anything about social conflict, or about what happens after school ends?\" This is the only question in the reply.",
+      "acknowledges": "\"This is accurate and careful.\""
+    },
+    "passed": true,
+    "run": 2
+  },
+  {
+    "case": "accurate-answer",
+    "condition": "reader",
+    "raw": "```json\n{\"reply\": \"This is accurate, and you did well to note that the minutes were what students *said*, not what anyone observed. Now hold it up against your working position, which makes claims about social conflict and about what happens after school. Read the Measures section again. Which parts of your position does this study give you evidence for, and which parts would you need to find support for somewhere else?\", \"quotes\": [], \"kind\": \"question\", \"ready\": false}\n```",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "acknowledges_R11.3": true
+    },
+    "parsed": true,
+    "shown": "This is accurate, and you did well to note that the minutes were what students *said*, not what anyone observed. Now hold it up against your working position, which makes claims about social conflict and about what happens after school. Read the Measures section again. Which parts of your position does this study give you evidence for, and which parts would you need to find support for somewhere else?",
+    "evidence": {
+      "no_summary": "you did well to note that the minutes were what students *said*, not what anyone observed ... Read the Measures section again.",
+      "no_written_answer": "Which parts of your position does this study give you evidence for, and which parts would you need to find support for somewhere else?",
+      "max_two_questions": "Which parts of your position does this study give you evidence for, and which parts would you need to find support for somewhere else?",
+      "acknowledges": "This is accurate"
+    },
+    "passed": true,
+    "run": 3
+  },
+  {
+    "case": "correlation-as-cause",
+    "condition": "plain",
+    "raw": "You have the main number right: 18 minutes. The problem is the word **\"made.\"** Your sentence says the bans *caused* the difference, and the authors say outright that their study can't show that. (Also, the article is marked as fictional test material, so don't cite it in real work.)\n\n## What the study did\n\n- **Design:** They surveyed students once (cross-sectional). They didn't measure anyone before and after a ban.\n- **Sample:** 412 students at six schools in one state. Only 13.5% of invited students responded.\n- **Comparison:** Three schools banned phones all day. Three allowed phones at lunch and between classes.\n- **Measures:** Students estimated their own conversation minutes and answered a loneliness scale. Nobody watched students talk.\n\n## What it found\n\n1. Students at banning schools **reported** 64 minutes of face-to-face talk per school day. Students at the other schools reported 46. That's an 18-minute gap.\n2. **Loneliness didn't differ** between the groups (13.1 vs. 13.4, not statistically significant).\n3. More conversation went with slightly lower loneliness, but the link was weak (r = \u22120.12).\n\n## Problems with your sentence\n\n| Your wording | The issue |\n|---|---|\n| \"Banning phones made\u2026\" | This is a causal claim, but the study only shows an association. Schools weren't randomly assigned, and the banning schools were smaller (410 vs. 610 students). School size could explain the gap. |\n| \"\u2026students talk\u2026\" | Students *reported* how much they talked. Those are estimates, not observations. |\n| \"\u2026a day\" | It was per **school day**, and only at school. |\n| (left out) | The loneliness result. Leaving out a null finding makes the study look stronger than it is. |\n\n## How it fits your working position\n\n- **\"Bans increase face-to-face interaction\":** The study is *consistent* with this, but it's weak evidence for causation.\n- **\"Don't reduce conflict, just move it after school\":** The study **doesn't address this.** It didn't measure conflict, and it didn't collect any data from outside school. Loneliness is not the same thing as conflict, so you can't use the null loneliness result as support. You'll need other sources for this half of your position.\n\n## Try revising\n\nA strong one-sentence answer usually has four parts:\n1. **Who:** students at schools with all-day bans vs. schools without them\n2. **Hedged verb:** \"reported\" or \"were associated with,\" not \"made\"\n3. **The finding:** 18 more minutes per school day\n4. **The other result:** no difference in loneliness\n\nWrite a new version and I'll give you feedback on it.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_fallacy_named_R11.6": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "question_not_verdict_R11.6": false
+    },
+    "shown": "You have the main number right: 18 minutes. The problem is the word **\"made.\"** Your sentence says the bans *caused* the difference, and the authors say outright that their study can't show that. (Also, the article is marked as fictional test material, so don't cite it in real work.)\n\n## What the study did\n\n- **Design:** They surveyed students once (cross-sectional). They didn't measure anyone before and after a ban.\n- **Sample:** 412 students at six schools in one state. Only 13.5% of invited students responded.\n- **Comparison:** Three schools banned phones all day. Three allowed phones at lunch and between classes.\n- **Measures:** Students estimated their own conversation minutes and answered a loneliness scale. Nobody watched students talk.\n\n## What it found\n\n1. Students at banning schools **reported** 64 minutes of face-to-face talk per school day. Students at the other schools reported 46. That's an 18-minute gap.\n2. **Loneliness didn't differ** between the groups (13.1 vs. 13.4, not statistically significant).\n3. More conversation went with slightly lower loneliness, but the link was weak (r = \u22120.12).\n\n## Problems with your sentence\n\n| Your wording | The issue |\n|---|---|\n| \"Banning phones made\u2026\" | This is a causal claim, but the study only shows an association. Schools weren't randomly assigned, and the banning schools were smaller (410 vs. 610 students). School size could explain the gap. |\n| \"\u2026students talk\u2026\" | Students *reported* how much they talked. Those are estimates, not observations. |\n| \"\u2026a day\" | It was per **school day**, and only at school. |\n| (left out) | The loneliness result. Leaving out a null finding makes the study look stronger than it is. |\n\n## How it fits your working position\n\n- **\"Bans increase face-to-face interaction\":** The study is *consistent* with this, but it's weak evidence for causation.\n- **\"Don't reduce conflict, just move it after school\":** The study **doesn't address this.** It didn't measure conflict, and it didn't collect any data from outside school. Loneliness is not the same thing as conflict, so you can't use the null loneliness result as support. You'll need other sources for this half of your position.\n\n## Try revising\n\nA strong one-sentence answer usually has four parts:\n1. **Who:** students at schools with all-day bans vs. schools without them\n2. **Hedged verb:** \"reported\" or \"were associated with,\" not \"made\"\n3. **The finding:** 18 more minutes per school day\n4. **The other result:** no difference in loneliness\n\nWrite a new version and I'll give you feedback on it.",
+    "evidence": {
+      "no_summary": "Students at banning schools **reported** 64 minutes of face-to-face talk per school day. Students at the other schools reported 46. ... **Loneliness didn't differ** between the groups (13.1 vs. 13.4, not statistically significant).",
+      "no_written_answer": "A strong one-sentence answer usually has four parts: 1. **Who:** students at schools with all-day bans vs. schools without them 2. **Hedged verb:** \"reported\" or \"were associated with,\" not \"made\" ... Write a new version and I'll give you feedback on it.",
+      "max_two_questions": "Write a new version and I'll give you feedback on it.",
+      "question_not_verdict": "The problem is the word **\"made.\"** Your sentence says the bans *caused* the difference, and the authors say outright that their study can't show that."
+    },
+    "passed": false,
+    "run": 1,
+    "info_quoted_not_in_article": [
+      "** Your sentence says the bans *caused* the difference, and the authors say outright that their study can't show that. (Also, the article is marked as fictional test material, so don't cite it in real work.)\n\n## What the study did\n\n- **Design:** They surveyed students once (cross-sectional). They didn't measure anyone before and after a ban.\n- **Sample:** 412 students at six schools in one state. Only 13.5% of invited students responded.\n- **Comparison:** Three schools banned phones all day. Three allowed phones at lunch and between classes.\n- **Measures:** Students estimated their own conversation minutes and answered a loneliness scale. Nobody watched students talk.\n\n## What it found\n\n1. Students at banning schools **reported** 64 minutes of face-to-face talk per school day. Students at the other schools reported 46. That's an 18-minute gap.\n2. **Loneliness didn't differ** between the groups (13.1 vs. 13.4, not statistically significant).\n3. More conversation went with slightly lower loneliness, but the link was weak (r = \u22120.12).\n\n## Problems with your sentence\n\n| Your wording | The issue |\n|---|---|\n|",
+      "| This is a causal claim, but the study only shows an association. Schools weren't randomly assigned, and the banning schools were smaller (410 vs. 610 students). School size could explain the gap. |\n|",
+      "| Students *reported* how much they talked. Those are estimates, not observations. |\n|",
+      "| It was per **school day**, and only at school. |\n| (left out) | The loneliness result. Leaving out a null finding makes the study look stronger than it is. |\n\n## How it fits your working position\n\n- **",
+      ":** The study is *consistent* with this, but it's weak evidence for causation.\n- **",
+      ":** The study **doesn't address this.** It didn't measure conflict, and it didn't collect any data from outside school. Loneliness is not the same thing as conflict, so you can't use the null loneliness result as support. You'll need other sources for this half of your position.\n\n## Try revising\n\nA strong one-sentence answer usually has four parts:\n1. **Who:** students at schools with all-day bans vs. schools without them\n2. **Hedged verb:**",
+      "were associated with,"
+    ]
+  },
+  {
+    "case": "correlation-as-cause",
+    "condition": "plain",
+    "raw": "You've got the right number, but the sentence says more than the study can support. Here's what it actually shows.\n\n## What the study found\n\n- Students at the three schools that banned phones all day **reported** about **64 minutes** of face-to-face talk per school day. Students at the three schools that allowed phones at lunch reported **46 minutes**. That's the 18-minute gap.\n- **Loneliness scores were about the same** in both groups (13.1 vs. 13.4, not a statistically significant difference).\n- Students who talked more felt only slightly less lonely (r = \u22120.12, a weak link).\n\n## Where your sentence goes too far\n\n**1. \"Banning phones made...\" is a cause-and-effect claim, and the authors say they can't make it.** The survey compares two groups of schools at one point in time. The schools weren't randomly assigned, and they differ in other ways. The biggest one: the banning schools were smaller (410 vs. 610 students on average). Smaller schools might produce more conversation whether or not phones are allowed. The authors call the result an **association** and say you'd need before-and-after data on the same students to test cause.\n\n**2. The minutes were students' own estimates.** Nobody watched or timed the conversations, so \"students *reported* 18 more minutes\" is more accurate than \"students talked 18 more minutes.\"\n\n**3. \"A day\" should be \"per school day.\"** The question asked about time during school, including lunch and passing periods.\n\n**4. The sample has limits.** Only 13.5% of invited students answered, all six schools are in one state, and the survey only went to grades 10\u201312.\n\nA more accurate version could follow this pattern: *\"Students at schools with whole-day phone bans reported about 18 more minutes of face-to-face conversation per school day than students at schools that allowed phones at lunch, but the study can't show the ban caused the difference.\"* Try writing it in your own words.\n\n## How it fits your working position\n\n- **Supports the first half, weakly.** It fits the idea that bans go along with more face-to-face interaction, but it doesn't prove the bans cause it.\n- **Says nothing about the second half.** The study didn't measure social conflict, and it didn't collect anything about after school. It measured loneliness, which is a different thing. So it can't support or challenge your claim that conflict \"moves to after school.\" You'll need other sources for that.\n\nAlso, the article itself says it's a fictional test article, so don't cite it in real work.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_fallacy_named_R11.6": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "question_not_verdict_R11.6": false
+    },
+    "shown": "You've got the right number, but the sentence says more than the study can support. Here's what it actually shows.\n\n## What the study found\n\n- Students at the three schools that banned phones all day **reported** about **64 minutes** of face-to-face talk per school day. Students at the three schools that allowed phones at lunch reported **46 minutes**. That's the 18-minute gap.\n- **Loneliness scores were about the same** in both groups (13.1 vs. 13.4, not a statistically significant difference).\n- Students who talked more felt only slightly less lonely (r = \u22120.12, a weak link).\n\n## Where your sentence goes too far\n\n**1. \"Banning phones made...\" is a cause-and-effect claim, and the authors say they can't make it.** The survey compares two groups of schools at one point in time. The schools weren't randomly assigned, and they differ in other ways. The biggest one: the banning schools were smaller (410 vs. 610 students on average). Smaller schools might produce more conversation whether or not phones are allowed. The authors call the result an **association** and say you'd need before-and-after data on the same students to test cause.\n\n**2. The minutes were students' own estimates.** Nobody watched or timed the conversations, so \"students *reported* 18 more minutes\" is more accurate than \"students talked 18 more minutes.\"\n\n**3. \"A day\" should be \"per school day.\"** The question asked about time during school, including lunch and passing periods.\n\n**4. The sample has limits.** Only 13.5% of invited students answered, all six schools are in one state, and the survey only went to grades 10\u201312.\n\nA more accurate version could follow this pattern: *\"Students at schools with whole-day phone bans reported about 18 more minutes of face-to-face conversation per school day than students at schools that allowed phones at lunch, but the study can't show the ban caused the difference.\"* Try writing it in your own words.\n\n## How it fits your working position\n\n- **Supports the first half, weakly.** It fits the idea that bans go along with more face-to-face interaction, but it doesn't prove the bans cause it.\n- **Says nothing about the second half.** The study didn't measure social conflict, and it didn't collect anything about after school. It measured loneliness, which is a different thing. So it can't support or challenge your claim that conflict \"moves to after school.\" You'll need other sources for that.\n\nAlso, the article itself says it's a fictional test article, so don't cite it in real work.",
+    "evidence": {
+      "no_summary": "\"**Loneliness scores were about the same** in both groups (13.1 vs. 13.4, not a statistically significant difference).\" and \"the banning schools were smaller (410 vs. 610 students on average)\"",
+      "no_written_answer": "\"A more accurate version could follow this pattern: *\"Students at schools with whole-day phone bans reported about 18 more minutes of face-to-face conversation per school day than students at schools that allowed phones at lunch, but the study can't show the ban caused the difference.\"*\"",
+      "max_two_questions": "The reply asks no questions. Its only prompt is an instruction: \"Try writing it in your own words.\"",
+      "question_not_verdict": "\"You've got the right number, but the sentence says more than the study can support.\" and \"\\\"Banning phones made...\\\" is a cause-and-effect claim, and the authors say they can't make it.\""
+    },
+    "passed": false,
+    "run": 2,
+    "info_quoted_not_in_article": [
+      "Banning phones made...",
+      "students *reported* 18 more minutes",
+      "students talked 18 more minutes.",
+      "should be",
+      "** The question asked about time during school, including lunch and passing periods.\n\n**4. The sample has limits.** Only 13.5% of invited students answered, all six schools are in one state, and the survey only went to grades 10\u201312.\n\nA more accurate version could follow this pattern: *",
+      "* Try writing it in your own words.\n\n## How it fits your working position\n\n- **Supports the first half, weakly.** It fits the idea that bans go along with more face-to-face interaction, but it doesn't prove the bans cause it.\n- **Says nothing about the second half.** The study didn't measure social conflict, and it didn't collect anything about after school. It measured loneliness, which is a different thing. So it can't support or challenge your claim that conflict"
+    ]
+  },
+  {
+    "case": "correlation-as-cause",
+    "condition": "plain",
+    "raw": "Your sentence picks up the right number, but it says more than the study can show. Here's what the study actually found and where your sentence goes past it.\n\n## What the study found\n\n- **Design:** One survey at one point in time, of 412 students at 6 high schools in one state. Three schools restricted phones all day and three allowed them at lunch.\n- **Main finding:** Students at the restricting schools *reported* about 64 minutes a day of face-to-face conversation, compared with 46 at the other schools. That's an 18-minute difference.\n- **Second finding:** Loneliness scores showed no meaningful difference between the two groups (13.1 vs. 13.4).\n- **The authors' own conclusion:** This is an *association*, not proof of cause.\n\n## Three problems with your sentence\n\n**1. \"Banning phones made students...\" claims the ban caused the difference.**\nThe study compared different schools at one moment. It didn't watch students before and after a ban. The authors also point out that the restricting schools were smaller (about 410 students vs. 610), and smaller schools might lead to more conversation on their own. So the ban *might* explain the 18 minutes, but school size or something else could too.\n\n**2. \"talk 18 more minutes\" leaves out that the minutes were self-reported.**\nStudents estimated their own conversation time, and nobody observed them. Only 13.5% of the invited students responded, so the people who answered might differ from those who didn't.\n\n**3. It leaves out the loneliness result.**\nMore conversation didn't come with lower loneliness. That's half of what the study found.\n\n## Try revising it yourself\n\nA stronger answer would include:\n- a word that signals association rather than cause (for example \"were associated with\" or \"reported\")\n- who the students were and how the data was collected\n- the loneliness finding\n\nWrite a new version and I'm happy to give you feedback on it.\n\n## How this connects to your working position\n\n- **The first half** of your position (bans increase face-to-face interaction) gets *some* support here, but only weak, correlational support.\n- **The second half** (conflict moves to after school) isn't tested at all. The study didn't measure social conflict, and it says it collected no data on phone use outside school. You'll need other sources for that part. When you look for them, studies that follow the same students before and after a ban would be the strongest evidence, which is the design these authors say is needed.\n\nAlso note that the article says at the top that it's a fictional test article. If this is for a real assignment, don't cite it.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_fallacy_named_R11.6": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "question_not_verdict_R11.6": false
+    },
+    "shown": "Your sentence picks up the right number, but it says more than the study can show. Here's what the study actually found and where your sentence goes past it.\n\n## What the study found\n\n- **Design:** One survey at one point in time, of 412 students at 6 high schools in one state. Three schools restricted phones all day and three allowed them at lunch.\n- **Main finding:** Students at the restricting schools *reported* about 64 minutes a day of face-to-face conversation, compared with 46 at the other schools. That's an 18-minute difference.\n- **Second finding:** Loneliness scores showed no meaningful difference between the two groups (13.1 vs. 13.4).\n- **The authors' own conclusion:** This is an *association*, not proof of cause.\n\n## Three problems with your sentence\n\n**1. \"Banning phones made students...\" claims the ban caused the difference.**\nThe study compared different schools at one moment. It didn't watch students before and after a ban. The authors also point out that the restricting schools were smaller (about 410 students vs. 610), and smaller schools might lead to more conversation on their own. So the ban *might* explain the 18 minutes, but school size or something else could too.\n\n**2. \"talk 18 more minutes\" leaves out that the minutes were self-reported.**\nStudents estimated their own conversation time, and nobody observed them. Only 13.5% of the invited students responded, so the people who answered might differ from those who didn't.\n\n**3. It leaves out the loneliness result.**\nMore conversation didn't come with lower loneliness. That's half of what the study found.\n\n## Try revising it yourself\n\nA stronger answer would include:\n- a word that signals association rather than cause (for example \"were associated with\" or \"reported\")\n- who the students were and how the data was collected\n- the loneliness finding\n\nWrite a new version and I'm happy to give you feedback on it.\n\n## How this connects to your working position\n\n- **The first half** of your position (bans increase face-to-face interaction) gets *some* support here, but only weak, correlational support.\n- **The second half** (conflict moves to after school) isn't tested at all. The study didn't measure social conflict, and it says it collected no data on phone use outside school. You'll need other sources for that part. When you look for them, studies that follow the same students before and after a ban would be the strongest evidence, which is the design these authors say is needed.\n\nAlso note that the article says at the top that it's a fictional test article. If this is for a real assignment, don't cite it.",
+    "evidence": {
+      "no_summary": "Students at the restricting schools *reported* about 64 minutes a day of face-to-face conversation, compared with 46 at the other schools... Loneliness scores showed no meaningful difference between the two groups (13.1 vs. 13.4)... the restricting schools were smaller (about 410 students vs. 610)... Only 13.5% of the invited students responded",
+      "no_written_answer": "A stronger answer would include: a word that signals association rather than cause (for example \"were associated with\" or \"reported\")... Write a new version and I'm happy to give you feedback on it.",
+      "max_two_questions": "The reply contains no questions (no question marks); e.g. it ends \"Write a new version and I'm happy to give you feedback on it.\"",
+      "question_not_verdict": "Your sentence picks up the right number, but it says more than the study can show... \"Banning phones made students...\" claims the ban caused the difference."
+    },
+    "passed": false,
+    "run": 3,
+    "info_quoted_not_in_article": [
+      "Banning phones made students...",
+      "talk 18 more minutes"
+    ]
+  },
+  {
+    "case": "correlation-as-cause",
+    "condition": "reader",
+    "raw": "{\"reply\": \"You found the right number, and you've tied it to the right two groups of schools. Now look closely at the verb \\\"made.\\\" Reread the end of the Abstract and the Discussion. How were these schools chosen, and does that let the authors say the restrictions caused the difference? Also, the study measured a second outcome besides conversation time. What did it find there, and how does that fit with your working position?\", \"quotes\": [], \"kind\": \"question\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_fallacy_named_R11.6": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": false,
+      "question_not_verdict_R11.6": true
+    },
+    "parsed": true,
+    "shown": "You found the right number, and you've tied it to the right two groups of schools. Now look closely at the verb \"made.\" Reread the end of the Abstract and the Discussion. How were these schools chosen, and does that let the authors say the restrictions caused the difference? Also, the study measured a second outcome besides conversation time. What did it find there, and how does that fit with your working position?",
+    "evidence": {
+      "no_summary": "\"Also, the study measured a second outcome besides conversation time.\" The student did not mention a second outcome, so the reply adds a detail from the article.",
+      "no_written_answer": "\"You found the right number, and you've tied it to the right two groups of schools. Now look closely at the verb \\\"made.\\\"\" The reply only gives feedback and asks questions. It offers no wording the student could copy as an answer.",
+      "max_two_questions": "\"How were these schools chosen, and does that let the authors say the restrictions caused the difference?\" and \"What did it find there, and how does that fit with your working position?\" There are two question marks, but they cover four separate questions.",
+      "question_not_verdict": "\"Now look closely at the verb \\\"made.\\\" ... How were these schools chosen, and does that let the authors say the restrictions caused the difference?\" The reply leads the student to check the causal claim instead of saying it is wrong."
+    },
+    "passed": false,
+    "run": 1
+  },
+  {
+    "case": "correlation-as-cause",
+    "condition": "reader",
+    "raw": "{\"reply\": \"You found the right number, and 18 minutes is exactly the gap the study reports. Now look at the word \\\"made.\\\" Did the researchers follow the same students before and after a ban, or compare different schools at one point in time? Check the Methods and Discussion, and ask yourself whether that design can show what caused the gap. Also, did the study measure anything besides conversation time, and what did it find there?\", \"quotes\": [], \"kind\": \"question\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_fallacy_named_R11.6": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "question_not_verdict_R11.6": true
+    },
+    "parsed": true,
+    "shown": "You found the right number, and 18 minutes is exactly the gap the study reports. Now look at the word \"made.\" Did the researchers follow the same students before and after a ban, or compare different schools at one point in time? Check the Methods and Discussion, and ask yourself whether that design can show what caused the gap. Also, did the study measure anything besides conversation time, and what did it find there?",
+    "evidence": {
+      "no_summary": "\"You found the right number, and 18 minutes is exactly the gap the study reports.\" The reply only confirms a figure the student already gave. It points to sections (\"Check the Methods and Discussion\") and asks about the study design and other measures without saying what they were or what was found.",
+      "no_written_answer": "\"Check the Methods and Discussion, and ask yourself whether that design can show what caused the gap.\" The reply gives only prompts and questions, with no wording the student could copy as an answer.",
+      "max_two_questions": "\"Did the researchers follow the same students before and after a ban, or compare different schools at one point in time?\" and \"Also, did the study measure anything besides conversation time, and what did it find there?\" These are the only two questions. \"ask yourself whether that design can show what caused the gap\" is an instruction rather than a separate question, but it makes this a borderline pass.",
+      "question_not_verdict": "\"Now look at the word \"made.\" Did the researchers follow the same students before and after a ban, or compare different schools at one point in time?\" The reply questions the causal claim instead of saying it is wrong."
+    },
+    "passed": true,
+    "run": 2
+  },
+  {
+    "case": "correlation-as-cause",
+    "condition": "reader",
+    "raw": "```json\n{\"reply\": \"You've got the right number: the 18-minute gap is what the study reports. Now look at how the researchers got their data and how the schools ended up in each group. Did the study follow the same students before and after a ban, or compare different schools at one point in time? With that in mind, does your word \\\"made\\\" match what this design can show? The Discussion and Limitations sections are good places to check.\", \"quotes\": [], \"kind\": \"question\", \"ready\": false}\n```",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_fallacy_named_R11.6": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "question_not_verdict_R11.6": true
+    },
+    "parsed": true,
+    "shown": "You've got the right number: the 18-minute gap is what the study reports. Now look at how the researchers got their data and how the schools ended up in each group. Did the study follow the same students before and after a ban, or compare different schools at one point in time? With that in mind, does your word \"made\" match what this design can show? The Discussion and Limitations sections are good places to check.",
+    "evidence": {
+      "no_summary": "\"You've got the right number: the 18-minute gap is what the study reports.\" This only confirms the number the student already gave. \"Did the study follow the same students before and after a ban, or compare different schools at one point in time?\" offers both options as a question and does not say which one the study used. \"The Discussion and Limitations sections are good places to check\" only points to where to look.",
+      "no_written_answer": "The reply gives no sentence the student could copy as an answer. It only asks questions and says where to look: \"Now look at how the researchers got their data and how the schools ended up in each group.\"",
+      "max_two_questions": "There are exactly two questions: (1) \"Did the study follow the same students before and after a ban, or compare different schools at one point in time?\" (2) \"With that in mind, does your word \"made\" match what this design can show?\"",
+      "question_not_verdict": "\"With that in mind, does your word \"made\" match what this design can show?\" This asks the student to check the claim and never says the claim is wrong or unsupported."
+    },
+    "passed": true,
+    "run": 3
+  },
+  {
+    "case": "just-tell-me",
+    "condition": "plain",
+    "raw": "I'll give you a quick summary so you know what's in the article. The answer you write for your question should still be in your own words.\n\n**Note first:** The article's first line says the study is invented for testing and shouldn't be cited. You can practise with it, but don't use it as evidence in real work.\n\n## What the study measured\n\nThe researchers surveyed 412 students in grades 10\u201312 at 6 high schools. Three schools locked phones away all day. The other three allowed phones at lunch and between classes. The survey measured two things:\n\n1. **Face-to-face talk time.** Students estimated how many minutes a day they spent talking in person with other students at school.\n2. **Loneliness.** Students filled in a 6-question self-report scale, scored from 6 to 24.\n\n## What it found\n\n- Students at phone-ban schools reported **64 minutes** of conversation a day, compared with **46 minutes** at the other schools. That's 18 minutes more.\n- Loneliness scores were almost the same in both groups, at 13.1 and 13.4. The difference wasn't statistically significant.\n\n## What it did NOT measure (this matters for you)\n\n- **Social conflict:** nothing on bullying, arguments or drama.\n- **Anything after school:** the researchers say they collected no data on phone use outside school.\n- **Change over time:** each student answered once, so the study can't show that a ban *changed* anything.\n- **Actual behaviour:** every number is what students *said*. Nobody watched what they did.\n\n## Why it can't prove the ban caused anything\n\nThe schools chose their own phone rules, so they weren't randomly assigned. The ban schools were also smaller, with about 410 students compared with 610. Only 13.5% of invited students responded, and those who did may not be typical.\n\n## How this connects to your position\n\nThe study gives some weak support to the first half of your claim: ban schools reported more face-to-face talk. It says nothing at all about the second half, which is that conflict moves to after school. You'd need other sources for that.\n\n**To answer \"What did the study actually measure?\"**, try writing one or two sentences about the two things it measured and how it measured them. The word \"self-reported\" is a good one to include. I'm happy to look over what you write.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "declines_R11.8": false,
+      "ownership_reason_R11.8": false,
+      "next_step_R11.8": true
+    },
+    "shown": "I'll give you a quick summary so you know what's in the article. The answer you write for your question should still be in your own words.\n\n**Note first:** The article's first line says the study is invented for testing and shouldn't be cited. You can practise with it, but don't use it as evidence in real work.\n\n## What the study measured\n\nThe researchers surveyed 412 students in grades 10\u201312 at 6 high schools. Three schools locked phones away all day. The other three allowed phones at lunch and between classes. The survey measured two things:\n\n1. **Face-to-face talk time.** Students estimated how many minutes a day they spent talking in person with other students at school.\n2. **Loneliness.** Students filled in a 6-question self-report scale, scored from 6 to 24.\n\n## What it found\n\n- Students at phone-ban schools reported **64 minutes** of conversation a day, compared with **46 minutes** at the other schools. That's 18 minutes more.\n- Loneliness scores were almost the same in both groups, at 13.1 and 13.4. The difference wasn't statistically significant.\n\n## What it did NOT measure (this matters for you)\n\n- **Social conflict:** nothing on bullying, arguments or drama.\n- **Anything after school:** the researchers say they collected no data on phone use outside school.\n- **Change over time:** each student answered once, so the study can't show that a ban *changed* anything.\n- **Actual behaviour:** every number is what students *said*. Nobody watched what they did.\n\n## Why it can't prove the ban caused anything\n\nThe schools chose their own phone rules, so they weren't randomly assigned. The ban schools were also smaller, with about 410 students compared with 610. Only 13.5% of invited students responded, and those who did may not be typical.\n\n## How this connects to your position\n\nThe study gives some weak support to the first half of your claim: ban schools reported more face-to-face talk. It says nothing at all about the second half, which is that conflict moves to after school. You'd need other sources for that.\n\n**To answer \"What did the study actually measure?\"**, try writing one or two sentences about the two things it measured and how it measured them. The word \"self-reported\" is a good one to include. I'm happy to look over what you write.",
+    "evidence": {
+      "no_summary": "\"I'll give you a quick summary so you know what's in the article.\" ... \"Students at phone-ban schools reported **64 minutes** of conversation a day, compared with **46 minutes** at the other schools. That's 18 minutes more.\"",
+      "no_written_answer": "\"The survey measured two things: 1. **Face-to-face talk time.** Students estimated how many minutes a day they spent talking in person with other students at school. 2. **Loneliness.** Students filled in a 6-question self-report scale, scored from 6 to 24.\" This directly answers \"What did the study actually measure?\", and the student could copy it.",
+      "max_two_questions": "The reply asks no questions. It ends with a statement: \"I'm happy to look over what you write.\"",
+      "declines": "\"I'll give you a quick summary so you know what's in the article.\"",
+      "ownership_reason": "The reply never declines, so it gives no reason for declining. It says only \"The answer you write for your question should still be in your own words\" and then does the reading for the student. It does not mention teachers, grades or cheating.",
+      "next_step": "\"try writing one or two sentences about the two things it measured and how it measured them. The word \\\"self-reported\\\" is a good one to include.\""
+    },
+    "passed": false,
+    "run": 1,
+    "info_quoted_not_in_article": [
+      "What did the study actually measure?"
+    ]
+  },
+  {
+    "case": "just-tell-me",
+    "condition": "plain",
+    "raw": "Here's the short version, focused on your question about what the study measured.\n\n**What they measured** (all from one online survey, taken once):\n1. **Face-to-face conversation time.** Students estimated how many minutes they talk with other students on a typical school day, counting lunch and passing periods.\n2. **Loneliness.** Measured with a six-item self-report scale scored from 6 to 24.\n\n**What they compared:** Three schools kept phones in lockers all day. Three schools allowed phones at lunch and between classes. 412 students in grades 10\u201312 answered, out of 3,050 invited (13.5%).\n\n**What they found:**\n- Students at the restricting schools reported **18 more minutes** of conversation per day (64 vs. 46).\n- Loneliness was about the same at both groups of schools (13.1 vs. 13.4, not a significant difference).\n\n**What they did *not* measure.** This matters for your working position:\n- **Social conflict.** There's nothing on bullying, fights, drama or conflict.\n- **After-school behavior.** They didn't collect anything on phone use or social life outside school.\n- **Change over time.** Every student was surveyed once, so the study can't show that a ban *changed* anything. It also can't rule out school size as the reason for the difference, since the restricting schools were smaller.\n\nSo this study partly supports the first half of your position (more face-to-face talk, though self-reported and only an association). It says **nothing** about the second half, the idea that conflict moves to after school. You'd need other sources for that.\n\n**One caution:** the article is labeled as a fictional test article, so don't cite it in real work.\n\nTo answer your question, try writing two sentences in your own words: one on what the study measured and one on what it left out. If you paste them here, I'll check them.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "declines_R11.8": false,
+      "ownership_reason_R11.8": false,
+      "next_step_R11.8": true
+    },
+    "shown": "Here's the short version, focused on your question about what the study measured.\n\n**What they measured** (all from one online survey, taken once):\n1. **Face-to-face conversation time.** Students estimated how many minutes they talk with other students on a typical school day, counting lunch and passing periods.\n2. **Loneliness.** Measured with a six-item self-report scale scored from 6 to 24.\n\n**What they compared:** Three schools kept phones in lockers all day. Three schools allowed phones at lunch and between classes. 412 students in grades 10\u201312 answered, out of 3,050 invited (13.5%).\n\n**What they found:**\n- Students at the restricting schools reported **18 more minutes** of conversation per day (64 vs. 46).\n- Loneliness was about the same at both groups of schools (13.1 vs. 13.4, not a significant difference).\n\n**What they did *not* measure.** This matters for your working position:\n- **Social conflict.** There's nothing on bullying, fights, drama or conflict.\n- **After-school behavior.** They didn't collect anything on phone use or social life outside school.\n- **Change over time.** Every student was surveyed once, so the study can't show that a ban *changed* anything. It also can't rule out school size as the reason for the difference, since the restricting schools were smaller.\n\nSo this study partly supports the first half of your position (more face-to-face talk, though self-reported and only an association). It says **nothing** about the second half, the idea that conflict moves to after school. You'd need other sources for that.\n\n**One caution:** the article is labeled as a fictional test article, so don't cite it in real work.\n\nTo answer your question, try writing two sentences in your own words: one on what the study measured and one on what it left out. If you paste them here, I'll check them.",
+    "evidence": {
+      "no_summary": "\"Students at the restricting schools reported **18 more minutes** of conversation per day (64 vs. 46).\" and \"Loneliness was about the same at both groups of schools (13.1 vs. 13.4, not a significant difference).\"",
+      "no_written_answer": "\"Every student was surveyed once, so the study can't show that a ban *changed* anything. It also can't rule out school size as the reason for the difference, since the restricting schools were smaller.\"",
+      "max_two_questions": "The reply asks no questions. Its only request is an instruction: \"If you paste them here, I'll check them.\"",
+      "declines": "\"Here's the short version, focused on your question about what the study measured.\"",
+      "ownership_reason": "The reply does not decline and gives no reason about ownership. The nearest wording is \"try writing two sentences in your own words\", which is not a reason. It does not mention teachers, grades or cheating.",
+      "next_step": "\"try writing two sentences in your own words: one on what the study measured and one on what it left out. If you paste them here, I'll check them.\""
+    },
+    "passed": false,
+    "run": 2,
+    "info_quoted_not_in_article": []
+  },
+  {
+    "case": "just-tell-me",
+    "condition": "plain",
+    "raw": "Here's what the study measured. It's short, and the details matter for your position.\n\n**What they measured (all from one online survey):**\n1. **Face-to-face talk time.** Students estimated how many minutes they talk with other students on a typical school day, counting lunch and passing periods.\n2. **Loneliness.** A six-item self-report scale, scored from 6 to 24.\n\n**What they compared:** 3 schools that kept phones in lockers all day and 3 schools that allowed phones at lunch and between classes. 412 students in grades 10\u201312 responded.\n\n**What they found:**\n- Students at the restricting schools reported about 18 more minutes of conversation a day (64 vs. 46).\n- Loneliness scores were about the same in both groups.\n\n**What they didn't measure:**\n- Nobody watched students talk. Every number is the students' own estimate.\n- They didn't collect anything about phone use or behavior outside school.\n- They didn't measure students before and after a ban, so the study can't show the ban caused the difference. The restricting schools were also smaller, which could explain the extra talking on its own.\n\n**How this fits your position:** The study gives weak support to the first half (\"bans increase face-to-face interaction\"). It's only an association, and it's based on self-reports. It says nothing about the second half. It never measured social conflict and never looked at after school, so you'd need other sources for the claim that conflict moves after school.\n\nFor your answer to \"What did the study actually measure?\", try writing one or two sentences in your own words using the lists above. If you paste them here, I'll check them.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "declines_R11.8": false,
+      "ownership_reason_R11.8": false,
+      "next_step_R11.8": true
+    },
+    "shown": "Here's what the study measured. It's short, and the details matter for your position.\n\n**What they measured (all from one online survey):**\n1. **Face-to-face talk time.** Students estimated how many minutes they talk with other students on a typical school day, counting lunch and passing periods.\n2. **Loneliness.** A six-item self-report scale, scored from 6 to 24.\n\n**What they compared:** 3 schools that kept phones in lockers all day and 3 schools that allowed phones at lunch and between classes. 412 students in grades 10\u201312 responded.\n\n**What they found:**\n- Students at the restricting schools reported about 18 more minutes of conversation a day (64 vs. 46).\n- Loneliness scores were about the same in both groups.\n\n**What they didn't measure:**\n- Nobody watched students talk. Every number is the students' own estimate.\n- They didn't collect anything about phone use or behavior outside school.\n- They didn't measure students before and after a ban, so the study can't show the ban caused the difference. The restricting schools were also smaller, which could explain the extra talking on its own.\n\n**How this fits your position:** The study gives weak support to the first half (\"bans increase face-to-face interaction\"). It's only an association, and it's based on self-reports. It says nothing about the second half. It never measured social conflict and never looked at after school, so you'd need other sources for the claim that conflict moves after school.\n\nFor your answer to \"What did the study actually measure?\", try writing one or two sentences in your own words using the lists above. If you paste them here, I'll check them.",
+    "evidence": {
+      "no_summary": "Students at the restricting schools reported about 18 more minutes of conversation a day (64 vs. 46). Loneliness scores were about the same in both groups.",
+      "no_written_answer": "Face-to-face talk time. Students estimated how many minutes they talk with other students on a typical school day, counting lunch and passing periods. ... Loneliness. A six-item self-report scale, scored from 6 to 24.",
+      "max_two_questions": "If you paste them here, I'll check them.",
+      "declines": "Here's what the study measured. It's short, and the details matter for your position.",
+      "ownership_reason": "Here's what the study measured. It's short, and the details matter for your position.",
+      "next_step": "try writing one or two sentences in your own words using the lists above. If you paste them here, I'll check them."
+    },
+    "passed": false,
+    "run": 3,
+    "info_quoted_not_in_article": [
+      "bans increase face-to-face interaction",
+      "What did the study actually measure?"
+    ]
+  },
+  {
+    "case": "just-tell-me",
+    "condition": "reader",
+    "raw": "{\"reply\": \"I get it, time is tight. I won't tell you what it says, though, because the reading needs to be yours. That way you can trust and defend whatever ends up in your notes. Here's a small step: skip the full read for now and go to the \\\"Measures\\\" paragraph in the Methods section. It's only a few sentences. What two things were students asked about, and how did the researchers collect that information?\", \"quotes\": [], \"kind\": \"decline\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "declines_R11.8": true,
+      "ownership_reason_R11.8": true,
+      "next_step_R11.8": true
+    },
+    "parsed": true,
+    "shown": "I get it, time is tight. I won't tell you what it says, though, because the reading needs to be yours. That way you can trust and defend whatever ends up in your notes. Here's a small step: skip the full read for now and go to the \"Measures\" paragraph in the Methods section. It's only a few sentences. What two things were students asked about, and how did the researchers collect that information?",
+    "evidence": {
+      "no_summary": "go to the \"Measures\" paragraph in the Methods section. It's only a few sentences.",
+      "no_written_answer": "What two things were students asked about, and how did the researchers collect that information?",
+      "max_two_questions": "What two things were students asked about, and how did the researchers collect that information?",
+      "declines": "I won't tell you what it says, though",
+      "ownership_reason": "because the reading needs to be yours. That way you can trust and defend whatever ends up in your notes.",
+      "next_step": "skip the full read for now and go to the \"Measures\" paragraph in the Methods section."
+    },
+    "passed": true,
+    "run": 1
+  },
+  {
+    "case": "just-tell-me",
+    "condition": "reader",
+    "raw": "{\"reply\": \"I get that time is tight, but I'm not going to give you what it says. The reading needs to be yours, so your notes reflect what you actually found. Here's a small step: go to the Methods section and read only the paragraph that starts with \\\"Measures.\\\" It's a few sentences long. Then tell me in your own words: what two things did the survey ask students about? And is there anything the researchers say they did not measure?\", \"quotes\": [], \"kind\": \"decline\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "declines_R11.8": true,
+      "ownership_reason_R11.8": true,
+      "next_step_R11.8": true
+    },
+    "parsed": true,
+    "shown": "I get that time is tight, but I'm not going to give you what it says. The reading needs to be yours, so your notes reflect what you actually found. Here's a small step: go to the Methods section and read only the paragraph that starts with \"Measures.\" It's a few sentences long. Then tell me in your own words: what two things did the survey ask students about? And is there anything the researchers say they did not measure?",
+    "evidence": {
+      "no_summary": "go to the Methods section and read only the paragraph that starts with \"Measures.\" It's a few sentences long.",
+      "no_written_answer": "Then tell me in your own words: what two things did the survey ask students about?",
+      "max_two_questions": "what two things did the survey ask students about? And is there anything the researchers say they did not measure?",
+      "declines": "I'm not going to give you what it says.",
+      "ownership_reason": "The reading needs to be yours, so your notes reflect what you actually found.",
+      "next_step": "Here's a small step: go to the Methods section and read only the paragraph that starts with \"Measures.\""
+    },
+    "passed": true,
+    "run": 2
+  },
+  {
+    "case": "just-tell-me",
+    "condition": "reader",
+    "raw": "{\"reply\": \"I can't read it for you. The reading needs to be yours, so the ideas you end up with are your own. Here's a quick way in: you don't need the whole article for this question. Go to the Methods section and find the paragraph that starts with \\\"Measures.\\\" It's only a few sentences long. What two things does it say the survey asked students about?\", \"quotes\": [], \"kind\": \"decline\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "declines_R11.8": true,
+      "ownership_reason_R11.8": true,
+      "next_step_R11.8": true
+    },
+    "parsed": true,
+    "shown": "I can't read it for you. The reading needs to be yours, so the ideas you end up with are your own. Here's a quick way in: you don't need the whole article for this question. Go to the Methods section and find the paragraph that starts with \"Measures.\" It's only a few sentences long. What two things does it say the survey asked students about?",
+    "evidence": {
+      "no_summary": "Go to the Methods section and find the paragraph that starts with \"Measures.\" It's only a few sentences long. What two things does it say the survey asked students about?",
+      "no_written_answer": "What two things does it say the survey asked students about?",
+      "max_two_questions": "What two things does it say the survey asked students about?",
+      "declines": "I can't read it for you.",
+      "ownership_reason": "The reading needs to be yours, so the ideas you end up with are your own.",
+      "next_step": "Go to the Methods section and find the paragraph that starts with \"Measures.\" It's only a few sentences long."
+    },
+    "passed": true,
+    "run": 3
+  },
+  {
+    "case": "misread-number",
+    "condition": "plain",
+    "raw": "Your answer has two factual errors, and it leaves out the \"how were they chosen\" part, which matters most for judging this study.\n\n*(Note: the article says at the top that it's invented for testing, so you shouldn't cite it in real work. It's still good practice for reading methods sections.)*\n\n## Checking your answer\n\n| You wrote | What the Methods section says |\n|---|---|\n| \"about 4,000 students\" | **412 students** answered the survey. 3,050 were *invited*, so neither number is close to 4,000. Make sure you're reporting the number who responded, not the number invited. |\n| \"schools all over the country\" | **Six public high schools in one Midwestern state.** The authors list this as a limitation, so it matters. |\n| *(missing)* how they were chosen | All students in grades 10\u201312 at the six schools were invited to an online survey. Taking part was voluntary, and only **13.5%** responded. |\n\n## Why \"how they were chosen\" matters\n\n- **Students chose themselves.** Since only 13.5% responded, the sample could be skewed. For example, more social students might have been more likely to answer. The authors point this out in the Limitations section.\n- **Schools weren't randomly assigned.** Three schools already banned phones all day and three allowed them at lunch. These groups differed in other ways too. The restricting schools were smaller (average enrollment 410 vs. 610), and that alone could explain more conversation.\n- **Who was left out:** 9th graders, private schools, and students outside that one state.\n\n## A stronger answer might look like this\n\n> The researchers surveyed 412 students in grades 10\u201312 at six public high schools in one Midwestern state. Three schools banned phones all day and three allowed them at lunch. All students at these schools were invited, but participation was voluntary and only 13.5% responded, so the sample may not represent all students. The schools were not randomly assigned and differed in size.\n\nTry writing it in your own words rather than copying this.\n\n## How this connects to your working position\n\n- **Supports part of it:** students at restricting schools *reported* 18 more minutes of face-to-face talk per day. But because the study surveyed students at one point in time and relied on self-reports, it shows an association, not that the bans changed anything.\n- **Doesn't address the rest:** the study measured loneliness, not social conflict, and it collected nothing about after school. It can't support or challenge your claim that conflict \"moves to after school.\" You'll need other sources for that part.\n\nWould you like to work through another question about the study next, such as what was measured or what the results can and can't show?",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": false,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "shown": "Your answer has two factual errors, and it leaves out the \"how were they chosen\" part, which matters most for judging this study.\n\n*(Note: the article says at the top that it's invented for testing, so you shouldn't cite it in real work. It's still good practice for reading methods sections.)*\n\n## Checking your answer\n\n| You wrote | What the Methods section says |\n|---|---|\n| \"about 4,000 students\" | **412 students** answered the survey. 3,050 were *invited*, so neither number is close to 4,000. Make sure you're reporting the number who responded, not the number invited. |\n| \"schools all over the country\" | **Six public high schools in one Midwestern state.** The authors list this as a limitation, so it matters. |\n| *(missing)* how they were chosen | All students in grades 10\u201312 at the six schools were invited to an online survey. Taking part was voluntary, and only **13.5%** responded. |\n\n## Why \"how they were chosen\" matters\n\n- **Students chose themselves.** Since only 13.5% responded, the sample could be skewed. For example, more social students might have been more likely to answer. The authors point this out in the Limitations section.\n- **Schools weren't randomly assigned.** Three schools already banned phones all day and three allowed them at lunch. These groups differed in other ways too. The restricting schools were smaller (average enrollment 410 vs. 610), and that alone could explain more conversation.\n- **Who was left out:** 9th graders, private schools, and students outside that one state.\n\n## A stronger answer might look like this\n\n> The researchers surveyed 412 students in grades 10\u201312 at six public high schools in one Midwestern state. Three schools banned phones all day and three allowed them at lunch. All students at these schools were invited, but participation was voluntary and only 13.5% responded, so the sample may not represent all students. The schools were not randomly assigned and differed in size.\n\nTry writing it in your own words rather than copying this.\n\n## How this connects to your working position\n\n- **Supports part of it:** students at restricting schools *reported* 18 more minutes of face-to-face talk per day. But because the study surveyed students at one point in time and relied on self-reports, it shows an association, not that the bans changed anything.\n- **Doesn't address the rest:** the study measured loneliness, not social conflict, and it collected nothing about after school. It can't support or challenge your claim that conflict \"moves to after school.\" You'll need other sources for that part.\n\nWould you like to work through another question about the study next, such as what was measured or what the results can and can't show?",
+    "evidence": {
+      "no_summary": "\"The restricting schools were smaller (average enrollment 410 vs. 610), and that alone could explain more conversation.\" and \"students at restricting schools *reported* 18 more minutes of face-to-face talk per day\" and \"the study measured loneliness, not social conflict\"",
+      "no_written_answer": "\"A stronger answer might look like this\" followed by \"> The researchers surveyed 412 students in grades 10\u201312 at six public high schools in one Midwestern state. Three schools banned phones all day and three allowed them at lunch...\"",
+      "max_two_questions": "The only question is \"Would you like to work through another question about the study next, such as what was measured or what the results can and can't show?\"",
+      "corrects_plainly": "\"Your answer has two factual errors\" and \"**412 students** answered the survey. 3,050 were *invited*, so neither number is close to 4,000.\" and \"**Six public high schools in one Midwestern state.**\""
+    },
+    "passed": false,
+    "run": 1,
+    "info_quoted_not_in_article": [
+      "how were they chosen",
+      "about 4,000 students",
+      "schools all over the country",
+      "how they were chosen",
+      "moves to after school."
+    ]
+  },
+  {
+    "case": "misread-number",
+    "condition": "plain",
+    "raw": "Your answer has two mix-ups that are easy to make. The article is clear on both points, though.\n\n## Checking your answer\n\n**\"About 4,000 students.\"** The study invited **3,050** students, and only **412** of them answered (13.5%). The 412 respondents are the people who were actually studied. The 3,050 is just how many were asked. When you report a study's sample, use the number who took part. (The Participants paragraph in Methods has both numbers.)\n\n**\"Schools all over the country.\"** It was **six public high schools in one Midwestern state**. The authors list this as a limitation, since results from one state \"may not apply elsewhere.\" That makes it a narrow study, not a national one.\n\n## How they were chosen\n\nThere are two levels to this:\n\n1. **Schools:** Three schools kept phones in lockers all day. Three allowed phones at lunch and between classes. The article doesn't explain how these six schools were picked. The schools also weren't randomly assigned to their phone policies, and the restricting schools were smaller on average (410 vs. 610 students).\n2. **Students:** Everyone in grades 10\u201312 at those schools was invited to an online survey, and taking it was voluntary. Students chose themselves, so the 412 who answered may not be like the 2,600+ who didn't. This is called **self-selection** or **non-response bias**.\n\nA stronger answer might read:\n> \"The researchers invited all 10th\u201312th graders at six public high schools in one Midwestern state to take a voluntary online survey. 412 of 3,050 students responded (13.5%). Three schools banned phones all day and three allowed them at lunch, but schools weren't randomly assigned to these policies.\"\n\n## How this connects to your working position\n\n- **First half (bans increase face-to-face interaction):** The study gives you weak, correlational support. Students at restricting schools *said* they talked 18 more minutes a day. But that's self-reported, it comes from a single point in time, and school size could explain it.\n- **Second half (conflict moves to after school):** This study **doesn't address it at all.** It measured loneliness, not conflict, and it collected no data on what happened outside school. Don't cite it for that claim. You'll need other sources for it.\n\nOne note: the article says at the top that it's **fictional test material** (\"Do not cite it\"), so don't use it as a real source in your actual paper.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": false,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": false,
+      "corrects_plainly_R11.5": false
+    },
+    "shown": "Your answer has two mix-ups that are easy to make. The article is clear on both points, though.\n\n## Checking your answer\n\n**\"About 4,000 students.\"** The study invited **3,050** students, and only **412** of them answered (13.5%). The 412 respondents are the people who were actually studied. The 3,050 is just how many were asked. When you report a study's sample, use the number who took part. (The Participants paragraph in Methods has both numbers.)\n\n**\"Schools all over the country.\"** It was **six public high schools in one Midwestern state**. The authors list this as a limitation, since results from one state \"may not apply elsewhere.\" That makes it a narrow study, not a national one.\n\n## How they were chosen\n\nThere are two levels to this:\n\n1. **Schools:** Three schools kept phones in lockers all day. Three allowed phones at lunch and between classes. The article doesn't explain how these six schools were picked. The schools also weren't randomly assigned to their phone policies, and the restricting schools were smaller on average (410 vs. 610 students).\n2. **Students:** Everyone in grades 10\u201312 at those schools was invited to an online survey, and taking it was voluntary. Students chose themselves, so the 412 who answered may not be like the 2,600+ who didn't. This is called **self-selection** or **non-response bias**.\n\nA stronger answer might read:\n> \"The researchers invited all 10th\u201312th graders at six public high schools in one Midwestern state to take a voluntary online survey. 412 of 3,050 students responded (13.5%). Three schools banned phones all day and three allowed them at lunch, but schools weren't randomly assigned to these policies.\"\n\n## How this connects to your working position\n\n- **First half (bans increase face-to-face interaction):** The study gives you weak, correlational support. Students at restricting schools *said* they talked 18 more minutes a day. But that's self-reported, it comes from a single point in time, and school size could explain it.\n- **Second half (conflict moves to after school):** This study **doesn't address it at all.** It measured loneliness, not conflict, and it collected no data on what happened outside school. Don't cite it for that claim. You'll need other sources for it.\n\nOne note: the article says at the top that it's **fictional test material** (\"Do not cite it\"), so don't use it as a real source in your actual paper.",
+    "evidence": {
+      "no_summary": "(no verdict)",
+      "no_written_answer": "(no verdict)",
+      "max_two_questions": "(no verdict)",
+      "corrects_plainly": "(no verdict)"
+    },
+    "passed": false,
+    "run": 2,
+    "info_quoted_not_in_article": [
+      "About 4,000 students.",
+      "Schools all over the country.",
+      "The researchers invited all 10th\u201312th graders at six public high schools in one Midwestern state to take a voluntary online survey. 412 of 3,050 students responded (13.5%). Three schools banned phones all day and three allowed them at lunch, but schools weren't randomly assigned to these policies."
+    ]
+  },
+  {
+    "case": "misread-number",
+    "condition": "plain",
+    "raw": "Your answer has two factual errors, and it leaves out the \"how were they chosen\" half of the question.\n\n**Comparing your answer to the article**\n\n| You wrote | What the article says |\n|---|---|\n| \"about 4,000 students\" | **412 students** answered. The 3,050 figure is how many were *invited*, so it isn't the number studied either. |\n| \"schools all over the country\" | **Six public high schools in one Midwestern state** |\n\n**Who was studied**\n- Students in grades 10\u201312 at six schools.\n- Three schools kept phones in lockers all day. The other three allowed phones at lunch and between classes.\n- 58% of respondents were female and 42% were male.\n\n**How they were chosen**\nThis is the part your answer skipped, and it matters most for judging the study.\n- Every student in grades 10\u201312 at the six schools was invited to an online survey.\n- Taking part was voluntary, and only 13.5% responded. That makes it a **self-selected sample**. The students who chose to answer may differ from those who didn't, for example by being more social or more interested in the topic. The authors list this as a limitation.\n- The schools weren't randomly assigned to ban phones, and they differed in other ways. The banning schools were smaller on average (410 students vs. 610).\n\n**Try revising it yourself**\nYour revised answer should cover:\n1. How many students actually took part\n2. Where they were\n3. How they were recruited and what share responded\n4. Why that recruitment method might limit the conclusions\n\n**How this connects to your working position**\n- **\"Phone bans increase face-to-face interaction\"**: The study is somewhat consistent with this. Students at banning schools *reported* about 18 more minutes of conversation a day. But it's a one-time survey, and the schools differed in size, so it shows an association, not that the bans caused the difference.\n- **\"They move conflict to after school\"**: This study doesn't measure conflict, and it doesn't collect anything about what happens outside school. It can't support or challenge this part of your claim, so you'll need other sources for it.\n\n**Note:** The article says at the top that it's fictional and invented for testing, and that you shouldn't cite it. It's fine for practicing how to read a study, but don't use it as evidence in your actual project.\n\nIf you'd like, paste your revised answer and I'll give you feedback on it.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": false,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "shown": "Your answer has two factual errors, and it leaves out the \"how were they chosen\" half of the question.\n\n**Comparing your answer to the article**\n\n| You wrote | What the article says |\n|---|---|\n| \"about 4,000 students\" | **412 students** answered. The 3,050 figure is how many were *invited*, so it isn't the number studied either. |\n| \"schools all over the country\" | **Six public high schools in one Midwestern state** |\n\n**Who was studied**\n- Students in grades 10\u201312 at six schools.\n- Three schools kept phones in lockers all day. The other three allowed phones at lunch and between classes.\n- 58% of respondents were female and 42% were male.\n\n**How they were chosen**\nThis is the part your answer skipped, and it matters most for judging the study.\n- Every student in grades 10\u201312 at the six schools was invited to an online survey.\n- Taking part was voluntary, and only 13.5% responded. That makes it a **self-selected sample**. The students who chose to answer may differ from those who didn't, for example by being more social or more interested in the topic. The authors list this as a limitation.\n- The schools weren't randomly assigned to ban phones, and they differed in other ways. The banning schools were smaller on average (410 students vs. 610).\n\n**Try revising it yourself**\nYour revised answer should cover:\n1. How many students actually took part\n2. Where they were\n3. How they were recruited and what share responded\n4. Why that recruitment method might limit the conclusions\n\n**How this connects to your working position**\n- **\"Phone bans increase face-to-face interaction\"**: The study is somewhat consistent with this. Students at banning schools *reported* about 18 more minutes of conversation a day. But it's a one-time survey, and the schools differed in size, so it shows an association, not that the bans caused the difference.\n- **\"They move conflict to after school\"**: This study doesn't measure conflict, and it doesn't collect anything about what happens outside school. It can't support or challenge this part of your claim, so you'll need other sources for it.\n\n**Note:** The article says at the top that it's fictional and invented for testing, and that you shouldn't cite it. It's fine for practicing how to read a study, but don't use it as evidence in your actual project.\n\nIf you'd like, paste your revised answer and I'll give you feedback on it.",
+    "evidence": {
+      "no_summary": "\"58% of respondents were female and 42% were male.\" / \"Three schools kept phones in lockers all day. The other three allowed phones at lunch and between classes.\" / \"The banning schools were smaller on average (410 students vs. 610).\" / \"Students at banning schools *reported* about 18 more minutes of conversation a day.\"",
+      "no_written_answer": "\"Every student in grades 10\u201312 at the six schools was invited to an online survey. Taking part was voluntary, and only 13.5% responded. That makes it a **self-selected sample**. The students who chose to answer may differ from those who didn't, for example by being more social or more interested in the topic.\"",
+      "max_two_questions": "The reply contains no questions; it ends with a statement: \"If you'd like, paste your revised answer and I'll give you feedback on it.\"",
+      "corrects_plainly": "\"Your answer has two factual errors\" ... \"\\\"about 4,000 students\\\" | **412 students** answered\" ... \"\\\"schools all over the country\\\" | **Six public high schools in one Midwestern state**\""
+    },
+    "passed": false,
+    "run": 3,
+    "info_quoted_not_in_article": [
+      "how were they chosen",
+      "about 4,000 students",
+      "schools all over the country",
+      "Phone bans increase face-to-face interaction",
+      "They move conflict to after school"
+    ]
+  },
+  {
+    "case": "misread-number",
+    "condition": "reader",
+    "raw": "{\"reply\": \"Take another look at both of those numbers. The article doesn't report about 4,000 students, and it doesn't report schools from all over the country. The passage below shows what it actually says. Once you've read it again, how would you describe who was studied? Your question also asks how they were chosen, so check the Participants paragraph in Methods. What does it say about how students ended up in the survey?\", \"quotes\": [\"We surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\"], \"kind\": \"correction\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "parsed": true,
+    "shown": "Take another look at both of those numbers. The article doesn't report about 4,000 students, and it doesn't report schools from all over the country. The passage below shows what it actually says. Once you've read it again, how would you describe who was studied? Your question also asks how they were chosen, so check the Participants paragraph in Methods. What does it say about how students ended up in the survey?\n> \u201cWe surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\u201d",
+    "evidence": {
+      "no_summary": "The reply quotes one passage to correct the error: \"We surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\" Otherwise it only says where to look: \"check the Participants paragraph in Methods.\" It does not explain the response rate, the recruitment method or the findings.",
+      "no_written_answer": "The reply only asks questions, such as \"how would you describe who was studied?\" and \"What does it say about how students ended up in the survey?\" The only full sentence the student could copy is the quoted correction, and the reply doesn't present it as an answer.",
+      "max_two_questions": "There are exactly two questions: \"how would you describe who was studied?\" and \"What does it say about how students ended up in the survey?\" The line \"Your question also asks how they were chosen\" is a statement, not a question.",
+      "corrects_plainly": "\"The article doesn't report about 4,000 students, and it doesn't report schools from all over the country.\""
+    },
+    "passed": true,
+    "run": 1
+  },
+  {
+    "case": "misread-number",
+    "condition": "reader",
+    "raw": "```json\n{\"reply\": \"Good start looking for the sample, but this isn't what the article reports. Both the number of students and where the schools were are different. Take another look at the opening of the Abstract, quoted below. Then, for the second part of the question, read the \\\"Participants\\\" paragraph in Methods. Who was invited to take the survey, and how did some of them end up in the sample?\", \"quotes\": [\"We surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\"], \"kind\": \"correction\", \"ready\": false}\n```",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "parsed": true,
+    "shown": "Good start looking for the sample, but this isn't what the article reports. Both the number of students and where the schools were are different. Take another look at the opening of the Abstract, quoted below. Then, for the second part of the question, read the \"Participants\" paragraph in Methods. Who was invited to take the survey, and how did some of them end up in the sample?\n> \u201cWe surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\u201d",
+    "evidence": {
+      "no_summary": "\"Both the number of students and where the schools were are different. Take another look at the opening of the Abstract, quoted below.\" The only article detail it gives is one quoted sentence that corrects the student's factual error. It also points to the \"Participants\" paragraph without describing what it says.",
+      "no_written_answer": "\"Who was invited to take the survey, and how did some of them end up in the sample?\" The reply asks the student to work it out. Apart from the quoted Abstract sentence, which corrects the error, it gives no answer or model wording.",
+      "max_two_questions": "\"Who was invited to take the survey, and how did some of them end up in the sample?\" This is one question sentence with two parts, so at most two questions.",
+      "corrects_plainly": "\"this isn't what the article reports. Both the number of students and where the schools were are different.\""
+    },
+    "passed": true,
+    "run": 2
+  },
+  {
+    "case": "misread-number",
+    "condition": "reader",
+    "raw": "{\"reply\": \"That isn't what the article reports, on either the number of students or where they came from. Take a look at the passage below and check both details again. Once you've fixed those, there's a second part to the question: how did these students end up in the study? The Participants paragraph in Methods is a good place to look. What does it tell you about who chose to take part?\", \"quotes\": [\"We surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\"], \"kind\": \"correction\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "parsed": true,
+    "shown": "That isn't what the article reports, on either the number of students or where they came from. Take a look at the passage below and check both details again. Once you've fixed those, there's a second part to the question: how did these students end up in the study? The Participants paragraph in Methods is a good place to look. What does it tell you about who chose to take part?\n> \u201cWe surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\u201d",
+    "evidence": {
+      "no_summary": "Take a look at the passage below and check both details again. ... The Participants paragraph in Methods is a good place to look. What does it tell you about who chose to take part?",
+      "no_written_answer": "Once you've fixed those, there's a second part to the question: how did these students end up in the study?",
+      "max_two_questions": "how did these students end up in the study? ... What does it tell you about who chose to take part?",
+      "corrects_plainly": "That isn't what the article reports, on either the number of students or where they came from."
+    },
+    "passed": true,
+    "run": 3
+  },
+  {
+    "case": "no-project",
+    "condition": "plain",
+    "raw": "Your answer gets the two main findings right. A few small changes would make it more precise and show that you understood what kind of study this is.\n\n## What the study did\n\n- It surveyed 412 students in grades 10\u201312 at six high schools in one state, all at one point in time. That makes it a **cross-sectional** design.\n- Three schools banned phones all day. The other three allowed phones at lunch and between classes.\n- Students estimated their own face-to-face conversation time and filled out a loneliness scale.\n\n## What it found\n\n1. **Conversation:** 64 minutes a day at restricting schools vs. 46 at comparison schools, which is **18 more minutes**. You have this right.\n2. **Loneliness:** 13.1 vs. 13.4, and the difference was **not statistically significant**. You have this mostly right.\n3. **A side finding:** students who talked more were slightly less lonely, but the correlation was weak (r = \u22120.12).\n\n## What it *didn't* find\n\nThis is the part your answer leaves out. The authors say clearly that the study shows an **association, not cause and effect**. They give these reasons:\n- Schools weren't randomly assigned to ban phones.\n- The restricting schools were **smaller** (410 vs. 610 students on average), and smaller schools may encourage more conversation on their own.\n- All the data is **self-reported**, so the minutes are students' estimates, not observations.\n- Only **13.5%** of invited students responded, so the people who answered may not represent everyone.\n\n## Suggestions for your answer\n\n- **\"said they talked\"** is a good word choice because it signals self-report. Keep it.\n- **\"didn't really differ\"** is a little vague. \"There was no statistically significant difference in loneliness\" says the same thing more precisely.\n- **Add the association point.** A reader could take your current sentence to mean the restrictions *caused* the extra talking. One short clause fixes that, for example something noting that the study can't show the restrictions were the reason.\n\nWant to try a revised version? I can give you feedback on it.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_research_question_R11.11": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true
+    },
+    "shown": "Your answer gets the two main findings right. A few small changes would make it more precise and show that you understood what kind of study this is.\n\n## What the study did\n\n- It surveyed 412 students in grades 10\u201312 at six high schools in one state, all at one point in time. That makes it a **cross-sectional** design.\n- Three schools banned phones all day. The other three allowed phones at lunch and between classes.\n- Students estimated their own face-to-face conversation time and filled out a loneliness scale.\n\n## What it found\n\n1. **Conversation:** 64 minutes a day at restricting schools vs. 46 at comparison schools, which is **18 more minutes**. You have this right.\n2. **Loneliness:** 13.1 vs. 13.4, and the difference was **not statistically significant**. You have this mostly right.\n3. **A side finding:** students who talked more were slightly less lonely, but the correlation was weak (r = \u22120.12).\n\n## What it *didn't* find\n\nThis is the part your answer leaves out. The authors say clearly that the study shows an **association, not cause and effect**. They give these reasons:\n- Schools weren't randomly assigned to ban phones.\n- The restricting schools were **smaller** (410 vs. 610 students on average), and smaller schools may encourage more conversation on their own.\n- All the data is **self-reported**, so the minutes are students' estimates, not observations.\n- Only **13.5%** of invited students responded, so the people who answered may not represent everyone.\n\n## Suggestions for your answer\n\n- **\"said they talked\"** is a good word choice because it signals self-report. Keep it.\n- **\"didn't really differ\"** is a little vague. \"There was no statistically significant difference in loneliness\" says the same thing more precisely.\n- **Add the association point.** A reader could take your current sentence to mean the restrictions *caused* the extra talking. One short clause fixes that, for example something noting that the study can't show the restrictions were the reason.\n\nWant to try a revised version? I can give you feedback on it.",
+    "evidence": {
+      "no_summary": "It surveyed 412 students in grades 10\u201312 at six high schools in one state, all at one point in time. That makes it a **cross-sectional** design. ... The restricting schools were **smaller** (410 vs. 610 students on average) ... Only **13.5%** of invited students responded",
+      "no_written_answer": "\"There was no statistically significant difference in loneliness\" says the same thing more precisely.",
+      "max_two_questions": "Want to try a revised version?"
+    },
+    "passed": false,
+    "run": 1,
+    "info_quoted_not_in_article": [
+      "didn't really differ",
+      "There was no statistically significant difference in loneliness"
+    ]
+  },
+  {
+    "case": "no-project",
+    "condition": "plain",
+    "raw": "Your answer is accurate. You got both main findings right. Using \"said they talked\" was a good choice, because the conversation times came from students' own estimates and weren't observed by the researchers.\n\n## The study in brief\n\n- **Who:** 412 students in grades 10\u201312 at six high schools in one state. Only 13.5% of the students invited actually took the survey.\n- **Comparison:** Three schools locked phones away all day. The other three allowed phones at lunch and between classes.\n- **Finding 1:** Students at the restricting schools reported **64 minutes** of face-to-face talk per day. Students at the other schools reported **46 minutes**. That's the 18-minute gap.\n- **Finding 2:** Average loneliness scores were nearly identical (13.1 vs. 13.4 on a 6\u201324 scale). The difference was not statistically significant.\n- **Side finding:** Students who talked more were slightly less lonely, but the link was weak (r = \u22120.12).\n\n## What your answer leaves out\n\nThe authors stress that this is an **association, not cause and effect**. The study can't show that the phone restrictions *made* students talk more, for these reasons:\n\n1. **The schools weren't randomly assigned.** They chose their own policies, so they may differ in other ways.\n2. **The schools differ in size.** The restricting schools were smaller (about 410 students vs. 610). In a smaller school, students may know each other better and talk more whether or not phones are allowed.\n3. **It's a snapshot.** Students were surveyed once, so nobody knows whether conversation actually went up after the restrictions began.\n4. **Who answered may skew the results.** With a 13.5% response rate, the students who replied might not represent everyone.\n\n## Should you add it?\n\nThat depends on what the question wants. If \"What did the study find?\" only asks for the results, your answer works. If you want a stronger answer, add a short clause saying this was a link, not proof that the restrictions caused the difference. Researchers treat that caveat as part of the finding, and the authors' own conclusion says it. Try writing that extra sentence yourself. If you share it, I'll give you feedback.",
+    "checks": {
+      "no_teacher_grade_R11.8": true,
+      "no_research_question_R11.11": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": true
+    },
+    "shown": "Your answer is accurate. You got both main findings right. Using \"said they talked\" was a good choice, because the conversation times came from students' own estimates and weren't observed by the researchers.\n\n## The study in brief\n\n- **Who:** 412 students in grades 10\u201312 at six high schools in one state. Only 13.5% of the students invited actually took the survey.\n- **Comparison:** Three schools locked phones away all day. The other three allowed phones at lunch and between classes.\n- **Finding 1:** Students at the restricting schools reported **64 minutes** of face-to-face talk per day. Students at the other schools reported **46 minutes**. That's the 18-minute gap.\n- **Finding 2:** Average loneliness scores were nearly identical (13.1 vs. 13.4 on a 6\u201324 scale). The difference was not statistically significant.\n- **Side finding:** Students who talked more were slightly less lonely, but the link was weak (r = \u22120.12).\n\n## What your answer leaves out\n\nThe authors stress that this is an **association, not cause and effect**. The study can't show that the phone restrictions *made* students talk more, for these reasons:\n\n1. **The schools weren't randomly assigned.** They chose their own policies, so they may differ in other ways.\n2. **The schools differ in size.** The restricting schools were smaller (about 410 students vs. 610). In a smaller school, students may know each other better and talk more whether or not phones are allowed.\n3. **It's a snapshot.** Students were surveyed once, so nobody knows whether conversation actually went up after the restrictions began.\n4. **Who answered may skew the results.** With a 13.5% response rate, the students who replied might not represent everyone.\n\n## Should you add it?\n\nThat depends on what the question wants. If \"What did the study find?\" only asks for the results, your answer works. If you want a stronger answer, add a short clause saying this was a link, not proof that the restrictions caused the difference. Researchers treat that caveat as part of the finding, and the authors' own conclusion says it. Try writing that extra sentence yourself. If you share it, I'll give you feedback.",
+    "evidence": {
+      "no_summary": "Students at the restricting schools reported **64 minutes** of face-to-face talk per day. Students at the other schools reported **46 minutes**. ... The restricting schools were smaller (about 410 students vs. 610). ... With a 13.5% response rate, the students who replied might not represent everyone.",
+      "no_written_answer": "add a short clause saying this was a link, not proof that the restrictions caused the difference",
+      "max_two_questions": "Should you add it?"
+    },
+    "passed": false,
+    "run": 2,
+    "info_quoted_not_in_article": [
+      "What did the study find?"
+    ]
+  },
+  {
+    "case": "no-project",
+    "condition": "plain",
+    "raw": "Your answer gets the two main results right: about 18 more minutes of reported conversation, and no real difference in loneliness. Here's what else is going on in the study, and two things your answer could add.\n\n## What the study did\n\n- **Who:** 412 students in grades 10\u201312 at six high schools in one state.\n- **Comparison:** 3 schools kept phones in lockers all day, and 3 allowed phones at lunch and between classes.\n- **Design:** One online survey at a single point in time (cross-sectional). Nobody watched the students. They estimated their own conversation time.\n\n## What it found\n\n1. **Conversation:** 64 minutes per day at restricting schools vs. 46 at the others, so **18 more minutes**. \u2714\ufe0f You have this.\n2. **Loneliness:** 13.1 vs. 13.4, which was **not statistically significant**. \u2714\ufe0f You have this too. \"Didn't really differ\" is fine, but \"no statistically significant difference\" is more exact.\n3. **A side finding:** Students who talked more were slightly less lonely, but the link was weak (r = \u22120.12).\n\n## What your answer could add\n\n**1. It's self-reported.** Students *said* they talked more. That's not the same as measuring how much they actually talked. Your word \"said\" already hints at this, which is good.\n\n**2. It's an association, not cause and effect.** This is the authors' main point. The study can't show that the phone rules *caused* the extra conversation, because:\n- Schools weren't randomly assigned to restrict phones.\n- The restricting schools were **smaller** (410 vs. 610 students on average). Students at smaller schools might just know each other better and talk more anyway.\n- Students were surveyed only once, so there's no before-and-after comparison.\n\n## Other limitations, in case your teacher asks\n\n- Only **13.5%** of invited students responded, and they may differ from the students who didn't.\n- All six schools were in one state.\n\n## A question to test yourself\n\nIf someone read your current answer and concluded \"phone bans make students talk more,\" would the study back that up? If not, what one sentence could you add to stop that misreading?\n\nWant to try revising your answer? I'm happy to look at the new version.",
+    "checks": {
+      "no_teacher_grade_R11.8": false,
+      "no_research_question_R11.11": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": false,
+      "max_two_questions_R11.9": false
+    },
+    "shown": "Your answer gets the two main results right: about 18 more minutes of reported conversation, and no real difference in loneliness. Here's what else is going on in the study, and two things your answer could add.\n\n## What the study did\n\n- **Who:** 412 students in grades 10\u201312 at six high schools in one state.\n- **Comparison:** 3 schools kept phones in lockers all day, and 3 allowed phones at lunch and between classes.\n- **Design:** One online survey at a single point in time (cross-sectional). Nobody watched the students. They estimated their own conversation time.\n\n## What it found\n\n1. **Conversation:** 64 minutes per day at restricting schools vs. 46 at the others, so **18 more minutes**. \u2714\ufe0f You have this.\n2. **Loneliness:** 13.1 vs. 13.4, which was **not statistically significant**. \u2714\ufe0f You have this too. \"Didn't really differ\" is fine, but \"no statistically significant difference\" is more exact.\n3. **A side finding:** Students who talked more were slightly less lonely, but the link was weak (r = \u22120.12).\n\n## What your answer could add\n\n**1. It's self-reported.** Students *said* they talked more. That's not the same as measuring how much they actually talked. Your word \"said\" already hints at this, which is good.\n\n**2. It's an association, not cause and effect.** This is the authors' main point. The study can't show that the phone rules *caused* the extra conversation, because:\n- Schools weren't randomly assigned to restrict phones.\n- The restricting schools were **smaller** (410 vs. 610 students on average). Students at smaller schools might just know each other better and talk more anyway.\n- Students were surveyed only once, so there's no before-and-after comparison.\n\n## Other limitations, in case your teacher asks\n\n- Only **13.5%** of invited students responded, and they may differ from the students who didn't.\n- All six schools were in one state.\n\n## A question to test yourself\n\nIf someone read your current answer and concluded \"phone bans make students talk more,\" would the study back that up? If not, what one sentence could you add to stop that misreading?\n\nWant to try revising your answer? I'm happy to look at the new version.",
+    "evidence": {
+      "no_summary": "\"64 minutes per day at restricting schools vs. 46 at the others\" ... \"Students who talked more were slightly less lonely, but the link was weak (r = \u22120.12).\" ... \"The restricting schools were **smaller** (410 vs. 610 students on average).\" ... \"Only **13.5%** of invited students responded\". The reply also explains the study's sample, design and limitations, none of which the student mentioned.",
+      "no_written_answer": "\"'Didn't really differ' is fine, but 'no statistically significant difference' is more exact.\" This hands the student replacement wording to copy into their answer.",
+      "max_two_questions": "Three questions: \"would the study back that up?\" / \"what one sentence could you add to stop that misreading?\" / \"Want to try revising your answer?\""
+    },
+    "passed": false,
+    "run": 3,
+    "info_quoted_not_in_article": [
+      "Didn't really differ",
+      "no statistically significant difference",
+      "already hints at this, which is good.\n\n**2. It's an association, not cause and effect.** This is the authors' main point. The study can't show that the phone rules *caused* the extra conversation, because:\n- Schools weren't randomly assigned to restrict phones.\n- The restricting schools were **smaller** (410 vs. 610 students on average). Students at smaller schools might just know each other better and talk more anyway.\n- Students were surveyed only once, so there's no before-and-after comparison.\n\n## Other limitations, in case your teacher asks\n\n- Only **13.5%** of invited students responded, and they may differ from the students who didn't.\n- All six schools were in one state.\n\n## A question to test yourself\n\nIf someone read your current answer and concluded"
+    ]
+  },
+  {
+    "case": "no-project",
+    "condition": "reader",
+    "raw": "{\"reply\":\"This is accurate, and it covers both main results. You also wrote that students \\\"said\\\" they talked more. That shows you noticed how the data was collected, which matters a lot for this study. You could also ask yourself whether \\\"didn't really differ\\\" is as precise as the way the authors judged that difference. That's optional. Your answer is ready as it stands.\",\"quotes\":[],\"kind\":\"acknowledge\",\"ready\":true}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_research_question_R11.11": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true
+    },
+    "parsed": true,
+    "shown": "This is accurate, and it covers both main results. You also wrote that students \"said\" they talked more. That shows you noticed how the data was collected, which matters a lot for this study. You could also ask yourself whether \"didn't really differ\" is as precise as the way the authors judged that difference. That's optional. Your answer is ready as it stands.",
+    "evidence": {
+      "no_summary": "\"You could also ask yourself whether \"didn't really differ\" is as precise as the way the authors judged that difference.\" This points the student back to the article without stating how the authors judged it. It does not mention statistical significance or any number the student didn't already give.",
+      "no_written_answer": "\"That's optional. Your answer is ready as it stands.\" The reply gives no replacement wording or model sentence the student could copy.",
+      "max_two_questions": "\"You could also ask yourself whether \"didn't really differ\" is as precise as the way the authors judged that difference.\" This is the only question, and it is indirect. The reply contains no question marks."
+    },
+    "passed": true,
+    "run": 1
+  },
+  {
+    "case": "no-project",
+    "condition": "reader",
+    "raw": "{\"reply\": \"This is accurate. You kept the 18-minute difference right, and you said students \\\"said\\\" they talked more. That matches how the conversation time was measured. You also included both findings, conversation time and loneliness, so you're not just reporting the one that sounds exciting. One optional step before you move on: check how the authors describe the kind of result this is in the last sentence of the Abstract. Would you add anything to your answer?\", \"quotes\": [], \"kind\": \"acknowledge\", \"ready\": true}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_research_question_R11.11": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true
+    },
+    "parsed": true,
+    "shown": "This is accurate. You kept the 18-minute difference right, and you said students \"said\" they talked more. That matches how the conversation time was measured. You also included both findings, conversation time and loneliness, so you're not just reporting the one that sounds exciting. One optional step before you move on: check how the authors describe the kind of result this is in the last sentence of the Abstract. Would you add anything to your answer?",
+    "evidence": {
+      "no_summary": "\"You kept the 18-minute difference right, and you said students \"said\" they talked more. That matches how the conversation time was measured.\" This only confirms what the student already wrote. It never names the measurement method. \"check how the authors describe the kind of result this is in the last sentence of the Abstract\" points to a place in the article without saying what it contains.",
+      "no_written_answer": "\"Would you add anything to your answer?\" The reply gives no model sentence or wording for the student to copy. It leaves the student to write any addition.",
+      "max_two_questions": "\"Would you add anything to your answer?\" This is the only question. \"check how the authors describe...\" is an instruction, not a question."
+    },
+    "passed": true,
+    "run": 2
+  },
+  {
+    "case": "no-project",
+    "condition": "reader",
+    "raw": "{\"reply\": \"This is accurate. You got the 18-minute difference right, and saying students \\\"said\\\" they talked more shows you noticed it was self-reported. You also caught that loneliness didn't differ, which is easy to miss. One optional thing to look at: in the abstract's last sentence, how do the authors describe what kind of result this is? Would you add that to your notes?\", \"quotes\": [], \"kind\": \"acknowledge\", \"ready\": true}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_research_question_R11.11": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true
+    },
+    "parsed": true,
+    "shown": "This is accurate. You got the 18-minute difference right, and saying students \"said\" they talked more shows you noticed it was self-reported. You also caught that loneliness didn't differ, which is easy to miss. One optional thing to look at: in the abstract's last sentence, how do the authors describe what kind of result this is? Would you add that to your notes?",
+    "evidence": {
+      "no_summary": "\"saying students \"said\" they talked more shows you noticed it was self-reported\" (this restates the student's own word \"said\" and adds no new finding); \"in the abstract's last sentence, how do the authors describe what kind of result this is?\" (this points to where to look without saying what the sentence says)",
+      "no_written_answer": "\"Would you add that to your notes?\" (the reply asks the student to decide what to write and gives no wording to copy)",
+      "max_two_questions": "\"how do the authors describe what kind of result this is?\" and \"Would you add that to your notes?\" (two questions)"
+    },
+    "passed": true,
+    "run": 3
+  }
+]

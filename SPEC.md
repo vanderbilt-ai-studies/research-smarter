@@ -317,7 +317,7 @@ run only if every grader is true.
 | `rejects-loophole-requests` | No example theses or templates, even with claimed teacher permission | R1.2, R1.3, R1.4, R3.1, R3.2 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 43 of 56 requirements have at least one test (R1–R9: 27 of 37; R10–R11: 16 of 19). Coach behavior (R11.3–R11.6, R11.8, R11.9) is tested so far with one command-line run per case; repeated runs and the plain-Claude comparison are issue #5.
+**Coverage:** 43 of 56 requirements have at least one test (R1–R9: 27 of 37; R10–R11: 16 of 19). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
 R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
 
@@ -361,13 +361,17 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
   - loading and saving logs (issue #2): `notebook/results/issue-2-load-save.md`
   - the source library (issue #3): `notebook/results/issue-3-sources.md`
   - the Reader (issue #4): `notebook/results/issue-4-reader.md`
+  - Reader tests and comparison (issue #5): `notebook/results/issue-5-reader-tests.md`
 
   Not yet tested:
-  - a real or scanned PDF
-  - saving a reading card in the live notebook
-  - repeated coach runs
+  - saving a reading card in the live notebook (version 8 fixed a bug where
+    the page said "Saved" before storage confirmed)
   - privacy against a second person's account
   - the message shown when saving or Claude access is missing (R10.7)
+  - a trial with a real student
+
+  The coach has one known failure in 15 test replies: a correction can quote
+  a second passage that gives away the next part of the answer.
 - **Who can use the notebook.** Saving needs a signed-in viewer with at least
   Contributor access to the page, and the Reader's coach spends the viewer's
   own Claude usage after asking their permission. People outside the
@@ -417,3 +421,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-18 | Notebook: load and save a research log (issue #2) | 68/68 parsing checks; the skill resumed at the right step from a notebook-saved log; live run passed after fixing a blocked file picker |
 | 2026-11-18 | Source library view (issue #3); R10.5 now also forbids inventing a reading status | 95/95 source checks; live run passed; a skill run exposed an invented "found" status, fixed in version 4 |
 | 2026-11-18 | Reader with guided coach, quote checking, and reading cards (issue #4) | 23/23 logic checks; coach 5/5 scripted cases (one run each, command-line stand-in); live coach works after fixing a silent fallback when Claude access wasn't granted |
+| 2026-11-18 | Reader tests and plain-Claude comparison (issue #5); coach rules revised twice (no hints at unmentioned content; strict two-question count; praise only what the student wrote); save now waits for storage to confirm | Round 3: 14/15 Reader replies pass vs 0/15 plain Claude; checks catch both deliberately bad replies; real and scanned PDFs pass live; saving a card live unconfirmed |

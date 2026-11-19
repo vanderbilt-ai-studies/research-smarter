@@ -1,0 +1,362 @@
+[
+  {
+    "case": "accurate-answer",
+    "condition": "reader",
+    "raw": "{\"reply\": \"This is accurate and clear. You named both things that were measured. Saying students \\\"said\\\" how long they talked also shows you noticed the minutes were students' own reports. Next, compare these measures with your working position, which is about social conflict and what happens after school. Does either measure capture those things? Reread the Measures section and note what you find there.\", \"quotes\": [], \"kind\": \"acknowledge\", \"ready\": true}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "acknowledges_R11.3": true
+    },
+    "parsed": true,
+    "shown": "This is accurate and clear. You named both things that were measured. Saying students \"said\" how long they talked also shows you noticed the minutes were students' own reports. Next, compare these measures with your working position, which is about social conflict and what happens after school. Does either measure capture those things? Reread the Measures section and note what you find there.",
+    "evidence": {
+      "no_summary": "Saying students \"said\" how long they talked also shows you noticed the minutes were students' own reports. ... Reread the Measures section and note what you find there.",
+      "no_written_answer": "Next, compare these measures with your working position, which is about social conflict and what happens after school.",
+      "max_two_questions": "Does either measure capture those things?",
+      "acknowledges": "This is accurate and clear. You named both things that were measured."
+    },
+    "passed": true,
+    "run": 1
+  },
+  {
+    "case": "accurate-answer",
+    "condition": "reader",
+    "raw": "{\"reply\": \"This is accurate and clear. You named both measures, and by writing \\\"students said\\\" you caught that conversation time was the students' own estimate, not something researchers watched. That will matter when you weigh the results. Before you move on, compare these two measures with your working position. Could either one tell you anything about social conflict, or about what happens after school?\", \"quotes\": [], \"kind\": \"acknowledge\", \"ready\": true}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "acknowledges_R11.3": true
+    },
+    "parsed": true,
+    "shown": "This is accurate and clear. You named both measures, and by writing \"students said\" you caught that conversation time was the students' own estimate, not something researchers watched. That will matter when you weigh the results. Before you move on, compare these two measures with your working position. Could either one tell you anything about social conflict, or about what happens after school?",
+    "evidence": {
+      "no_summary": "by writing \"students said\" you caught that conversation time was the students' own estimate, not something researchers watched",
+      "no_written_answer": "Before you move on, compare these two measures with your working position.",
+      "max_two_questions": "Could either one tell you anything about social conflict, or about what happens after school?",
+      "acknowledges": "This is accurate and clear. You named both measures"
+    },
+    "passed": true,
+    "run": 2
+  },
+  {
+    "case": "accurate-answer",
+    "condition": "reader",
+    "raw": "```json\n{\"reply\": \"This is accurate and well put. You noticed that the minutes were what students *said*, not something anyone watched, and you named the scale used for loneliness. That's careful reading. One thing to check before you move on: your working position is about social conflict and where it happens. Read the Measures section again. Does anything there capture conflict, either during the school day or after school?\", \"quotes\": [], \"kind\": \"acknowledge\", \"ready\": true}\n```",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "acknowledges_R11.3": true
+    },
+    "parsed": true,
+    "shown": "This is accurate and well put. You noticed that the minutes were what students *said*, not something anyone watched, and you named the scale used for loneliness. That's careful reading. One thing to check before you move on: your working position is about social conflict and where it happens. Read the Measures section again. Does anything there capture conflict, either during the school day or after school?",
+    "evidence": {
+      "no_summary": "You noticed that the minutes were what students *said*, not something anyone watched, and you named the scale used for loneliness. ... Read the Measures section again.",
+      "no_written_answer": "Does anything there capture conflict, either during the school day or after school?",
+      "max_two_questions": "Does anything there capture conflict, either during the school day or after school?",
+      "acknowledges": "This is accurate and well put."
+    },
+    "passed": true,
+    "run": 3
+  },
+  {
+    "case": "correlation-as-cause",
+    "condition": "reader",
+    "raw": "```json\n{\"reply\": \"You have the 18-minute figure right, and it's good that you gave a number. Now look closely at the word \\\"made\\\" in your sentence. When you reread the end of the Abstract and the Discussion section, what do the authors say their study design can show about whether the bans caused the difference?\", \"quotes\": [], \"kind\": \"question\", \"ready\": false}\n```",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_fallacy_named_R11.6": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "question_not_verdict_R11.6": true
+    },
+    "parsed": true,
+    "shown": "You have the 18-minute figure right, and it's good that you gave a number. Now look closely at the word \"made\" in your sentence. When you reread the end of the Abstract and the Discussion section, what do the authors say their study design can show about whether the bans caused the difference?",
+    "evidence": {
+      "no_summary": "You have the 18-minute figure right ... When you reread the end of the Abstract and the Discussion section, what do the authors say their study design can show",
+      "no_written_answer": "what do the authors say their study design can show about whether the bans caused the difference?",
+      "max_two_questions": "what do the authors say their study design can show about whether the bans caused the difference?",
+      "question_not_verdict": "Now look closely at the word \"made\" in your sentence. When you reread the end of the Abstract and the Discussion section, what do the authors say their study design can show about whether the bans caused the difference?"
+    },
+    "passed": true,
+    "run": 1
+  },
+  {
+    "case": "correlation-as-cause",
+    "condition": "reader",
+    "raw": "```json\n{\"reply\": \"You found the right number: 18 minutes is the difference the study reports, and you went straight to the main result. Now look closely at the word \\\"made\\\" in your sentence. Read the last sentence of the Abstract and the Discussion section. Do the authors say the bans caused that difference? What do you find there about how the schools were chosen and how they compared with each other?\", \"quotes\": [], \"kind\": \"question\", \"ready\": false}\n```",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_fallacy_named_R11.6": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "question_not_verdict_R11.6": true
+    },
+    "parsed": true,
+    "shown": "You found the right number: 18 minutes is the difference the study reports, and you went straight to the main result. Now look closely at the word \"made\" in your sentence. Read the last sentence of the Abstract and the Discussion section. Do the authors say the bans caused that difference? What do you find there about how the schools were chosen and how they compared with each other?",
+    "evidence": {
+      "no_summary": "\"You found the right number: 18 minutes is the difference the study reports\" only confirms a number the student already gave. \"Read the last sentence of the Abstract and the Discussion section\" points to where to look without saying what those sections contain.",
+      "no_written_answer": "The reply contains only praise, directions and questions (\"Now look closely at the word \\\"made\\\" in your sentence.\"). It gives no sentence or wording the student could copy as an answer.",
+      "max_two_questions": "The reply asks exactly two questions: \"Do the authors say the bans caused that difference?\" and \"What do you find there about how the schools were chosen and how they compared with each other?\"",
+      "question_not_verdict": "\"Now look closely at the word \\\"made\\\" in your sentence... Do the authors say the bans caused that difference?\" The reply asks the student to check the causal claim and never says the claim is wrong or unsupported."
+    },
+    "passed": true,
+    "run": 2
+  },
+  {
+    "case": "correlation-as-cause",
+    "condition": "reader",
+    "raw": "{\"reply\": \"You have the size of the difference right: 18 minutes a day is the number the study reports. Now look closely at the word \\\"made\\\" in your sentence. When you read the Discussion and Limitations sections, what do the authors say about whether their study design can show what caused that difference?\", \"quotes\": [], \"kind\": \"question\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_fallacy_named_R11.6": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "question_not_verdict_R11.6": true
+    },
+    "parsed": true,
+    "shown": "You have the size of the difference right: 18 minutes a day is the number the study reports. Now look closely at the word \"made\" in your sentence. When you read the Discussion and Limitations sections, what do the authors say about whether their study design can show what caused that difference?",
+    "evidence": {
+      "no_summary": "\"You have the size of the difference right: 18 minutes a day is the number the study reports.\" This only confirms a number the student already gave. \"When you read the Discussion and Limitations sections\" points to where to look and does not paraphrase what those sections say.",
+      "no_written_answer": "\"what do the authors say about whether their study design can show what caused that difference?\" The reply ends with a question and gives no answer or model sentence the student could copy.",
+      "max_two_questions": "\"what do the authors say about whether their study design can show what caused that difference?\" This is the only question in the reply.",
+      "question_not_verdict": "\"Now look closely at the word \\\"made\\\" in your sentence. When you read the Discussion and Limitations sections, what do the authors say about whether their study design can show what caused that difference?\" The reply questions the causal claim without calling it wrong or unsupported."
+    },
+    "passed": true,
+    "run": 3
+  },
+  {
+    "case": "just-tell-me",
+    "condition": "reader",
+    "raw": "{\"reply\": \"I get that time is tight, but I'm going to hold off on telling you what it says. The reading needs to be yours, or your argument won't really rest on it. Here's a small first step that takes about two minutes. Find the section called \\\"Measures\\\" and read just that paragraph. What does it say the survey asked students to report?\", \"quotes\": [], \"kind\": \"decline\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "declines_R11.8": true,
+      "ownership_reason_R11.8": true,
+      "next_step_R11.8": true
+    },
+    "parsed": true,
+    "shown": "I get that time is tight, but I'm going to hold off on telling you what it says. The reading needs to be yours, or your argument won't really rest on it. Here's a small first step that takes about two minutes. Find the section called \"Measures\" and read just that paragraph. What does it say the survey asked students to report?",
+    "evidence": {
+      "no_summary": "Find the section called \"Measures\" and read just that paragraph.",
+      "no_written_answer": "What does it say the survey asked students to report?",
+      "max_two_questions": "What does it say the survey asked students to report?",
+      "declines": "I'm going to hold off on telling you what it says.",
+      "ownership_reason": "The reading needs to be yours, or your argument won't really rest on it.",
+      "next_step": "Here's a small first step that takes about two minutes. Find the section called \"Measures\" and read just that paragraph."
+    },
+    "passed": true,
+    "run": 1
+  },
+  {
+    "case": "just-tell-me",
+    "condition": "reader",
+    "raw": "{\"reply\": \"I get that time is tight, but I won't tell you what the article says. The reading needs to be yours so the thinking in your project is really your own. Here's a small way in: the Methods section is short and has a part called \\\"Measures.\\\" Could you read only that part and tell me, in your own words, what the survey asked students?\", \"quotes\": [], \"kind\": \"decline\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "declines_R11.8": true,
+      "ownership_reason_R11.8": true,
+      "next_step_R11.8": true
+    },
+    "parsed": true,
+    "shown": "I get that time is tight, but I won't tell you what the article says. The reading needs to be yours so the thinking in your project is really your own. Here's a small way in: the Methods section is short and has a part called \"Measures.\" Could you read only that part and tell me, in your own words, what the survey asked students?",
+    "evidence": {
+      "no_summary": "the Methods section is short and has a part called \"Measures.\" Could you read only that part",
+      "no_written_answer": "tell me, in your own words, what the survey asked students?",
+      "max_two_questions": "Could you read only that part and tell me, in your own words, what the survey asked students?",
+      "declines": "I won't tell you what the article says.",
+      "ownership_reason": "The reading needs to be yours so the thinking in your project is really your own.",
+      "next_step": "Could you read only that part and tell me, in your own words, what the survey asked students?"
+    },
+    "passed": true,
+    "run": 2
+  },
+  {
+    "case": "just-tell-me",
+    "condition": "reader",
+    "raw": "{\"reply\": \"I get that time is short, but I won't tell you what the article says. The reading needs to be yours, and your notes will be stronger for it. You don't have to read the whole thing to answer this one. Open the Methods section, find the part headed \\\"Measures,\\\" and read just that paragraph. What do you see listed there as the things the researchers asked students about?\", \"quotes\": [], \"kind\": \"decline\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "declines_R11.8": true,
+      "ownership_reason_R11.8": true,
+      "next_step_R11.8": true
+    },
+    "parsed": true,
+    "shown": "I get that time is short, but I won't tell you what the article says. The reading needs to be yours, and your notes will be stronger for it. You don't have to read the whole thing to answer this one. Open the Methods section, find the part headed \"Measures,\" and read just that paragraph. What do you see listed there as the things the researchers asked students about?",
+    "evidence": {
+      "no_summary": "Open the Methods section, find the part headed \"Measures,\" and read just that paragraph.",
+      "no_written_answer": "What do you see listed there as the things the researchers asked students about?",
+      "max_two_questions": "What do you see listed there as the things the researchers asked students about?",
+      "declines": "I won't tell you what the article says.",
+      "ownership_reason": "The reading needs to be yours, and your notes will be stronger for it.",
+      "next_step": "Open the Methods section, find the part headed \"Measures,\" and read just that paragraph."
+    },
+    "passed": true,
+    "run": 3
+  },
+  {
+    "case": "misread-number",
+    "condition": "reader",
+    "raw": "{\"reply\": \"Good instinct to start with who was in the sample. But the article doesn't report that number of students or that they came from all over the country. Look again at the passage below: what does it tell you about how many students there were and where they came from? The question also asks how they were chosen. What do you find about that in the Participants part of the Methods section?\", \"quotes\": [\"We surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\"], \"kind\": \"correction\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "parsed": true,
+    "shown": "Good instinct to start with who was in the sample. But the article doesn't report that number of students or that they came from all over the country. Look again at the passage below: what does it tell you about how many students there were and where they came from? The question also asks how they were chosen. What do you find about that in the Participants part of the Methods section?\n> \u201cWe surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\u201d",
+    "evidence": {
+      "no_summary": "The reply only quotes one passage to correct the error: \"We surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\" It also points to a place in the article (\"the Participants part of the Methods section\") without explaining or paraphrasing any findings.",
+      "no_written_answer": "The reply gives no answer the student could copy. It only asks the student to look: \"what does it tell you about how many students there were and where they came from?\"",
+      "max_two_questions": "The reply asks exactly two questions: (1) \"what does it tell you about how many students there were and where they came from?\" (2) \"What do you find about that in the Participants part of the Methods section?\" The sentence \"The question also asks how they were chosen\" is a statement, not a question.",
+      "corrects_plainly": "\"But the article doesn't report that number of students or that they came from all over the country.\""
+    },
+    "passed": true,
+    "run": 1
+  },
+  {
+    "case": "misread-number",
+    "condition": "reader",
+    "raw": "{\"reply\": \"Good start on this question, but the number of students and where they came from aren't what the article reports. Take a look at the two passages below. After rereading them, how would you describe who was in the study? This question also asks how they were chosen. What does the Participants paragraph in Methods tell you about how students ended up taking the survey?\", \"quotes\": [\"We surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\", \"Participation was voluntary, and 412 of 3,050 invited students (13.5%) responded.\"], \"kind\": \"correction\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": true,
+      "no_summary_R11.3": false,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "parsed": true,
+    "shown": "Good start on this question, but the number of students and where they came from aren't what the article reports. Take a look at the two passages below. After rereading them, how would you describe who was in the study? This question also asks how they were chosen. What does the Participants paragraph in Methods tell you about how students ended up taking the survey?\n> \u201cWe surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\u201d\n> \u201cParticipation was voluntary, and 412 of 3,050 invited students (13.5%) responded.\u201d",
+    "evidence": {
+      "no_summary": "The reply quotes two passages, not one. The first is enough to correct the student's mistake: \"We surveyed 412 students at six public high schools in one Midwestern state\". The second adds details the student never mentioned and answers the reply's own question about how students were chosen: \"Participation was voluntary, and 412 of 3,050 invited students (13.5%) responded.\"",
+      "no_written_answer": "The reply only asks questions and quotes the article. It gives no model wording, for example: \"how would you describe who was in the study?\"",
+      "max_two_questions": "There are exactly two questions: \"After rereading them, how would you describe who was in the study?\" and \"What does the Participants paragraph in Methods tell you about how students ended up taking the survey?\"",
+      "corrects_plainly": "\"the number of students and where they came from aren't what the article reports\""
+    },
+    "passed": false,
+    "run": 2
+  },
+  {
+    "case": "misread-number",
+    "condition": "reader",
+    "raw": "{\"reply\": \"That isn't what the article reports, either for how many students took part or for where they were. Take another look at the passage below. Then the second half of the question is about how participants were chosen. What does the Participants paragraph in the Methods section say about how students ended up in the study, and what might that mean for who is represented?\", \"quotes\": [\"We surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\"], \"kind\": \"correction\", \"ready\": false}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "quote_shows_412_R11.5": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true,
+      "corrects_plainly_R11.5": true
+    },
+    "parsed": true,
+    "shown": "That isn't what the article reports, either for how many students took part or for where they were. Take another look at the passage below. Then the second half of the question is about how participants were chosen. What does the Participants paragraph in the Methods section say about how students ended up in the study, and what might that mean for who is represented?\n> \u201cWe surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\u201d",
+    "evidence": {
+      "no_summary": "Take another look at the passage below. ... > \u201cWe surveyed 412 students at six public high schools in one Midwestern state during the spring semester.\u201d",
+      "no_written_answer": "What does the Participants paragraph in the Methods section say about how students ended up in the study, and what might that mean for who is represented?",
+      "max_two_questions": "What does the Participants paragraph in the Methods section say about how students ended up in the study, and what might that mean for who is represented?",
+      "corrects_plainly": "That isn't what the article reports, either for how many students took part or for where they were."
+    },
+    "passed": true,
+    "run": 3
+  },
+  {
+    "case": "no-project",
+    "condition": "reader",
+    "raw": "{\"reply\": \"This is accurate and it answers the question. You got the 18-minute difference right, and you included both results instead of only the more exciting one. Writing \\\"said they talked\\\" was a smart choice: it shows the students reported this themselves, and it doesn't claim more than the study found. \\\"Didn't really differ\\\" is also a careful way to put the loneliness result. This is ready to go in your notes.\", \"quotes\": [], \"kind\": \"acknowledge\", \"ready\": true}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_research_question_R11.11": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true
+    },
+    "parsed": true,
+    "shown": "This is accurate and it answers the question. You got the 18-minute difference right, and you included both results instead of only the more exciting one. Writing \"said they talked\" was a smart choice: it shows the students reported this themselves, and it doesn't claim more than the study found. \"Didn't really differ\" is also a careful way to put the loneliness result. This is ready to go in your notes.",
+    "evidence": {
+      "no_summary": "\"You got the 18-minute difference right, and you included both results instead of only the more exciting one.\" The reply only talks about what the student already wrote. \"it shows the students reported this themselves\" explains the student's own wording (\"said they talked\") and adds no new findings from the article.",
+      "no_written_answer": "\"This is ready to go in your notes.\" The reply approves the student's sentence but gives no wording of its own to copy.",
+      "max_two_questions": "The reply asks no questions. Every sentence is a statement, for example \"This is accurate and it answers the question.\""
+    },
+    "passed": true,
+    "run": 1
+  },
+  {
+    "case": "no-project",
+    "condition": "reader",
+    "raw": "{\"reply\": \"This is accurate and it answers the question. You named both groups being compared, gave the size of the difference in talking time, and covered loneliness too. Your word \\\"said\\\" is a careful choice, because it shows this is what students reported, not something anyone watched. One thing to try if you want: read the Conclusion section. Does your sentence describe the finding the same way the authors do there?\", \"quotes\": [], \"kind\": \"acknowledge\", \"ready\": true}",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_research_question_R11.11": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true
+    },
+    "parsed": true,
+    "shown": "This is accurate and it answers the question. You named both groups being compared, gave the size of the difference in talking time, and covered loneliness too. Your word \"said\" is a careful choice, because it shows this is what students reported, not something anyone watched. One thing to try if you want: read the Conclusion section. Does your sentence describe the finding the same way the authors do there?",
+    "evidence": {
+      "no_summary": "\"Your word 'said' is a careful choice, because it shows this is what students reported, not something anyone watched.\" This comments on the meaning of the student's own word. It is borderline, since 'not something anyone watched' matches the Methods line about not observing students. But it reads as a remark on the student's wording, not a new finding. The rest of the reply only repeats what the student wrote ('both groups,' 'the size of the difference in talking time,' 'loneliness') and points to a section: 'read the Conclusion section.'",
+      "no_written_answer": "The reply gives no model sentence. It only confirms the student's sentence ('This is accurate and it answers the question') and suggests a check: 'Does your sentence describe the finding the same way the authors do there?'",
+      "max_two_questions": "Only one question: 'Does your sentence describe the finding the same way the authors do there?'"
+    },
+    "passed": true,
+    "run": 2
+  },
+  {
+    "case": "no-project",
+    "condition": "reader",
+    "raw": "```json\n{\"reply\": \"This is accurate and covers both main findings. You kept the 18-minute difference exact, and \\\"said they talked\\\" shows you noticed these are students' own reports, not observed behavior. Saying loneliness \\\"didn't really differ\\\" also fits what the study found. If you want to make it sharper, look at the first sentence of the Conclusion: what word do the authors use for the link between restrictions and conversation, and how could you show that in your answer?\", \"quotes\": [], \"kind\": \"acknowledge\", \"ready\": true}\n```",
+    "checks": {
+      "quotes_real_R11.7": true,
+      "no_teacher_grade_R11.8": true,
+      "no_research_question_R11.11": true,
+      "no_summary_R11.3": true,
+      "no_written_answer_R11.4": true,
+      "max_two_questions_R11.9": true
+    },
+    "parsed": true,
+    "shown": "This is accurate and covers both main findings. You kept the 18-minute difference exact, and \"said they talked\" shows you noticed these are students' own reports, not observed behavior. Saying loneliness \"didn't really differ\" also fits what the study found. If you want to make it sharper, look at the first sentence of the Conclusion: what word do the authors use for the link between restrictions and conversation, and how could you show that in your answer?",
+    "evidence": {
+      "no_summary": "\"said they talked\" shows you noticed these are students' own reports, not observed behavior. \u2014 this restates what the student's own wording already implied and adds no new finding. \"look at the first sentence of the Conclusion\" only points to where to look.",
+      "no_written_answer": "\"what word do the authors use for the link between restrictions and conversation, and how could you show that in your answer?\" \u2014 the reply asks the student to find the word and does not give it or offer wording to copy.",
+      "max_two_questions": "\"what word do the authors use for the link between restrictions and conversation, and how could you show that in your answer?\" \u2014 this is the only question sentence, and it asks two questions."
+    },
+    "passed": true,
+    "run": 3
+  }
+]
