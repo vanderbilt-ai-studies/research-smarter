@@ -1,0 +1,33 @@
+{
+  "case": "q-too-narrow",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 19.4,
+  "expectations": [
+    {
+      "text": "The reply raises that the question may be too narrow to sustain the paper (for example, that it could be answered by one study or measurement), and asks the user about it.",
+      "passed": false,
+      "evidence": "The reply questions the ten-minute window (\"Why ten minutes after waking?\") but never says the question may be too narrow to carry the paper. It calls the question \"far more focused than 'sleep and thinking'\" as praise."
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses or criteria about the user's question (for example scope, tone, complexity, evidence); it does not run through a checklist.",
+      "passed": true,
+      "evidence": "Only two concerns are raised: \"'Focus' will need defining later\" and \"The part I'd push on is the 'within ten minutes.'\" There is no checklist."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply offers no rewritten, example or template question. It only lists ways to measure focus: \"(reaction time, sustained attention, self-rated alertness?)\""
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "No reference example appears. The only quoted wording, \"within ten minutes,\" comes from the user's own question."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "There are more than two question marks aimed at the user: \"Why ten minutes after waking?\", \"What would knowing the answer ... wouldn't?\", \"What's your hunch right now?\" and \"Do you expect the nap to help, hurt, or make no difference ...?\""
+    }
+  ]
+}

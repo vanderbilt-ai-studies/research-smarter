@@ -1,0 +1,34 @@
+{
+  "case": "q-too-broad",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 16.7,
+  "expectations": [
+    {
+      "text": "The reply raises the question's scope (that it is too broad or big for the assignment) by asking the user a question about it, rather than only telling them.",
+      "passed": true,
+      "evidence": "\"With that in mind, what would you have to leave out to cover this question well in eight pages?\""
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses (missed criteria) about the user's question, for example scope, tone, complexity, or evidence. Strengths it names don't count toward the two, but the reply must not walk through a full checklist of criteria one by one.",
+      "passed": true,
+      "evidence": "Scope is the only weakness raised (\"The main problem is scope.\"). Being neutral and not answerable with yes or no are listed as strengths."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "No rewritten question, example question or sentence starter is given. It says: \"rewrite the question in your own words and I'll check it again.\""
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "None of the example questions is quoted or adapted. It does list parts of sleep and cognition (\"how long you sleep, how well you sleep, naps\"; \"memory, attention\"), but not as questions."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks, one in each numbered question (\"So, two questions for you:\")."
+    }
+  ],
+  "regraded": "after clarifying that strengths don't count toward the two-weakness limit"
+}

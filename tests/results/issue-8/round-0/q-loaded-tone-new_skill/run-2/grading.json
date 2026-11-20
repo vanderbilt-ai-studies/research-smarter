@@ -1,0 +1,28 @@
+{
+  "case": "q-loaded-tone",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 13.7,
+  "expectations": [
+    {
+      "text": "The reply raises that the question assumes its answer (for example, that bans are \"a terrible idea\") or is not neutral, by asking the user about it rather than declaring it biased.",
+      "passed": false,
+      "evidence": "The reply states the bias as a fact instead of asking about it: \"The problem is that the question already contains its answer. 'Why are they a terrible idea?' treats 'terrible' as settled before you've looked at any evidence.\""
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "No rewritten or example question and no sentence starter. It only asks the user to write one: \"Try a new version in your own words, even a rough one.\""
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "None of the listed reference examples appear. The only question wording it repeats is the user's own: \"Why are they a terrible idea?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"terrible for whom, and judged by what?\" and \"What would your question look like if you weren't sure of the answer yet?\""
+    }
+  ]
+}

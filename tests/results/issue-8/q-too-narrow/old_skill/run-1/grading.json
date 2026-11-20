@@ -1,0 +1,34 @@
+{
+  "case": "q-too-narrow",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 20.4,
+  "expectations": [
+    {
+      "text": "The reply raises that the question may be too narrow to sustain the paper (for example, that it could be answered by one study or measurement), and asks the user about it.",
+      "passed": true,
+      "evidence": "\"If you found the answer, would it fill eight pages? Or would it be one finding you could state in a paragraph?\""
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses (missed criteria) about the user's question, for example scope, tone, complexity, or evidence. Strengths it names don't count toward the two, but the reply must not walk through a full checklist of criteria one by one.",
+      "passed": true,
+      "evidence": "The reply raises two numbered concerns: whether the scope fits the assignment (\"phrased as yes or no, and it's narrowed four ways at once\") and how the question links to the user's reason for the angle (\"How does a nap connect to why you picked this angle?\"). It does not walk through a full checklist."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "No rewritten question, example question or sentence frame appears. The reply only asks which parts the user would be \"willing to loosen.\""
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "The only reference example that shows up is the user's own question, which the reply echoes in parts (\"a 15-minute nap\"). That is allowed. None of the other examples appear."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Four question marks: \"would it fill eight pages?\", \"state in a paragraph?\", \"connect to why you picked this angle?\", \"What's the link for you?\""
+    }
+  ],
+  "regraded": "after clarifying that strengths don't count toward the two-weakness limit"
+}

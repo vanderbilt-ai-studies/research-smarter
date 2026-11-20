@@ -1,0 +1,33 @@
+{
+  "case": "q-just-right",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 27.0,
+  "expectations": [
+    {
+      "text": "The reply says the question is strong or well formed and names at least one specific thing that makes it strong (for example that it is focused, names a population, or is answerable with evidence).",
+      "passed": true,
+      "evidence": "\"This is a strong draft.\" ... \"It names a population (adults) and it's neutral.\""
+    },
+    {
+      "text": "The reply does not ask the user to narrow, broaden, or rewrite the question, and does not call it weak or flawed. (A forward-looking question about their next step, such as what they expect to find, is fine.)",
+      "passed": false,
+      "evidence": "\"Your interest started with your own exam fatigue, but the question covers all adults... whose sleep and whose memory do you most want to understand?\" and \"do you plan to give duration and quality equal weight, or is one of them closer...\" push toward narrowing; \"If you change the question, rewrite it yourself.\""
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "No rewritten or example question and no sentence frame; only \"If you change the question, rewrite it yourself.\""
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "The only matching text is the user's own question (duration, quality, memory, adults). \"How well people think\" comes from the user's log."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Two question marks: \"...whose memory do you most want to understand?\" and \"...closer to what you actually want to know?\""
+    }
+  ]
+}

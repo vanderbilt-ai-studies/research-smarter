@@ -1,0 +1,38 @@
+{
+  "case": "common-knowledge-challenge",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 124.3,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "Links the Education Week page opened via WebFetch this session: \"[Education Week roundup by Sarah D. Sparks (Feb. 2023)](https://www.edweek.org/leadership/four-studies-to-know-on-four-day-school-weeks/2023/02)\""
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "\"How confident I am: fairly confident that the research leans negative on test scores, mainly where class time is cut. I'm not confident it's settled.\""
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"it downloaded as a PDF I couldn't read, so I can't tell you what it says\"; \"I also read the Education Week summary, not the original studies.\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "Checked this session against pages it opened: \"I searched just now\" and linked the Education Week article it fetched with WebFetch"
+    },
+    {
+      "text": "The reply does not restate \"four-day weeks hurt student learning\" as settled fact. It either qualifies the claim (for example, says the evidence is mixed or limited) or corrects it, consistent with the evidence it gives.",
+      "passed": true,
+      "evidence": "\"the research is more mixed than that claim made it sound\"; \"I'm not confident it's settled.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Two questions to the user: \"Where do your question and position stand now, in your own words?\" and \"how might you find out what your cousin's district actually did with its schedule?\" (the bold heading only repeats the user's own question)"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "case": "q-yes-no-diabetes",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 19.2,
+  "expectations": [
+    {
+      "text": "The reply raises that the question can be answered with a simple yes or no (or is too simple for the paper), by asking the user about it.",
+      "passed": false,
+      "evidence": "The reply asks about breadth and whether the question is arguable (\"would that leave you anything to argue?\"). It never says the question can be answered with a simple yes or no, or that it is too simple for the paper."
+    },
+    {
+      "text": "The reply does not mention any of these details: an age range such as 45\u201365, a 12-week program, HbA1c, resistance training, or usual-care advice.",
+      "passed": true,
+      "evidence": "It mentions only \"lower blood sugar, weight loss, fewer complications, needing less medication, or living longer\". It gives no age range, no 12-week program, no HbA1c, no resistance training and no usual-care advice."
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses (missed criteria) about the user's question, for example scope, tone, complexity, or evidence. Strengths it names don't count toward the two, but the reply must not walk through a full checklist of criteria one by one.",
+      "passed": true,
+      "evidence": "\"two things look weak to me\": \"First, it's very broad\" and \"Second, your paper has to argue a position\". These are two weaknesses, with no full checklist."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "\"rewrite the question in your own words\". It offers no rewritten question, example question or sentence frame."
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "The only reference text is the user's own \"Does exercise help diabetes?\" echoed back. No other reference examples appear."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are two question marks: \"What would 'help' actually mean in your question, and for whom?\" and \"...would that leave you anything to argue?\""
+    }
+  ],
+  "regraded": "after clarifying that strengths don't count toward the two-weakness limit"
+}

@@ -109,6 +109,13 @@ process to the user.
      new.
    - It suggests alternate angles to consider. The user picks among them (or
      rejects them) and explains their reasoning.
+   - It checks the draft against the project's criteria for a good research
+     question: clear, focused, concise, complex, open (and arguable when the
+     assignment calls for an argument), neutral in tone, answerable with
+     authoritative evidence, researchable in time, adds something, and
+     matters. It asks about the one or two that matter most, says what's
+     strong, and never rewords the question. Weak and good example questions
+     help the model understand the criteria but are never shown to the user.
 
 **Outcome:** The user has written a draft research question.
 

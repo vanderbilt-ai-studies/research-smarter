@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 113.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "**Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "The briefing has four labeled sections: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\" and \"**Open questions**\"."
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "Counting the four sections gives roughly 380\u2013400 words, which is inside the 300\u2013500 range."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved an interactive map of six possible angles at .../mind-map.html\". The tool log shows the HTML was built from templates/mind-map.html by replacing __MIND_MAP_DATA__."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "The reply says there are \"six possible angles\". Every branch shown has 2 or 3 children (for example, Student achievement has 3 and Teachers has 2). Every angle shown has a saturation value between 0 and 1 (for example, \"saturation\": 0.85). The file excerpt is cut off, so the last branches could not be checked."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "The labels are short topics, for example \"Student achievement\", \"Budgets and cost savings\" and \"Districts that switched back\". None is phrased as a question."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "\"Take some time with the map, then tell me: which direction pulls you in\". The reply recommends no angle."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every link visible in the reply and the map was fetched this session: k12dive, edweek, chalkbeat and ncsl. The map excerpt is cut off, so any links after that point could not be checked."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"which direction pulls you in, and why that one rather than the others?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The reply asks only one compound question, about which direction and why. \"You can also ask me how I know...\" is an offer, not a question."
+    }
+  ]
+}

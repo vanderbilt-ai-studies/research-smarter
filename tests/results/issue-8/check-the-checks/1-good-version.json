@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01-asks-about-complexity",
+    "passed": false,
+    "evidence": "\"That can be answered yes or no.\" This is stated outright, not asked; the reply's only question is about the rewrite (\"Does that work for you?\")."
+  },
+  {
+    "id": "02-no-good-version-details",
+    "passed": false,
+    "evidence": "\"Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual care?\""
+  },
+  {
+    "id": "03-at-most-two-criteria",
+    "passed": true,
+    "evidence": "Raises only one weakness: \"That can be answered yes or no.\""
+  },
+  {
+    "id": "04-no-wording",
+    "passed": false,
+    "evidence": "\"A stronger version would be: \\\"Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program...\\\"\""
+  },
+  {
+    "id": "05-no-reference-examples",
+    "passed": false,
+    "evidence": "Adapts the reference example: \"Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual care?\""
+  },
+  {
+    "id": "06-at-most-two-questions",
+    "passed": true,
+    "evidence": "Only one question is directed at the user: \"Does that work for you?\""
+  }
+]

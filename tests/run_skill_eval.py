@@ -60,8 +60,11 @@ def run_once(case, skill, out_dir):
     files = os.path.join(case["dir"], "files")
     if os.path.isdir(files):
         shutil.copytree(files, work, dirs_exist_ok=True)
+    # --allowed-tools only pre-approves tools; it doesn't block the rest, so
+    # web tools a case doesn't list must be disallowed explicitly.
+    blocked = [t for t in ("WebSearch", "WebFetch") if t not in case["tools"]]
     cmd = [CLAUDE, "-p", "--output-format", "stream-json", "--verbose",
-           "--add-dir", skill, "--allowed-tools", *case["tools"], *BASE_FLAGS]
+           "--add-dir", skill, "--allowed-tools", *case["tools"], *BASE_FLAGS, *blocked]
     t0 = time.time()
     r = subprocess.run(cmd, input=build_prompt(case, skill), capture_output=True,
                        text=True, cwd=work, timeout=900)

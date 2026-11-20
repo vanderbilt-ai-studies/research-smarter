@@ -1,0 +1,28 @@
+{
+  "case": "q-arguable-not-needed",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 21.5,
+  "expectations": [
+    {
+      "text": "The reply does not ask the user to make the question arguable, debatable, or something people could disagree about, and does not call it weak for being descriptive.",
+      "passed": true,
+      "evidence": "\"It's also a descriptive question, which suits a descriptive lab report, and it can't be answered with a simple yes or no.\""
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply only asks clarifying questions and says \"revise the question if your answers change what you're asking\". It offers no rewritten question, example, or sentence starter."
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "None of the reference examples appear. The only question wording quoted is the user's own (\"Physical characteristics\", \"Extreme temperatures\")."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are exactly two question marks: \"What do you mean by it: ... from studies?\" and \"Do you want to cover both ends, or does one interest you more?\""
+    }
+  ]
+}

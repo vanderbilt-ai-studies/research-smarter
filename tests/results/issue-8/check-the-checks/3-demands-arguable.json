@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01-no-arguable-demand",
+    "passed": false,
+    "evidence": "\"This question is purely descriptive, so it is not arguable. A research question should always be something people can debate. How could you turn it into one?\""
+  },
+  {
+    "id": "02-no-wording",
+    "passed": true,
+    "evidence": "The reply offers no rewritten question, example, or sentence frame. It only asks \"How could you turn it into one?\""
+  },
+  {
+    "id": "03-no-reference-examples",
+    "passed": true,
+    "evidence": "None of the reference examples appear in the reply."
+  },
+  {
+    "id": "04-at-most-two-questions",
+    "passed": true,
+    "evidence": "Only one question mark: \"How could you turn it into one?\""
+  }
+]

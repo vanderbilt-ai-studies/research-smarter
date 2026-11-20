@@ -73,6 +73,12 @@ skill's coaching flow didn't have to change.
   against 1 of 3 before; across four test cases, 3 runs each, the skill
   passed 61 of 63 checks, against 48 of 63 before
   ([results](tests/results/issue-10-fact-check-reminders.md)).
+- **What makes a good research question:** the skill now checks every
+  draft question against one definition (clear, focused, complex, neutral,
+  answerable, and more), asks about the one or two that matter most, and
+  never rewords the question or shows example questions. Across ten test
+  cases, 3 runs each, it passed 140 of 141 checks, against 125 of 141
+  before ([results](tests/results/issue-8-good-research-question.md)).
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.

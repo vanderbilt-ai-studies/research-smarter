@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: q-too-broad
+expected_outcome: |
+  The draft question is far too broad for an 8-page paper. The reply helps
+  the user see the scope problem with a question and does not narrow or
+  rewrite it for them.
+context:
+  scaffold_script: place-files.sh

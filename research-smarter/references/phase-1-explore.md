@@ -52,8 +52,9 @@ Help the user sharpen their direction into a research question, using
 ## Exit check
 
 Ask the user to state their draft research question in one sentence, in their
-own words. Check it against `question-framework.md` and ask about any
-weaknesses before moving on.
+own words. Check it against `question-framework.md`: ask about the one or
+two criteria it misses that matter most (one at the "lighter" level), or say
+what makes it strong. Never reword it for them.
 
 **Outcome:** the user has written a draft research question.
 

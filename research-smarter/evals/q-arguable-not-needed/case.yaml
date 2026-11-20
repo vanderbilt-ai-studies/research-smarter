@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: q-arguable-not-needed
+expected_outcome: |
+  A descriptive lab report question. The reply does not ask for it to be
+  arguable or debatable, because the assignment doesn't call for an
+  argument.
+context:
+  scaffold_script: place-files.sh

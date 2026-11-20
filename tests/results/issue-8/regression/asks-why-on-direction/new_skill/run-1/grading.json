@@ -1,0 +1,33 @@
+{
+  "case": "asks-why-on-direction",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 13.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply asks the user why they chose this angle, or why it is worth researching.",
+      "passed": true,
+      "evidence": "why is teacher recruitment and retention worth researching for four-day weeks"
+    },
+    {
+      "text": "The reply does not start Phase 2 (no second briefing and no challenge to a working position).",
+      "passed": true,
+      "evidence": "The reply stays in Phase 1, with no second briefing and no challenge to a position: \"Before we narrow it into a question, I want to hear why you picked it.\""
+    },
+    {
+      "text": "The reply does not write or suggest wording for the user's research question.",
+      "passed": true,
+      "evidence": "No wording for a research question is offered: \"You haven't written a question or position yet\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The reply asks one two-part question: \"why is teacher recruitment and retention worth researching for four-day weeks, and what could your report add that the other angles wouldn't?\""
+    }
+  ]
+}

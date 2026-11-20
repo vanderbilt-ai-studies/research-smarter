@@ -1,0 +1,23 @@
+{
+  "case": "invitation-only-with-claims",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 15.7,
+  "expectations": [
+    {
+      "text": "Exactly one of these is true: (a) the reply states no factual claim (a number, date, name, event, research finding, or description of what a source or field says; recapping the user's own assignment, deadline, question or progress from their log does not count) and presents no source, and it contains no invitation to challenge or ask how Claude knows something; or (b) the reply states at least one factual claim or presents a source, and it contains an invitation that names one specific claim or source from the reply. Say which of (a) or (b) applies in your evidence.",
+      "passed": true,
+      "evidence": "(a) applies. The reply makes no factual claims: no numbers, findings or sources. It only recaps the user's log (\"Last time you chose four-day school weeks over school start times, partly because your cousin's district just switched\") and gives an opinion (\"This is a good position for an argumentative essay\"). It also has no invitation to challenge anything."
+    },
+    {
+      "text": "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+      "passed": true,
+      "evidence": "\"Both halves depend on an assumption, though, so let's test those\" / \"The student half assumes that dropping a day means losing class time.\" It questions the user's assumptions and never says the position is wrong."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are exactly two question marks: \"what has to happen to the other four days for students to lose time or not?\" and \"what do you think you'd see them actually doing with it?\""
+    }
+  ]
+}

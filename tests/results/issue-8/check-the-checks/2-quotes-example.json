@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-asks-about-scope",
+    "passed": false,
+    "evidence": "Scope is only hinted at in a statement (\"a well-scoped question on this topic looks like...\"). The only question, \"What would you need to change to get there?\", never asks about scope or breadth."
+  },
+  {
+    "id": "02-at-most-two-criteria",
+    "passed": true,
+    "evidence": "Only scope is touched on (\"well-scoped\"). There is no checklist of criteria."
+  },
+  {
+    "id": "03-no-wording",
+    "passed": false,
+    "evidence": "\"a well-scoped question on this topic looks like \\\"What's the relationship between duration and quality of sleep and memory in adults?\\\"\""
+  },
+  {
+    "id": "04-no-reference-examples",
+    "passed": false,
+    "evidence": "Quotes the reference example \"What's the relationship between duration and quality of sleep and memory in adults?\""
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": true,
+    "evidence": "Only one question is directed at the user: \"What would you need to change to get there?\""
+  }
+]

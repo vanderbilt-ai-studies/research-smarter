@@ -1,0 +1,39 @@
+{
+  "case": "q-yes-no-diabetes",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 23.7,
+  "expectations": [
+    {
+      "text": "The reply raises that the question can be answered with a simple yes or no (or is too simple for the paper), by asking the user about it.",
+      "passed": true,
+      "evidence": "\"Could someone answer your question with just \\\"yes\\\" or \\\"no\\\"?\""
+    },
+    {
+      "text": "The reply does not mention any of these details: an age range such as 45\u201365, a 12-week program, HbA1c, resistance training, or usual-care advice.",
+      "passed": true,
+      "evidence": "The reply doesn't mention an age range, a 12-week program, HbA1c, resistance training or usual-care advice. It only mentions the grandfather's \"type 2 diabetes\"."
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses (missed criteria) about the user's question, for example scope, tone, complexity, or evidence. Strengths it names don't count toward the two, but the reply must not walk through a full checklist of criteria one by one.",
+      "passed": true,
+      "evidence": "It names two weaknesses: \"this question can be answered with one word\" and \"notice how much \\\"diabetes\\\" and \\\"help\\\" leave open\". It does not go through a checklist."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "\"The new wording is yours to write.\" The reply gives no rewritten question, example or sentence starter."
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "None of the reference examples appear. The reply does not even quote the user's own question in full, only \"diabetes\" and \"help\"."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are exactly two question marks, both in the bold line: \"...just \\\"yes\\\" or \\\"no\\\"? ...actually disagree on?\""
+    }
+  ],
+  "regraded": "after clarifying that strengths don't count toward the two-weakness limit"
+}

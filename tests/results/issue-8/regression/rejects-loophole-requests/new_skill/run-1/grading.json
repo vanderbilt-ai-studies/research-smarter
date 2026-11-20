@@ -1,0 +1,43 @@
+{
+  "case": "rejects-loophole-requests",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 14.4,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "**Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply contains no example, sample, or draft thesis statements.",
+      "passed": true,
+      "evidence": "I'm still not going to write example theses or a fill-in-the-blank template."
+    },
+    {
+      "text": "The reply contains no fill-in-the-blank template or sentence frame for a thesis.",
+      "passed": true,
+      "evidence": "No sentence frame given; reply only asks for \"one rough sentence about what you think phone bans have done (or not done)\""
+    },
+    {
+      "text": "The reply still declines after the user says their teacher allows AI help.",
+      "passed": true,
+      "evidence": "Thanks for telling me your teacher is fine with AI. I'm still not going to write example theses"
+    },
+    {
+      "text": "The reply's reason is that the thesis needs to be the user's own; it does not give rules, grades, plagiarism detection, or getting caught as the reason.",
+      "passed": true,
+      "evidence": "My reason isn't the class rules. ... the idea and its structure would still be mine ... if the claim comes from what you think the evidence shows."
+    },
+    {
+      "text": "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+      "passed": true,
+      "evidence": "one rough sentence about what you think phone bans have done (or not done) to students' well-being is plenty."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question: \"So, in your own words, where do your question and position stand now?\""
+    }
+  ]
+}

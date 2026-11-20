@@ -302,6 +302,53 @@ deadline, question, or progress) is not a factual claim.
 - **R11.11** The Reader also works with no project loaded, for a student who
   just wants help reading one article.
 
+### R12 · What makes a good research question
+
+The skill checks every draft and final research question against one
+definition, kept in `research-smarter/references/question-framework.md`. A
+good research question is:
+
+- **clear:** someone else can understand its purpose without more
+  explanation;
+- **focused:** narrow enough to answer thoroughly in the space and time the
+  assignment allows;
+- **concise:** said in as few words as it needs;
+- **complex:** not answerable with yes or no; answering it takes synthesis
+  and analysis of sources;
+- **open:** its answer isn't settled or one lookup away; and **arguable**
+  (thoughtful people could reach different answers) when the assignment
+  calls for an argument;
+- **neutral in tone:** it doesn't assume its own answer;
+- **answerable with authoritative evidence;**
+- **researchable in the time available;**
+- **adds something,** and **matters** (the user can say why, and to whom).
+
+- **R12.1** When the user states a research question (the Phase 1 exit
+  check, the final question in Phase 2, or a question they arrive with,
+  R6.4), the response asks about at most two criteria the question misses,
+  choosing the ones that matter most. It never supplies wording: no
+  narrower, rewritten, or "improved" version (R1.2).
+- **R12.2** If the question meets the criteria, the response says which
+  ones it meets and doesn't invent a weakness (R4.5).
+- **R12.3** "Focused," "complex enough," and "researchable in the time
+  available" are judged from the assignment intake recorded (its kind,
+  length, and deadline), never from the user's age, grade, or school
+  (R3.3).
+- **R12.4** "Arguable" is required only when the assignment calls for an
+  argument. When it does and the question isn't arguable, the response says
+  so plainly and asks the user about it. When it doesn't (for example, a
+  descriptive lab report), the response doesn't ask for the question to be
+  debatable.
+- **R12.5** The skill reads the question as descriptive, comparative,
+  correlational, or causal. When the user's plan or evidence doesn't fit
+  that type (for example, a causal question with only correlational
+  evidence), the response asks about it.
+- **R12.6** No response contains, quotes, or adapts any example research
+  question from `question-framework.md`. Those examples are there to show
+  the model what the criteria look like, not for the user.
+- **R12.7** At the "lighter" challenge level, the response raises at most
+  one missed criterion.
+
 ---
 
 ## 3. Acceptance criteria
@@ -378,11 +425,21 @@ run only if every grader is true.
 | `reminder-at-phase-start` | Beginning Phase 2: a fact-check reminder naming what and how, combined with the invitation | R3.2, R9.2, R9.9, R9.10, R9.11 |
 | `source-list-reminder` | A Phase 4 source list: the same reminder, combined with the invitation | R3.2, R9.2, R9.9, R9.10, R9.11 |
 | `no-reminder-mid-phase` | A mid-phase reply has no general reminder | R3.2, R4.4, R9.2 |
+| `q-too-broad` | A too-broad draft (literature review): scope raised as a question, no rewording | R1.2, R3.2, R12.1, R12.6 |
+| `q-too-narrow` | A too-narrow draft: asks whether it can sustain the paper | R1.2, R3.2, R12.1, R12.6 |
+| `q-just-right` | A well-scoped draft: says what's strong, invents no weakness | R1.2, R3.2, R12.2, R12.6 |
+| `q-yes-no-diabetes` | A yes/no draft on a reference example's own topic: asks about complexity, none of the example's details | R1.2, R3.2, R12.1, R12.6 |
+| `q-arguable-missing` | An argumentative paper with a descriptive question: says an arguable question is needed and asks | R1.2, R3.2, R12.4 |
+| `q-arguable-not-needed` | A descriptive lab report question: no demand that it be debatable | R1.2, R3.2, R12.4 |
+| `q-causal-correlational` | A causal question with a correlational plan: asks what evidence could show cause | R1.2, R3.2, R4.4, R12.5 |
+| `q-loaded-tone` | A question that assumes its answer: asks about it rather than announcing it | R1.2, R3.2, R4.4, R12.1 |
+| `q-no-evidence` | A counterfactual no evidence could answer: asks what evidence could | R1.2, R3.2, R12.1 |
+| `q-lighter-just-tell-me` | A lighter project asking for a verdict: at most one missed criterion | R1.2, R3.2, R12.7 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 51 of 64 requirements have at least one test (R1–R9: 35 of 45; R10–R11: 16 of 19). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
+**Coverage:** 57 of 71 requirements have at least one test (R1–R9: 35 of 45; R10–R11: 16 of 19; R12: 6 of 7). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
-R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
+R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
 
 ### Environment and tooling constraints
 
@@ -437,9 +494,17 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
   graded the runs. One call was borderline: in `rejects-loophole-requests`,
   the reply with the skill asked the user to restate their question and then
   asked one more question, which was counted as two.
-- **Question framework is provisional.**
-  `research-smarter/references/question-framework.md` uses general criteria
-  until the project's own frameworks (tracked as GitHub issues) replace it.
+- **`no-search-tool` can't be tested faithfully yet.** Until issue #8, the
+  runner (`tests/run_skill_eval.py`) didn't block web search for this case,
+  so runs in issues #6, #14 and #10 could search, and some did. The runner
+  now blocks WebSearch and WebFetch when a case doesn't allow them, but the
+  case still allows Bash (for the mind map file), and Claude then searched
+  through `curl` to OpenAlex (3 of 3 runs). Testing "no search" needs an
+  environment with no network access.
+- **Discipline frameworks still to come.**
+  `research-smarter/references/question-framework.md` has the project's own
+  criteria (R12, issue #8); frameworks for building questions in particular
+  disciplines (issue #7) aren't in it yet.
 - **Notebook and Reader built; Reader not fully tested.** Each piece has its
   own results file:
   - feasibility (issue #1): `notebook/results/feasibility.md`
@@ -510,3 +575,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-19 | "Ask it how it knows" (issue #6): R9.4–R9.8 added; principle 5 rewritten; six new test cases; new runner `tests/run_skill_eval.py`. Two revision rounds: say confidence in plain words; the invitation never replaces the question after a correction. Clarified that recapping the user's own log isn't a factual claim | New cases: 72/81 checks with the new skill vs 54/81 with the current skill (3 runs each); invitations 12/12 vs 0/12 in briefings and source lists. Existing cases, 1 run each: 64/68 vs 62/68. Checks catch all 4 deliberately bad replies |
 | 2026-11-20 | Three problems found in #6 (issue #14): open every link, including DOIs, before giving it (source lists and the mind map); the restatement on resume is one question and counts toward two; every question counts, including "consider" lists and multi-part questions; no sentence starters for the user to finish; test deadlines moved to May-June 2027 | All 16 cases, 3 runs each: 282/285 checks, 45/48 runs pass every check. Unopened links in source lists: 0 of 3 runs (was 6 of 6). Checks catch both deliberately bad replies |
 | 2026-11-20 | Fact-check reminders (issue #10): R9.2 rewritten on purpose (a reminder now begins each phase and accompanies every source list); R9.9–R9.11 added (names what and how, at most two sentences, combined with the #6 invitation). One revision round: no reminder when wrapping up a phase. Clarified two graders that an "ask me how I know" invitation is not a reminder; `end-of-phase4-disclosure` grader 07 rewritten to the new rule | New cases, 3 runs each, after the revision: 61/63 checks with the new skill vs 48/63 with the #14 skill; phase-start reminders 15/15 vs 6/15. Other 15 cases, 1 run each: 13 pass every check (misses: an unopened DOI and four questions in a source list; planning skipped once, not repeated in 3 more runs). Checks catch all 4 deliberately bad replies |
+| 2026-11-20 | What makes a good research question (issue #8): new R12 (the definition plus R12.1–R12.7); `question-framework.md` rewritten with the criteria, a question to ask for each, the question types, and weak/good examples marked for the model only; Phase 1 and 2 exit checks point to it. One revision round: ask instead of announcing a problem; don't push an already-focused question narrower. Test fixes: the sleep cases became a literature review (an argumentative paper made the "just right" question rightly fail "arguable"); a two-weakness check stopped counting strengths. Runner now blocks web tools a case doesn't allow | Ten new cases, 3 runs each: 140/141 checks with the new skill vs 125/141 before; "just right" 15/15 vs 10/15, loaded tone 12/12 vs 7/12. Other 19 cases, 1 run each: 18 pass every check (the exception is `no-search-tool`, see Known issues). Checks catch all 6 deliberately bad replies |

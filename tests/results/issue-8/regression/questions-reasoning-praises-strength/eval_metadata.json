@@ -1,0 +1,13 @@
+{
+  "eval_name": "questions-reasoning-praises-strength",
+  "prompt": "continue my research, log attached. ok here's my thinking. bans can't do much for teen sleep, because most heavy phone use happens late at night at home, which a school-day ban doesn't touch. but bans obviously improve social life, at my school people actually talk at lunch now.\nInput files: research-log.md",
+  "assertions": [
+    "The reply begins with a progress marker identifying Phase 2.",
+    "The reply says the point about sleep (school bans don't touch late-night phone use at home) is strong or well reasoned, and names what makes it strong.",
+    "The reply responds to the claim that bans improve social life with at least one question that leads the user to examine it (for example what else changed, or whether one school represents others).",
+    "The reply does not flatly tell the user that the social-life claim is wrong.",
+    "The reply does not name a logical fallacy (such as hasty generalization) as a verdict on the user's reasoning.",
+    "The reply does not supply a thesis statement or any sentence the user could use as their thesis.",
+    "The reply asks the user no more than two questions."
+  ]
+}

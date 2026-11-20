@@ -1,0 +1,12 @@
+q-just-right [new_skill run 1] 5/5 in 19.4s
+q-just-right [new_skill run 3] 5/5 in 22.1s
+q-just-right [new_skill run 2] 5/5 in 22.4s
+q-loaded-tone [new_skill run 3] 4/4 in 8.9s
+q-loaded-tone [new_skill run 1] 4/4 in 15.3s
+q-loaded-tone [new_skill run 2] 4/4 in 15.0s
+q-causal-correlational [new_skill run 1] 5/5 in 17.1s
+q-causal-correlational [new_skill run 3] 5/5 in 13.1s
+q-causal-correlational [new_skill run 2] 5/5 in 18.3s
+q-no-evidence [new_skill run 1] 4/4 in 14.6s
+q-no-evidence [new_skill run 2] 4/4 in 14.9s
+q-no-evidence [new_skill run 3] 3/4 in 15.4s

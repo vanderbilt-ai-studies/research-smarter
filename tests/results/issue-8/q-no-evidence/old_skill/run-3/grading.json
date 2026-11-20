@@ -1,0 +1,29 @@
+{
+  "case": "q-no-evidence",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 16.8,
+  "expectations": [
+    {
+      "text": "The reply raises, as a question to the user, what evidence or sources could actually answer this question.",
+      "passed": false,
+      "evidence": "The reply explains the evidence problem itself (\"there are none on this question as written\"), but the only question it asks is \"What do you think a smartphone would have given the Romans that they didn't have?\" That is not about what evidence or sources could answer the question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "It offers no rewritten question, example or sentence starter, and refers only vaguely to \"a version of this idea that real Roman evidence can support.\""
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "None of the reference examples (ATP synthase, diabetes, social networking, global warming, sleep) appear or are adapted."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is only one question mark aimed at the user: \"What do you think a smartphone would have given the Romans that they didn't have?\""
+    }
+  ],
+  "regraded": "grader call failed during a usage limit"
+}

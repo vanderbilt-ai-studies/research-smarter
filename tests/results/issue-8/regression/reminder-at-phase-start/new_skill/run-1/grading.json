@@ -1,0 +1,33 @@
+{
+  "case": "reminder-at-phase-start",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 71.3,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "\"Open a couple of these links and check that each figure appears in the source as I've described it\""
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "Names what to check (\"each figure\" in \"these links\") and how: \"Open a couple of these links and check that each figure appears in the source as I've described it\""
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "The reminder is one sentence. It gives no reason about teachers, grades, plagiarism or getting caught."
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": true,
+      "evidence": "One sentence with no question mark: \"...check that each figure appears in the source as I've described it, and feel free to ask me how I know about the Colorado youth crime finding, since it's the most dramatic number here.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is directed at the user: \"which way are you leaning, and what in the briefing is pulling you there?\" The other question marks belong to a heading or the briefing's open research questions."
+    }
+  ]
+}

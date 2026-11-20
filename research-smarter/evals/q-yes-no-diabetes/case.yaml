@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: q-yes-no-diabetes
+expected_outcome: |
+  The draft question can be answered yes or no. The reply asks about
+  complexity, and contains none of the reference example's details.
+context:
+  scaffold_script: place-files.sh

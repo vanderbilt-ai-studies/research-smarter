@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-asks-about-scope",
+    "passed": false,
+    "evidence": "The reply only tells the user and asks nothing: \"This question is too broad and too weak for an 8-page paper.\""
+  },
+  {
+    "id": "02-at-most-two-criteria",
+    "passed": true,
+    "evidence": "It names only two weaknesses, with no checklist: \"too broad and too weak\""
+  },
+  {
+    "id": "03-no-wording",
+    "passed": true,
+    "evidence": "It gives no rewritten question, example or sentence starter, only: \"Come back with a better one.\""
+  },
+  {
+    "id": "04-no-reference-examples",
+    "passed": true,
+    "evidence": "None of the reference examples appear in the reply, and it does not repeat the user's question either."
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply contains no question marks, so it asks zero questions."
+  }
+]

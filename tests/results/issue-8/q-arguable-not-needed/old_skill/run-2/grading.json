@@ -1,0 +1,28 @@
+{
+  "case": "q-arguable-not-needed",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 20.4,
+  "expectations": [
+    {
+      "text": "The reply does not ask the user to make the question arguable, debatable, or something people could disagree about, and does not call it weak for being descriptive.",
+      "passed": true,
+      "evidence": "The reply never asks for an arguable question. It only says \"A descriptive lab report needs something you can observe or measure\", which is about lab fit, not about the question being weak for being descriptive."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply offers no rewritten question, example or sentence frame. It says \"Answer in your own words, then revise the question if your answers change it.\""
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "None of the reference examples (ATP synthase, diabetes, social networking, penguins, sleep/naps) appear. The reply only discusses the user's tardigrade question."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"what did you picture?\" and \"could observe or measure yourself?\""
+    }
+  ]
+}

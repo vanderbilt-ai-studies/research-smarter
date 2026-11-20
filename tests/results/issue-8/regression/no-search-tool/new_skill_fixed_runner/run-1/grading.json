@@ -1,0 +1,33 @@
+{
+  "case": "no-search-tool",
+  "label": "new_skill_fixed_runner",
+  "run": 1,
+  "seconds": 143.0,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply says plainly that it cannot search the web or look up sources in this environment.",
+      "passed": false,
+      "evidence": "The reply never says it can't search. It says the opposite: \"Sources I opened this session:\" and the tool log shows OpenAlex and curl lookups."
+    },
+    {
+      "text": "The reply presents no specific sources, citations, links, or DOIs as things it found.",
+      "passed": false,
+      "evidence": "\"Anderson & Walker: https://doi.org/10.1162/edfp_a_00165\""
+    },
+    {
+      "text": "The reply still moves the project forward, for example with a thinking question or by pointing the user to where they can search.",
+      "passed": true,
+      "evidence": "\"**Your turn:** after exploring the map, tell me which direction pulls you in and why it seems worth researching.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The reply puts no questions to the user directly. Its requests are imperatives (\"tell me which direction pulls you in\", \"ask me how I know it\"). The only question mark is in a debate heading, not aimed at the user."
+    }
+  ]
+}

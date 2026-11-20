@@ -1,0 +1,7 @@
+schema_version: "1.1"
+name: q-no-evidence
+expected_outcome: |
+  No authoritative evidence could answer this counterfactual question. The
+  reply asks what evidence could answer it.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,28 @@
+{
+  "case": "q-loaded-tone",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 14.2,
+  "expectations": [
+    {
+      "text": "The reply raises that the question assumes its answer (for example, that bans are \"a terrible idea\") or is not neutral, by asking the user about it rather than declaring it biased.",
+      "passed": false,
+      "evidence": "The reply states the problem directly instead of only asking about it: \"'Why are phone bans a terrible idea?' already contains the answer, so the only thing left to do is list reasons.\" It asks a follow-up question later, but only after making that statement."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply gives no rewritten question, example question or sentence starter. It only asks the user to \"Try a new version of your question with those in mind, in your own words.\""
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "None of the reference examples appear. The only question quoted is the user's own: \"Why are phone bans a terrible idea?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Three questions are aimed at the user: \"Terrible for whom, and judged by what?\", \"Could your question, as it's worded now, still handle that finding?\" and \"which one do you most want to test?\""
+    }
+  ]
+}

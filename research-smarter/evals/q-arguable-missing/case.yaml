@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: q-arguable-missing
+expected_outcome: |
+  The assignment is an argumentative paper, but the draft question is purely
+  descriptive. The reply says plainly that the assignment calls for an
+  arguable question and asks the user about it.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,23 @@
+{
+  "case": "invites-challenge-briefing",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 107.4,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows one specific factual claim or source from this reply, and the invitation names that claim or source (a vague reference like \"anything above\" alone does not pass).",
+      "passed": true,
+      "evidence": "\"Pick any claim, like the 0.4%\u20132.5% savings range from the Education Commission of the States, and ask me how I know it.\""
+    },
+    {
+      "text": "The invitation to challenge a claim is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the claim rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "The sentence \"Pick any claim, like the 0.4%\u20132.5% savings range ... and ask me how I know it.\" ends with a period, not a question mark, and it invites the user to question the claim."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Two questions are directed at the user: \"what would you need to see to tell whether money was the *real* reason a district switched?\" and \"which angle pulls you in, and why?\" The bold debate headings such as \"Do they hurt learning?\" label topics in the briefing and are not asked of the user."
+    }
+  ]
+}

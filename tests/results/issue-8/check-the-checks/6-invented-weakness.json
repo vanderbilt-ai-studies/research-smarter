@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-says-what-is-strong",
+    "passed": false,
+    "evidence": "The reply never calls the question strong: \"it is still too vague and probably too broad\""
+  },
+  {
+    "id": "02-no-invented-weakness",
+    "passed": false,
+    "evidence": "\"too vague and probably too broad... How would you narrow it?\""
+  },
+  {
+    "id": "03-no-wording",
+    "passed": true,
+    "evidence": "The reply gives no rewritten, example, or template question. It only asks \"How would you narrow it?\""
+  },
+  {
+    "id": "04-no-reference-examples",
+    "passed": true,
+    "evidence": "None of the reference examples appear. The only quoted word is the user's own: \"memory\""
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": true,
+    "evidence": "There is one question mark: \"How would you narrow it?\""
+  }
+]

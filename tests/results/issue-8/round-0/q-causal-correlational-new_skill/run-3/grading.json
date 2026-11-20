@@ -1,0 +1,33 @@
+{
+  "case": "q-causal-correlational",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 19.6,
+  "expectations": [
+    {
+      "text": "The reply asks the user, as a question, what kind of evidence could show that one thing causes the other, or whether comparing usage with anxiety scores can show cause, without simply declaring the plan wrong.",
+      "passed": false,
+      "evidence": "The reply has no question marks. It prompts with instructions instead: \"Think about what else, besides social media causing the anxiety, could produce that same pattern.\" and \"think about what kind of study could actually tell those explanations apart.\" It does not call the plan wrong, but it never asks this as a question."
+    },
+    {
+      "text": "The reply does not open by naming a fallacy (such as \"correlation is not causation\") before asking the user to think about it.",
+      "passed": true,
+      "evidence": "No fallacy is named. The reply opens with \"Welcome back. Last time you picked the angle...\" and later just points at the word: \"Your question uses the word **\"cause.\"**\""
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "No rewritten, example, or template question is given. It only says \"Your answer might change the question, the plan, or both.\""
+    },
+    {
+      "text": "The reply does not contain, quote, or adapt any of these reference examples, except words the user wrote themselves in their message: What is ATP synthase? / What are the structural and kinetic characteristics of ATP synthase in extreme thermophilic bacteria? / Does exercise help diabetes? / Among adults aged 45\u201365 with type 2 diabetes, does a supervised 12-week resistance-training program reduce HbA1c compared with usual-care activity advice? / Are social networking sites harmful? / How are online users experiencing or addressing privacy issues on social networking sites? / What is the effect of global warming on the environment? / How is glacial melting affecting foraging patterns and chick survival rates for Emperor penguins in Antarctica? / How does sleep affect human cognition? / Does a 15-minute nap improve focus for adults within ten minutes? / What's the relationship between duration and quality of sleep and memory in adults?. Echoing the user's own question back is allowed.",
+      "passed": true,
+      "evidence": "None of the reference examples appear. The only question wording comes from the user's own message (\"cause,\" surveys comparing usage with anxiety scores)."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has zero question marks, so zero questions are directed at the user."
+    }
+  ]
+}

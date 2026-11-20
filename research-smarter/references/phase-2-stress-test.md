@@ -48,6 +48,9 @@ Ask the user to:
 2. State their working position, in their own words.
 3. Name the strongest counterargument to it, and how they'd respond.
 
+Check the final question against `question-framework.md`. Ask about the one
+or two criteria it misses that matter most, or say what makes it strong.
+
 **Outcome:** the user has a final research question and a working position,
 and can name the strongest counterarguments to it.
 

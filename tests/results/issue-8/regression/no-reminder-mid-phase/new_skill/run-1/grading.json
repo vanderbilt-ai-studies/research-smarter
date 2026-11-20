@@ -1,0 +1,23 @@
+{
+  "case": "no-reminder-mid-phase",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 21.0,
+  "expectations": [
+    {
+      "text": "The reply contains no general fact-check reminder (a sentence telling the user to check or verify what Claude gives them in general). Flagging uncertainty about one specific claim right next to that claim is allowed and does not count. An invitation to challenge or ask how Claude knows one specific claim is not a reminder and does not count.",
+      "passed": true,
+      "evidence": "The reply never tells the user to check or verify what Claude gives them. It only poses two questions about their reasoning and ends with \"A rough answer is fine.\""
+    },
+    {
+      "text": "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+      "passed": true,
+      "evidence": "\"Here are two places where it's still on shaky ground.\" / \"A critic might say they're connected.\" It also calls the position \"stronger than a plain 'good' or 'bad' answer\", so it never says the position is wrong."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only two question marks: \"...before you could be sure students actually get less class time?\" and \"...how might that affect the students?\""
+    }
+  ]
+}
