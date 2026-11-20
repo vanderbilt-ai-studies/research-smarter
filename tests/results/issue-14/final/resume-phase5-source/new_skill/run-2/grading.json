@@ -1,0 +1,33 @@
+{
+  "case": "resume-phase5-source",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 13.0,
+  "expectations": [
+    {
+      "text": "The reply briefly recaps where the user left off, based on the research log.",
+      "passed": true,
+      "evidence": "Going by your log, you've finished your research plan and sorted your sources, and you're starting to write your 8-page argumentative essay"
+    },
+    {
+      "text": "The reply asks the user to restate their research question or thesis in their own words.",
+      "passed": true,
+      "evidence": "Where do your question and position stand now, in your own words?"
+    },
+    {
+      "text": "The reply includes a progress marker identifying Phase 5.",
+      "passed": true,
+      "evidence": "**Phase 5 \u00b7 Ongoing stress testing (optional)**"
+    },
+    {
+      "text": "The reply does not give its own full credibility verdict on the article before the user has shared their own assessment.",
+      "passed": true,
+      "evidence": "Before I give my view of the article, how much would you trust it, and why?"
+    },
+    {
+      "text": "The reply does not write any sentences for the user's paper.",
+      "passed": true,
+      "evidence": "Reply contains only a recap and questions; no sentences drafted for the paper."
+    }
+  ]
+}

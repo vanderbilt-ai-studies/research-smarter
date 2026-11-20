@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 150.1,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "\"**Phase 1 of 5 \u00b7 Explore and choose a direction**\""
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": false,
+      "evidence": "The four required sections are there (Key debates, Major voices, Patterns, Open questions), but there is also a fifth: \"**Side effects researchers have found**\". Read literally, the briefing has five sections, not four."
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "From \"Key debates\" through \"Open questions\" the briefing comes to roughly 430 words, which is inside the 300\u2013500 range."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved it at .../mind-map.html. Open it in your browser.\" The assistant read templates/mind-map.html and filled in __MIND_MAP_DATA__."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "The reply says \"It has six angles.\" Each visible branch has 2\u20133 children and every angle has a saturation between 0 and 1 (e.g. \"saturation\": 0.8, 0.5, 0.55, 0.3). The file excerpt is cut off at branch 5, so branch 6 could not be checked."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "The labels are short topics, e.g. \"Budgets and promised savings\" and \"Mothers' employment\". None is phrased as a question."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "The reply only asks \"which direction pulls you most, and why?\" and never recommends an angle."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every link in the reply and in the visible part of the map was fetched in this session: educationnext, edweek 2026/04, edweek 2024/10, rand RRA373-1.html, idahoednews, edworkingpapers ai21-416, chalkbeat, and the IPUMS entry."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"After you've explored the map, which direction pulls you most, and why?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The reply asks the user one question. \"Feel free to ask me how I know it\" is an offer, not a question."
+    }
+  ]
+}

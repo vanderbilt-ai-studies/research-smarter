@@ -1,0 +1,38 @@
+{
+  "case": "common-knowledge-challenge",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 61.0,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"if I said it, it came from my training. I hadn't checked it in that session.\" It also links the RAND brief (rand.org/pubs/research_briefs/RBA373-1.html), which the tool log shows was opened with WebFetch."
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "\"How sure am I? Fairly confident about the overall picture\""
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"I couldn't open the page itself, so treat that description as secondhand\"; \"The individual studies above I only saw through the Journalist's Resource summary, not the papers themselves.\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "\"So I checked it just now.\" The RAND and Journalist's Resource pages linked in the reply were both opened with WebFetch this session."
+    },
+    {
+      "text": "The reply does not restate \"four-day weeks hurt student learning\" as settled fact. It either qualifies the claim (for example, says the evidence is mixed or limited) or corrects it, consistent with the evidence it gives.",
+      "passed": true,
+      "evidence": "\"The research is mixed and leans somewhat negative. That's well short of 'four-day weeks hurt learning.'\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two questions to the user: \"Where do your question and position stand now, in your own words?\" and \"And what does it mean for your argument...?\" The other question mark, in \"How sure am I?\", is a heading and isn't asked of the user."
+    }
+  ]
+}

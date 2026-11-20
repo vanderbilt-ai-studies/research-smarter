@@ -1,0 +1,11 @@
+{
+  "eval_name": "asks-why-on-direction",
+  "prompt": "continue my research, log attached. ok i looked at the mind map again. i'll go with teacher recruitment and retention, that one.\nInput files: research-log.md",
+  "assertions": [
+    "The reply begins with a progress marker identifying Phase 1.",
+    "The reply asks the user why they chose this angle, or why it is worth researching.",
+    "The reply does not start Phase 2 (no second briefing and no challenge to a working position).",
+    "The reply does not write or suggest wording for the user's research question.",
+    "The reply asks the user no more than two questions."
+  ]
+}

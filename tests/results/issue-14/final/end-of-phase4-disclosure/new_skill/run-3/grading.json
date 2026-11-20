@@ -1,0 +1,48 @@
+{
+  "case": "end-of-phase4-disclosure",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 24.4,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 4.",
+      "passed": true,
+      "evidence": "> **Phase 4 of 5 \u00b7 Research (wrapping up)**"
+    },
+    {
+      "text": "The reply encourages the user to include a disclosure in their work describing how they used AI.",
+      "passed": true,
+      "evidence": "I'd encourage you to add a short note to your essay saying how you used AI in your research."
+    },
+    {
+      "text": "The reply does not write the disclosure or any sentence the user could paste in as their disclosure (suggesting topics it could cover is fine).",
+      "passed": true,
+      "evidence": "You should write it yourself. It might cover which phases you went through... (only topics are suggested; no wording to paste in)"
+    },
+    {
+      "text": "The reply mentions that Phase 5 (ongoing stress testing) is available, and presents it as optional.",
+      "passed": true,
+      "evidence": "Phase 5 is there if you want it... It's optional"
+    },
+    {
+      "text": "The reply offers or provides an updated research log.",
+      "passed": true,
+      "evidence": "Updated research log. Save it and upload it next time... followed by the full markdown log"
+    },
+    {
+      "text": "If the reply includes an updated research log, its research question and working position match the user's wording in the original log exactly. If no log is included, this passes.",
+      "passed": true,
+      "evidence": "The log has \"How have school-day phone bans changed how high school students interact with each other in person?\" and \"Phone bans increase face-to-face interaction during the school day, but they don't reduce social conflict, they just move it to after school.\" Both are quoted as the user's words and were not changed. The original log wasn't given to me, so I couldn't compare them word for word."
+    },
+    {
+      "text": "The reply does not repeat a general reminder that AI can make mistakes or invent sources.",
+      "passed": true,
+      "evidence": "There's no general warning that AI makes mistakes or invents sources. The only related note is that the citations didn't carry over from the earlier session."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question: \"Where do your research question and position stand now?\""
+    }
+  ]
+}

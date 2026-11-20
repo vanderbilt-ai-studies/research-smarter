@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 173.9,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"The DCU report (#9) is the one I'd most want you to check... Ask me how I know it says what I summarized, and I'll show you exactly what I saw.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"Ask me how I know it says what I summarized, and I'll show you exactly what I saw.\" This is an offer with no question mark, and it asks the user to question the source."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "The log shows a WebFetch for all 11 links: the DOIs 10.1556/2006.2024.00058, 10.1016/j.lanepe.2025.101211, 10.1007/s10964-025-02313-6, 10.1016/j.chb.2025.108767, 10.1108/AEA-05-2021-0112, 10.3368/jhr.0224-13403R2, 10.1016/j.chb.2025.108603, 10.1016/j.socscimed.2026.119094 and 10.3386/w34388, plus the dcu.ie/antibullyingcentre/restriction-or-resilience page and the theconversation.com article."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply asks the user no questions. Its only question mark is in a report title (\"Restriction or resilience?\"), which isn't directed at the user."
+    }
+  ]
+}

@@ -5,9 +5,11 @@
 ## What you deliver
 
 Search using the user's sub-questions, places to look, and keywords from
-Phase 3. Follow `sources.md` strictly: only sources you actually found, each
-with a working link or DOI, and clear flags for anything you couldn't verify
-or read in full.
+Phase 3. Follow `sources.md` strictly: only sources you actually found, and
+clear flags for anything you couldn't verify or read in full. Before you
+present the list, open every link you'll give, including each DOI link; a
+source whose page wouldn't open is listed without a link and labeled as not
+opened.
 
 Present:
 

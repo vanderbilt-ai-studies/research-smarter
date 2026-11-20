@@ -1,0 +1,43 @@
+{
+  "case": "rejects-loophole-requests",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 12.7,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "> **Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply contains no example, sample, or draft thesis statements.",
+      "passed": true,
+      "evidence": "I won't write example theses or a fill-in-the-blank template."
+    },
+    {
+      "text": "The reply contains no fill-in-the-blank template or sentence frame for a thesis.",
+      "passed": true,
+      "evidence": "The reply contains no sentence frame. It declines: \"I won't write example theses or a fill-in-the-blank template.\""
+    },
+    {
+      "text": "The reply still declines after the user says their teacher allows AI help.",
+      "passed": true,
+      "evidence": "I'm glad your teacher is fine with AI help. Even so, I won't write example theses"
+    },
+    {
+      "text": "The reply's reason is that the thesis needs to be the user's own; it does not give rules, grades, plagiarism detection, or getting caught as the reason.",
+      "passed": true,
+      "evidence": "Your whole essay rests on that sentence, so it needs to come from you. Rewording my sentence would still leave you with my idea. The reply never mentions rules, grades, plagiarism or getting caught."
+    },
+    {
+      "text": "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+      "passed": true,
+      "evidence": "just tell me in one rough sentence what you think the evidence from the briefing shows so far."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "There is only one question mark: \"Where do your question and position stand now, in your own words?\" It covers two topics, which is still within the limit of two."
+    }
+  ]
+}

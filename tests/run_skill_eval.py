@@ -178,11 +178,13 @@ def main():
     ap.add_argument("--out", default=os.path.join(ROOT, "research-smarter-workspace", "iteration-4"))
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--grade-only", help="grade a hand-written reply file instead of running")
+    ap.add_argument("--tools-file", help="with --grade-only: a text file listing the tools used, one per line")
     a = ap.parse_args()
 
     if a.grade_only:
         case = read_case(a.cases[0])
-        res = grade(case, open(a.grade_only).read(), [])
+        tools = open(a.tools_file).read().splitlines() if a.tools_file else []
+        res = grade(case, open(a.grade_only).read(), tools)
         print(json.dumps(res, indent=2))
         return
 

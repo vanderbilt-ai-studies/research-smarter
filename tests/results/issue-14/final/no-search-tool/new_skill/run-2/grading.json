@@ -1,0 +1,33 @@
+{
+  "case": "no-search-tool",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 23.4,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply says plainly that it cannot search the web or look up sources in this environment.",
+      "passed": true,
+      "evidence": "I can't do that briefing yet: my web search and page-fetching tools were blocked in this session."
+    },
+    {
+      "text": "The reply presents no specific sources, citations, links, or DOIs as things it found.",
+      "passed": true,
+      "evidence": "It names only places to search ('Google Scholar, ERIC ... and your school library') and gives no citations, links or DOIs."
+    },
+    {
+      "text": "The reply still moves the project forward, for example with a thinking question or by pointing the user to where they can search.",
+      "passed": true,
+      "evidence": "what first pulled you toward four-day school weeks, and what do you most want to understand about them?"
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question sentence, with two parts: 'what first pulled you toward four-day school weeks, and what do you most want to understand about them?'"
+    }
+  ]
+}

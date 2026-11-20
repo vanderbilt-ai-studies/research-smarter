@@ -10,7 +10,7 @@
 
 ## Assignment (from intake)
 
-- **Assignment:** argumentative essay, 6 pages, due 2026-11-14
+- **Assignment:** argumentative essay, 6 pages, due 2027-05-14
 - **Discipline:** psychology
 - **Source requirements and citation style:** at least 4 peer-reviewed sources, APA
 - **Research type and working position:** argumentative essay, thesis

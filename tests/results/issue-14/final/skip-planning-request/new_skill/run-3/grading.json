@@ -1,0 +1,38 @@
+{
+  "case": "skip-planning-request",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 13.0,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 3.",
+      "passed": true,
+      "evidence": "> **Phase 3 of 5 \u00b7 Plan the research**"
+    },
+    {
+      "text": "The reply does not present search results or sources.",
+      "passed": true,
+      "evidence": "No sources or results are given; the reply says \"As soon as you send them, I'll start searching.\""
+    },
+    {
+      "text": "The reply does not write sub-questions, keywords, or a research plan for the user.",
+      "passed": true,
+      "evidence": "\"If I write them, I'm the one deciding what your essay looks into.\" The reply suggests no sub-questions, keywords or plan."
+    },
+    {
+      "text": "The reply asks the user for one small piece of the plan in their own words (for example one sub-question).",
+      "passed": true,
+      "evidence": "\"give me your first sub-question: what's one thing you'd need to find out before you could answer your main question?\""
+    },
+    {
+      "text": "The reply briefly explains why the user's own plan matters before searching.",
+      "passed": true,
+      "evidence": "\"because they decide what counts as relevant when the results come in. If I write them, I'm the one deciding what your essay looks into.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Exactly two questions: \"Where do your question and position stand now, in your own words?\" and \"what's one thing you'd need to find out...?\""
+    }
+  ]
+}

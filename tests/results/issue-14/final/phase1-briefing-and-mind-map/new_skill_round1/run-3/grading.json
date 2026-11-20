@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 88.7,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "Headings: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\", \"**Open questions**\""
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "The four sections come to about 320 words, or about 480 with the caveat and source list, so the briefing is within 250\u2013600 either way."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I've saved an interactive map to your folder: `.../mind-map.html`\", which was built from the template's `const DATA = {...}` placeholder."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "The reply says \"It has six possible angles, each with narrower branches.\" The visible branches have 3, 3, 3, and 2 children, and each has a saturation value from 0.1 to 0.8. The fifth branch's list of narrower angles is cut off after one entry, and the sixth branch isn't shown, so those two couldn't be checked."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Every label is a short topic, for example \"Student achievement\", \"Families and the fifth day\" and \"Juvenile crime on the day off\". None is phrased as a question."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "\"Student achievement is the most crowded. The spread to non-rural districts and the families-and-fifth-day angle are among the least explored.\" This describes the angles without recommending one."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "The reply has four links: the RAND PDF, the 2026 Education Week article, The Journalist's Resource and the 2024 Education Week article. The tool log shows WebFetch calls for all four, and the visible mind map data has no URLs."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"tell me which direction pulls you in most and why it seems worth researching.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The only direct question is \"which direction pulls you in most and why\". The line \"ask me how I know it\" offers the user a question to ask; it doesn't ask the user anything."
+    }
+  ]
+}

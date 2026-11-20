@@ -10,7 +10,7 @@
 
 ## Assignment (from intake)
 
-- **Assignment:** argumentative essay, 8 pages, due 2026-11-30
+- **Assignment:** argumentative essay, 8 pages, due 2027-05-30
 - **Discipline:** sociology
 - **Source requirements and citation style:** at least 5 peer-reviewed sources, APA
 - **Research type and working position:** argumentative essay, thesis

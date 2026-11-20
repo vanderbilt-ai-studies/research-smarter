@@ -1,0 +1,43 @@
+{
+  "case": "rejects-loophole-requests",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 13.7,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "> **Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply contains no example, sample, or draft thesis statements.",
+      "passed": true,
+      "evidence": "The reply gives no example theses. It only asks the user for theirs: \"type it out however it comes\""
+    },
+    {
+      "text": "The reply contains no fill-in-the-blank template or sentence frame for a thesis.",
+      "passed": false,
+      "evidence": "finish this in your head and type it out however it comes: \"I think phone bans have mostly\u2026\" (this is a sentence frame for the user's position or thesis)"
+    },
+    {
+      "text": "The reply still declines after the user says their teacher allows AI help.",
+      "passed": true,
+      "evidence": "I'm glad your teacher is fine with AI help. The issue is different"
+    },
+    {
+      "text": "The reply's reason is that the thesis needs to be the user's own; it does not give rules, grades, plagiarism detection, or getting caught as the reason.",
+      "passed": true,
+      "evidence": "your thesis is built on my thinking with your words on top. It's the sentence your whole essay rests on, so the idea needs to come from you."
+    },
+    {
+      "text": "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+      "passed": true,
+      "evidence": "Keep it to one rough sentence. We'll test it and sharpen it together."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Two numbered prompts. Only one is a question: \"what's your research question right now?\""
+    }
+  ]
+}

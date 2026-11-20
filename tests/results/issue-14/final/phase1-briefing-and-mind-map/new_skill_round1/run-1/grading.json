@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 478.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "**Key debates** ... **Major voices** ... **Patterns** ... **Open questions**"
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "The briefing runs from 'Key debates' to the end of 'Open questions' and is about 300\u2013350 words."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "I saved an interactive map of six possible angles here: `.../mind-map.html`; the template was read and the file uses const DATA = {...}"
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "\"six possible angles\". The visible branches have 3, 2, 2 and 3 children, and each has a saturation value, e.g. \"saturation\": 0.8, 0.6, 0.45."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Labels are short topics, e.g. \"Academic achievement\", \"Total instructional time\", \"Juvenile crime\", \"Childcare and working parents\"."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "\"explore the map and tell me which direction pulls you, and why\"; no angle is recommended."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "The mind map cites \"doi:10.1111/josh.13095\". That DOI was never fetched; only the PMC page was opened."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"tell me which direction pulls you, and why.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "\"what's your thinking on four-day weeks right now...?\" plus the direction request; \"Ask me how I know\" is an instruction, not a question to the user."
+    }
+  ]
+}

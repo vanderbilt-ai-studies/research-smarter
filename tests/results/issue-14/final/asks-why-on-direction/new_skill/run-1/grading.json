@@ -1,0 +1,33 @@
+{
+  "case": "asks-why-on-direction",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 12.1,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "**Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply asks the user why they chose this angle, or why it is worth researching.",
+      "passed": true,
+      "evidence": "Then tell me why this angle is worth researching."
+    },
+    {
+      "text": "The reply does not start Phase 2 (no second briefing and no challenge to a working position).",
+      "passed": true,
+      "evidence": "The reply stays in Phase 1. It gives no new briefing and does not challenge a position; it only asks the user to say where they are."
+    },
+    {
+      "text": "The reply does not write or suggest wording for the user's research question.",
+      "passed": true,
+      "evidence": "\"Tell me in your own words.\" The reply suggests no wording for the research question."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": false,
+      "evidence": "There are at least three questions: \"Is a question or a hunch starting to form...?\", \"tell me why this angle is worth researching\", and \"What makes it matter, and what do you think you could add?\""
+    }
+  ]
+}

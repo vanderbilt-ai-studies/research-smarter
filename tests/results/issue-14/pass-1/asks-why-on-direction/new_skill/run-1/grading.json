@@ -1,0 +1,33 @@
+{
+  "case": "asks-why-on-direction",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 14.3,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "**Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply asks the user why they chose this angle, or why it is worth researching.",
+      "passed": true,
+      "evidence": "what made teacher recruitment and retention stand out from the other four angles? And why do you think it's worth researching?"
+    },
+    {
+      "text": "The reply does not start Phase 2 (no second briefing and no challenge to a working position).",
+      "passed": true,
+      "evidence": "The reply stays in Phase 1. It gives no second briefing and does not challenge a position: \"You haven't written a research question or a position yet\""
+    },
+    {
+      "text": "The reply does not write or suggest wording for the user's research question.",
+      "passed": true,
+      "evidence": "It suggests no wording for a research question, only \"that's what we'll work toward\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": false,
+      "evidence": "It asks three questions: \"what made ... stand out...?\", \"why do you think it's worth researching?\", \"What might you add to the conversation?\""
+    }
+  ]
+}

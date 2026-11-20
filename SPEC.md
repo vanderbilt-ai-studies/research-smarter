@@ -377,6 +377,13 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
 - **Testing tools:** the skill-creator scripts need Python 3.10 or later and
   PyYAML; the trigger tester also needs the Claude Code command-line tool,
   signed in. Last tested with Claude Code 2.1.319 and Claude Opus 5.5.
+- **Test dates:** the skill reads today's date, so a test log's deadline
+  changes its advice as the deadline nears. Give test logs deadlines at least
+  six months after the tests will run (they're currently May–June 2027), and
+  move them forward before they get close.
+- **Skill test runner:** `tests/run_skill_eval.py` runs each case in a fresh
+  `claude -p` session outside the repo and grades it with a separate Claude
+  call that quotes its evidence.
 
 ### Known issues
 
@@ -384,21 +391,15 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
   command-line tester, even a description that says "always use this skill"
   activated it only 1 time in 6, so trigger scores from that tool don't
   measure the description. Activation has to be checked by hand in the app.
-- **Tests run once, not three times, for the original ten cases.** They
-  passed every grader in one run each (iterations 2 and 3). Since issue #6
-  they run through `tests/run_skill_eval.py` (fresh `claude -p` sessions),
-  and in one run each neither the current nor the new skill passed every
-  grader (62/68 and 64/68). Acceptance criterion 1 needs three runs each.
-- **More than two questions, mostly when resuming.** Both versions of the
-  skill sometimes ask three questions, usually "restate your question" plus
-  two coaching questions (R3.2). Seen in about a third of resumed runs in
-  issue #6.
-- **Unopened DOI links in Phase 4.** In `source-list-invitation`, both
-  versions listed DOI links they never opened, which breaks R5.1. Seen in
-  all 6 runs.
-- **A test case's deadline has passed.** `skip-planning-request`'s log says
-  the essay is due 2026-11-20, so runs on or after 2026-11-19 shorten
-  planning because of the deadline. The date needs moving.
+- **Three runs: 45 of 48 pass every check.** With issue #14, all 16 test
+  cases ran 3 times each (282/285 checks). 13 cases passed 3 of 3; three
+  passed 2 of 3 (see the next item), so acceptance criterion 1 isn't fully
+  met yet.
+- **Occasional misses that remain.** In 2 of 48 runs the reply asked a third
+  question (R3.2), once by adding "tell me why..." after two questions. In 1
+  run a Phase 1 briefing added a fifth section beside the required four.
+  Each case passed its other runs; revision stopped after two rounds, as
+  agreed.
 - **Only single replies are tested.** Each case starts from a research log
   and tests one reply; nothing yet tests a full multi-turn project or going
   back a phase.
@@ -477,3 +478,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-18 | Reader with guided coach, quote checking, and reading cards (issue #4) | 23/23 logic checks; coach 5/5 scripted cases (one run each, command-line stand-in); live coach works after fixing a silent fallback when Claude access wasn't granted |
 | 2026-11-18 | Reader tests and plain-Claude comparison (issue #5); coach rules revised twice (no hints at unmentioned content; strict two-question count; praise only what the student wrote); save now waits for storage to confirm | Round 3: 14/15 Reader replies pass vs 0/15 plain Claude; checks catch both deliberately bad replies; real and scanned PDFs pass live; saving a card live unconfirmed |
 | 2026-11-19 | "Ask it how it knows" (issue #6): R9.4–R9.8 added; principle 5 rewritten; six new test cases; new runner `tests/run_skill_eval.py`. Two revision rounds: say confidence in plain words; the invitation never replaces the question after a correction. Clarified that recapping the user's own log isn't a factual claim | New cases: 72/81 checks with the new skill vs 54/81 with the current skill (3 runs each); invitations 12/12 vs 0/12 in briefings and source lists. Existing cases, 1 run each: 64/68 vs 62/68. Checks catch all 4 deliberately bad replies |
+| 2026-11-20 | Three problems found in #6 (issue #14): open every link, including DOIs, before giving it (source lists and the mind map); the restatement on resume is one question and counts toward two; every question counts, including "consider" lists and multi-part questions; no sentence starters for the user to finish; test deadlines moved to May-June 2027 | All 16 cases, 3 runs each: 282/285 checks, 45/48 runs pass every check. Unopened links in source lists: 0 of 3 runs (was 6 of 6). Checks catch both deliberately bad replies |

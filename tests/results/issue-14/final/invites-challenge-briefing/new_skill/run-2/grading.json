@@ -1,0 +1,23 @@
+{
+  "case": "invites-challenge-briefing",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 112.7,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows one specific factual claim or source from this reply, and the invitation names that claim or source (a vague reference like \"anything above\" alone does not pass).",
+      "passed": true,
+      "evidence": "\"I'm least certain about the roughly 2% savings figure... so ask me how I know it if you want to dig into it.\""
+    },
+    {
+      "text": "The invitation to challenge a claim is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the claim rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"so ask me how I know it if you want to dig into it.\" This sentence has no question mark and invites the user to question the figure."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks in the reply: \"what would you expect to find in a district's own records, such as your cousin's?\" and \"Which branch of the map pulls at you most, and why?\""
+    }
+  ]
+}

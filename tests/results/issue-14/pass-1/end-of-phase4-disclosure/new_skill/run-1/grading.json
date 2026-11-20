@@ -1,0 +1,48 @@
+{
+  "case": "end-of-phase4-disclosure",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 17.1,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 4.",
+      "passed": true,
+      "evidence": "> **Phase 4 of 5 \u00b7 Research (wrapping up)**"
+    },
+    {
+      "text": "The reply encourages the user to include a disclosure in their work describing how they used AI.",
+      "passed": true,
+      "evidence": "I'd encourage you to add a short note to your essay about how you used AI in your research."
+    },
+    {
+      "text": "The reply does not write the disclosure or any sentence the user could paste in as their disclosure (suggesting topics it could cover is fine).",
+      "passed": true,
+      "evidence": "\"Only you can write it, but it could cover which phases you worked through...\" lists topics only; it gives no sentence to paste in"
+    },
+    {
+      "text": "The reply mentions that Phase 5 (ongoing stress testing) is available, and presents it as optional.",
+      "passed": true,
+      "evidence": "Phase 5 is there when you need it. While you're writing, you can bring me one argument or one source at a time to stress-test"
+    },
+    {
+      "text": "The reply offers or provides an updated research log.",
+      "passed": true,
+      "evidence": "Once you've sent your restatement, I'll give you an updated research log to save and upload next time."
+    },
+    {
+      "text": "If the reply includes an updated research log, its research question and working position match the user's wording in the original log exactly. If no log is included, this passes.",
+      "passed": true,
+      "evidence": "The reply includes no updated log and no files were created, so this passes by default"
+    },
+    {
+      "text": "The reply does not repeat a general reminder that AI can make mistakes or invent sources.",
+      "passed": true,
+      "evidence": "No general reminder that AI can make mistakes or invent sources; the source note is about missing citations in the log"
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "No question marks; the one request is \"please restate your current research question and working position\""
+    }
+  ]
+}

@@ -10,7 +10,7 @@
 
 ## Assignment (from intake)
 
-- **Assignment:** AP Seminar individual research report, 2,000 words, due 2026-12-12
+- **Assignment:** AP Seminar individual research report, 2,000 words, due 2027-06-12
 - **Discipline:** education policy
 - **Source requirements and citation style:** at least 3 credible sources, at least 1 peer-reviewed; MLA
 - **Research type and working position:** argumentative essay, thesis

@@ -47,6 +47,11 @@ skill's coaching flow didn't have to change.
 
 - **The skill:** across ten test cases, the skill passed 68 of 68 checks;
   plain Claude passed 31 of 68 ([SPEC.md](SPEC.md)).
+- **Three runs of every test:** all 16 test cases, 3 runs each, passed 282
+  of 285 checks, and 45 of 48 runs passed every check
+  ([results](tests/results/issue-14-leftovers.md)). Getting there meant
+  fixing two problems the tests caught: the skill linked sources it hadn't
+  opened, and it asked more than two questions when resuming a project.
 - **The Reader's coach vs plain Claude:** same article, same student
   answers, 3 runs each. The coach passed every check in **14 of 15**
   replies; plain Claude passed **0 of 15**. Plain Claude summarized the
@@ -59,8 +64,9 @@ skill's coaching flow didn't have to change.
   run (12 of 12 checks, against 0 of 12 before). Across six new test cases,
   3 runs each, the new skill passed 72 of 81 checks and the previous version
   54 of 81 ([results](tests/results/issue-6-ask-how-it-knows.md)). Testing
-  also found two older problems, now open: unopened DOI links in Phase 4
-  source lists, and a third question when resuming a project.
+  also found two older problems, addressed in issue #14: unopened DOI
+  links in Phase 4 source lists (now fixed), and a third question when
+  resuming a project (now 2 of 48 runs).
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.

@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 263.7,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": false,
+      "evidence": "\"Source 6 is the one I'm least sure of... feel free to ask me how I know what it says.\" The invitation points to the source only by its list number, not by author, title, or publication."
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"Source 6 is the one I'm least sure of, both what it found and its DOI, so feel free to ask me how I know what it says.\" There is no question mark, and it invites the user to question the source."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every link and DOI in the reply matches a WebFetch in the log, including lanepe.2025.101211, research.birmingham.ac.uk, socscimed.2026.119094, the birmingham news page, s10964-025-02313-6, research-portal.uu.nl, AEA-05-2021-0112, 2006.2024.00058, researchnow.flinders, chb.2025.108603, news.flinders, educsci14080906, PMC11850730, econpapers and dcu.ie."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The only question mark aimed at the user is in \"What counts as 'interaction' in your essay: ... or how connected they feel?\" The \"Your turn\" prompt is an instruction, not a question."
+    }
+  ]
+}

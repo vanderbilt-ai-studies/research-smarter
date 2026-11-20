@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 165.3,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"The Bar et al. (2025) summary is the one I'm least sure of... so ask me how I know what it says.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"...so ask me how I know what it says.\" The sentence is an offer to question the source, and it has no question mark."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "The tool log shows a WebFetch for every link in the reply: doi.org/10.1556/2006.2024.00058, real.mtak.hu/216606, news.flinders.edu.au, research.birmingham.ac.uk, research-portal.uu.nl, emerald.com/aea/article/30/90/153-175/59588, swopec.hhs.se, dcu.ie, blogs.lse.ac.uk."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has one question mark: \"For each source, which of your two sub-questions does it speak to, and does it support or complicate your position?\""
+    }
+  ]
+}

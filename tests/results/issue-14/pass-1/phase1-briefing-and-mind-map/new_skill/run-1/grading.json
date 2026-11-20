@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 134.1,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "\"> **Phase 1 of 5 \u00b7 Explore and choose a direction**\" is the first line."
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "Bold section labels: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\", \"**Open questions**\"."
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "Estimated at about 375 words for the four sections, or about 425 with the sources list. Both are within 300\u2013500."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved an interactive map of six possible angles as **mind-map.html**\". The tool log shows the template templates/mind-map.html was read."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "The reply says \"six possible angles\". The visible branches have 3, 3, 2 and 3 children, and each has a saturation from 0 to 1 (e.g. \"saturation\": 0.85, \"saturation\": 0.2). The file excerpt is cut off, so the last two branches could not be checked."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Labels are short noun phrases, e.g. \"Total instructional time\", \"Schedule as a substitute for pay\", \"Which students are affected most\". None ends in a question mark."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "It only describes how crowded each angle is: \"Academic achievement is the most crowded; state policy and student health are the least.\" It never says which one to pick."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "All six URLs in the reply (hechingerreport, journalistsresource, future-ed, fortune, pmc.ncbi, missourinet) appear as WebFetch calls. The visible mind-map sources are text only, with no URLs."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"which direction pulls you most, and why does it seem worth researching?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question, with two parts, closes the reply. \"Feel free to ask me...\" is an invitation, not a question."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 167.1,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"I'm least confident about B\u00f6ttger & Zierer... Feel free to ask me how I know what it says\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"Feel free to ask me how I know what it says, or to question any other entry.\" (this sentence has no question mark and asks the user to question the source)"
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "All 8 links in the reply were fetched: doi.org/10.1108/AEA-05-2021-0112, 10.3368/jhr.0224-13403R2, 10.1007/s10964-025-02313-6, 10.1556/2006.2024.00058, 10.1016/j.lanepe.2025.101211, 10.3386/w35132, dcu.ie/antibullyingcentre/restriction-or-resilience, the74million.org article"
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark directed at the user: \"Which source surprised you most?\""
+    }
+  ]
+}

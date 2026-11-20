@@ -55,5 +55,4 @@ and so on), and ask the user to confirm or correct it. Then move to Phase 1.
 > including getting facts wrong or inventing sources, so plan to double-check
 > anything important I give you.
 >
-> To get started, what's the assignment? What kind of piece is it, roughly how
-> long, and when is it due?
+> To get started, what kind of assignment is it, and when is it due?

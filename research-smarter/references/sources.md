@@ -11,6 +11,14 @@ details before presenting it.
 - Only link a page you actually opened. A URL guessed from search snippets or
   mirror sites can be wrong; if you only saw a source secondhand, say so
   instead of linking it.
+- **Open every link you give, exactly as you give it, before you present
+  it.** This includes DOI links (`https://doi.org/...`): open the DOI link
+  itself, not just a search result or another page that mentions it. A
+  DOI copied from search results is a guess until you've opened it. This
+  matters most in a long source list, where it's tempting to skip.
+- If a source's page won't open (paywall, blocked, error), you may still
+  list it, but without a link or DOI, and say so in the same line: "Found
+  in search results; I couldn't open it, so check it before relying on it."
 - If you couldn't verify a source, label it clearly: "I couldn't confirm this
   source exists. Please check it before relying on it."
 - If you have no web search or other research tool in this environment, say

@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 175.1,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "Briefing has four labeled sections: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\", \"**Open questions**\""
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "By manual count, the briefing (Key debates through Open questions, plus the peer-review note) is about 370\u2013430 words, which is inside the 250\u2013600 range."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved an interactive map at `.../mind-map.html`\". The tool log shows the skill's templates/mind-map.html being read and grepped for __MIND_MAP_DATA__."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "\"It has six angles, each with smaller sub-angles\". Every branch shown in the file has 3 children, each with a saturation value, e.g. \"saturation\": 0.8 with children at 0.55, 0.4 and 0.35. The file excerpt is cut off, so the sixth branch could not be checked."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Labels are short topics, e.g. \"Teacher recruitment and retention\", \"Fifth-day programs\", \"Youth crime\". None is phrased as a question."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "\"Explore it, then tell me which direction pulls you in most\". The \"30 hours\" remark invites the user to check a claim; it does not recommend an angle."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every link appears in the WebFetch log: edworkingpapers ai22-630, both edweek URLs, the RAND RBA373-1 PDF, the NWEA blog post and the Chalkbeat article. The mind map excerpt is cut off, so links in its unseen part could not be checked."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"tell me which direction pulls you in most, and why it's worth researching beyond 'it's interesting.'\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The reply asks the user one thing, which direction and why. The questions inside the mind map are prompts to think about, not questions put directly to the user."
+    }
+  ]
+}

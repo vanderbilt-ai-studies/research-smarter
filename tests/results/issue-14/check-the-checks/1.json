@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01-invitation-names-source",
+    "passed": false,
+    "evidence": "No invitation to challenge or ask about a source; the reply only says \"Sort these by which sub-question they serve, and tell me which ones support or complicate your position.\""
+  },
+  {
+    "id": "02-invitation-is-offer",
+    "passed": false,
+    "evidence": "The reply has no invitation to challenge a source at all."
+  },
+  {
+    "id": "03-links-were-opened",
+    "passed": false,
+    "evidence": "The tool log shows only \"WebSearch: school smartphone ban bullying peer-reviewed study\". No page fetch is shown for https://doi.org/10.3368/jhr.0224-13403R2."
+  },
+  {
+    "id": "04-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply has no question marks; it ends with an instruction: \"Sort these... and tell me which ones support or complicate your position.\""
+  }
+]
