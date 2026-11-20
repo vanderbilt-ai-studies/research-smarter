@@ -67,6 +67,12 @@ skill's coaching flow didn't have to change.
   also found two older problems, addressed in issue #14: unopened DOI
   links in Phase 4 source lists (now fixed), and a third question when
   resuming a project (now 2 of 48 runs).
+- **Fact-check reminders:** the skill now reminds students to check what it
+  gives them at the start of each phase and with every source list, naming
+  what to check and how. Phase 2 briefings had that reminder in 3 of 3 runs,
+  against 1 of 3 before; across four test cases, 3 runs each, the skill
+  passed 61 of 63 checks, against 48 of 63 before
+  ([results](tests/results/issue-10-fact-check-reminders.md)).
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.

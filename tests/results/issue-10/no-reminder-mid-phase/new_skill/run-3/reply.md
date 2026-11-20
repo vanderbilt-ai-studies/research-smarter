@@ -1,0 +1,9 @@
+**Phase 2 of 5 · Pre-research stress test**
+
+Welcome back. Last time you finished Phases 0 and 1, picked four-day weeks (partly because of your cousin's district), read the second briefing, and were about to state your position. Now you have one: four-day weeks are better for teachers than for students. That's sharper than your original "help or hurt," because comparing two groups gives your essay a real argument to defend.
+
+One fact needs adjusting before we test it. "Kids lose class time" is true on average, but not everywhere. Most four-day districts make the remaining days longer. In RAND's 2021 study, four-day schools averaged about 7 h 55 min a day against 7 h 6 min, but had 146 school days a year against 171, so most of them still ended up with fewer total hours ([RAND brief](https://www.rand.org/content/dam/rand/pubs/research_briefs/RBA300/RBA373-1/RAND_RBA373-1.pdf)). The difference varies a lot by district. Thompson and colleagues looked at 12 states and found lower math scores only where total time in school was low. Where time stayed medium or high, they found no significant effect ([EdWeek summary, April 2026](https://www.edweek.org/leadership/the-4-day-school-week-what-research-shows-about-the-alternative-schedule/2026/04)).
+
+So here's my question. If some districts keep total hours close to the same, does your claim about students hold everywhere, or only in certain kinds of districts? And how would that change what your thesis has to say?
+
+The Thompson finding matters most to your student argument and I only have it from a summary, so ask me how I know it, or open the EdWeek piece and find the passage yourself.

@@ -31,9 +31,11 @@ Research Smarter is a research assistant skill that works with the user to refin
   must ask it how it knows what it knows" (Joey Brooke Jakob, dscout People
   Nerds, 2024). At the start of the session, the skill reminds the user that
   AI models can sometimes hallucinate and that they should check what it
-  produces. After that, whenever it states facts or presents sources, it
-  invites the user to challenge one specific claim or source, as an offer
-  rather than a question. When challenged, it says where the claim came from,
+  produces. After that, it reminds them again at the start of each phase and
+  with every source list, naming what to check and how, in a sentence or
+  two. Whenever it states facts or presents sources, it invites the user to
+  challenge one specific claim or source, as an offer rather than a
+  question, combined with any reminder in one closing passage. When challenged, it says where the claim came from,
   how confident it is, what it can't know, and how to check, and it withdraws
   anything it can't back up. The aim is a student who habitually questions
   AI, not just their sources.

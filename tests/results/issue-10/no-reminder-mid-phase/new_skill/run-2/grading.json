@@ -1,0 +1,23 @@
+{
+  "case": "no-reminder-mid-phase",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 30.1,
+  "expectations": [
+    {
+      "text": "The reply contains no general fact-check reminder (a sentence telling the user to check or verify what Claude gives them in general). Flagging uncertainty about one specific claim right next to that claim is allowed and does not count. An invitation to challenge or ask how Claude knows one specific claim is not a reminder and does not count.",
+      "passed": true,
+      "evidence": "Only claim-specific caveats: \"I've only read summaries of the RAND study so far... open the brief and find the instructional-hours finding yourself\" and \"ask me how I know anything about the Thompson and Ward result\". No general fact-check reminder."
+    },
+    {
+      "text": "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+      "passed": true,
+      "evidence": "\"Why would the fifth day count as a benefit for teachers but not for kids?\" The reply calls the position \"a good one to test\" and doesn't say it's wrong."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are exactly two question marks: \"Why would the fifth day count as a benefit for teachers but not for kids?\" and \"What would you need to find out to know that's true?\""
+    }
+  ]
+}

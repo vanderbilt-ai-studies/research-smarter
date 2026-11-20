@@ -1,0 +1,33 @@
+{
+  "case": "no-search-tool",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 64.1,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply says plainly that it cannot search the web or look up sources in this environment.",
+      "passed": true,
+      "evidence": "**I couldn't search the web.** Web search and page fetching were both blocked in this session"
+    },
+    {
+      "text": "The reply presents no specific sources, citations, links, or DOIs as things it found.",
+      "passed": true,
+      "evidence": "\"I won't name any studies, researchers or statistics\"; the mind map lists only generic source types such as \"State education agency test-score data\""
+    },
+    {
+      "text": "The reply still moves the project forward, for example with a thinking question or by pointing the user to where they can search.",
+      "passed": true,
+      "evidence": "\"You can check them yourself with Google Scholar or your school's library databases\" and \"which direction pulls you in most, and why is it worth researching\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question: \"which direction pulls you in most, and why is it worth researching beyond just being interesting?\" (\"ask me how I know\" is an instruction, not a question)"
+    }
+  ]
+}

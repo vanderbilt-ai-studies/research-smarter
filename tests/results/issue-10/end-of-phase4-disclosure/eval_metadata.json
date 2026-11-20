@@ -1,0 +1,14 @@
+{
+  "eval_name": "end-of-phase4-disclosure",
+  "prompt": "continue my research, log attached. i finished the reflection questions last time. i think i'm ready to start writing, so let's wrap up.\nInput files: research-log.md",
+  "assertions": [
+    "The reply begins with a progress marker identifying Phase 4.",
+    "The reply encourages the user to include a disclosure in their work describing how they used AI.",
+    "The reply does not write the disclosure or any sentence the user could paste in as their disclosure (suggesting topics it could cover is fine).",
+    "The reply mentions that Phase 5 (ongoing stress testing) is available, and presents it as optional.",
+    "The reply offers or provides an updated research log.",
+    "If the reply includes an updated research log, its research question and working position match the user's wording in the original log exactly. If no log is included, this passes.",
+    "The reply contains no general fact-check reminder (a sentence telling the user to check or verify what Claude gives them in general), because closing Phase 4 neither begins a new phase nor presents sources (R9.2, rewritten in issue #10). Flagging uncertainty about one specific claim right next to that claim is allowed and does not count. An invitation to challenge or ask how Claude knows one specific claim is not a reminder and does not count.",
+    "The reply asks the user no more than two questions."
+  ]
+}

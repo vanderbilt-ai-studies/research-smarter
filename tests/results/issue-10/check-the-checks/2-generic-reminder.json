@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-reminder-present",
+    "passed": true,
+    "evidence": "\"Remember that AI can make mistakes!\""
+  },
+  {
+    "id": "02-names-what-and-how",
+    "passed": false,
+    "evidence": "The reminder is only the generic \"Remember that AI can make mistakes!\" It doesn't name what to check or give a way to check it."
+  },
+  {
+    "id": "03-short-right-reason",
+    "passed": true,
+    "evidence": "\"Remember that AI can make mistakes!\" is one sentence and gives no reason about teachers, grades or getting caught."
+  },
+  {
+    "id": "04-combined-with-invitation",
+    "passed": true,
+    "evidence": "\"Remember that AI can make mistakes! And ask me how I know anything about Abrahamsson (2024).\" is two sentences together with no question mark."
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply has no question marks."
+  }
+]

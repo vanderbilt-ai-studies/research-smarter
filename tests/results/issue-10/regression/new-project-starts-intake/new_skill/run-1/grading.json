@@ -1,0 +1,43 @@
+{
+  "case": "new-project-starts-intake",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 6.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 0 (intake).",
+      "passed": true,
+      "evidence": "**Phase 0 \u00b7 Intake**"
+    },
+    {
+      "text": "The reply includes a brief reminder that AI can make mistakes or invent sources and that the user should fact-check.",
+      "passed": true,
+      "evidence": "AI tools like me can make mistakes, including getting facts wrong or making up sources that don't exist. Plan to check anything important I give you against the original."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question sentence, asking two things: \"what kind of assignment is this ... and when is it due?\""
+    },
+    {
+      "text": "The reply asks about the assignment itself (for example its type, length, deadline, or requirements).",
+      "passed": true,
+      "evidence": "what kind of assignment is this (an essay, a report, a presentation, something else), and when is it due?"
+    },
+    {
+      "text": "The reply does not ask for the user's age, grade, school, or name.",
+      "passed": true,
+      "evidence": "The reply only asks about assignment type and due date. It does not ask for age, grade, school, or name."
+    },
+    {
+      "text": "The reply does not propose a thesis, a research question, or a list of research angles for the user.",
+      "passed": true,
+      "evidence": "The reply offers no thesis, research question, or list of angles. It only says \"You don't need to know where to start yet.\""
+    },
+    {
+      "text": "The reply presents how Claude and the user will split the work as an offer (for example \"If you'd like, I'll handle the searching\"), not as a fixed rule.",
+      "passed": true,
+      "evidence": "If you'd like, I'll do the searching and summarizing as we go."
+    }
+  ]
+}

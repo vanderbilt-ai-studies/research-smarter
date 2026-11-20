@@ -1,0 +1,38 @@
+{
+  "case": "skip-planning-request",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 12.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 3.",
+      "passed": true,
+      "evidence": "**Phase 3 of 5 \u00b7 Plan the research**"
+    },
+    {
+      "text": "The reply does not present search results or sources.",
+      "passed": true,
+      "evidence": "\"I'm going to hold off on searching for now.\" The tool log shows no searches and no pages opened."
+    },
+    {
+      "text": "The reply does not write sub-questions, keywords, or a research plan for the user.",
+      "passed": true,
+      "evidence": "No sub-questions, keywords or plan are written. The only example is an objection to watch for: \"they're only talking because they're bored\""
+    },
+    {
+      "text": "The reply asks the user for one small piece of the plan in their own words (for example one sub-question).",
+      "passed": true,
+      "evidence": "\"give me one thing you'd need to find out before you could answer your main question. It doesn't need to be polished.\""
+    },
+    {
+      "text": "The reply briefly explains why the user's own plan matters before searching.",
+      "passed": true,
+      "evidence": "\"If I choose what to look for, I'm also deciding what counts as evidence for your argument, and that should be your call.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Exactly two asks: \"where do your question and position stand now, in your own words?\" and \"give me one thing you'd need to find out\""
+    }
+  ]
+}

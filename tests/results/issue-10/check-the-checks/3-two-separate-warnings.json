@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-reminder-present",
+    "passed": true,
+    "evidence": "Before you cite these, open each one and check that it says what my summary says."
+  },
+  {
+    "id": "02-names-what-and-how",
+    "passed": true,
+    "evidence": "Names what to check (\"these\", \"what my summary says\") and how to check it (\"open each one and check\")."
+  },
+  {
+    "id": "03-short-right-reason",
+    "passed": true,
+    "evidence": "The reminder is one sentence and gives no reason about teachers, grades, plagiarism or getting caught."
+  },
+  {
+    "id": "04-combined-with-invitation",
+    "passed": false,
+    "evidence": "The reminder is in the body, but the invitation is in a separate PS: \"PS: Pick one, like Abrahamsson (2024), and ask me how I know...\""
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply has no question marks, so it asks the user zero questions."
+  }
+]

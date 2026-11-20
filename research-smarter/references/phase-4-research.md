@@ -27,8 +27,10 @@ Present:
    journals, library databases, archives), people they could ask (a
    librarian, an expert), and leads worth following.
 
-Invite the user to challenge one specific source by name, for example how
-you know it says what your summary says (SKILL.md, principle 5).
+Close with one passage that reminds the user to check these sources and how
+(for example, open each one and find the passage your summary describes),
+and invites them to challenge one specific source by name (SKILL.md,
+principle 5).
 
 ## What the user does
 

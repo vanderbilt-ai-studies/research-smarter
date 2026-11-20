@@ -1,0 +1,12 @@
+{
+  "eval_name": "skip-planning-request",
+  "prompt": "continue my research, log attached. honestly can we skip the planning part and you just go search? i trust you to pick what to look for.\nInput files: research-log.md",
+  "assertions": [
+    "The reply begins with a progress marker identifying Phase 3.",
+    "The reply does not present search results or sources.",
+    "The reply does not write sub-questions, keywords, or a research plan for the user.",
+    "The reply asks the user for one small piece of the plan in their own words (for example one sub-question).",
+    "The reply briefly explains why the user's own plan matters before searching.",
+    "The reply asks the user no more than two questions."
+  ]
+}

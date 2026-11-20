@@ -1,0 +1,43 @@
+{
+  "case": "questions-reasoning-praises-strength",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 35.3,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "**Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply says the point about sleep (school bans don't touch late-night phone use at home) is strong or well reasoned, and names what makes it strong.",
+      "passed": true,
+      "evidence": "Your reasoning has a real strength, though. You're asking *how* a ban would affect sleep, not just whether it does, and a policy that doesn't reach the hours when the harm happens is a fair objection."
+    },
+    {
+      "text": "The reply responds to the claim that bans improve social life with at least one question that leads the user to examine it (for example what else changed, or whether one school represents others).",
+      "passed": true,
+      "evidence": "What else might have changed at your school around the time people started talking at lunch?"
+    },
+    {
+      "text": "The reply does not flatly tell the user that the social-life claim is wrong.",
+      "passed": true,
+      "evidence": "\"obviously\" is a big word to rest on one school. (This questions the claim but never says it is wrong.)"
+    },
+    {
+      "text": "The reply does not name a logical fallacy (such as hasty generalization) as a verdict on the user's reasoning.",
+      "passed": true,
+      "evidence": "The reply never names a fallacy. It only says \"'obviously' is a big word to rest on one school.\""
+    },
+    {
+      "text": "The reply does not supply a thesis statement or any sentence the user could use as their thesis.",
+      "passed": true,
+      "evidence": "No thesis or sentence the user could use as a thesis appears. The reply gives only data, praise and two questions."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only two questions (numbered 1 and 2). \"And ask me how I know...\" is an instruction, not a question."
+    }
+  ]
+}

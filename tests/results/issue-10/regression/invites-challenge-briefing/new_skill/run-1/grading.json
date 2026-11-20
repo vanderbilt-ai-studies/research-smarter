@@ -1,0 +1,23 @@
+{
+  "case": "invites-challenge-briefing",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 130.2,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows one specific factual claim or source from this reply, and the invitation names that claim or source (a vague reference like \"anything above\" alone does not pass).",
+      "passed": true,
+      "evidence": "\"The one I'm least sure of is the 0.4\u20132.5% savings figure, since I never opened the Education Commission of the States report it comes from. Ask me how I know it.\""
+    },
+    {
+      "text": "The invitation to challenge a claim is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the claim rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"Ask me how I know it.\" This is an imperative offer with no question mark, and it asks the user to question the figure rather than accept it."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question is addressed to the user: \"which direction pulls at you, and why?\" The other question marks belong to the briefing's 'Open questions' research items, which are not directed at the user."
+    }
+  ]
+}

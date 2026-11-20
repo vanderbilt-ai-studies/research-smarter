@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: source-list-reminder
+expected_outcome: |
+  The reply presents a Phase 4 source list. It has a fact-check reminder
+  that names these sources and how to check them, combined with the
+  invitation to challenge one named source in one closing passage.
+context:
+  scaffold_script: place-files.sh

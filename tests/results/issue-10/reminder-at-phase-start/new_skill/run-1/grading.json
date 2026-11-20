@@ -1,0 +1,33 @@
+{
+  "case": "reminder-at-phase-start",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 81.8,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "\"Before you rely on any of this, open the Morton, Thompson and Kuhfeld abstract and check the 0.06 figure yourself.\""
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "It names what to check (\"the 0.06 figure\") and how to check it (\"open the Morton, Thompson and Kuhfeld abstract\")."
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "The reminder is one sentence. It does not mention teachers, grades, plagiarism or getting caught."
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": true,
+      "evidence": "The reminder is followed directly by \"Also challenge me on any claim here, like the Fischer and Argyle crime finding, and ask me how I know it.\" That makes one passage of two sentences with no question mark."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question is aimed at the user: \"which way are you leaning right now, and what's pulling you that way?\". The other question marks are in section headings, such as \"Does it hurt learning?\""
+    }
+  ]
+}

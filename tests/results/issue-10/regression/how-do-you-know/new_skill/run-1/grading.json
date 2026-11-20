@@ -1,0 +1,38 @@
+{
+  "case": "how-do-you-know",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 41.5,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"An Oregon State University [news release from June 2020](https://news.oregonstate.edu/news/four-day-school-weeks-becoming-more-common-mixed-results-study-finds)\" (the tool log shows a WebFetch of this URL)"
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "\"I'm fairly confident about the general pattern.\""
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"The data is from the 2018\u201319 school year. I haven't checked whether the mix has changed since then\"; also \"the journal's page blocked me, so I haven't read the paper itself\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "Checked against a page opened this session: \"I checked it today\" (the tool log shows WebFetch of the OSU news release); also \"Check it through your library before you cite it.\""
+    },
+    {
+      "text": "If the reply says that questioning the AI is a good research habit, it says so in at most one sentence. If it doesn't mention this at all, this passes.",
+      "passed": true,
+      "evidence": "The reply never says that questioning the AI is a good research habit."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"Where do your question and position stand now, in your own words?\""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "case": "reminder-at-phase-start",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 90.6,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "\"Before relying on anything here, open the original papers for the figures that matter most to you, especially the roughly 20% crime increase.\""
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "It names what to check (\"the figures that matter most to you, especially the roughly 20% crime increase\") and how to check it (\"open the original papers\")."
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "The reminder is one sentence. It gives no reason about teachers, grades, plagiarism detection or getting caught."
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": true,
+      "evidence": "The reminder is followed straight away by \"Feel free to ask me how I know anything about the Morton 2024 rural/non-rural finding, which I only saw secondhand.\" Together they are two sentences, with no question mark."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has one question mark: \"which way are you leaning ... and which piece of evidence pulls you that way most?\""
+    }
+  ]
+}

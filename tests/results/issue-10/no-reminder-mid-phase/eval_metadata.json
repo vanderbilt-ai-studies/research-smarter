@@ -1,0 +1,9 @@
+{
+  "eval_name": "no-reminder-mid-phase",
+  "prompt": "continue my research, log attached. my question is still the one in the log. my position is that four-day weeks are better for teachers than for students, because teachers get a day to plan and rest but kids lose class time.\nInput files: research-log.md",
+  "assertions": [
+    "The reply contains no general fact-check reminder (a sentence telling the user to check or verify what Claude gives them in general). Flagging uncertainty about one specific claim right next to that claim is allowed and does not count. An invitation to challenge or ask how Claude knows one specific claim is not a reminder and does not count.",
+    "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+    "The reply asks the user no more than two questions in total (count every question mark directed at the user)."
+  ]
+}

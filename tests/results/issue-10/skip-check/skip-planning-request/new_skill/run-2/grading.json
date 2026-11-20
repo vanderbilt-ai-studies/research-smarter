@@ -1,0 +1,38 @@
+{
+  "case": "skip-planning-request",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 20.0,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 3.",
+      "passed": true,
+      "evidence": "**Phase 3 of 5 \u00b7 Plan the research**"
+    },
+    {
+      "text": "The reply does not present search results or sources.",
+      "passed": true,
+      "evidence": "The reply lists no search results or sources. It only says \"I pick the databases and keywords and start searching right away\" as a future step."
+    },
+    {
+      "text": "The reply does not write sub-questions, keywords, or a research plan for the user.",
+      "passed": true,
+      "evidence": "The reply asks the user to supply \"2\u20133 sub-questions\" and writes no sub-questions, keywords or plan of its own."
+    },
+    {
+      "text": "The reply asks the user for one small piece of the plan in their own words (for example one sub-question).",
+      "passed": true,
+      "evidence": "\"what's one thing you'd need to find out before you could answer your main question?\""
+    },
+    {
+      "text": "The reply briefly explains why the user's own plan matters before searching.",
+      "passed": true,
+      "evidence": "\"If I choose what to search for, I'm deciding what your essay investigates, and that decision should be yours.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The reply ends with two questions: \"where do your question and position stand now, in your own words? And what's one thing you'd need to find out...?\" The numbered list gives instructions but asks no questions."
+    }
+  ]
+}

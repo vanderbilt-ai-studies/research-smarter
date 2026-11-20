@@ -1,0 +1,33 @@
+{
+  "case": "reminder-at-phase-start",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 93.0,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "\"Before any of these numbers go into your report, find each one in the original study rather than in my summary or a news article.\""
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "It names \"these numbers\" and says how to check them: \"find each one in the original study rather than in my summary or a news article\""
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "The reminder is two sentences (\"Before any of these numbers... Also, ask me how I know...\") and never mentions teachers, grades, plagiarism or getting caught."
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": true,
+      "evidence": "The two sentences sit together in one passage with no question mark: \"...find each one in the original study... Also, ask me how I know about the Fischer and Argyle crime finding, since I read only its abstract\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark in the reply: \"where are you leaning, even roughly, and what is pulling you that way: ...your cousin's district?\""
+    }
+  ]
+}

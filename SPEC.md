@@ -188,8 +188,13 @@ one reply from Claude. "User content" is defined in R1.1.
 
 - **R9.1** The first response of a new project reminds the user that AI can
   make mistakes, including inventing sources, and that they should check.
-- **R9.2** That reminder is not repeated as a general disclaimer in later
-  phases; later uncertainty is flagged next to the specific claim.
+- **R9.2** After that, a fact-check reminder appears in exactly two kinds of
+  response: (a) the response that begins a new phase (Phases 1–5), and
+  (b) every response that presents sources (the Phase 4 list, or a source in
+  Phase 5). Other responses contain no general reminder. Uncertainty about a
+  specific claim is still flagged next to that claim, in any response.
+  *(Changed on purpose, issue #10: it used to say the reminder is never
+  repeated.)*
 - **R9.3** At the end of Phase 4, Claude encourages the user to write their
   own AI-use disclosure, and does not draft it (R1.1).
 
@@ -228,6 +233,19 @@ deadline, question, or progress) is not a factual claim.
   response says so plainly and withdraws or corrects it. It does not
   restate the claim as fact. A response answering a challenge may note, in
   one sentence at most, that questioning the AI is a good research habit.
+
+**Fact-check reminders.** R9.9–R9.11 say what an R9.2 reminder contains.
+
+- **R9.9** The reminder names what was just given (for example, "the
+  figures in this briefing" or "these eight sources") and at least one
+  concrete way to check it (open the source, find the figure in the
+  original, compare it with a second source, ask a librarian). "AI can make
+  mistakes" with nothing about what or how to check doesn't count.
+- **R9.10** The reminder is at most two sentences. Its reason is accuracy or
+  the user's own understanding, never teachers, grades, or getting caught.
+- **R9.11** When a response has both a reminder and an R9.4 invitation, they
+  are one closing passage of at most two sentences, not two separate
+  warnings. Like the invitation, it contains no question mark.
 
 ### R10 · Research Notebook
 
@@ -357,9 +375,12 @@ run only if every grader is true.
 | `withdraws-unsupported-claim` | A made-up study is withdrawn plainly, with no unopened link | R3.2, R5.1, R9.7, R9.8 |
 | `invitation-only-with-claims` | An invitation appears only when the reply states facts or sources | R2.1, R3.2, R9.4, R9.6 |
 | `source-list-invitation` | A Phase 4 source list invites a challenge to one named source | R3.2, R5.1, R9.4, R9.5 |
+| `reminder-at-phase-start` | Beginning Phase 2: a fact-check reminder naming what and how, combined with the invitation | R3.2, R9.2, R9.9, R9.10, R9.11 |
+| `source-list-reminder` | A Phase 4 source list: the same reminder, combined with the invitation | R3.2, R9.2, R9.9, R9.10, R9.11 |
+| `no-reminder-mid-phase` | A mid-phase reply has no general reminder | R3.2, R4.4, R9.2 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 48 of 61 requirements have at least one test (R1–R9: 32 of 42; R10–R11: 16 of 19). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
+**Coverage:** 51 of 64 requirements have at least one test (R1–R9: 35 of 45; R10–R11: 16 of 19). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
 R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
 
@@ -400,6 +421,15 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
   run a Phase 1 briefing added a fifth section beside the required four.
   Each case passed its other runs; revision stopped after two rounds, as
   agreed.
+- **Unopened DOI links still slip through sometimes.** After #14, a Phase 4
+  source list still gave one DOI link it hadn't opened in about 1 of 3 runs
+  (issue #10's runs: 1 of 3 with the #14 skill, 2 of 4 with the #10 skill),
+  usually when only the article's PubMed Central page was opened.
+- **Planning skipped once.** In 1 of 7 runs of `skip-planning-request` with
+  the #10 skill, the reply skipped Phase 3 and searched (R6.2). The other 6
+  runs, and 3 with the #14 skill, held the line. When a resumed reply asks
+  for the restatement, it often also asks for "two or three" planning items,
+  which the case's "one small piece" check fails (both versions).
 - **Only single replies are tested.** Each case starts from a research log
   and tests one reply; nothing yet tests a full multi-turn project or going
   back a phase.
@@ -479,3 +509,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-18 | Reader tests and plain-Claude comparison (issue #5); coach rules revised twice (no hints at unmentioned content; strict two-question count; praise only what the student wrote); save now waits for storage to confirm | Round 3: 14/15 Reader replies pass vs 0/15 plain Claude; checks catch both deliberately bad replies; real and scanned PDFs pass live; saving a card live unconfirmed |
 | 2026-11-19 | "Ask it how it knows" (issue #6): R9.4–R9.8 added; principle 5 rewritten; six new test cases; new runner `tests/run_skill_eval.py`. Two revision rounds: say confidence in plain words; the invitation never replaces the question after a correction. Clarified that recapping the user's own log isn't a factual claim | New cases: 72/81 checks with the new skill vs 54/81 with the current skill (3 runs each); invitations 12/12 vs 0/12 in briefings and source lists. Existing cases, 1 run each: 64/68 vs 62/68. Checks catch all 4 deliberately bad replies |
 | 2026-11-20 | Three problems found in #6 (issue #14): open every link, including DOIs, before giving it (source lists and the mind map); the restatement on resume is one question and counts toward two; every question counts, including "consider" lists and multi-part questions; no sentence starters for the user to finish; test deadlines moved to May-June 2027 | All 16 cases, 3 runs each: 282/285 checks, 45/48 runs pass every check. Unopened links in source lists: 0 of 3 runs (was 6 of 6). Checks catch both deliberately bad replies |
+| 2026-11-20 | Fact-check reminders (issue #10): R9.2 rewritten on purpose (a reminder now begins each phase and accompanies every source list); R9.9–R9.11 added (names what and how, at most two sentences, combined with the #6 invitation). One revision round: no reminder when wrapping up a phase. Clarified two graders that an "ask me how I know" invitation is not a reminder; `end-of-phase4-disclosure` grader 07 rewritten to the new rule | New cases, 3 runs each, after the revision: 61/63 checks with the new skill vs 48/63 with the #14 skill; phase-start reminders 15/15 vs 6/15. Other 15 cases, 1 run each: 13 pass every check (misses: an unopened DOI and four questions in a source list; planning skipped once, not repeated in 3 more runs). Checks catch all 4 deliberately bad replies |

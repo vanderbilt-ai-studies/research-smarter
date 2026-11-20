@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 134.7,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"And ask me how I know what the Abrahamsson study found on bullying, since that's the one I'm least sure of.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"And ask me how I know what the Abrahamsson study found on bullying, since that's the one I'm least sure of.\" (no question mark; asks the user to question the source)"
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "The reply cites https://doi.org/10.1016/j.lanepe.2025.101237 for Weiss & Bonell, but the log shows no fetch of that DOI. Only https://pmc.ncbi.nlm.nih.gov/articles/PMC11850730/ was opened."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Four question marks directed at the user: \"what does 'interaction' in your question include?\", \"Does it cover students and adults, or only students with each other?\", \"How would you tell 'conflict moved after school' apart from 'phone use moved after school'?\", \"which of these sources goes with which of your two sub-questions...?\""
+    }
+  ]
+}

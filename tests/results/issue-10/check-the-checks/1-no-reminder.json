@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-reminder-present",
+    "passed": false,
+    "evidence": "No sentence tells the user to check the sources themselves. The closest line is \"Pick one, like Abrahamsson (2024), and ask me how I know it says what I summarized.\" That invites the user to question Claude; it doesn't tell them to check the source."
+  },
+  {
+    "id": "02-names-what-and-how",
+    "passed": false,
+    "evidence": "There is no fact-check reminder. No way to check is given, such as opening the DOI or finding the result in the original."
+  },
+  {
+    "id": "03-short-right-reason",
+    "passed": false,
+    "evidence": "There is no fact-check reminder."
+  },
+  {
+    "id": "04-combined-with-invitation",
+    "passed": false,
+    "evidence": "The invitation is there (\"Pick one, like Abrahamsson (2024), and ask me how I know...\"), but there is no fact-check reminder to go with it."
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply contains no question marks."
+  }
+]

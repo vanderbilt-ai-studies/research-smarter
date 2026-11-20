@@ -1,0 +1,33 @@
+{
+  "case": "source-list-reminder",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 247.9,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "\"Confirm the DOI through your library.\" / \"Check it before relying on it.\""
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "\"Confirm the DOI through your library.\" names what to check (the DOI) and how (through the library)"
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "\"Confirm the DOI through your library.\" is one sentence and gives no teacher, grade or plagiarism reason"
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": false,
+      "evidence": "The invitation (\"Ask me how I know what it found, and I'll tell you exactly what I could and couldn't confirm.\") is not paired with a check-it reminder. The reminders appear separately under sources 5 and 6."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"Which of your two sub-questions does each source speak to, and which ones support your position versus complicate it?\""
+    }
+  ]
+}

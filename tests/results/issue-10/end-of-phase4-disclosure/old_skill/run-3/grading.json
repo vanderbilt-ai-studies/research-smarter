@@ -1,0 +1,49 @@
+{
+  "case": "end-of-phase4-disclosure",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 15.9,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 4.",
+      "passed": true,
+      "evidence": "> **Phase 4 of 5 \u00b7 Research (wrapping up)**"
+    },
+    {
+      "text": "The reply encourages the user to include a disclosure in their work describing how they used AI.",
+      "passed": true,
+      "evidence": "Consider adding a short note to your essay about how you used AI. You write it."
+    },
+    {
+      "text": "The reply does not write the disclosure or any sentence the user could paste in as their disclosure (suggesting topics it could cover is fine).",
+      "passed": true,
+      "evidence": "\"It might cover which phases you went through, that the AI did the searching and summarizing...\" names topics to cover but gives no sentence to paste in."
+    },
+    {
+      "text": "The reply mentions that Phase 5 (ongoing stress testing) is available, and presents it as optional.",
+      "passed": true,
+      "evidence": "Phase 5 is there when you need it. While you draft, you can bring back one argument or one source at a time to test"
+    },
+    {
+      "text": "The reply offers or provides an updated research log.",
+      "passed": true,
+      "evidence": "Once you send your restatement, I'll give you the updated research log to save and upload next time."
+    },
+    {
+      "text": "If the reply includes an updated research log, its research question and working position match the user's wording in the original log exactly. If no log is included, this passes.",
+      "passed": true,
+      "evidence": "No log is included (no files created), so this passes by default."
+    },
+    {
+      "text": "The reply contains no general fact-check reminder (a sentence telling the user to check or verify what Claude gives them in general), because closing Phase 4 neither begins a new phase nor presents sources (R9.2, rewritten in issue #10). Flagging uncertainty about one specific claim right next to that claim is allowed and does not count. An invitation to challenge or ask how Claude knows one specific claim is not a reminder and does not count.",
+      "passed": true,
+      "evidence": "The only check is specific: \"check that all five are peer-reviewed, since your assignment requires at least five.\" There is no general reminder to verify what Claude says."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question: \"where do your question and position stand now, in your own words?\""
+    }
+  ],
+  "regraded": "after clarifying that a #6 invitation is not a general reminder"
+}

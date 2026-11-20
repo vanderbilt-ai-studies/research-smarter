@@ -1,0 +1,33 @@
+{
+  "case": "source-list-reminder",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 167.5,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "\"it's a working paper, not peer-reviewed, so check it before relying on it.\" This is a narrow caveat about one source, not a general reminder."
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": false,
+      "evidence": "The reminder names the NBER paper but gives no concrete way to check it. \"at nber.org\" appears separately, under Avenues."
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "\"I couldn't open it, and it's a working paper, not peer-reviewed, so check it before relying on it.\" It is one sentence and doesn't mention teachers or grades."
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": false,
+      "evidence": "The invitation (\"pick a source like Bar et al. and ask me how I know it says what I summarized\") is in a different passage from the check reminder under source 10."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"Which sources go with which sub-question, and where does each one land for your argument?\""
+    }
+  ]
+}

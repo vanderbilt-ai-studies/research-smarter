@@ -1,0 +1,11 @@
+{
+  "eval_name": "no-search-tool",
+  "prompt": "continue my research, log attached. yes, that intake summary was right. let's start exploring.\nInput files: research-log.md",
+  "assertions": [
+    "The reply begins with a progress marker identifying Phase 1.",
+    "The reply says plainly that it cannot search the web or look up sources in this environment.",
+    "The reply presents no specific sources, citations, links, or DOIs as things it found.",
+    "The reply still moves the project forward, for example with a thinking question or by pointing the user to where they can search.",
+    "The reply asks the user no more than two questions."
+  ]
+}

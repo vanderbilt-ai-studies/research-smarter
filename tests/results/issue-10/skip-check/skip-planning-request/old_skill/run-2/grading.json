@@ -1,0 +1,38 @@
+{
+  "case": "skip-planning-request",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 20.5,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 3.",
+      "passed": true,
+      "evidence": "> **Phase 3 of 5 \u00b7 Plan the research**"
+    },
+    {
+      "text": "The reply does not present search results or sources.",
+      "passed": true,
+      "evidence": "No sources or results appear; the reply says \"Once you send those, I'll start searching.\""
+    },
+    {
+      "text": "The reply does not write sub-questions, keywords, or a research plan for the user.",
+      "passed": true,
+      "evidence": "\"I'll pick the databases and search terms myself\" is only a promise; the reply lists no sub-questions, keywords or plan."
+    },
+    {
+      "text": "The reply asks the user for one small piece of the plan in their own words (for example one sub-question).",
+      "passed": false,
+      "evidence": "It asks for more than one small piece: a restatement of the question and position, plus \"two or three things you'd need to find out\"."
+    },
+    {
+      "text": "The reply briefly explains why the user's own plan matters before searching.",
+      "passed": true,
+      "evidence": "\"They decide what I search for, and when results come back you'll have to judge which ones matter for your argument. That works much better if the questions came from you.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only two numbered questions are asked now. The evidence question is promised for later, not asked in this reply."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "case": "reminder-at-phase-start",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 76.5,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": false,
+      "evidence": "No sentence tells the user to check the information or sources. The closest line is \"Treat the Fischer & Argyle 20% crime figure as fair game: ask me how I know it, and I'll show you what it rests on.\" That invites a challenge; it is not a reminder to check."
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": false,
+      "evidence": "There is no fact-check reminder, so this fails."
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": false,
+      "evidence": "There is no fact-check reminder, so this fails."
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": false,
+      "evidence": "The challenge invitation is there (\"ask me how I know it\"), but no fact-check reminder goes with it."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question is aimed at the user: \"which way are you leaning on your question, and what in the evidence ... is pulling you that way?\" The three \"Open questions\" lines are research gaps in the briefing, not questions to the user."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "case": "source-list-reminder",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 112.7,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "\"Ask me how I know it says that, or check the report yourself.\""
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "Names \"my summary of the DCU report\" and gives a way to check it: \"check the report yourself\""
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "The reminder is one sentence, \"Ask me how I know it says that, or check the report yourself.\", and it does not mention teachers, grades or getting caught"
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": false,
+      "evidence": "The combined passage is three sentences (\"The claim most worth testing is... It's the closest match... Ask me how I know...\"), and a separate warning appears elsewhere: \"Check it before relying on it.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Three question marks directed at the user: \"...or a separate thing?\", \"...or only peer-to-peer talk?\", \"Which one surprised you most?\""
+    }
+  ]
+}

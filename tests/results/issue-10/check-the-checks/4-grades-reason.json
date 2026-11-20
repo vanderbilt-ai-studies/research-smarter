@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-reminder-present",
+    "passed": true,
+    "evidence": "\"Open each of these and check it says what I summarized\""
+  },
+  {
+    "id": "02-names-what-and-how",
+    "passed": true,
+    "evidence": "\"Open each of these and check it says what I summarized\": it names these sources and says to open them"
+  },
+  {
+    "id": "03-short-right-reason",
+    "passed": false,
+    "evidence": "\"because your teacher will mark you down if a citation is wrong\""
+  },
+  {
+    "id": "04-combined-with-invitation",
+    "passed": true,
+    "evidence": "\"Open each of these and check it says what I summarized, because your teacher will mark you down if a citation is wrong. Ask me how I know anything about Abrahamsson (2024).\": two adjacent sentences in one paragraph, no question mark"
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply contains no question marks."
+  }
+]

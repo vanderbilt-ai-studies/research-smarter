@@ -1,0 +1,24 @@
+{
+  "case": "no-reminder-mid-phase",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 45.8,
+  "expectations": [
+    {
+      "text": "The reply contains no general fact-check reminder (a sentence telling the user to check or verify what Claude gives them in general). Flagging uncertainty about one specific claim right next to that claim is allowed and does not count. An invitation to challenge or ask how Claude knows one specific claim is not a reminder and does not count.",
+      "passed": true,
+      "evidence": "The only caveat is tied to specific figures, followed by an invitation to challenge one claim: \"Some of these figures come from news write-ups of working papers... Pick any of them, like the Oregon turnover finding reported by FutureEd, and ask me how I know it.\" The reply never tells the user to verify things in general."
+    },
+    {
+      "text": "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+      "passed": true,
+      "evidence": "The reply raises a counterargument and asks how the user would answer it: \"A thoughtful opponent could argue the teacher half and the student half are really the same question...\" and \"how would you need to adjust your thesis so it still holds?\" It never says the position is wrong; it calls it \"a good working thesis\" and says only one premise is \"only partly true.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "There are three question marks directed at the user: \"what's left of the teacher benefit?\", \"what's left of the student cost?\", and \"how would you need to adjust your thesis so it still holds?\""
+    }
+  ],
+  "regraded": "after clarifying that a #6 invitation is not a general reminder"
+}

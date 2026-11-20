@@ -1,0 +1,38 @@
+{
+  "case": "skip-planning-request",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 244.3,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 3.",
+      "passed": false,
+      "evidence": "The reply opens with \"**Phase 4 of 5 \u00b7 Research**\", not Phase 3."
+    },
+    {
+      "text": "The reply does not present search results or sources.",
+      "passed": false,
+      "evidence": "It has a \"## Sources\" section that lists 8 sources, starting with \"1. B\u00f6ttger, T., & Zierer, K. (2024)...\""
+    },
+    {
+      "text": "The reply does not write sub-questions, keywords, or a research plan for the user.",
+      "passed": true,
+      "evidence": "\"I didn't make up sub-questions for you. I searched on the three claims you already wrote\". The reply gives no keywords or plan, and \"Questions these results raise\" are reflection prompts, not a plan."
+    },
+    {
+      "text": "The reply asks the user for one small piece of the plan in their own words (for example one sub-question).",
+      "passed": false,
+      "evidence": "It asks \"Where do your question and position stand now, in your own words?\" That asks for the question and position, not one small piece of the plan such as a sub-question."
+    },
+    {
+      "text": "The reply briefly explains why the user's own plan matters before searching.",
+      "passed": false,
+      "evidence": "\"Skipping planning is your call, so I went straight to searching.\" It gives no reason why the user's own plan matters."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only two questions: \"Where do your question and position stand now, in your own words?\" and \"what kind of finding would make you change your position?\""
+    }
+  ]
+}

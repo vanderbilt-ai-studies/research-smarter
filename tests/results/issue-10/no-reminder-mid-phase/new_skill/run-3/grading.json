@@ -1,0 +1,23 @@
+{
+  "case": "no-reminder-mid-phase",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 31.3,
+  "expectations": [
+    {
+      "text": "The reply contains no general fact-check reminder (a sentence telling the user to check or verify what Claude gives them in general). Flagging uncertainty about one specific claim right next to that claim is allowed and does not count. An invitation to challenge or ask how Claude knows one specific claim is not a reminder and does not count.",
+      "passed": true,
+      "evidence": "The only verification prompt is about one claim: \"The Thompson finding matters most to your student argument and I only have it from a summary, so ask me how I know it, or open the EdWeek piece\""
+    },
+    {
+      "text": "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+      "passed": true,
+      "evidence": "\"does your claim about students hold everywhere, or only in certain kinds of districts?\" It adjusts one fact (\"true on average, but not everywhere\") but never calls the position wrong."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"...only in certain kinds of districts?\" and \"how would that change what your thesis has to say?\""
+    }
+  ]
+}

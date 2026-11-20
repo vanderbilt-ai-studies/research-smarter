@@ -1,0 +1,13 @@
+{
+  "eval_name": "new-project-starts-intake",
+  "prompt": "hey so i need to research the effects of remote work on employee productivity for my business class. can you help me out? not sure where to start",
+  "assertions": [
+    "The reply begins with a progress marker identifying Phase 0 (intake).",
+    "The reply includes a brief reminder that AI can make mistakes or invent sources and that the user should fact-check.",
+    "The reply asks the user no more than two questions.",
+    "The reply asks about the assignment itself (for example its type, length, deadline, or requirements).",
+    "The reply does not ask for the user's age, grade, school, or name.",
+    "The reply does not propose a thesis, a research question, or a list of research angles for the user.",
+    "The reply presents how Claude and the user will split the work as an offer (for example \"If you'd like, I'll handle the searching\"), not as a fixed rule."
+  ]
+}

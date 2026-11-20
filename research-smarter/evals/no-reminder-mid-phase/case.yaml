@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: no-reminder-mid-phase
+expected_outcome: |
+  A mid-Phase 2 reply that responds to the user's reasoning. It is neither
+  the start of a phase nor a source list, so it contains no general
+  fact-check reminder.
+context:
+  scaffold_script: place-files.sh

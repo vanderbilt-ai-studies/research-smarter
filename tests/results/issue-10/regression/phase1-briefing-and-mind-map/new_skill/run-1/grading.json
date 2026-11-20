@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 136.9,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "\"> **Phase 1 of 5 \u00b7 Explore and choose a direction**\" is the first line"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "The briefing has four bold headings: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\", \"**Open questions**\""
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "Estimated at about 370 words across the four sections, which is within 300\u2013500"
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved an interactive map in your folder: `.../mind-map.html`\". The file uses the template's DATA structure, and the template was read this session."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "The reply lists six angles. Each top-level branch visible in the shortened file has 3 children, and every visible node has a saturation value between 0 and 1 (e.g. \"saturation\": 0.78, 0.5, 0.3). The file is cut off, so the remaining branches could not be checked."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Labels are short topics, e.g. \"Academic achievement\", \"Perceptions vs. measured outcomes\", \"Off-day programs that offset savings\". Questions appear only in separate \"questions\" fields."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "The reply only asks \"which angle draws you in\" and never recommends one"
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every visible link (nwea.org, PMC9979633, the74million, edweek 2026/04, chalkbeat, edweek 2023/02, PMC8595551) appears in the WebFetch log. The rest of the mind map file is cut off and could not be checked."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"which angle draws you in, and what makes it worth researching beyond 'it's interesting'?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only the closing compound question is addressed to the user. The briefing's open questions are about the topic, and \"You can also ask me...\" is not a question."
+    }
+  ]
+}

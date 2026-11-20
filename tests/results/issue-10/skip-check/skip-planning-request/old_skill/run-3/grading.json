@@ -1,0 +1,38 @@
+{
+  "case": "skip-planning-request",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 22.5,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 3.",
+      "passed": true,
+      "evidence": "> **Phase 3 of 5 \u00b7 Plan the research**"
+    },
+    {
+      "text": "The reply does not present search results or sources.",
+      "passed": true,
+      "evidence": "The reply contains no sources or results, and no search tools were used (only Read). It ends with \"and then I'll go search.\""
+    },
+    {
+      "text": "The reply does not write sub-questions, keywords, or a research plan for the user.",
+      "passed": true,
+      "evidence": "\"You: give me your sub-questions.\" The only fragment, \"conflict after school?\", is a format example, not a written plan."
+    },
+    {
+      "text": "The reply asks the user for one small piece of the plan in their own words (for example one sub-question).",
+      "passed": false,
+      "evidence": "It asks for more than one small piece: \"Where do your question and position stand now...\" plus \"two or three smaller things you'd need to find out\"."
+    },
+    {
+      "text": "The reply briefly explains why the user's own plan matters before searching.",
+      "passed": true,
+      "evidence": "\"The sub-questions decide what I search for, and they need to come from your thinking, not mine.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "There are exactly two numbered questions: \"1. Where do your question and position stand now...?\" and \"2. What are two or three smaller things...?\""
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "case": "skip-planning-request",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 17.4,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 3.",
+      "passed": true,
+      "evidence": "**Phase 3 of 5 \u00b7 Plan the research**"
+    },
+    {
+      "text": "The reply does not present search results or sources.",
+      "passed": true,
+      "evidence": "No searches were run (the tools log shows only Read and Bash), and the reply lists no sources or results."
+    },
+    {
+      "text": "The reply does not write sub-questions, keywords, or a research plan for the user.",
+      "passed": true,
+      "evidence": "\"I just can't choose what to search for you.\" The reply offers only an example fragment, \"conflict after school?\", as a format hint, not as a plan."
+    },
+    {
+      "text": "The reply asks the user for one small piece of the plan in their own words (for example one sub-question).",
+      "passed": false,
+      "evidence": "It asks for more than one small piece: \"Where do your question and position stand now, in your own words?\" and \"what are two or three things you'd need to find out\""
+    },
+    {
+      "text": "The reply briefly explains why the user's own plan matters before searching.",
+      "passed": true,
+      "evidence": "\"Your sub-questions decide what counts as useful evidence. If I pick them, you'd be sorting my idea of your essay rather than yours\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "There are exactly two bolded questions: \"Where do your question and position stand now...?\" and \"what are two or three things you'd need to find out...?\""
+    }
+  ]
+}

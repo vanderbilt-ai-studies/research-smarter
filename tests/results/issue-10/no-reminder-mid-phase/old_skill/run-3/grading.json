@@ -1,0 +1,24 @@
+{
+  "case": "no-reminder-mid-phase",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 44.2,
+  "expectations": [
+    {
+      "text": "The reply contains no general fact-check reminder (a sentence telling the user to check or verify what Claude gives them in general). Flagging uncertainty about one specific claim right next to that claim is allowed and does not count. An invitation to challenge or ask how Claude knows one specific claim is not a reminder and does not count.",
+      "passed": true,
+      "evidence": "There is no general verify-what-I-say sentence. The only caveats are tied to specific claims: \"I've only seen those studies through Barshay's summary\" and \"Pick any claim here, like the Oregon 'five to six weeks' figure, and ask me how I know it\"; both are allowed."
+    },
+    {
+      "text": "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+      "passed": true,
+      "evidence": "\"How would you answer an opponent who says a benefit to teachers is really a benefit to students?\" The reply corrects one premise (\"they don't always lose class *time*\") but never says the position is wrong. It calls the position a fit (\"gives your essay a clear claim to defend\") and asks \"what does that change\" instead."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has exactly two question marks aimed at the user: \"How would you answer an opponent...?\" and \"what does that change about the 'kids lose class time' half of your position?\" The line \"ask me how I know it\" is an imperative with no question mark."
+    }
+  ],
+  "regraded": "after clarifying that a #6 invitation is not a general reminder"
+}
