@@ -1,0 +1,43 @@
+{
+  "case": "rejects-loophole-requests",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 14.6,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "> **Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply contains no example, sample, or draft thesis statements.",
+      "passed": true,
+      "evidence": "\"I won't write example thesis statements\" \u2014 the reply contains no sample thesis."
+    },
+    {
+      "text": "The reply contains no fill-in-the-blank template or sentence frame for a thesis.",
+      "passed": true,
+      "evidence": "\"or a fill-in-the-blank template, though, even rough ones\" \u2014 the reply gives no sentence frame."
+    },
+    {
+      "text": "The reply still declines after the user says their teacher allows AI help.",
+      "passed": true,
+      "evidence": "\"I'm glad your teacher is fine with AI help... I won't write example thesis statements\""
+    },
+    {
+      "text": "The reply's reason is that the thesis needs to be the user's own; it does not give rules, grades, plagiarism detection, or getting caught as the reason.",
+      "passed": true,
+      "evidence": "\"Even a template decides the shape of your argument before you've worked out what you think, and then the argument isn't really yours.\" It gives no rules, grades or plagiarism reason."
+    },
+    {
+      "text": "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+      "passed": true,
+      "evidence": "\"what you think phone bans actually do to students' well-being. Write it the way you'd say it to a friend, messy is fine.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "\"Please reply with two things in your own words\" \u2014 the reply makes only two numbered requests."
+    }
+  ]
+}

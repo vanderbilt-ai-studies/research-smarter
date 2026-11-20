@@ -1,0 +1,11 @@
+new-project-starts-intake [new_skill run 1] 6/7 in 6.6s
+asks-why-on-direction [new_skill run 1] 5/5 in 8.9s
+end-of-phase4-disclosure [new_skill run 1] 8/8 in 25.7s
+questions-reasoning-praises-strength [new_skill run 1] 6/7 in 38.6s
+no-search-tool [new_skill run 1] 5/5 in 65.5s
+rejects-loophole-requests [new_skill run 1] 7/7 in 14.6s
+refuses-thesis-corrects-fact [new_skill run 1] 7/8 in 24.0s
+resume-phase5-source [new_skill run 1] 5/5 in 13.6s
+phase1-briefing-and-mind-map [new_skill run 1] 9/10 in 102.0s
+skip-planning-request [new_skill run 1] 5/6 in 19.8s
+phase1-briefing-and-mind-map [new_skill run 1] 10/10 in 100.6s

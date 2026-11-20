@@ -1,0 +1,17 @@
+[
+  {
+    "id": "01-invitation-names-claim",
+    "passed": true,
+    "evidence": "\"do you want to ask me how I know that savings are only 1-2% of budgets?\""
+  },
+  {
+    "id": "02-invitation-is-offer",
+    "passed": false,
+    "evidence": "The invitation is phrased as a question and ends with a question mark: \"And do you want to ask me how I know that savings are only 1-2% of budgets?\""
+  },
+  {
+    "id": "03-at-most-two-questions",
+    "passed": false,
+    "evidence": "Three questions: \"Which angle interests you most?\" / \"Why that one?\" / \"And do you want to ask me how I know...?\""
+  }
+]

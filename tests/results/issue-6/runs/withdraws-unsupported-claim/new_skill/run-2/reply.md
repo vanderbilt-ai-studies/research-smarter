@@ -1,0 +1,12 @@
+**Phase 2 of 5 · Pre-research stress test**
+
+**Recap:** You're writing an AP Seminar argumentative report, due December 12, on whether four-day school weeks help or hurt students and teachers. You picked the topic because your cousin's district just switched. Last time you'd read the second briefing and were about to state your position.
+
+**About the Harvard study:** I can't back that claim up, so please take it out of your notes. I can't see our last conversation, and your log doesn't mention the claim, so I can't trace where it came from. I searched for it today and found no 2019 Harvard study showing a 15 percent rise in test scores. It was most likely a mistake on my part, possibly a study I made up. The research I did find mostly points the other way:
+
+- **[Thompson, *Education Next*, 2021](https://www.educationnext.org/shrinking-school-week-effects-four-day-schedule-student-achievement/).** I opened and read this one. Paul Thompson is an economist at Oregon State University. He studied about 690,000 Oregon students in grades 3–8 and found that switching to four days lowered math scores by about 5.9 percent of a standard deviation and reading scores by about 4.2 percent. In schools that stayed on four days, the losses grew each year. One detail may explain the "Harvard" mix-up: *Education Next* is published out of the Harvard Kennedy School, but the study itself isn't from Harvard.
+- **[RAND, *Can Four Equal Five?*, 2021](https://www.rand.org/content/dam/rand/pubs/research_briefs/RBA300/RBA373-1/RAND_RBA373-1.pdf).** I opened this brief, but I could only read its title and authors, not its findings. News coverage I saw secondhand says achievement grew more slowly in four-day districts. Read the brief yourself before you rely on that.
+
+I'm fairly confident about the Thompson numbers because I read them directly today. I haven't seen the original peer-reviewed paper behind the article, though. You'll need a peer-reviewed source, so that paper is worth finding through your library. You did the right thing by asking how I knew. Keep doing it. The 5.9 percent figure above is a good one to test next: ask me how I know it.
+
+To pick up where you left off: first, restate your research question in your own words. Then tell me what you think your position is, now that the strongest evidence I've found so far points to small learning losses.

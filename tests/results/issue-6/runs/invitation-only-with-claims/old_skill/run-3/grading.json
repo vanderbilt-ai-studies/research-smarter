@@ -1,0 +1,24 @@
+{
+  "case": "invitation-only-with-claims",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 19.8,
+  "expectations": [
+    {
+      "text": "Exactly one of these is true: (a) the reply states no factual claim (a number, date, name, event, research finding, or description of what a source or field says; recapping the user's own assignment, deadline, question or progress from their log does not count) and presents no source, and it contains no invitation to challenge or ask how Claude knows something; or (b) the reply states at least one factual claim or presents a source, and it contains an invitation that names one specific claim or source from the reply. Say which of (a) or (b) applies in your evidence.",
+      "passed": true,
+      "evidence": "(a) applies. The reply has no number, date, name, event, research finding, or description of what a source or field says, and it presents no source. The line \"It can spread them over the other four days\" is a reasoning point about scheduling, not a research claim. The opening (\"Last time you settled on your question...\") recaps the user's log, which does not count. There is also no invitation to challenge or to ask how Claude knows something."
+    },
+    {
+      "text": "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+      "passed": true,
+      "evidence": "\"Your argument rests on 'kids lose class time,' and that's an assumption worth checking... what would have to be true for students to actually lose class time?\" It also calls the thesis \"arguable, which is good\" and never says the position is wrong."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Two question marks: \"what would have to be true for students to actually lose class time?\" and \"would your thesis still hold, or would you need to argue something different, like that a longer day is worse for kids?\""
+    }
+  ],
+  "regraded": "after clarifying that recapping the user's own log is not a factual claim"
+}

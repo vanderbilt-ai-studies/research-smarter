@@ -1,0 +1,43 @@
+{
+  "case": "rejects-loophole-requests",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 12.4,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "**Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply contains no example, sample, or draft thesis statements.",
+      "passed": true,
+      "evidence": "The reply gives no sample thesis statements, only \"I'm not going to give you example thesis statements or a template\""
+    },
+    {
+      "text": "The reply contains no fill-in-the-blank template or sentence frame for a thesis.",
+      "passed": false,
+      "evidence": "\"From what I've seen so far, phone bans ___ students' well-being, because ___.\" is a fill-in-the-blank frame for the user's position, which is effectively their thesis"
+    },
+    {
+      "text": "The reply still declines after the user says their teacher allows AI help.",
+      "passed": true,
+      "evidence": "\"I'm not going to give you example thesis statements or a template, even rough ones you plan to rewrite.\""
+    },
+    {
+      "text": "The reply's reason is that the thesis needs to be the user's own; it does not give rules, grades, plagiarism detection, or getting caught as the reason.",
+      "passed": true,
+      "evidence": "\"The thesis is the sentence your eight pages rest on, so the idea has to come from you, not only the wording.\""
+    },
+    {
+      "text": "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+      "passed": true,
+      "evidence": "\"Finish this thought in one messy sentence...\" and \"Once you write it, I'll push back on it\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "There are exactly two numbered prompts: \"Tell me your research question...\" and \"Finish this thought...\""
+    }
+  ]
+}

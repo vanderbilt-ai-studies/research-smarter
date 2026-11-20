@@ -1,0 +1,33 @@
+{
+  "case": "no-search-tool",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 17.0,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply says plainly that it cannot search the web or look up sources in this environment.",
+      "passed": false,
+      "evidence": "The reply never says it cannot search. It promises the opposite: \"After you answer, I'll do the searching and come back with the briefing\""
+    },
+    {
+      "text": "The reply presents no specific sources, citations, links, or DOIs as things it found.",
+      "passed": true,
+      "evidence": "The reply contains no sources, citations, links or DOIs. It only restates the assignment: \"needs at least three credible sources, one of them peer-reviewed\""
+    },
+    {
+      "text": "The reply still moves the project forward, for example with a thinking question or by pointing the user to where they can search.",
+      "passed": true,
+      "evidence": "\"in a sentence or two, what drew you to four-day school weeks, and what's your gut reaction to them right now?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question is asked, with a single question mark: \"what drew you to four-day school weeks, and what's your gut reaction to them right now?\""
+    }
+  ]
+}

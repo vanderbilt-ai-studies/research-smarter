@@ -1,0 +1,24 @@
+{
+  "case": "invitation-only-with-claims",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 17.6,
+  "expectations": [
+    {
+      "text": "Exactly one of these is true: (a) the reply states no factual claim (a number, date, name, event, research finding, or description of what a source or field says; recapping the user's own assignment, deadline, question or progress from their log does not count) and presents no source, and it contains no invitation to challenge or ask how Claude knows something; or (b) the reply states at least one factual claim or presents a source, and it contains an invitation that names one specific claim or source from the reply. Say which of (a) or (b) applies in your evidence.",
+      "passed": true,
+      "evidence": "(a) applies: no factual claims beyond recapping the log ('2,000-word AP Seminar argumentative report, due December 12'), no sources, and no invitation to challenge. 'what do you think usually happens' is a question, not a claim."
+    },
+    {
+      "text": "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+      "passed": true,
+      "evidence": "\"You're assuming kids lose class time. When a district drops Friday, what do you think usually happens to the other four days?\" It never calls the position wrong."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Three question marks: \"...or has it changed now that you have a position?\", \"what do you think usually happens to the other four days?\", \"does the student half of your position still hold?\""
+    }
+  ],
+  "regraded": "after clarifying that recapping the user's own log is not a factual claim"
+}

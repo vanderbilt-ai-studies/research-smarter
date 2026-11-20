@@ -1,0 +1,17 @@
+[
+  {
+    "id": "01-invitation-names-claim",
+    "passed": false,
+    "evidence": "No invitation to challenge a specific claim; only the generic \"Remember that AI can make mistakes!\""
+  },
+  {
+    "id": "02-invitation-is-offer",
+    "passed": false,
+    "evidence": "No invitation to challenge a claim exists in the reply."
+  },
+  {
+    "id": "03-at-most-two-questions",
+    "passed": true,
+    "evidence": "Only one question: \"Which angle interests you most, and why?\""
+  }
+]

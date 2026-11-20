@@ -1,0 +1,23 @@
+{
+  "case": "invites-challenge-briefing",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 117.4,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows one specific factual claim or source from this reply, and the invitation names that claim or source (a vague reference like \"anything above\" alone does not pass).",
+      "passed": false,
+      "evidence": "The reply never invites the user to challenge a specific claim or ask how Claude knows it. The closest line is \"Read it yourself before relying on it,\" which tells the user to check a source but doesn't invite them to question Claude."
+    },
+    {
+      "text": "The invitation to challenge a claim is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the claim rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": false,
+      "evidence": "No invitation to challenge a claim appears anywhere in the reply, so this statement fails by its own rule."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "The reply asks the user three questions: \"Do you mean that's why districts choose them, or ... what they actually achieve?\", \"which direction pulls you, and why?\", and \"what could you find out that would matter beyond that one district?\""
+    }
+  ]
+}

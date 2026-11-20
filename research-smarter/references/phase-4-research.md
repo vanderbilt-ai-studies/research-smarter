@@ -25,6 +25,9 @@ Present:
    journals, library databases, archives), people they could ask (a
    librarian, an expert), and leads worth following.
 
+Invite the user to challenge one specific source by name, for example how
+you know it says what your summary says (SKILL.md, principle 5).
+
 ## What the user does
 
 Then hand the work over, one step at a time:

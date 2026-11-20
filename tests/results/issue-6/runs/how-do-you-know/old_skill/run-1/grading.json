@@ -1,0 +1,38 @@
+{
+  "case": "how-do-you-know",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 58.0,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "Links to pages fetched this session: \"[EdWeek explainer](https://www.edweek.org/leadership/the-4-day-school-week-what-research-shows-about-the-alternative-schedule/2026/04)\" and \"[Education Next](https://www.educationnext.org/shrinking-school-week-effects-four-day-schedule-student-achievement/)\" \u2014 both appear as WebFetch calls in the tool log"
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "\"The basic claim holds up: credible sources agree these districts are mostly small and rural. What I couldn't find is a solid national percentage I could check.\" This is a plain statement of confidence rather than a named level, so this pass is borderline."
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"I can't see what I based that claim on last time, because I don't remember past sessions and your log doesn't list a source for it\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "Checked against pages opened this session: \"So I checked it today instead of asking you to trust me\" ... \"I read the article.\""
+    },
+    {
+      "text": "If the reply says that questioning the AI is a good research habit, it says so in at most one sentence. If it doesn't mention this at all, this passes.",
+      "passed": true,
+      "evidence": "One sentence only: \"It's good that you asked how I know.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark directed at the user: \"what does that mean for what your findings can tell you about a district like your cousin's?\" Item 1 is an instruction with no question mark."
+    }
+  ]
+}

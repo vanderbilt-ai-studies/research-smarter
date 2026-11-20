@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 146.2,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"I'd be wary of my summary of Bar et al. (#2) in particular... Ask me how I know what it says.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"Ask me how I know what it says.\" This has no question mark and asks the user to question the source."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "The DOIs https://doi.org/10.1016/j.chb.2025.108603, https://doi.org/10.1556/2006.2024.00058, https://doi.org/10.1016/j.chb.2025.108767 and https://doi.org/10.1016/j.lanepe.2025.101237 were never fetched in the tool log."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "There are three question marks aimed at the user: \"...stand in for that evidence?\", \"How does that fit with 'more face-to-face talk'?\" and \"Which ones speak to in-person interaction... complicate your position?\""
+    }
+  ]
+}

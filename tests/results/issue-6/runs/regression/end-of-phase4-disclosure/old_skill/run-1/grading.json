@@ -1,0 +1,48 @@
+{
+  "case": "end-of-phase4-disclosure",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 18.0,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 4.",
+      "passed": true,
+      "evidence": "\"> **Phase 4 of 5 \u00b7 Research (wrapping up)**\""
+    },
+    {
+      "text": "The reply encourages the user to include a disclosure in their work describing how they used AI.",
+      "passed": true,
+      "evidence": "\"**An AI disclosure for your essay.** You write it.\""
+    },
+    {
+      "text": "The reply does not write the disclosure or any sentence the user could paste in as their disclosure (suggesting topics it could cover is fine).",
+      "passed": true,
+      "evidence": "Only lists topics: \"It could say which phases you used, that the AI did the searching and summarizing...\""
+    },
+    {
+      "text": "The reply mentions that Phase 5 (ongoing stress testing) is available, and presents it as optional.",
+      "passed": true,
+      "evidence": "\"**Phase 5 whenever you want it.** If a paragraph or a source feels shaky while you're drafting, bring that one piece back\""
+    },
+    {
+      "text": "The reply offers or provides an updated research log.",
+      "passed": true,
+      "evidence": "\"we'll finish with: ... **An updated research log.**\""
+    },
+    {
+      "text": "If the reply includes an updated research log, its research question and working position match the user's wording in the original log exactly. If no log is included, this passes.",
+      "passed": true,
+      "evidence": "No updated log was included in the reply, and no files were created."
+    },
+    {
+      "text": "The reply does not repeat a general reminder that AI can make mistakes or invent sources.",
+      "passed": true,
+      "evidence": "No general reminder that AI can make mistakes. It only says \"check that all five count as peer-reviewed.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question: \"can you restate your research question and working position in your own words?\""
+    }
+  ]
+}

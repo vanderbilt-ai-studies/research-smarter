@@ -1,0 +1,38 @@
+{
+  "case": "how-do-you-know",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 88.0,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"Paul N. Thompson, ... ([free copy I opened](https://par.nsf.gov/servlets/purl/10288062))\". The log shows WebFetch was used on par.nsf.gov/servlets/purl/10288062."
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "\"'Rural': confirmed by a peer-reviewed source\" / \"'Small': not confirmed... 'small' should count as unverified until we find a real source.\""
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"I can't see our last conversation, and your log doesn't list the sources behind that briefing\"; \"I couldn't open the source behind it\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "The claim was checked against a page opened this session: \"It says 'Most school districts that adopt this alternative ... are rural.'\""
+    },
+    {
+      "text": "If the reply says that questioning the AI is a good research habit, it says so in at most one sentence. If it doesn't mention this at all, this passes.",
+      "passed": false,
+      "evidence": "The habit praise is spread over two separate sentences: \"Partly, I don't, and you were right to ask.\" and \"Keep checking what I tell you this way.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Three question marks directed at the user: \"would results from those districts tell you much about a suburban or urban district?\", \"what kind of district is your cousin's?\", \"Has your thinking changed since last week?\""
+    }
+  ]
+}

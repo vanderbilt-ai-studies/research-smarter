@@ -53,6 +53,14 @@ skill's coaching flow didn't have to change.
   study every time, wrote answers for the student, and answered "just tell
   me what it says" with a full summary
   ([results](notebook/results/issue-5-reader-tests.md)).
+- **"Ask it how it knows":** the skill now invites students to challenge
+  its claims and answers honestly when they do. With the change, briefings
+  and source lists invited a challenge to a named claim or source in every
+  run (12 of 12 checks, against 0 of 12 before). Across six new test cases,
+  3 runs each, the new skill passed 72 of 81 checks and the previous version
+  54 of 81 ([results](tests/results/issue-6-ask-how-it-knows.md)). Testing
+  also found two older problems, now open: unopened DOI links in Phase 4
+  source lists, and a third question when resuming a project.
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.
@@ -68,7 +76,7 @@ skill's coaching flow didn't have to change.
 
   Each was diagnosed and fixed. The build history is in the
   [closed issues](https://github.com/vanderbilt-ai-studies/research-smarter/issues?q=is%3Aissue)
-  and each issue's results file in `notebook/results/`.
+  and each issue's results file in `notebook/results/` or `tests/results/`.
 
 ## Limits and what's still open
 

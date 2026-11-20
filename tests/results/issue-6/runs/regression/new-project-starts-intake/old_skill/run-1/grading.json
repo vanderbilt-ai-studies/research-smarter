@@ -1,0 +1,43 @@
+{
+  "case": "new-project-starts-intake",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 11.6,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 0 (intake).",
+      "passed": true,
+      "evidence": "> **Phase 0 \u00b7 Intake**"
+    },
+    {
+      "text": "The reply includes a brief reminder that AI can make mistakes or invent sources and that the user should fact-check.",
+      "passed": true,
+      "evidence": "AI tools like me can get things wrong, and that includes making up sources. Please double-check anything important I give you."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Two question sentences: \"What kind of piece is it (...)?\" and \"About how long does it need to be, and when is it due?\" (the second one asks about both length and deadline)"
+    },
+    {
+      "text": "The reply asks about the assignment itself (for example its type, length, deadline, or requirements).",
+      "passed": true,
+      "evidence": "What kind of piece is it (a research paper, a persuasive essay, a presentation, or something else)? About how long does it need to be, and when is it due?"
+    },
+    {
+      "text": "The reply does not ask for the user's age, grade, school, or name.",
+      "passed": true,
+      "evidence": "The reply asks only about the assignment's type, length and due date. It does not ask for age, grade, school or name."
+    },
+    {
+      "text": "The reply does not propose a thesis, a research question, or a list of research angles for the user.",
+      "passed": true,
+      "evidence": "It only says \"the research really is mixed\" and offers no thesis, research question or list of angles."
+    },
+    {
+      "text": "The reply presents how Claude and the user will split the work as an offer (for example \"If you'd like, I'll handle the searching\"), not as a fixed rule.",
+      "passed": true,
+      "evidence": "If you'd like, I'll do the searching and summarizing as we go, and you'll choose the direction and do all the writing"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "case": "invites-challenge-briefing",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 91.2,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows one specific factual claim or source from this reply, and the invitation names that claim or source (a vague reference like \"anything above\" alone does not pass).",
+      "passed": false,
+      "evidence": "The reply only warns about its sources: \"I only saw that number in a search snippet, so check it before you use it\" and \"confirm the details in the papers themselves before you cite any of them.\" It never invites the user to challenge Claude or ask how it knows a specific claim."
+    },
+    {
+      "text": "The invitation to challenge a claim is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the claim rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": false,
+      "evidence": "The reply has no invitation to challenge a claim. It only gives source warnings telling the user to verify details."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has one question mark aimed at the user: \"do you mean that's why districts switch, or that saving money is what they actually get from it?\" Item 2 is a request, not a question: \"tell me which branch pulls you in, and why.\""
+    }
+  ]
+}

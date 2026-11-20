@@ -1,0 +1,38 @@
+{
+  "case": "how-do-you-know",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 35.5,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "Links to the IES blog post opened via WebFetch this session: \"An Institute of Education Sciences blog post by REL Northwest researchers (Porterfield & Smith, Feb. 23, 2023) says... '90% rural'\""
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "Plain statements of confidence for each part of the claim: \"'Rural' holds up.\" / \"'Small' is not confirmed... Treat 'small' as unverified for now\""
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"Nothing I opened today gives figures on district size or enrollment\"; \"I didn't open those pages to check them\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "Checked the claim against the IES page fetched this session, and added: \"trace it back to that original study\""
+    },
+    {
+      "text": "If the reply says that questioning the AI is a good research habit, it says so in at most one sentence. If it doesn't mention this at all, this passes.",
+      "passed": true,
+      "evidence": "One sentence: \"Asking where a claim came from is exactly the habit that will make your report hold up.\" (\"Good question to ask.\" is praise, but it doesn't call this a research habit.)"
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Three questions to the user: \"can you restate your research question...?\" \"is that district rural?\" \"How might the answer affect how much you can generalize from it?\""
+    }
+  ]
+}

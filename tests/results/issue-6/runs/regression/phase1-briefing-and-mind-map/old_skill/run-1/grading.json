@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 124.7,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "\"> **Phase 1 of 5 \u00b7 Explore and choose a direction**\" is the first line."
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "The briefing has four labeled sections: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\" and \"**Open questions**\"."
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "The briefing runs from \"Key debates\" through the RAND note and is roughly 450\u2013480 words, which is inside the 250\u2013600 range."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "The reply says \"I've saved an interactive map as `mind-map.html`\". The tool log shows the assistant read templates/mind-map.html, and the file contains `const DATA = {...}`."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "The reply says \"It has six angles\". Each branch shown (Academic achievement, Teacher recruitment, Families, Student health) has 3 children, and every saturation value is between 0 and 1 (for example 0.8, 0.65, 0.15). The last branches are cut off in the shortened file."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "The labels are short topics, such as \"Total instructional time\", \"Schedule vs. salary trade-off\" and \"Childcare on the day off\". None is phrased as a question."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "The reply says \"tell me which direction pulls you in most\" and does not recommend any angle."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every link in the reply was opened with WebFetch: the74million, future-ed, kcur, gse.harvard.edu, pmc.ncbi.nlm.nih.gov/PMC8595551 and k12dive. The mind map's sources contain no URLs."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"tell me which direction pulls you in most and **why it's worth researching**\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The reply asks the user two things: which direction and why, and \"whether the briefing changed it.\" The briefing's open questions are research questions, not questions to the user."
+    }
+  ]
+}

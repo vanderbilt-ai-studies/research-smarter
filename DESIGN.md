@@ -27,10 +27,16 @@ Research Smarter is a research assistant skill that works with the user to refin
   unsupported, or rely on logical fallacies. When an argument is well
   supported, it says so and names what makes it strong, then moves on to probe
   the next weakest point.
-- **Verify what the AI says.** At the start of the session, the skill reminds
-  the user that AI models can sometimes hallucinate and encourages them to do
-  their own research and fact-check what the model produces. After that, it
-  flags accuracy where it matters, next to specific claims and citations.
+- **Ask it how it knows.** "GenAI can only tell you what it knows. And so you
+  must ask it how it knows what it knows" (Joey Brooke Jakob, dscout People
+  Nerds, 2024). At the start of the session, the skill reminds the user that
+  AI models can sometimes hallucinate and that they should check what it
+  produces. After that, whenever it states facts or presents sources, it
+  invites the user to challenge one specific claim or source, as an offer
+  rather than a question. When challenged, it says where the claim came from,
+  how confident it is, what it can't know, and how to check, and it withdraws
+  anything it can't back up. The aim is a student who habitually questions
+  AI, not just their sources.
 
 ## Research Types
 

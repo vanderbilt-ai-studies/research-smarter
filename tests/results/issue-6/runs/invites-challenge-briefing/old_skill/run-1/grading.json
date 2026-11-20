@@ -1,0 +1,23 @@
+{
+  "case": "invites-challenge-briefing",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 113.9,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows one specific factual claim or source from this reply, and the invitation names that claim or source (a vague reference like \"anything above\" alone does not pass).",
+      "passed": false,
+      "evidence": "The reply never invites the user to challenge a claim or ask how Claude knows it. The closest line is a caution: \"check the originals before you cite them\"."
+    },
+    {
+      "text": "The invitation to challenge a claim is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the claim rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": false,
+      "evidence": "The reply contains no invitation to challenge a claim, so this statement fails."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question is aimed at the user: \"Which one do you mean?\" The question marks in the briefing headings are topic headings, not questions to the user."
+    }
+  ]
+}

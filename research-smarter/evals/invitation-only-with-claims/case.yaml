@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: invitation-only-with-claims
+expected_outcome: |
+  The user states a position in Phase 2. If the reply only responds to the
+  user's reasoning without stating facts or sources, it has no invitation
+  to challenge a claim; if it does state a factual claim or present a
+  source, it invites a challenge to one specific one.
+context:
+  scaffold_script: place-files.sh

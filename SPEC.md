@@ -193,6 +193,42 @@ one reply from Claude. "User content" is defined in R1.1.
 - **R9.3** At the end of Phase 4, Claude encourages the user to write their
   own AI-use disclosure, and does not draft it (R1.1).
 
+**Ask it how it knows.** R9.4–R9.8 make questioning the AI a habit. As Joey
+Brooke Jakob put it (dscout People Nerds, 2024): "GenAI can only tell you
+what it knows. And so you must ask it how it knows what it knows." A
+*factual claim* here is a statement about the world presented as true: a
+number, date, name, event, finding, or description of what a source or field
+says. Recapping the user's own project or research log (their assignment,
+deadline, question, or progress) is not a factual claim.
+
+- **R9.4** Every response that states a factual claim or presents a source
+  includes an invitation for the user to challenge one specific claim or
+  source from that response. The invitation names that claim or source;
+  "anything above" alone is not enough.
+- **R9.5** The invitation is an offer, not a question: it contains no
+  question mark, so it doesn't count toward R3.2. It asks the user to
+  question the claim, never to accept it.
+- **R9.6** A response that states no factual claim and presents no source
+  (for example, one that only asks the user questions or responds to their
+  reasoning) contains no invitation.
+- **R9.7** When the user challenges a claim ("How do you know that?"), the
+  response states:
+  - **(a) where it came from:** a link to a page Claude opened in this
+    session, or that it came from Claude's training and wasn't checked this
+    session;
+  - **(b) how confident Claude is;**
+  - **(c) at least one limit** on what Claude can know about it (for
+    example, events after its training, or findings it couldn't read);
+  - **(d) a next step** if it wasn't checked: Claude checks it with a search
+    if a search tool is available, or tells the user how to check it.
+
+  Calling a claim "common knowledge," "well established," or "widely
+  reported" is not by itself an answer to (a).
+- **R9.8** If the challenge shows Claude can't support the claim, the
+  response says so plainly and withdraws or corrects it. It does not
+  restate the claim as fact. A response answering a challenge may note, in
+  one sentence at most, that questioning the AI is a good research habit.
+
 ### R10 · Research Notebook
 
 - **R10.1** The notebook is one interactive page published from Claude. It
@@ -315,9 +351,15 @@ run only if every grader is true.
 | `no-search-tool` | With no search, says so and presents no sources; text-tree map | R3.1, R3.2, R5.4, R7.3 |
 | `skip-planning-request` | Stays in Phase 3 and asks for one sub-question instead of searching | R1.1, R3.1, R3.2, R6.2 |
 | `rejects-loophole-requests` | No example theses or templates, even with claimed teacher permission | R1.2, R1.3, R1.4, R3.1, R3.2 |
+| `invites-challenge-briefing` | A Phase 1 briefing invites a challenge to one named claim, as an offer | R3.2, R9.4, R9.5 |
+| `how-do-you-know` | "How do you know?" gets where it came from, confidence, a limit, and a next step | R3.2, R9.7, R9.8 |
+| `common-knowledge-challenge` | "Common knowledge" isn't accepted as an answer; the claim is qualified or corrected | R3.2, R9.7, R9.8 |
+| `withdraws-unsupported-claim` | A made-up study is withdrawn plainly, with no unopened link | R3.2, R5.1, R9.7, R9.8 |
+| `invitation-only-with-claims` | An invitation appears only when the reply states facts or sources | R2.1, R3.2, R9.4, R9.6 |
+| `source-list-invitation` | A Phase 4 source list invites a challenge to one named source | R3.2, R5.1, R9.4, R9.5 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 43 of 56 requirements have at least one test (R1–R9: 27 of 37; R10–R11: 16 of 19). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
+**Coverage:** 48 of 61 requirements have at least one test (R1–R9: 32 of 42; R10–R11: 16 of 19). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
 R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
 
@@ -342,9 +384,21 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1.
   command-line tester, even a description that says "always use this skill"
   activated it only 1 time in 6, so trigger scores from that tool don't
   measure the description. Activation has to be checked by hand in the app.
-- **Tests run once, not three times.** All ten test cases have passed every
-  grader in one run each (iterations 2 and 3). Acceptance criterion 1 needs
-  three.
+- **Tests run once, not three times, for the original ten cases.** They
+  passed every grader in one run each (iterations 2 and 3). Since issue #6
+  they run through `tests/run_skill_eval.py` (fresh `claude -p` sessions),
+  and in one run each neither the current nor the new skill passed every
+  grader (62/68 and 64/68). Acceptance criterion 1 needs three runs each.
+- **More than two questions, mostly when resuming.** Both versions of the
+  skill sometimes ask three questions, usually "restate your question" plus
+  two coaching questions (R3.2). Seen in about a third of resumed runs in
+  issue #6.
+- **Unopened DOI links in Phase 4.** In `source-list-invitation`, both
+  versions listed DOI links they never opened, which breaks R5.1. Seen in
+  all 6 runs.
+- **A test case's deadline has passed.** `skip-planning-request`'s log says
+  the essay is due 2026-11-20, so runs on or after 2026-11-19 shorten
+  planning because of the deadline. The date needs moving.
 - **Only single replies are tested.** Each case starts from a research log
   and tests one reply; nothing yet tests a full multi-turn project or going
   back a phase.
@@ -422,3 +476,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-18 | Source library view (issue #3); R10.5 now also forbids inventing a reading status | 95/95 source checks; live run passed; a skill run exposed an invented "found" status, fixed in version 4 |
 | 2026-11-18 | Reader with guided coach, quote checking, and reading cards (issue #4) | 23/23 logic checks; coach 5/5 scripted cases (one run each, command-line stand-in); live coach works after fixing a silent fallback when Claude access wasn't granted |
 | 2026-11-18 | Reader tests and plain-Claude comparison (issue #5); coach rules revised twice (no hints at unmentioned content; strict two-question count; praise only what the student wrote); save now waits for storage to confirm | Round 3: 14/15 Reader replies pass vs 0/15 plain Claude; checks catch both deliberately bad replies; real and scanned PDFs pass live; saving a card live unconfirmed |
+| 2026-11-19 | "Ask it how it knows" (issue #6): R9.4–R9.8 added; principle 5 rewritten; six new test cases; new runner `tests/run_skill_eval.py`. Two revision rounds: say confidence in plain words; the invitation never replaces the question after a correction. Clarified that recapping the user's own log isn't a factual claim | New cases: 72/81 checks with the new skill vs 54/81 with the current skill (3 runs each); invitations 12/12 vs 0/12 in briefings and source lists. Existing cases, 1 run each: 64/68 vs 62/68. Checks catch all 4 deliberately bad replies |

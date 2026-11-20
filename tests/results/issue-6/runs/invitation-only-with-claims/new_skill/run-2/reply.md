@@ -1,0 +1,14 @@
+> **Phase 2 of 5 · Pre-research stress test**
+
+Welcome back. You're doing a 2,000-word AP Seminar argumentative report, due December 12. You picked four-day school weeks because your cousin's district just switched. Your research question is whether four-day weeks help or hurt the students and teachers in districts that adopt them. You'd read the second briefing and were about to state your position, which you've just done.
+
+Your position has a real strength: it doesn't just say "good" or "bad." It argues that the same policy affects two groups differently, which is harder to argue but more interesting. Your question asks "help or hurt," though, while your position compares teachers with students. In your own words, what's your research question now?
+
+I quickly checked both halves of your position, and they hold up differently:
+
+- **"Kids lose class time":** This holds up on average. RAND's 2021 study found four-day districts have longer but fewer days and fewer instructional hours per year ([RAND brief](https://www.rand.org/content/dam/rand/pubs/research_briefs/RBA300/RBA373-1/RAND_RBA373-1.pdf), [full report via NWEA](https://www.nwea.org/research/publication/does-four-equal-five-implementation-and-outcomes-of-the-four-day-school-week/)). Test scores didn't drop, but they grew more slowly than in five-day schools. A follow-up found the math harm was concentrated in districts with the least time in school ([summary](https://medium.com/rand-corporation/a-four-day-school-week-here-are-the-costs-and-benefits-86727b322d18)).
+- **"Better for teachers":** This is shakier. In Missouri, teachers told researchers the four-day week helps keep and attract staff, but the data on actual turnover and hiring showed no clear effect ([EdSource](https://edsource.org/updates/study-four-day-school-week-hardly-improves-teacher-retention), [Show-Me Institute summary](https://showmeinstitute.org/?p=588415), which is a think tank). An Arkansas study found a possible small benefit ([EdWorkingPaper](https://edworkingpapers.com/ai24-971)). The most positive results come from single-district case studies ([Iowa](https://iro.uiowa.edu/esploro/outputs/journalArticle/The-Use-of-a-Four-Day-School/9984815916502771)) and interviews ([three rural districts](https://scholarsjunction.msstate.edu/ruraleducator/vol46/iss2/1)).
+
+Here's what an opponent would say: "If the extra day really made teachers' lives better, fewer of them would quit. Mostly, that didn't happen." How would you answer that? And are you assuming teachers spend that fifth day planning and resting? What else might they be doing with it?
+
+The Missouri finding matters most to your position. Ask me how I know what it says, since I'm working from summaries of the paper, not the paper itself.

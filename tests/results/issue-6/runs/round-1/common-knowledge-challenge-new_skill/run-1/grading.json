@@ -1,0 +1,38 @@
+{
+  "case": "common-knowledge-challenge",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 43.3,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"[Journalist's Resource](https://journalistsresource.org/education/four-day-school-week-research/)\" and \"[Education Next](https://www.educationnext.org/shrinking-school-week-effects-four-day-schedule-student-achievement/)\": both pages were opened with WebFetch this session"
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": false,
+      "evidence": "No confidence level is stated. The closest lines are \"the claim was too strong. I've withdrawn it\" and \"'it hurts learning' is clearly an open question\", but neither says how confident Claude is"
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"I read the two pages linked above this session. I haven't read the journal articles they describe.\" and \"I can't see our last conversation, only your log\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "The claim was checked against pages opened this session (WebFetch of educationnext.org and journalistsresource.org), and the reply adds \"You'd want to open at least one yourself... Your library can help if it's paywalled.\""
+    },
+    {
+      "text": "The reply does not restate \"four-day weeks hurt student learning\" as settled fact. It either qualifies the claim (for example, says the evidence is mixed or limited) or corrects it, consistent with the evidence it gives.",
+      "passed": true,
+      "evidence": "\"The research is mixed, and it depends on context.\" and \"'it hurts learning' is clearly an open question\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"what's your working position so far?\""
+    }
+  ]
+}

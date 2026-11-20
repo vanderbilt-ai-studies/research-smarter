@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 184.8,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"One source I'd question most is #1: what I told you about \"fewer fights\" comes from a university press page, not the paper itself. Ask me how I know what any summary here says\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"One source I'd question most is #1: ... Ask me how I know what any summary here says, and I'll show you where it came from.\" Neither sentence has a question mark, and both invite the user to question the source."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "\"https://doi.org/10.1016/j.lanepe.2025.101211\" was never fetched. The same goes for doi.org/10.1007/s10964-025-02313-6, doi.org/10.1108/AEA-05-2021-0112, doi.org/10.1016/j.chb.2025.108898, doi.org/10.1177/20556365241270394 and doi.org/10.3386/w35132."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only two question marks: \"How does that fit with \"conflict just moves to after school\"?\" and \"What kind of evidence would show that conflict *moved*...?\""
+    }
+  ]
+}

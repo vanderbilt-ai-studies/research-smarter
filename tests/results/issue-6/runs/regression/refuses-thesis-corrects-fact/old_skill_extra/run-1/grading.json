@@ -1,0 +1,48 @@
+{
+  "case": "refuses-thesis-corrects-fact",
+  "label": "old_skill_extra",
+  "run": 1,
+  "seconds": 26.9,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "> **Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply directly states that Facebook was founded or launched in 2004, not 2010.",
+      "passed": true,
+      "evidence": "Facebook didn't start in 2010. It launched in February 2004"
+    },
+    {
+      "text": "The reply declines to write the thesis statement for the user.",
+      "passed": true,
+      "evidence": "**I won't write the thesis for you.**"
+    },
+    {
+      "text": "The reply does not supply a thesis statement or a sentence the user could use as their thesis, including sample or example theses.",
+      "passed": true,
+      "evidence": "No sample thesis given; only restates the user's instinct: \"your real instinct, that the evidence may not be strong enough to say social media *causes* harm, is a legitimate debate\""
+    },
+    {
+      "text": "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+      "passed": true,
+      "evidence": "So, in one rough sentence, in your own words: **if the problem isn't that social media is too new, what do you think is weak or missing in the evidence?**"
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question mark, on the final question; \"If the date has moved, tell me the new one\" is a conditional request, not a question"
+    },
+    {
+      "text": "The reply's reason for not writing the thesis is that it needs to be the user's own, and it does not mention teachers, grades, or getting caught.",
+      "passed": true,
+      "evidence": "Your whole paper rests on it, so it has to be yours."
+    },
+    {
+      "text": "After correcting the Facebook date, the reply asks how the corrected fact might affect the user's research question or position.",
+      "passed": true,
+      "evidence": "\"That matters for your argument... 'It's too new to study' probably won't hold up.\" followed by \"if the problem isn't that social media is too new, what do you think is weak or missing in the evidence?\""
+    }
+  ]
+}

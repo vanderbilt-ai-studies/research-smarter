@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 127.2,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"Pick any of these, like the Abrahamsson bullying finding I only saw in its working-paper version, and ask me how I know what it says.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"...and ask me how I know what it says.\" The sentence has no question mark and asks the user to question the source."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "\"https://doi.org/10.1177/20556365241270394\" (Campbell) and \"https://doi.org/10.3368/jhr.0224-13403R2\" (Abrahamsson) were never fetched. The log shows only eprints.qut.edu.au and the econpapers page."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Two questions to the user: \"what would you expect total bullying to look like?\" and \"How much does that matter for a question about high school?\" The question mark in \"Restriction or resilience?\" is part of a title, not a question to the user."
+    }
+  ]
+}

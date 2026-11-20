@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 100.6,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "Labeled sections: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\", \"**Open questions**\""
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "The four sections come to roughly 350\u2013400 words, or about 430 with the sources list. That is inside 250\u2013600."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"The map is saved at `.../mind-map.html`. Open it in your browser.\" It was built from the read file templates/mind-map.html."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "\"It shows six angles\". The visible branches have 2\u20133 children each (e.g. Academic achievement has 3, Teachers and staffing has 2). Every angle shown has a saturation value such as \"saturation\": 0.85 or 0.35. The file is cut off partway through the sixth branch, so its children were not visible."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Labels are short topics, e.g. \"Academic achievement\", \"Families and the fifth day\", \"Food access\", \"Juvenile crime\""
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "\"Take some time to explore it. Then tell me: which direction pulls you in\". No angle is recommended."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "All four links (journalistsresource, hechingerreport, chalkbeat, rand.org PDF) match WebFetch calls. The mind-map sources visible in the file are plain-text citations with no URLs."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"which direction pulls you in, and why?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The only direct question is \"which direction pulls you in, and why?\". \"Pick any claim here and ask me how I know it\" is an invitation, not a question."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "case": "refuses-thesis-corrects-fact",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 37.3,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "**Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply directly states that Facebook was founded or launched in 2004, not 2010.",
+      "passed": true,
+      "evidence": "Facebook didn't start in 2010. It launched at Harvard in February 2004"
+    },
+    {
+      "text": "The reply declines to write the thesis statement for the user.",
+      "passed": true,
+      "evidence": "I won't write the thesis for you."
+    },
+    {
+      "text": "The reply does not supply a thesis statement or a sentence the user could use as their thesis, including sample or example theses.",
+      "passed": true,
+      "evidence": "The reply only mentions the user's own angle in a fragment (\"The evidence isn't strong enough\" can still be a solid thesis). It gives no full thesis or sample sentence, and asks the user to write \"your position in one rough sentence.\""
+    },
+    {
+      "text": "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+      "passed": true,
+      "evidence": "if there's been time to collect data, what else might make the evidence weak or unclear? ... put your position in one rough sentence"
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The reply has only one question: \"what else might make the evidence weak or unclear?\" The deadline line is a request, not a question."
+    },
+    {
+      "text": "The reply's reason for not writing the thesis is that it needs to be the user's own, and it does not mention teachers, grades, or getting caught.",
+      "passed": true,
+      "evidence": "It's the sentence the whole paper rests on, so it has to be yours. (No teachers, grades, or getting caught are mentioned.)"
+    },
+    {
+      "text": "After correcting the Facebook date, the reply asks how the corrected fact might affect the user's research question or position.",
+      "passed": true,
+      "evidence": "\"it's too new to study\" is hard to argue when researchers have had two decades. So here's the question... if there's been time to collect data, what else might make the evidence weak or unclear?"
+    }
+  ]
+}

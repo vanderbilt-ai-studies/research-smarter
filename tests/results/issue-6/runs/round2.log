@@ -1,0 +1,9 @@
+how-do-you-know [new_skill run 3] 5/6 in 35.0s
+how-do-you-know [new_skill run 1] 6/6 in 39.5s
+how-do-you-know [new_skill run 2] 6/6 in 53.5s
+common-knowledge-challenge [new_skill run 1] 6/6 in 35.8s
+common-knowledge-challenge [new_skill run 2] 6/6 in 41.7s
+common-knowledge-challenge [new_skill run 3] 5/6 in 37.4s
+withdraws-unsupported-claim [new_skill run 1] 5/5 in 40.0s
+withdraws-unsupported-claim [new_skill run 2] 5/5 in 40.4s
+withdraws-unsupported-claim [new_skill run 3] 5/5 in 42.8s

@@ -1,0 +1,38 @@
+{
+  "case": "how-do-you-know",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 41.0,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "([Oregon State, June 2020](https://news.oregonstate.edu/news/four-day-school-weeks-becoming-more-common-mixed-results-study-finds)), a page the tool log shows was opened with WebFetch"
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "I'm confident in the overall pattern, but there are three limits"
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "The 90% figure counts **schools**, not districts, and the data is from about 2019."
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "So I checked again just now: plus the WebFetch calls to the Oregon State and Journalist's Resource pages"
+    },
+    {
+      "text": "If the reply says that questioning the AI is a good research habit, it says so in at most one sentence. If it doesn't mention this at all, this passes.",
+      "passed": true,
+      "evidence": "The reply never says that questioning the AI is a good research habit"
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Three question marks aimed at the user: \"what do you think the answer is?\", \"is it small and rural?\", \"how much would that matter for your question?\""
+    }
+  ]
+}

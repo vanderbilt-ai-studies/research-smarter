@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 141.2,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": false,
+      "evidence": "The reply never invites the user to challenge a specific source or ask how Claude knows something about it. The closest line is \"Please still open each link and confirm the details yourself before you cite anything,\" which is general and names no source."
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": false,
+      "evidence": "There is no invitation to challenge a source, so this fails by the statement's own rule."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "The reply links \"https://doi.org/10.1007/s10964-025-02313-6\", \"https://doi.org/10.3389/fdpys.2026.1796471\", \"https://doi.org/10.1016/j.chb.2025.108603\", \"https://doi.org/10.1016/j.acap.2026.103333\" and \"https://doi.org/10.3386/w35132\". None of these URLs appears in the tool log. The 10.1016/j.lanepe.2025.101211 DOI also appears only as a Crossref API lookup, not as the doi.org link."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "The reply has three question marks aimed at the user: \"...in the first place?\", \"How might that affect what any of them can show?\" and \"Which of these eight sources speak to each one?\""
+    }
+  ]
+}

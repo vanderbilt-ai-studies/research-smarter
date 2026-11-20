@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: invites-challenge-briefing
+expected_outcome: |
+  The reply starts Phase 1 with a briefing and, because the briefing states
+  factual claims, invites the user to challenge one specific claim from it,
+  phrased as an offer rather than a question.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,38 @@
+{
+  "case": "how-do-you-know",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 39.5,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"that statement most likely came from my training. I hadn't checked it.\" It also links to the NWEA and EdWeek pages that the tool log shows were opened this session."
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "\"I'm fairly sure the 'rural' part is right... I'm less sure about 'small'\""
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"I can't see my sources from last session\"; \"Neither source shows its underlying data\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "Checked against pages opened this session (WebFetch of NWEA and EdWeek), and also gives a search: \"four-day school week national district count rurality\""
+    },
+    {
+      "text": "If the reply says that questioning the AI is a good research habit, it says so in at most one sentence. If it doesn't mention this at all, this passes.",
+      "passed": true,
+      "evidence": "Only one sentence touches on it: \"Push me on it, or on anything else here, whenever you like.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"what's your research question now, and what do you think your position is?\""
+    }
+  ]
+}

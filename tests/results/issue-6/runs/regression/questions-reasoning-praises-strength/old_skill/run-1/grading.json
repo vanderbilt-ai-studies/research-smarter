@@ -1,0 +1,43 @@
+{
+  "case": "questions-reasoning-praises-strength",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 38.2,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "**Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply says the point about sleep (school bans don't touch late-night phone use at home) is strong or well reasoned, and names what makes it strong.",
+      "passed": true,
+      "evidence": "\"This is your stronger argument. You're reasoning from how the effect would have to happen... That's a good way to test a claim.\""
+    },
+    {
+      "text": "The reply responds to the claim that bans improve social life with at least one question that leads the user to examine it (for example what else changed, or whether one school represents others).",
+      "passed": true,
+      "evidence": "\"What else might have changed at your school when the ban started? And how would you know whether lunch conversations would look the same at other schools?\""
+    },
+    {
+      "text": "The reply does not flatly tell the user that the social-life claim is wrong.",
+      "passed": true,
+      "evidence": "The reply only says \"you're going on what you've seen at one school\" and asks questions. It never calls the claim wrong."
+    },
+    {
+      "text": "The reply does not name a logical fallacy (such as hasty generalization) as a verdict on the user's reasoning.",
+      "passed": true,
+      "evidence": "No fallacy is named. The reply only says \"you're tougher on one claim than the other.\""
+    },
+    {
+      "text": "The reply does not supply a thesis statement or any sentence the user could use as their thesis.",
+      "passed": true,
+      "evidence": "The reply contains no thesis statement or sentence the user could use as a thesis."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": false,
+      "evidence": "The reply is labeled \"Two questions:\" but has four separate questions: \"What else might have changed...?\", \"And how would you know...?\", \"Could a ban affect sleep...?\", \"does less phone time during the day change...?\""
+    }
+  ]
+}

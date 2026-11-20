@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 129.7,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": false,
+      "evidence": "The reply never invites the user to challenge a specific source or ask how Claude knows something about it. The only related lines are general (\"Please check the citations against the originals before you use them\") or tell the user to verify (\"Read the abstract yourself before relying on that\")."
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": false,
+      "evidence": "The reply contains no invitation to challenge a source, so this statement fails by its own rule."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "Several DOIs were never fetched, for example https://doi.org/10.1016/j.lanepe.2025.101237 (Weiss & Bonell), https://doi.org/10.1007/s10964-025-02313-6 and https://doi.org/10.1001/jamanetworkopen.2026.40893. None of these appear among the WebFetch calls."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has only two question marks: \"...what kind of evidence could stand in for that part of your position, and how far would it stretch?\" and \"Does \"interaction\" in your question mean one of those, or both?\""
+    }
+  ]
+}

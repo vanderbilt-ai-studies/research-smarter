@@ -1,0 +1,17 @@
+[
+  {
+    "id": "01-invitation-matches-claims",
+    "passed": false,
+    "evidence": "Neither (a) nor (b) applies. The reply makes no factual claim and cites no source, so (b) is ruled out. It still invites a challenge (\"Ask me how I know anything I have said.\"), so (a) is ruled out too."
+  },
+  {
+    "id": "02-asks-why-or-challenges",
+    "passed": true,
+    "evidence": "\"What makes you think the lost class time outweighs the benefit of a rested teacher?\" The reply questions the user's reasoning and does not say the position is wrong."
+  },
+  {
+    "id": "03-at-most-two-questions",
+    "passed": true,
+    "evidence": "Only one question mark is directed at the user: \"What makes you think the lost class time outweighs the benefit of a rested teacher?\""
+  }
+]

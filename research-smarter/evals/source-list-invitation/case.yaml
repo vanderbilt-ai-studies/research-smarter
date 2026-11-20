@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: source-list-invitation
+expected_outcome: |
+  The reply starts Phase 4 with a source list and invites the user to
+  challenge one specific source from it, by name, phrased as an offer
+  rather than a question.
+context:
+  scaffold_script: place-files.sh

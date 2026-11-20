@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 134.6,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": false,
+      "evidence": "The reply never invites the user to challenge a source or ask how Claude knows something about one. It only gives notes such as \"\u26a0\ufe0f The journal page blocked me\"."
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": false,
+      "evidence": "There is no invitation to challenge a source anywhere in the reply."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "The reply links \"https://antibullyingcentre.ie/publication/restriction-or-resilience/\" and \"https://doi.org/10.1556/2006.2024.00058\", but the tool log shows neither was fetched. The log only shows the DCU press release and the PMC page."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "The reply asks three questions: \"does that show conflict *moved*, or that it was never happening at school in the first place?\", \"How does that fit with the direction your position describes?\" and \"Which source surprised you most?\""
+    }
+  ]
+}

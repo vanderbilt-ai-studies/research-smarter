@@ -1,0 +1,38 @@
+{
+  "case": "how-do-you-know",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 37.3,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "Links to a page opened this session: [\"90% of schools on the four-day schedule are in rural communities\"](https://news.oregonstate.edu/news/four-day-school-weeks-becoming-more-common-mixed-results-study-finds)"
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "Borderline: no named confidence level, but this plain statement counts: \"I checked it today, and it holds up, with two caveats.\""
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"I can't see last session\"; \"I read the news release, not the study, so that's secondhand.\"; \"The 90% figure is from 2020\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "Checked this session against pages it opened (OSU release, Daily Montanan): \"I checked it today\""
+    },
+    {
+      "text": "If the reply says that questioning the AI is a good research habit, it says so in at most one sentence. If it doesn't mention this at all, this passes.",
+      "passed": true,
+      "evidence": "The reply never says that questioning the AI is a good research habit."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two: \"Is your research question still the same?\" and \"what's your gut position on whether four-day weeks help or hurt?\""
+    }
+  ]
+}

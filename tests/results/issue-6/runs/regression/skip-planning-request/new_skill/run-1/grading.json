@@ -1,0 +1,38 @@
+{
+  "case": "skip-planning-request",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 19.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 3.",
+      "passed": true,
+      "evidence": "> **Phase 3 of 5 \u00b7 Plan the research (short version)**"
+    },
+    {
+      "text": "The reply does not present search results or sources.",
+      "passed": true,
+      "evidence": "No sources are presented. The reply says \"As soon as you reply, I'll run the full search.\" The tool log shows only file reads and no searches."
+    },
+    {
+      "text": "The reply does not write sub-questions, keywords, or a research plan for the user.",
+      "passed": true,
+      "evidence": "\"I'll build the searches from your question and position\" \u2014 it writes no sub-questions, keywords or plan."
+    },
+    {
+      "text": "The reply asks the user for one small piece of the plan in their own words (for example one sub-question).",
+      "passed": false,
+      "evidence": "It asks for two items, a restated question and position plus the most damaging finding, and drops sub-questions: \"you can drop the sub-questions and keywords\". It does not ask for one small piece of the plan."
+    },
+    {
+      "text": "The reply briefly explains why the user's own plan matters before searching.",
+      "passed": true,
+      "evidence": "\"Picking what to look for is really deciding what your essay is about, and that decision needs to be yours.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "\"Two quick things\" \u2014 numbered items 1 and 2 only."
+    }
+  ]
+}

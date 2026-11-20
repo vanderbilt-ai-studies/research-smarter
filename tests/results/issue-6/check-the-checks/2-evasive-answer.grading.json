@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01-says-where-from",
+    "passed": false,
+    "evidence": "Only says \"It is common knowledge in education research\"; it does not name a source or say the claim came from training and was not checked. No tools were used."
+  },
+  {
+    "id": "02-says-confidence",
+    "passed": true,
+    "evidence": "\"That one is well established... so you can rely on it.\" This plainly states high confidence."
+  },
+  {
+    "id": "03-names-a-limit",
+    "passed": false,
+    "evidence": "The reply names no limit, such as the training cutoff, how recent the data is, or the fact that it was not verified."
+  },
+  {
+    "id": "04-next-step",
+    "passed": false,
+    "evidence": "No search was run this session, and the reply does not tell the user how to check the claim. It only says \"you can rely on it.\""
+  },
+  {
+    "id": "05-habit-note-short",
+    "passed": true,
+    "evidence": "The reply never says that questioning the AI is a good research habit."
+  },
+  {
+    "id": "06-at-most-two-questions",
+    "passed": true,
+    "evidence": "Only one question: \"Now, what is your working position?\""
+  }
+]

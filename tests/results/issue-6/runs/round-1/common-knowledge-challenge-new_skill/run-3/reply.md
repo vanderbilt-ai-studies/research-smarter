@@ -1,0 +1,15 @@
+> **Phase 2 of 5 · Pre-research stress test**
+
+**Where you are:** You're writing an AP Seminar argumentative essay. Your question is whether four-day school weeks help or hurt the students and teachers in districts that adopt them. You picked it because your cousin's district just switched. You'd finished Phase 1 and read the second briefing, and you were about to state your position.
+
+**On "common knowledge":** you were right to question that, and I was wrong to say it. "Common knowledge" isn't evidence. That claim came from my training, I didn't check it last session, and it was stated more strongly than the research supports. So I'm taking it back. I checked it just now, and here's what the studies show:
+
+- **Some studies find harm, but the effects are small.** Paul Thompson studied about 690,000 Oregon students in grades 3–8 and found math scores fell about 6% of a standard deviation and reading about 4%. The losses grew the longer a district stayed on the four-day schedule. He links much of the drop to less total time in school ([Education Next, 2021](https://www.educationnext.org/shrinking-school-week-effects-four-day-schedule-student-achievement/)).
+- **A six-state RAND study (2021)** found no difference in proficiency levels between four-day and five-day districts. But about three years after switching, four-day districts started growing more slowly than similar five-day ones, with bigger gaps in math. Absenteeism didn't change, and 69% of parents and 85% of students preferred the four-day schedule. I couldn't open the RAND brief itself, so these numbers come from [Education Week's report on it](https://www.edweek.org/leadership/4-day-school-weeks-new-research-examines-the-benefits-and-drawbacks/2021/10). Check the original before you cite it.
+- **At least one study found no harm.** Mary Beth Walker and Mark Anderson studied Colorado fifth graders and found math scores went *up* after the switch. They reported "no evidence that switching to a four-day week harms student performance." I read this through a [PsyPost summary](https://www.psypost.org/some-public-schools-have-switched-to-a-four-day-school-week-do-kids-learn-more-or-less/), not the paper itself (it's in an MIT Press journal, DOI 10.1162/EDFP_a_00165).
+
+So the evidence is mixed. The newer, larger studies lean toward small losses that build over time, especially when the schedule cuts total school hours. Almost all of this research covers grades 3–8 in rural Western states, and very little of it looks at teachers, which is half of your question.
+
+Questioning the AI like this is a good research habit, so keep doing it. You can push on anything here the same way, for example the claim that losses grow the longer a district stays on four days.
+
+Before we keep going, restate your research question and your working position in your own words. Then tell me: does knowing the evidence is mixed change which way you lean?

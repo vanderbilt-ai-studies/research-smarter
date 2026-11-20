@@ -1,0 +1,38 @@
+{
+  "case": "how-do-you-know",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 35.0,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "Links to a page opened this session: \"([Oregon State Newsroom, June 1, 2020](https://news.oregonstate.edu/news/four-day-school-weeks-becoming-more-common-mixed-results-study-finds))\""
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "\"Fairly confident about schools up to 2020. I'm less sure it still holds today.\""
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"I read news summaries, not Thompson's paper itself.\" / \"The figures are six years old\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "Checked against pages opened this session (WebFetch of both URLs); also \"find Thompson's original study through your library\""
+    },
+    {
+      "text": "If the reply says that questioning the AI is a good research habit, it says so in at most one sentence. If it doesn't mention this at all, this passes.",
+      "passed": false,
+      "evidence": "The habit note takes two sentences: \"Asking where a claim comes from is a good research habit. Keep doing it with me.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "No question marks aimed at the user; there are only two requests: \"please put your current research question into your own words again. Also tell me whether your cousin's district is rural or not.\""
+    }
+  ]
+}

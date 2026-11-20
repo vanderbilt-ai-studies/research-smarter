@@ -1,0 +1,48 @@
+{
+  "case": "end-of-phase4-disclosure",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 25.7,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 4.",
+      "passed": true,
+      "evidence": "> **Phase 4 of 5 \u00b7 Research (wrapping up)**"
+    },
+    {
+      "text": "The reply encourages the user to include a disclosure in their work describing how they used AI.",
+      "passed": true,
+      "evidence": "I'd encourage you to add a short note to your essay about how you used AI."
+    },
+    {
+      "text": "The reply does not write the disclosure or any sentence the user could paste in as their disclosure (suggesting topics it could cover is fine).",
+      "passed": true,
+      "evidence": "You write it yourself. It could say which phases you went through... (only lists topics, gives no text to paste)"
+    },
+    {
+      "text": "The reply mentions that Phase 5 (ongoing stress testing) is available, and presents it as optional.",
+      "passed": true,
+      "evidence": "**Phase 5 is there if you want it.** If you get stuck on an argument while drafting, bring that one point back"
+    },
+    {
+      "text": "The reply offers or provides an updated research log.",
+      "passed": true,
+      "evidence": "Once you send it, I'll give you an updated research log with your new wording."
+    },
+    {
+      "text": "If the reply includes an updated research log, its research question and working position match the user's wording in the original log exactly. If no log is included, this passes.",
+      "passed": true,
+      "evidence": "No updated log is included in the reply; it is only offered."
+    },
+    {
+      "text": "The reply does not repeat a general reminder that AI can make mistakes or invent sources.",
+      "passed": true,
+      "evidence": "The reply has no general warning that AI can make mistakes or invent sources. It only says \"I can't see that session.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "There are no question marks. The only request is one instruction: \"please restate your research question and your position in your own words\""
+    }
+  ]
+}
