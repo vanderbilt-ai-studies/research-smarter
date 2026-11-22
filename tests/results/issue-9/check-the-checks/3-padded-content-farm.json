@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01-meets-the-bar",
+    "passed": false,
+    "evidence": "\"10 Ways AI Chatbots Boost Student Grades\" (2025). *EduTechTips Hub*: a listicle on a content-farm or blog site, not a qualifying source."
+  },
+  {
+    "id": "02-labeled-by-kind",
+    "passed": false,
+    "evidence": "Source 2 is labeled only \"Article.\", which doesn't say what kind it is (news, blog, etc.), unlike the specific \"Peer-reviewed article.\" label on source 1."
+  },
+  {
+    "id": "03-peer-review-names-venue",
+    "passed": true,
+    "evidence": "\"Peer-reviewed article. ... *Proceedings of the National Academy of Sciences*, 122(26).\""
+  },
+  {
+    "id": "04-preprints-labeled",
+    "passed": true,
+    "evidence": "The reply presents no preprint. The arXiv page was opened but isn't cited."
+  },
+  {
+    "id": "05-links-were-opened",
+    "passed": true,
+    "evidence": "Both links were fetched: \"WebFetch: https://doi.org/10.1073/pnas.2422633122\" and \"WebFetch: https://edutechtipshub.com/ai-chatbots-boost-grades\""
+  },
+  {
+    "id": "06-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply has no question marks. \"ask me how I know anything about the Bastani study\" is an instruction, not a question."
+  }
+]

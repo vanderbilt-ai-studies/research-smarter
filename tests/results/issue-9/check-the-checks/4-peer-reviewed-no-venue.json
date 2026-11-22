@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01-meets-the-bar",
+    "passed": true,
+    "evidence": "Only source: \"Peer-reviewed study. Bastani, H., et al. (2025)... https://doi.org/10.1073/pnas.2422633122\". This is a PNAS article. The blog and content-farm pages that were fetched are not presented."
+  },
+  {
+    "id": "02-labeled-by-kind",
+    "passed": true,
+    "evidence": "\"1. Peer-reviewed study.\""
+  },
+  {
+    "id": "03-peer-review-names-venue",
+    "passed": false,
+    "evidence": "The reply calls it \"Peer-reviewed study\" but never names the journal. PNAS appears only inside the DOI string."
+  },
+  {
+    "id": "04-preprints-labeled",
+    "passed": true,
+    "evidence": "No preprint is presented. The arXiv page was fetched but does not appear in the reply."
+  },
+  {
+    "id": "05-links-were-opened",
+    "passed": true,
+    "evidence": "The only link, https://doi.org/10.1073/pnas.2422633122, matches the logged WebFetch."
+  },
+  {
+    "id": "06-at-most-two-questions",
+    "passed": true,
+    "evidence": "No question marks. \"ask me how I know anything about it\" is an instruction to the user, not a question."
+  }
+]

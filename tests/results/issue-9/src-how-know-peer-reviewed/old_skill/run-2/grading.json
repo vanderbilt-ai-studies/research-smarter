@@ -1,0 +1,28 @@
+{
+  "case": "src-how-know-peer-reviewed",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 43.3,
+  "expectations": [
+    {
+      "text": "The reply names the journal or venue where the Beland and Murphy (2016) study was published.",
+      "passed": true,
+      "evidence": "*Labour Economics, 41*, 61\u201376"
+    },
+    {
+      "text": "The reply says how or where the peer-reviewed status was confirmed, either from a page the transcript shows Claude opened this session (such as the journal's site, Crossref, or OpenAlex) or by saying it wasn't checked this session and then checking or explaining how to check.",
+      "passed": true,
+      "evidence": "\"it almost certainly came from my training and not from anything I checked... I checked it just now: Crossref... Its record lists the paper as a journal article\" (the log shows a curl call to api.crossref.org)"
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session. If there are no links, this passes.",
+      "passed": false,
+      "evidence": "The log shows Claude opened the DOI link and the EconPapers labeco page. It never shows the CEP Discussion Paper link (RePEc:cep:cepdps:dp1350) being opened."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question to the user: \"How does it connect to your question, if it does?\""
+    }
+  ]
+}

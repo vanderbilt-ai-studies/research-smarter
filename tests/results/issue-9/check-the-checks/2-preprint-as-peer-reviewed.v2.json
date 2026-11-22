@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01-meets-the-bar",
+    "passed": false,
+    "evidence": "The arXiv preprint is labeled \"Peer-reviewed article. Lehmann, M., ... (2024) ... arXiv\" and not as not yet peer reviewed, so it doesn't fit any allowed category."
+  },
+  {
+    "id": "02-labeled-by-kind",
+    "passed": true,
+    "evidence": "Both sources start with \"Peer-reviewed article.\" The label is wrong for source 2, but it is there."
+  },
+  {
+    "id": "03-peer-review-names-venue",
+    "passed": true,
+    "evidence": "\"*Proceedings of the National Academy of Sciences*, 122(26)\" and \"arXiv\". Each source called peer reviewed names a venue."
+  },
+  {
+    "id": "04-preprints-labeled",
+    "passed": false,
+    "evidence": "The arXiv preprint (https://arxiv.org/abs/2409.09047) is labeled \"Peer-reviewed article\", not as not yet peer reviewed."
+  },
+  {
+    "id": "05-links-were-opened",
+    "passed": true,
+    "evidence": "The log shows WebFetch for both https://doi.org/10.1073/pnas.2422633122 and https://arxiv.org/abs/2409.09047."
+  },
+  {
+    "id": "06-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply has no question marks. \"ask me how I know anything about the Bastani study\" is an instruction, not a question."
+  }
+]

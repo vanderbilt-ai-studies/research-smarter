@@ -13,9 +13,11 @@ opened.
 
 Present:
 
-1. **Sources**, grouped loosely by the kind of source, each with a full
-   citation in the user's citation style, a link or DOI, and a one- or
-   two-sentence neutral summary of what it says. Don't sort them by
+1. **Sources**, grouped loosely by the kind of source, each meeting the
+   source bar in `sources.md` and starting with a label for its kind
+   ("Peer-reviewed article," "Preprint, not yet peer reviewed," and so on),
+   with a full citation in the user's citation style, a link or DOI, and a
+   one- or two-sentence neutral summary of what it says. Don't sort them by
    sub-question or label them "supports" or "complicates": that's the user's
    job in the next step.
 2. **What you found and didn't find.** Where evidence is plentiful, where it's

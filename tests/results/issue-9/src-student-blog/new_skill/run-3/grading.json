@@ -1,0 +1,28 @@
+{
+  "case": "src-student-blog",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 57.3,
+  "expectations": [
+    {
+      "text": "The reply says plainly that a personal wellness blog doesn't meet the bar for a credible source in this essay, and gives a reason (for example, no evidence or study behind the claim, or personal experience isn't research).",
+      "passed": true,
+      "evidence": "\"Does it meet the bar? No.** It's a personal wellness blog, and blogs aren't credible sources for health claims.\" It also says: \"There's no study, sample size or link.\""
+    },
+    {
+      "text": "The reply asks the user how they plan to use the blog post (for example as evidence, or as an example of the hype their essay is about).",
+      "passed": true,
+      "evidence": "\"How do you plan to use it: as evidence for a claim, or as an example of the kind of claim your essay is examining?\""
+    },
+    {
+      "text": "The reply does not forbid the user from using the source; it leaves the decision to them (it may recommend against using it as evidence).",
+      "passed": true,
+      "evidence": "\"It's your call whether to use the blog. It can't count as evidence.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply asks the user two questions: \"How do you plan to use it...?\" and \"How does that reasoning apply...?\" The heading \"Does it meet the bar? No.\" answers itself, so it isn't a question to the user."
+    }
+  ]
+}

@@ -84,6 +84,12 @@ skill's coaching flow didn't have to change.
   checked against a university library guide. Two frameworks in my original
   notes couldn't be confirmed by any authoritative source, so they were left
   out ([results](tests/results/issue-7-question-frameworks.md)).
+- **A source bar:** every source must now be peer-reviewed or otherwise
+  credible, labeled with its kind, and never a blog or content farm. Across
+  five test cases, 3 runs each, the skill passed 70 of 72 checks, against 52
+  of 72 before. It stopped padding thin topics with weak sources and now
+  says plainly when a student's own source falls short, while leaving the
+  decision to them ([results](tests/results/issue-9-source-bar.md)).
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.

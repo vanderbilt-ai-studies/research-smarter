@@ -1,0 +1,38 @@
+{
+  "case": "src-popular-ai",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 198.0,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "All 11 sources are acceptable kinds: peer-reviewed journal articles (PNAS, Scientific Reports, BJET, etc.), arXiv preprints, Pew Research Center reports, and an EU Digital Skills and Jobs Platform summary of an OECD report. None is a blog, content farm, opinion site, social post, marketing page or Wikipedia."
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": true,
+      "evidence": "Section headings label every source: \"Peer-reviewed studies (experiments)\", \"Peer-reviewed reviews and surveys\", \"Preprints (not yet peer-reviewed)\", \"Surveys and reports\". The OECD item adds: \"this is a news summary of the report, not the report itself\"."
+    },
+    {
+      "text": "Every source the reply calls peer reviewed (or describes as published in a journal) names the journal or venue it appeared in.",
+      "passed": true,
+      "evidence": "Every peer-reviewed source names its journal: \"*Proceedings of the National Academy of Sciences*\", \"*Scientific Reports*\", \"*British Journal of Educational Technology*\", \"*Computers & Education*\", \"*Smart Learning Environments*\", \"*Societies*\"."
+    },
+    {
+      "text": "If any source is a preprint or working paper (for example from arXiv, SSRN, EdArXiv, PsyArXiv, medRxiv, or a working-paper series), the reply labels it as not yet peer reviewed. If there are none, this passes.",
+      "passed": true,
+      "evidence": "\"**Preprints (not yet peer-reviewed)**\" covers both arXiv papers (Lehmann, Kosmyna). The SSRN and arXiv versions mentioned later are only alternate free copies of published papers, and the reply says to \"confirm they match the published papers\"."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "The reply gives \"ERIC (eric.ed.gov)\" and \"Fan has an arXiv version (2412.09315). I didn't open either\". The transcript shows no fetch of either. All six source URLs (PMC, two arXiv pages, two Pew pages, the EU platform) were fetched."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is only one question mark aimed at the user: \"Which one surprised you most once you'd sorted them?\" \"You're welcome to ask me...\" is not a question."
+    }
+  ]
+}

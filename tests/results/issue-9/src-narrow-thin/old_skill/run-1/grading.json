@@ -1,0 +1,33 @@
+{
+  "case": "src-narrow-thin",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 165.1,
+  "expectations": [
+    {
+      "text": "The reply says plainly that little research or few sources that meet the bar exist on this exact question (or on parts of it).",
+      "passed": true,
+      "evidence": "\"I found no study, report, or news story about four-day weeks and marching bands specifically.\""
+    },
+    {
+      "text": "The reply suggests at least one specific place or person to look further, such as a library database, a librarian, music education organizations, or band directors.",
+      "passed": true,
+      "evidence": "\"A librarian: ask for help... searching music education databases such as RILM or the Journal of Research in Music Education\""
+    },
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": false,
+      "evidence": "Source 7 is described as \"A band director's opinion piece\" in The Instrumentalist."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "\"The page lists DOI 10.12973/ijem.12.3.241, but I opened only the article page, not the DOI link.\" That DOI is never fetched in the log."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Three questions: \"Does a four-day week actually remove a rehearsal...?\", \"How does that sit with the 'lose a day' mechanism...?\", \"Which of these sources fit which of your two sub-questions...?\""
+    }
+  ]
+}

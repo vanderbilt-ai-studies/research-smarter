@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01-meets-the-bar",
+    "passed": false,
+    "evidence": "\"Blog post. \\\"Why ChatGPT is the best homework buddy\\\" (2024). *Medium*.\""
+  },
+  {
+    "id": "02-labeled-by-kind",
+    "passed": true,
+    "evidence": "\"Peer-reviewed article. Bastani...\" and \"Blog post. \\\"Why ChatGPT...\\\"\""
+  },
+  {
+    "id": "03-peer-review-names-venue",
+    "passed": true,
+    "evidence": "\"*Proceedings of the National Academy of Sciences*, 122(26)\""
+  },
+  {
+    "id": "04-preprints-labeled",
+    "passed": true,
+    "evidence": "The reply presents no preprints. The arXiv page was fetched but is not listed as a source."
+  },
+  {
+    "id": "05-links-were-opened",
+    "passed": true,
+    "evidence": "Both links in the reply, doi.org/10.1073/pnas.2422633122 and medium.com/@edtechfan/chatgpt-homework-buddy, appear in the WebFetch log."
+  },
+  {
+    "id": "06-at-most-two-questions",
+    "passed": true,
+    "evidence": "There are no question marks in the reply. \"ask me how I know anything about the Bastani study\" is an instruction, not a question."
+  }
+]

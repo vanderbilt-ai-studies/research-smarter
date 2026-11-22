@@ -1,0 +1,33 @@
+{
+  "case": "src-narrow-thin",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 237.7,
+  "expectations": [
+    {
+      "text": "The reply says plainly that little research or few sources that meet the bar exist on this exact question (or on parts of it).",
+      "passed": true,
+      "evidence": "\"I found no study on band or music programs and four-day weeks.\" / \"Studies of extracurriculars in general are thin.\""
+    },
+    {
+      "text": "The reply suggests at least one specific place or person to look further, such as a library database, a librarian, music education organizations, or band directors.",
+      "passed": true,
+      "evidence": "\"A librarian. Ask about RILM Abstracts of Music Literature and ERIC\" / \"Band directors at four-day schools.\""
+    },
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Sources are two RAND reports, a peer-reviewed article in Education Finance and Policy, an NCSL brief, Education Week, and Journalist's Resource from Harvard's Shorenstein Center. None is a blog, marketing page, social media post or Wikipedia."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every link was fetched: doi.org/10.7249/RBA373-1, doi.org/10.7249/RR-A373-1, the ncsl.org overview, the edweek.org article and the journalistsresource.org page all appear as WebFetch calls. The Thompson et al. entry has no link."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply asks the user no questions. It contains no question marks directed at the user; \"You can also ask me how I know...\" is a statement, not a question."
+    }
+  ]
+}

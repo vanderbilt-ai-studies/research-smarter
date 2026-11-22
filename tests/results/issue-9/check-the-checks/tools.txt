@@ -1,0 +1,4 @@
+WebFetch: https://doi.org/10.1073/pnas.2422633122
+WebFetch: https://medium.com/@edtechfan/chatgpt-homework-buddy
+WebFetch: https://arxiv.org/abs/2409.09047
+WebFetch: https://edutechtipshub.com/ai-chatbots-boost-grades

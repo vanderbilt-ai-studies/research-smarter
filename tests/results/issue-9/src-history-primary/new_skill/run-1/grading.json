@@ -1,0 +1,33 @@
+{
+  "case": "src-history-primary",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 186.9,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Sources are journal articles, university-press books, university/scholarly encyclopedia essays, a state archives finding aid and labeled primary sources. None is a blog, Wikipedia or similar, e.g. \"Scholarly book (Oxford University Press)\", \"Government finding aid.\""
+    },
+    {
+      "text": "If the reply presents any primary source (for example a 1918 newspaper article, an official notice, or an archive item), each one is labeled as a primary source. If there are none, the reply says where primary sources could be found.",
+      "passed": true,
+      "evidence": "Items 7, 9 and 10 are each labeled \"Primary source\" or \"Primary source, not opened.\" Item 8 is labeled as a finding aid."
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": true,
+      "evidence": "Every item starts with a kind label, e.g. \"Scholarly journal article.\", \"Peer-reviewed article\", \"Scholarly reference essay.\", \"Government finding aid.\", \"Primary source.\""
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every linked URL or DOI appears in the WebFetch log (Stetler PDF, doi.org/10.1017/mdh.2012.101, openlibrary, the Cambridge chapter, philadelphiaencyclopedia, influenzaarchive, cppdigitallibrary, pa.gov). Items 9 and 10 have no links."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only two question marks: \"What would it mean for your argument if the shift you expect happened in one paper but not another?\" and \"Where would you put Stetler, and why?\""
+    }
+  ]
+}

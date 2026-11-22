@@ -1,0 +1,16 @@
+{
+  "eval_name": "phase1-briefing-and-mind-map",
+  "prompt": "continue my research, log attached. yes, that intake summary was right. let's start exploring.\nInput files: research-log.md",
+  "assertions": [
+    "The reply begins with a progress marker identifying Phase 1.",
+    "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+    "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+    "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+    "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+    "No mind map label is phrased as a research question; labels are short topics.",
+    "The reply does not tell the user which angle they should choose or which one is best.",
+    "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+    "The reply asks the user which direction interests them and why.",
+    "The reply asks the user no more than two questions."
+  ]
+}

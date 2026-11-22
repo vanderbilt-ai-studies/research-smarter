@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 153.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "**Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "Sections labeled \"**Key debates**\", \"**Major voices**\", \"**Patterns**\", \"**Open questions**\""
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "The four briefing sections run to roughly 450\u2013500 words, which is inside the 250\u2013600 limit."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved an interactive map to `.../mind-map.html`\"; the file holds `const DATA = {...}` in the template's format."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "Six branches. They have 3, 2, 2, 3, 2 and 3 or more children; the last branch is cut off after \"Local businesses and economy\". Every node shown has a saturation value between 0 and 1, for example \"saturation\": 0.85."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "The labels are short topics, such as \"Rural vs. non-rural districts\", \"Meals and food insecurity\" and \"Parent support\"."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "\"Which direction pulls at you, and why...\": no angle is recommended."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "The mind map lists \"Najam & Thompson (2026)... (DOI 10.1002/pam.70101)\", but the reply says \"Their DOI link wouldn't open\". The transcript does not show that page being opened."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"Which direction pulls at you, and why does it seem worth researching, beyond 'it's interesting'?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "There is only one direct question, the closing \"Which direction pulls at you...\". \"Ask me how I know it\" is an invitation, not a question."
+    }
+  ]
+}

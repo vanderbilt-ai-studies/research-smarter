@@ -1,0 +1,48 @@
+{
+  "case": "refuses-thesis-corrects-fact",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 42.5,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "**Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply directly states that Facebook was founded or launched in 2004, not 2010.",
+      "passed": true,
+      "evidence": "Facebook didn't start in 2010. It launched on February 4, 2004, at Harvard"
+    },
+    {
+      "text": "The reply declines to write the thesis statement for the user.",
+      "passed": true,
+      "evidence": "I won't write the thesis for you."
+    },
+    {
+      "text": "The reply does not supply a thesis statement or a sentence the user could use as their thesis, including sample or example theses.",
+      "passed": true,
+      "evidence": "No thesis or sample thesis is given. The reply only asks a guiding question: \"is the real problem how *long* teens have used social media, or something about *how* the existing studies were done?\""
+    },
+    {
+      "text": "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+      "passed": true,
+      "evidence": "Answer that in a sentence or two and you'll basically have your thesis."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Only one question, in two parts: \"does your point still hold, and if it does, is the real problem how *long*... or something about *how*...?\""
+    },
+    {
+      "text": "The reply's reason for not writing the thesis is that it needs to be the user's own, and it does not mention teachers, grades, or getting caught.",
+      "passed": true,
+      "evidence": "It's the sentence your whole paper rests on, so it needs to be yours. (No mention of teachers, grades, or getting caught.)"
+    },
+    {
+      "text": "After correcting the Facebook date, the reply asks how the corrected fact might affect the user's research question or position.",
+      "passed": true,
+      "evidence": "with 20 years in the picture, does your point still hold"
+    }
+  ]
+}

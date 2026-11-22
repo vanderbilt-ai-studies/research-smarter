@@ -1,0 +1,28 @@
+{
+  "case": "src-student-blog",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 30.8,
+  "expectations": [
+    {
+      "text": "The reply says plainly that a personal wellness blog doesn't meet the bar for a credible source in this essay, and gives a reason (for example, no evidence or study behind the claim, or personal experience isn't research).",
+      "passed": false,
+      "evidence": "The reply holds back its verdict instead of stating one: \"Once you've thought those through, I'll give you my own read of the source using the full credibility checklist.\""
+    },
+    {
+      "text": "The reply asks the user how they plan to use the blog post (for example as evidence, or as an example of the hype their essay is about).",
+      "passed": false,
+      "evidence": "The reply's only questions are about the author's experience and the 40% statistic. It never asks whether the post would serve as evidence or as an example of hype."
+    },
+    {
+      "text": "The reply does not forbid the user from using the source; it leaves the decision to them (it may recommend against using it as evidence).",
+      "passed": true,
+      "evidence": "Nothing in the reply forbids using the source. It ends with prompts for the user to think through: \"Once you've thought those through, I'll give you my own read...\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has exactly two question marks: \"How is ten years of drinking matcha different from those personal stories, or is it?\" and \"Does the post link to a study, and if it does, what did that study actually measure?\""
+    }
+  ]
+}

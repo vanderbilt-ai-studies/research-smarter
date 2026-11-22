@@ -39,6 +39,11 @@ Research Smarter is a research assistant skill that works with the user to refin
   how confident it is, what it can't know, and how to check, and it withdraws
   anything it can't back up. The aim is a student who habitually questions
   AI, not just their sources.
+- **A clear source bar.** Every source the skill presents is peer-reviewed
+  or otherwise credible (scholarly books, government and research
+  organization reports, reputable news for current events), never a blog,
+  content farm, or Wikipedia, and each is labeled with its kind. When the
+  evidence is thin, it says so instead of padding the list.
 
 ## Research Types
 

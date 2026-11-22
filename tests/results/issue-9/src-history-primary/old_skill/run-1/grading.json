@@ -1,0 +1,33 @@
+{
+  "case": "src-history-primary",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 118.9,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Sources are journal articles (Stetler, *Pennsylvania History*; Higgins, *PMHB*), Barry's book from Penguin, university reference works, *New Republic* journalism, and archive items under \"**Primary sources**\". None is a blog, wiki or social media post."
+    },
+    {
+      "text": "If the reply presents any primary source (for example a 1918 newspaper article, an official notice, or an archive item), each one is labeled as a primary source. If there are none, the reply says where primary sources could be found.",
+      "passed": true,
+      "evidence": "The scrapbook, the *Evening Public Ledger* and the *Evening Bulletin* clippings are all listed under the heading \"**Primary sources**\"."
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": true,
+      "evidence": "Every source sits under a heading that names its kind: \"**Scholarly secondary sources**\", \"**Digital reference works**\", \"**Journalism**\", \"**Primary sources**\"."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "The tool log shows a WebFetch for every linked URL: pa-history.org PDF, penguinrandomhouse, influenzaarchive.org, philadelphiaencyclopedia.org, newrepublic.com, cppdigitallibrary.org. The MUSE, Taylor & Francis and Library of Congress sources that wouldn't open are given without links."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has no question marks. It gives instructions instead, e.g. \"ask me how I know anything in it.\""
+    }
+  ]
+}

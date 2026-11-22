@@ -1,0 +1,32 @@
+[
+  {
+    "id": "01-meets-the-bar",
+    "passed": false,
+    "evidence": "Source 2 is an arXiv preprint (\"arXiv. https://arxiv.org/abs/2409.09047\"). A preprint is not a peer-reviewed article or any other category on the allowed list."
+  },
+  {
+    "id": "02-labeled-by-kind",
+    "passed": false,
+    "evidence": "The arXiv preprint is labeled \"Peer-reviewed article,\" so its label does not say what kind of source it really is."
+  },
+  {
+    "id": "03-peer-review-names-venue",
+    "passed": true,
+    "evidence": "Source 1 names \"*Proceedings of the National Academy of Sciences*\" and source 2 names \"arXiv\"."
+  },
+  {
+    "id": "04-preprints-labeled",
+    "passed": false,
+    "evidence": "The arXiv source is labeled \"Peer-reviewed article\" and is never marked as not yet peer reviewed."
+  },
+  {
+    "id": "05-links-were-opened",
+    "passed": true,
+    "evidence": "The tool log shows WebFetch calls to both https://doi.org/10.1073/pnas.2422633122 and https://arxiv.org/abs/2409.09047."
+  },
+  {
+    "id": "06-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply contains no question marks. \"ask me how I know...\" is an instruction to the user, not a question."
+  }
+]

@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: src-narrow-thin
+expected_outcome: |
+  A Phase 4 search on a very narrow topic with little research. The reply
+  says plainly that few sources meet the bar, suggests where else to look,
+  and doesn't pad the list with weaker sources.
+context:
+  scaffold_script: place-files.sh

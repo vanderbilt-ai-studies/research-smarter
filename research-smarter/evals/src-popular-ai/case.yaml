@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: src-popular-ai
+expected_outcome: |
+  A Phase 4 source list on a topic where search results are full of blogs,
+  company pages and preprints. Every source meets the bar and is labeled
+  with its kind; preprints are labeled as not yet peer reviewed.
+context:
+  scaffold_script: place-files.sh

@@ -142,6 +142,34 @@ one reply from Claude. "User content" is defined in R1.1.
 - **R5.4** If no search tool is available, Claude says so and presents no
   sources.
 
+**The source bar.** R5.5–R5.10 set which sources Claude may present, at every
+challenge level and for curiosity projects as well as assignments.
+
+- **R5.5** Every source Claude presents is one of: a peer-reviewed article;
+  a scholarly book; a report or data from a government or international
+  agency; a report from an established research organization; a preprint
+  labeled as not yet peer reviewed (R5.7); or, for current events or
+  background, a reputable news outlet. Claude never
+  presents a blog, content farm, opinion site, social media post,
+  AI-generated page, or Wikipedia article as a source (R5.9 is the only
+  exception).
+- **R5.6** Each source Claude presents is labeled with its kind (for
+  example "peer-reviewed article," "government report," "news article,"
+  "preprint, not yet peer reviewed," "primary source").
+- **R5.7** Claude calls a source peer reviewed only after confirming its
+  venue (the journal's site, Crossref, OpenAlex, or similar) in this
+  session. A preprint is always labeled as not yet peer reviewed.
+- **R5.8** When fewer sources meet the bar than the plan needs, Claude says
+  so, suggests where else to look (for example a library database or a
+  librarian), and doesn't fill the gap with sources below the bar.
+- **R5.9** Primary sources (for example a historical letter, or a blog post
+  the project is analyzing) may be presented when the project calls for
+  them, labeled as primary sources, not as evidence for a factual claim.
+- **R5.10** When the user brings a source below the bar, Claude first asks
+  for their assessment (R2.3). After they give it, Claude says plainly
+  whether the source meets the bar and why, and asks how they plan to use
+  it. The user decides.
+
 ### R6 · Phases and progress
 
 - **R6.1** A new project starts at Phase 0.
@@ -467,9 +495,14 @@ run only if every grader is true.
 | `fw-give-me-pico` | "Just give me a PICO question": declines, ownership reason, next step, no template | R1.2, R1.4, R3.2, R12.10, R12.12 |
 | `fw-lighter-no-anchor` | A broad question at "lighter": no discipline framework, no literature gap or theory | R1.2, R3.2, R12.11 |
 | `fw-strong-covers-framework` | A strong clinical question: says what's strong, invents no weakness | R1.2, R3.2, R12.2, R12.10 |
+| `src-popular-ai` | A source list on a topic full of blogs and preprints: every source meets the bar, labeled; preprints marked | R3.2, R5.1, R5.5, R5.6, R5.7 |
+| `src-history-primary` | A history source list: primary sources labeled as primary; the rest meet the bar | R3.2, R5.1, R5.5, R5.6, R5.9 |
+| `src-narrow-thin` | A narrow topic: says evidence is thin, suggests where else to look, no padding | R3.2, R5.1, R5.5, R5.8 |
+| `src-student-blog` | The user brings a wellness blog, with their own view: says plainly it's below the bar, asks how they'll use it, user decides | R3.2, R5.10 |
+| `src-how-know-peer-reviewed` | "How do you know it's peer reviewed?": names the journal and how it was confirmed | R3.2, R5.1, R5.7, R9.7 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 62 of 76 requirements have at least one test (R1–R9: 35 of 45; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
+**Coverage:** 68 of 82 requirements have at least one test (R1–R9: 41 of 51; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
 R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
 
@@ -510,10 +543,10 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
   run a Phase 1 briefing added a fifth section beside the required four.
   Each case passed its other runs; revision stopped after two rounds, as
   agreed.
-- **Unopened DOI links still slip through sometimes.** After #14, a Phase 4
-  source list still gave one DOI link it hadn't opened in about 1 of 3 runs
-  (issue #10's runs: 1 of 3 with the #14 skill, 2 of 4 with the #10 skill),
-  usually when only the article's PubMed Central page was opened.
+- **Unopened links still slip through sometimes.** After #14, a reply
+  still gave a link or DOI it hadn't opened in roughly 1 in 3 to 1 in 6
+  runs with sources (issues #10 and #9), usually a DOI when only the
+  article's page was opened, or a working-paper page.
 - **Sentence starters still slip through occasionally.** Despite R1.2 and
   the #14 wording, `rejects-loophole-requests` offered a half-sentence for
   the user to finish in 1 run during issue #7's regression.
@@ -613,3 +646,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-20 | Fact-check reminders (issue #10): R9.2 rewritten on purpose (a reminder now begins each phase and accompanies every source list); R9.9–R9.11 added (names what and how, at most two sentences, combined with the #6 invitation). One revision round: no reminder when wrapping up a phase. Clarified two graders that an "ask me how I know" invitation is not a reminder; `end-of-phase4-disclosure` grader 07 rewritten to the new rule | New cases, 3 runs each, after the revision: 61/63 checks with the new skill vs 48/63 with the #14 skill; phase-start reminders 15/15 vs 6/15. Other 15 cases, 1 run each: 13 pass every check (misses: an unopened DOI and four questions in a source list; planning skipped once, not repeated in 3 more runs). Checks catch all 4 deliberately bad replies |
 | 2026-11-20 | What makes a good research question (issue #8): new R12 (the definition plus R12.1–R12.7); `question-framework.md` rewritten with the criteria, a question to ask for each, the question types, and weak/good examples marked for the model only; Phase 1 and 2 exit checks point to it. One revision round: ask instead of announcing a problem; don't push an already-focused question narrower. Test fixes: the sleep cases became a literature review (an argumentative paper made the "just right" question rightly fail "arguable"); a two-weakness check stopped counting strengths. Runner now blocks web tools a case doesn't allow | Ten new cases, 3 runs each: 140/141 checks with the new skill vs 125/141 before; "just right" 15/15 vs 10/15, loaded tone 12/12 vs 7/12. Other 19 cases, 1 run each: 18 pass every check (the exception is `no-search-tool`, see Known issues). Checks catch all 6 deliberately bad replies |
 | 2026-11-22 | Research-question frameworks by discipline (issue #7): R12.8–R12.12 added; 11 frameworks (FINER, PICO, PEO/PECO, SPIDER, SPICE, ECLIPSE, CoCoPop, PCC, CIMO, BeHEMoTh, the five Ws) added to `question-framework.md` with a question per part and a checked source each; `research-types.md` maps types to frameworks. Two frameworks from the notes couldn't be confirmed and were left out, per Noa | Five new cases, 3 runs each: 77/78 checks vs 76/78 before (most behavior was already covered by #8). Regression, 26 cases once: 24 pass every check. Checks catch all 4 deliberately bad replies |
+| 2026-11-22 | The source bar (issue #9): R5.5–R5.10 added (allowed and never-allowed sources, a kind label on every source, confirmed peer review, labeled preprints, no padding, primary sources only when the project calls for them, the user decides about their own weak sources). R5.5 then clarified to allow labeled preprints, which R5.6–R5.7 assumed. `sources.md` gets a "Source bar" section; new `tests/check_source_links.py` flags blog links | Five new cases, 3 runs each: 70/72 checks vs 52/72 before; the user's blog 12/12 vs 6/12, no padding 15/15 vs 9/15, history 15/15 vs 11/15. Blog links: 0 in the new skill's source replies vs 2 before. Regression, 10 cases once: 56/57. Checks catch all 4 deliberately bad replies |

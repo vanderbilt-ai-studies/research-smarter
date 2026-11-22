@@ -1,0 +1,33 @@
+{
+  "case": "src-history-primary",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 117.3,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": false,
+      "evidence": "Presents a blog as a source: \"'Finding the Flu: Crisis and Documentation.' *Fugitive Leaves* (blog), September 19, 2018.\" It also cites popular sites such as History.com."
+    },
+    {
+      "text": "If the reply presents any primary source (for example a 1918 newspaper article, an official notice, or an archive item), each one is labeled as a primary source. If there are none, the reply says where primary sources could be found.",
+      "passed": true,
+      "evidence": "The 1918 scrapbook, the State Archives clippings and the Evening Public Ledger all sit under the heading \"**Primary sources and archives**\"."
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": false,
+      "evidence": "Sources are grouped only under broad headings like \"**Scholarly and reference sources**\". No source gets its own label; for example, the Wirth and Higgins journal articles are never called peer-reviewed."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "The log shows a WebFetch for every linked URL (cppdigitallibrary, histmed, pa.gov, influenzaarchive, philadelphiaencyclopedia, pa-history PDF, niemanreports, daily.jstor, phillyvoice, history.com). The two blocked pages get no link: \"I say so and give no link.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The only question mark is inside a quoted 1918 editorial (\"scare everybody to death?\"). The closing request is a statement: \"Go through the list and tell me...\""
+    }
+  ]
+}

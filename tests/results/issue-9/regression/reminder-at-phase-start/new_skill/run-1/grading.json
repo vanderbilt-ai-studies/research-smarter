@@ -1,0 +1,33 @@
+{
+  "case": "reminder-at-phase-start",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 403.5,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "\"Several of these I confirmed only through a database, so open each one and find the passage behind the number I quoted before you rely on it.\""
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "It names what to check (\"these\" sources and \"the number I quoted\") and how to check it: \"open each one and find the passage behind the number I quoted\""
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "The reminder is one sentence. Its only reason to check is that sources were \"confirmed only through a database\"; it says nothing about teachers, grades, plagiarism or getting caught."
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": true,
+      "evidence": "The reminder and the invitation form one two-sentence passage with no question mark: \"...before you rely on it. Feel free to ask me how I know anything here, especially the 20% juvenile crime figure...\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"which way are you leaning, and what in the briefing pulls you that way?\" The other question marks are in source titles or in a section heading."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "case": "source-list-reminder",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 365.3,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "\"Before you cite any of these, open each one and find the sentence my summary is based on\""
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "Names what was given (\"any of these\" sources, \"my summary\") and how to check it: \"open each one and find the sentence my summary is based on\""
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "The reminder is one sentence (\"Before you cite any of these, open each one and find the sentence my summary is based on, especially B\u00f6ttger & Zierer and Bar et al....\") and gives no reason about teachers, grades, plagiarism or getting caught."
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": true,
+      "evidence": "The reminder is followed directly by \"Pick any source, like the DCU \\\"moves until after school\\\" conclusion, and ask me how I know.\" Together they form one passage of two sentences with no question mark."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question is directed at the user: \"How much weight can perception data like that carry in an argument about what actually happens?\" The other question marks belong to source titles."
+    }
+  ]
+}

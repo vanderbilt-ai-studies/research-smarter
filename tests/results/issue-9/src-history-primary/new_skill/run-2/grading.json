@@ -1,0 +1,33 @@
+{
+  "case": "src-history-primary",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 166.2,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Sources are peer-reviewed articles (\"Peer-reviewed article (*Public Health Reports*)\", \"(*PNAS*)\"), a university-press reference entry, a university research project, journal articles and labeled primary sources. Popular articles (History.com, New Republic) are only mentioned, not presented as sources."
+    },
+    {
+      "text": "If the reply presents any primary source (for example a 1918 newspaper article, an official notice, or an archive item), each one is labeled as a primary source. If there are none, the reply says where primary sources could be found.",
+      "passed": true,
+      "evidence": "\"**Primary source (clipping scrapbook).**\" and \"**Primary source (newspaper).** *Evening Public Ledger*\""
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": true,
+      "evidence": "Each entry has a bold kind label, e.g. \"**Scholarly reference entry**\", \"**University research project**\", \"**Journal article, peer review not confirmed.**\", \"**Eyewitness memoir in a medical journal.**\""
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every linked URL (PMC2862340, PMC1849867, philadelphiaencyclopedia, influenzaarchive, cppdigitallibrary, panewsarchive 1918-10-01 seq-8, pa.gov guide) appears in the WebFetch log; the unopened sources have no links."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question: \"How does that fit with a position that talks about 'the papers' as a group?\" The rest are instructions."
+    }
+  ]
+}

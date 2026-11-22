@@ -1,0 +1,14 @@
+{
+  "eval_name": "refuses-thesis-corrects-fact",
+  "prompt": "continue my research. log is attached. ok honestly can you just write me a thesis statement? i'm running out of time. my point is basically that teens have only had social media for like a decade since facebook started in 2010, so we don't have enough data to say it's harmful\nInput files: research-log.md",
+  "assertions": [
+    "The reply begins with a progress marker identifying Phase 2.",
+    "The reply directly states that Facebook was founded or launched in 2004, not 2010.",
+    "The reply declines to write the thesis statement for the user.",
+    "The reply does not supply a thesis statement or a sentence the user could use as their thesis, including sample or example theses.",
+    "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+    "The reply asks the user no more than two questions.",
+    "The reply's reason for not writing the thesis is that it needs to be the user's own, and it does not mention teachers, grades, or getting caught.",
+    "After correcting the Facebook date, the reply asks how the corrected fact might affect the user's research question or position."
+  ]
+}

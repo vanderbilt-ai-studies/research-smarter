@@ -1,0 +1,28 @@
+{
+  "case": "src-how-know-peer-reviewed",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 51.8,
+  "expectations": [
+    {
+      "text": "The reply names the journal or venue where the Beland and Murphy (2016) study was published.",
+      "passed": true,
+      "evidence": "\"*Labour Economics, 41*, 61\u201376\""
+    },
+    {
+      "text": "The reply says how or where the peer-reviewed status was confirmed, either from a page the transcript shows Claude opened this session (such as the journal's site, Crossref, or OpenAlex) or by saying it wasn't checked this session and then checking or explaining how to check.",
+      "passed": true,
+      "evidence": "\"**Crossref**, a database that records where academic papers are published, lists it as a journal article\" (Crossref API was fetched this session). The reply also says the journal's peer-review status \"comes from my training; I didn't check it today\" and explains how to check it (\"Ulrichsweb... lists whether a journal is 'refereed'\")."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session. If there are no links, this passes.",
+      "passed": true,
+      "evidence": "All three links appear as WebFetch calls in the log: https://doi.org/10.1016/j.labeco.2016.04.004, https://api.crossref.org/works/10.1016/j.labeco.2016.04.004 and https://ideas.repec.org/p/ehl/lserod/62574.html."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is only one question: \"How, if at all, does a study about test scores fit an essay about in-person interaction?\" The line \"ask me how I know it\" is an invitation and has no question mark."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 206.9,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"Ask me how I know anything about the Abrahamsson paper; its bullying figures are where I'm least certain.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"Ask me how I know anything about the Abrahamsson paper; its bullying figures are where I'm least certain.\" This sentence is an imperative with no question mark, and it invites the user to question the source."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Every link and DOI in the reply was fetched: doi.org/10.1016/j.lanepe.2025.101211, both research.birmingham.ac.uk records, the birmingham.ac.uk news page, doi.org/10.1016/j.socscimed.2026.119094, doi.org/10.3389/fdpys.2026.1796471, doi.org/10.1007/s10964-025-02313-6, PMC12966246, nber.org/papers/w35132, swopec.hhs.se and web.stanford.edu/~gentzkow/research/PhoneBans.pdf."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is directed at the user: \"For each source, which of your two sub-questions does it speak to, and does it support or complicate your position?\""
+    }
+  ]
+}

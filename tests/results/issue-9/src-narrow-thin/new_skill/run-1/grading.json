@@ -1,0 +1,33 @@
+{
+  "case": "src-narrow-thin",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 201.2,
+  "expectations": [
+    {
+      "text": "The reply says plainly that little research or few sources that meet the bar exist on this exact question (or on parts of it).",
+      "passed": true,
+      "evidence": "\"Thin:** I found **no study about marching bands, or even music programs, under four-day weeks.\""
+    },
+    {
+      "text": "The reply suggests at least one specific place or person to look further, such as a library database, a librarian, music education organizations, or band directors.",
+      "passed": true,
+      "evidence": "\"search ERIC, JSTOR, RILM Abstracts of Music Literature... A school or public librarian can help\"; \"band directors in four-day districts\""
+    },
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "All sources fit allowed categories: peer-reviewed articles, RAND/HEDCO reports, UIL labeled \"Primary source\", and news from IPR, AZ Luminaria and EdWeek. Slate was \"Left out\"."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "RAND, HEDCO, UIL, IPR, AZ Luminaria, EdWeek and Liberty pages were all fetched with WebFetch. The ERIC PDF was downloaded by Bash (\"curl -sL -o eric.pdf\") but that log line is cut off before the URL. The Morton 2023 and Israel entries give no link."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question to the user: \"Which ones did you put on the 'complicates' side?\""
+    }
+  ]
+}

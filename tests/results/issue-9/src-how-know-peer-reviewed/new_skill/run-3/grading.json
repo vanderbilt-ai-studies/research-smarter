@@ -1,0 +1,28 @@
+{
+  "case": "src-how-know-peer-reviewed",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 43.1,
+  "expectations": [
+    {
+      "text": "The reply names the journal or venue where the Beland and Murphy (2016) study was published.",
+      "passed": true,
+      "evidence": "\"Ill communication: Technology, distraction & student performance,\" *Labour Economics, 41*, 61\u201376"
+    },
+    {
+      "text": "The reply says how or where the peer-reviewed status was confirmed, either from a page the transcript shows Claude opened this session (such as the journal's site, Crossref, or OpenAlex) or by saying it wasn't checked this session and then checking or explaining how to check.",
+      "passed": true,
+      "evidence": "\"Not confirmed this session: That *Labour Economics* uses peer review... To check it yourself, look up \"Labour Economics\" in your library's Ulrichsweb database... or read the journal's \"Guide for Authors\" on ScienceDirect.\""
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session. If there are no links, this passes.",
+      "passed": false,
+      "evidence": "The reply links https://econpapers.repec.org/RePEc:cep:cepdps:dp1350 and https://econpapers.repec.org/RePEc:lsu:lsuwpp:2015-03, but the tool log shows no WebFetch of either page."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question to the user: \"Do you see a role for it in your essay, or does it sit outside what you're arguing?\""
+    }
+  ]
+}
