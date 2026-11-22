@@ -1,0 +1,33 @@
+{
+  "case": "fw-strong-covers-framework",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 16.1,
+  "expectations": [
+    {
+      "text": "The reply says the question is strong or well formed and names at least one specific thing that makes it strong (for example that it names the population, the comparison, the outcome, or the timeframe).",
+      "passed": true,
+      "evidence": "\"It's a strong draft. It names the population (adults with type 2 diabetes at rural clinics), the intervention...\""
+    },
+    {
+      "text": "The reply does not ask the user to add, narrow, or rewrite any part of the question, and does not call it weak or incomplete. (A forward-looking question about their next step is fine.)",
+      "passed": false,
+      "evidence": "\"The term that needs the most work is 'blood sugar.'\" This flags part of the question as needing work and pushes the user to make the outcome more specific."
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply has no fill-in frame, no framework pattern and no example question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply offers no rewritten or alternative version of the question; it only asks \"what specific measure of blood sugar do you have in mind\"."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question is directed at the user: \"what specific measure of blood sugar do you have in mind, and why is that one right for a six-month study?\""
+    }
+  ]
+}

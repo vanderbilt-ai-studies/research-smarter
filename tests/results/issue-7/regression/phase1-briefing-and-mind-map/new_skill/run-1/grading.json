@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 119.3,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "\"> **Phase 1 of 5 \u00b7 Explore and choose a direction**\""
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "Has bold section labels \"Key debates\", \"Major voices\", \"Patterns\" and \"Open questions\"."
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "By estimate, the four sections come to about 350\u2013420 words, which is inside the 300\u2013500 range."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved an interactive map of six possible angles to: .../mind-map.html\". The file defines `const DATA = {...}` from the template."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "The reply says there are \"six possible angles\". Each visible branch has 2\u20133 children, and every angle has a saturation value between 0 and 1, e.g. \"saturation\": 0.8 and \"saturation\": 0.15. The file is cut off, so the last branches can't be fully checked."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Labels are short topics, for example \"Academic achievement\", \"Budgets and cost savings\" and \"Meals and food access\". None is phrased as a question."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "\"which direction pulls you most, and why?\" The reply recommends no angle."
+    },
+    {
+      "text": "Every link or DOI that appears in the reply or the mind map points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "The links to educationnext, edweek 2026/04, edweek 2025/07, news.uoregon and chalkbeat were all fetched with WebFetch. RAND, ECS and Stateline were left out: \"wouldn't open, so I left them out\"."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"which direction pulls you most, and why?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "There are exactly two questions: \"what do you think about four-day weeks right now...\" and \"which direction pulls you most, and why?\""
+    }
+  ]
+}

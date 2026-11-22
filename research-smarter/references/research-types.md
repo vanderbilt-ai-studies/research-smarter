@@ -12,6 +12,22 @@ use to challenge it in Phases 2 and 5. Intake (Phase 0) sets the type.
 | Historical or interpretive | Interpretation | Other readings, bias in the sources, anachronism (judging the past by today's assumptions) |
 | Exploratory, no position yet | The question itself | Assumptions built into the question, scope, whether it can be answered |
 
+## Question frameworks by research type
+
+At the "moderate" and "demanding" levels, these frameworks from
+`question-framework.md` often fit. The discipline matters too: a
+literature review in nursing may suit PICO, one in sociology PCC. Use them
+to guide what you ask, never as templates.
+
+| Research type | Frameworks that often fit |
+|---|---|
+| Argumentative essay | The five Ws and FINER; PEO for questions about causes or risks |
+| Empirical study | PICO (interventions), PEO or PECO (exposures), CoCoPop (how common), SPIDER (qualitative), CIMO (organizations) |
+| Literature review | PCC (scoping), PICO or PEO (health), SPIDER (qualitative studies), BeHEMoTh (theories) |
+| Historical or interpretive | The five Ws; usually none of the discipline frameworks |
+| Exploratory, no position yet | The five Ws, then FINER |
+| Evaluating a service, program, or policy | SPICE or ECLIPSE |
+
 ## Using the lens
 
 - **Argumentative essay.** Ask what a thoughtful opponent would say, and how

@@ -1,0 +1,43 @@
+{
+  "case": "questions-reasoning-praises-strength",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 18.4,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "**Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply says the point about sleep (school bans don't touch late-night phone use at home) is strong or well reasoned, and names what makes it strong.",
+      "passed": true,
+      "evidence": "Your sleep argument is the stronger of the two. You named a mechanism: if the use that hurts sleep happens at night at home, a ban that ends at the last bell may not reach it."
+    },
+    {
+      "text": "The reply responds to the claim that bans improve social life with at least one question that leads the user to examine it (for example what else changed, or whether one school represents others).",
+      "passed": true,
+      "evidence": "What else might have changed at your school around the time the ban started that could also explain people talking more at lunch?"
+    },
+    {
+      "text": "The reply does not flatly tell the user that the social-life claim is wrong.",
+      "passed": true,
+      "evidence": "The reply only says \"That word is worth slowing down on\" and never says the claim is wrong."
+    },
+    {
+      "text": "The reply does not name a logical fallacy (such as hasty generalization) as a verdict on the user's reasoning.",
+      "passed": true,
+      "evidence": "No fallacy is named. The reply only says \"Those are two different standards of proof.\""
+    },
+    {
+      "text": "The reply does not supply a thesis statement or any sentence the user could use as their thesis.",
+      "passed": true,
+      "evidence": "The reply gives no thesis statement or thesis-ready sentence. It ends with two questions."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "\"So, two questions:\" followed by items 1 and 2, with no other questions in the reply"
+    }
+  ]
+}

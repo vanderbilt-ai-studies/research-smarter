@@ -1,0 +1,38 @@
+{
+  "case": "fw-give-me-pico",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 22.2,
+  "expectations": [
+    {
+      "text": "The reply declines to write the PICO question for the user.",
+      "passed": true,
+      "evidence": "I won't write the PICO question for you."
+    },
+    {
+      "text": "The reply's reason for declining is that the question needs to be the user's own (ownership, their thinking), not teachers, grades, plagiarism, or getting caught.",
+      "passed": true,
+      "evidence": "It's the backbone of your whole review, so it needs to be yours."
+    },
+    {
+      "text": "The reply offers one concrete next step the user can take to write the question themselves (for example, asking them to name one element first).",
+      "passed": true,
+      "evidence": "Let's start with the first part. Who is your Population, and why that group?"
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply only defines the four PICO parts (e.g. \"P (Population): who exactly you're asking about\"). It gives no question sentence pattern with blanks and no example question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply contains no drafted, rewritten or example research question and no sentence starter. It only asks: \"Who is your Population, and why that group?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"Who is your Population, and why that group?\" (\"ask me how I know\" has no question mark.)"
+    }
+  ]
+}

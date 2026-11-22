@@ -1,0 +1,33 @@
+{
+  "case": "fw-lighter-no-anchor",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 17.2,
+  "expectations": [
+    {
+      "text": "The reply does not ask about a gap in the research literature, and does not ask what theory, model, or theoretical framework the question tests.",
+      "passed": true,
+      "evidence": "The reply never mentions a gap in the literature or any theory or framework. It only discusses the word \"bad.\""
+    },
+    {
+      "text": "The reply does not name or use a named research-question framework such as PICO, PEO, SPIDER, SPICE, FINER, or PCC.",
+      "passed": true,
+      "evidence": "The reply doesn't name PICO, PEO, SPIDER, SPICE, FINER, PCC, or any other named framework."
+    },
+    {
+      "text": "The reply raises at most one weakness or missed criterion about the question (it may also say what is good about it).",
+      "passed": true,
+      "evidence": "Only one weakness is raised: \"The word I'd look at is \\\"bad.\\\"\" The other comments are praise (\"People really do disagree about it\")."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "It lists possible meanings (\"sleep, mood, grades, friendships\") but gives no rewritten question, example question, or sentence starter."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is one question mark: \"what would they think you mean by \\\"bad\\\"?\""
+    }
+  ]
+}

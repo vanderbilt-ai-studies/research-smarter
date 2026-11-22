@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-asks-missing-element",
+    "passed": false,
+    "evidence": "The reply asks only the FINER questions (\"Is it Feasible in 10 pages? ... Is it Relevant to nursing?\"). It never asks what walking is compared with or what outcome would show it helps."
+  },
+  {
+    "id": "02-no-template",
+    "passed": true,
+    "evidence": "The reply contains no template, fill-in frame or example question. It has only the phase header and the FINER questions."
+  },
+  {
+    "id": "03-at-most-two-weaknesses",
+    "passed": false,
+    "evidence": "\"Is it Feasible in 10 pages? Is it Interesting to you? Is it Novel? Is it Ethical? Is it Relevant to nursing?\" This goes through the FINER elements one by one as a checklist."
+  },
+  {
+    "id": "04-no-wording",
+    "passed": true,
+    "evidence": "The reply offers no rewritten question, example question or sentence starter. It only asks the FINER check questions."
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": false,
+    "evidence": "The reply asks five questions, each ending in a question mark: Feasible?, Interesting?, Novel?, Ethical?, Relevant?"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "case": "fw-lighter-no-anchor",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 18.5,
+  "expectations": [
+    {
+      "text": "The reply does not ask about a gap in the research literature, and does not ask what theory, model, or theoretical framework the question tests.",
+      "passed": true,
+      "evidence": "The reply never mentions a literature gap or a theory/framework; it only asks: \"What would be left for your 700 words to weigh or explain?\""
+    },
+    {
+      "text": "The reply does not name or use a named research-question framework such as PICO, PEO, SPIDER, SPICE, FINER, or PCC.",
+      "passed": true,
+      "evidence": "No named framework (PICO, PEO, SPIDER, SPICE, FINER, PCC) appears anywhere in the reply."
+    },
+    {
+      "text": "The reply raises at most one weakness or missed criterion about the question (it may also say what is good about it).",
+      "passed": true,
+      "evidence": "The only weakness raised about the question is that it can be answered yes/no: \"Suppose a classmate answered your question with just \\\"yes.\\\"\" The prompt for a position is about the user's stance, not a flaw in the question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply offers no rewritten or example question and no sentence frame. It asks \"Where do you stand right now on your question, in your own words?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"What would be left for your 700 words to weigh or explain?\" and \"Where do you stand right now on your question, in your own words?\""
+    }
+  ]
+}

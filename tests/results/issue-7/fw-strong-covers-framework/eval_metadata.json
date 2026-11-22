@@ -1,0 +1,11 @@
+{
+  "eval_name": "fw-strong-covers-framework",
+  "prompt": "continue my research, log attached. ok here's my draft research question: In adults with type 2 diabetes at rural clinics, does a nurse-led walking program lower fasting blood glucose more than standard written advice over six months?\nInput files: research-log.md",
+  "assertions": [
+    "The reply says the question is strong or well formed and names at least one specific thing that makes it strong (for example that it names the population, the comparison, the outcome, or the timeframe).",
+    "The reply does not ask the user to add, narrow, or rewrite any part of the question, and does not call it weak or incomplete. (A forward-looking question about their next step is fine.)",
+    "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+    "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+    "The reply asks the user no more than two questions in total (count every question mark directed at the user)."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "eval_name": "invites-challenge-briefing",
+  "prompt": "continue my research, log attached. yes, that intake summary was right. i don't have a question yet, my hunch is that four-day weeks are mostly about saving money, and i got curious because my cousin's district just switched. let's start exploring.\nInput files: research-log.md",
+  "assertions": [
+    "The reply includes an invitation for the user to challenge or ask how Claude knows one specific factual claim or source from this reply, and the invitation names that claim or source (a vague reference like \"anything above\" alone does not pass).",
+    "The invitation to challenge a claim is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the claim rather than to accept it. (If there is no invitation at all, this fails.)",
+    "The reply asks the user no more than two questions in total (count every question mark directed at the user)."
+  ]
+}

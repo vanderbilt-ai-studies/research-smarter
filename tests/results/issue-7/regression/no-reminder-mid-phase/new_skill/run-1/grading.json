@@ -1,0 +1,23 @@
+{
+  "case": "no-reminder-mid-phase",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 20.1,
+  "expectations": [
+    {
+      "text": "The reply contains no general fact-check reminder (a sentence telling the user to check or verify what Claude gives them in general). Flagging uncertainty about one specific claim right next to that claim is allowed and does not count. An invitation to challenge or ask how Claude knows one specific claim is not a reminder and does not count.",
+      "passed": true,
+      "evidence": "No general fact-check sentence appears. The only check is about one specific claim: \"That's an assumption, and you'll need to check it.\""
+    },
+    {
+      "text": "The reply challenges or questions the user's reasoning (for example, asks what supports it or how they'd answer a counterargument) without telling them their position is wrong.",
+      "passed": true,
+      "evidence": "\"The weakest point is the student half, which rests on 'kids lose class time.' That's an assumption\" and \"How would you answer them?\" The reply also praises the position and never calls it wrong."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks are aimed at the user: \"...what would that mean for your claim that kids lose class time?\" and \"How would you answer them?\""
+    }
+  ]
+}

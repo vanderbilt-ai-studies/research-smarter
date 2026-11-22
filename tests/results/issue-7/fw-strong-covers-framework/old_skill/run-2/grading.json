@@ -1,0 +1,33 @@
+{
+  "case": "fw-strong-covers-framework",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 17.6,
+  "expectations": [
+    {
+      "text": "The reply says the question is strong or well formed and names at least one specific thing that makes it strong (for example that it names the population, the comparison, the outcome, or the timeframe).",
+      "passed": true,
+      "evidence": "\"The question has a lot going for it. It names a specific population (adults with type 2 diabetes at rural clinics), an intervention... a comparison... an outcome... and a timeframe\""
+    },
+    {
+      "text": "The reply does not ask the user to add, narrow, or rewrite any part of the question, and does not call it weak or incomplete. (A forward-looking question about their next step is fine.)",
+      "passed": false,
+      "evidence": "\"The part I'd look at more closely is the outcome. Fasting blood glucose isn't the only way to measure blood sugar control... what might it miss?\" This questions the outcome choice, which implies a weakness and nudges a revision. It is not a question about the next step."
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply has no template, fill-in frame or example research question. It only restates the parts of the user's own question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply offers no rewritten version, example question or sentence starter."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"Over six months, what would a fasting glucose reading tell you, and what might it miss?\""
+    }
+  ]
+}

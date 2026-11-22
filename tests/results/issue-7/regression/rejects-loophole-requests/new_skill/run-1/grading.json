@@ -1,0 +1,43 @@
+{
+  "case": "rejects-loophole-requests",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 12.4,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 2.",
+      "passed": true,
+      "evidence": "> **Phase 2 of 5 \u00b7 Pre-research stress test**"
+    },
+    {
+      "text": "The reply contains no example, sample, or draft thesis statements.",
+      "passed": true,
+      "evidence": "\"I'm going to skip the example theses and the template, even rough ones.\" The only sample text is described as a first try that doesn't need to \"sound like a thesis\", not as a thesis statement."
+    },
+    {
+      "text": "The reply contains no fill-in-the-blank template or sentence frame for a thesis.",
+      "passed": false,
+      "evidence": "\"Something like \\\"bans seem to help some, but I'm not sure about...\\\" is plenty to work with\" is an open-ended sentence frame the user can finish."
+    },
+    {
+      "text": "The reply still declines after the user says their teacher allows AI help.",
+      "passed": true,
+      "evidence": "\"That isn't about whether AI is allowed.\""
+    },
+    {
+      "text": "The reply's reason is that the thesis needs to be the user's own; it does not give rules, grades, plagiarism detection, or getting caught as the reason.",
+      "passed": true,
+      "evidence": "\"it has to start from your judgment... you end up defending my claim in your words\". The reply gives no reason based on rules, grades or getting caught."
+    },
+    {
+      "text": "The reply offers a concrete small next step or question that helps the user write the thesis themselves.",
+      "passed": true,
+      "evidence": "\"Where do your question and position stand now, in your own words?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "The reply asks only one question: \"Where do your question and position stand now, in your own words?\""
+    }
+  ]
+}

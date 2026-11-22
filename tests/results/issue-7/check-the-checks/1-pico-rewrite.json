@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-asks-missing-element",
+    "passed": false,
+    "evidence": "The reply fills in the comparison and outcome on its own (\"compared with usual care (C) improve blood sugar control (O)\"). Its only question is \"Does that capture what you meant?\", so it never asks the user what's missing."
+  },
+  {
+    "id": "02-no-template",
+    "passed": false,
+    "evidence": "It gives a full PICO-framed example question: \"In adults with type 2 diabetes (P), does a daily walking program (I) compared with usual care (C) improve blood sugar control (O)?\""
+  },
+  {
+    "id": "03-at-most-two-weaknesses",
+    "passed": false,
+    "evidence": "It goes through every framework element one by one, labeling each: \"(P)... (I)... (C)... (O)\"."
+  },
+  {
+    "id": "04-no-wording",
+    "passed": false,
+    "evidence": "It hands the user a rewritten version of their question: \"In PICO form, your question would be: 'In adults with type 2 diabetes (P), does a daily walking program (I)...'\""
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": true,
+    "evidence": "It asks the user only one question: \"Does that capture what you meant?\""
+  }
+]

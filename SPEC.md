@@ -349,6 +349,33 @@ good research question is:
 - **R12.7** At the "lighter" challenge level, the response raises at most
   one missed criterion.
 
+**Frameworks by discipline.** R12.8–R12.12 cover the established frameworks
+for building a question (for example PICO for clinical questions, SPIDER for
+qualitative ones), kept in the same reference file. They are guides for what
+to ask, not procedures to follow.
+
+- **R12.8** The skill chooses which framework, if any, fits from the
+  research type and discipline intake recorded. It doesn't add an intake
+  question to decide.
+- **R12.9** When the user's question is missing an element that matters for
+  their project (for example, a comparison in a clinical question), the
+  response asks about that element. It doesn't have to cover every element,
+  follow the framework's order, or name it. It may name a framework and say
+  what its parts are, but never supplies the wording for any part.
+- **R12.10** No response contains an example research question or a
+  fill-in frame, including a framework's own template ("In [population],
+  does [intervention]...") and examples on unrelated topics (R1.2).
+- **R12.11** Challenge level sets the depth. At "lighter," the response
+  uses only the general criteria (focus, feasibility, why it matters): it
+  doesn't introduce a discipline framework and never asks about a literature
+  gap or theoretical anchor. At "moderate," it may add the discipline
+  framework that fits. At "demanding," it may also ask what gap in the
+  literature the question addresses and what theory or model it tests.
+- **R12.12** When asked to write a question in a framework's form ("Just
+  give me a PICO question about X"), the response declines (R1.4), may name
+  the framework's elements, and offers a next step the user can take
+  themselves.
+
 ---
 
 ## 3. Acceptance criteria
@@ -435,9 +462,14 @@ run only if every grader is true.
 | `q-loaded-tone` | A question that assumes its answer: asks about it rather than announcing it | R1.2, R3.2, R4.4, R12.1 |
 | `q-no-evidence` | A counterfactual no evidence could answer: asks what evidence could | R1.2, R3.2, R12.1 |
 | `q-lighter-just-tell-me` | A lighter project asking for a verdict: at most one missed criterion | R1.2, R3.2, R12.7 |
+| `fw-clinical-no-comparison` | A clinical draft with no comparison or outcome: asks about a missing element, no PICO rewrite | R1.2, R3.2, R12.9, R12.10 |
+| `fw-qualitative-experiences` | A qualitative draft: questions follow qualitative elements, not PICO's | R1.2, R3.2, R12.8, R12.9, R12.10 |
+| `fw-give-me-pico` | "Just give me a PICO question": declines, ownership reason, next step, no template | R1.2, R1.4, R3.2, R12.10, R12.12 |
+| `fw-lighter-no-anchor` | A broad question at "lighter": no discipline framework, no literature gap or theory | R1.2, R3.2, R12.11 |
+| `fw-strong-covers-framework` | A strong clinical question: says what's strong, invents no weakness | R1.2, R3.2, R12.2, R12.10 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 57 of 71 requirements have at least one test (R1–R9: 35 of 45; R10–R11: 16 of 19; R12: 6 of 7). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
+**Coverage:** 62 of 76 requirements have at least one test (R1–R9: 35 of 45; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
 R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
 
@@ -482,6 +514,9 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
   source list still gave one DOI link it hadn't opened in about 1 of 3 runs
   (issue #10's runs: 1 of 3 with the #14 skill, 2 of 4 with the #10 skill),
   usually when only the article's PubMed Central page was opened.
+- **Sentence starters still slip through occasionally.** Despite R1.2 and
+  the #14 wording, `rejects-loophole-requests` offered a half-sentence for
+  the user to finish in 1 run during issue #7's regression.
 - **Planning skipped once.** In 1 of 7 runs of `skip-planning-request` with
   the #10 skill, the reply skipped Phase 3 and searched (R6.2). The other 6
   runs, and 3 with the #14 skill, held the line. When a resumed reply asks
@@ -501,10 +536,11 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
   case still allows Bash (for the mind map file), and Claude then searched
   through `curl` to OpenAlex (3 of 3 runs). Testing "no search" needs an
   environment with no network access.
-- **Discipline frameworks still to come.**
-  `research-smarter/references/question-framework.md` has the project's own
-  criteria (R12, issue #8); frameworks for building questions in particular
-  disciplines (issue #7) aren't in it yet.
+- **Two frameworks from the original notes were left out.** A "4-element
+  topic formula" and a "sequential funnel" couldn't be confirmed against an
+  authoritative source (issue #7). The funnel's two later questions, the
+  literature gap and the theory being tested, are kept as the project's own
+  guidance at the "demanding" level.
 - **Notebook and Reader built; Reader not fully tested.** Each piece has its
   own results file:
   - feasibility (issue #1): `notebook/results/feasibility.md`
@@ -576,3 +612,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-20 | Three problems found in #6 (issue #14): open every link, including DOIs, before giving it (source lists and the mind map); the restatement on resume is one question and counts toward two; every question counts, including "consider" lists and multi-part questions; no sentence starters for the user to finish; test deadlines moved to May-June 2027 | All 16 cases, 3 runs each: 282/285 checks, 45/48 runs pass every check. Unopened links in source lists: 0 of 3 runs (was 6 of 6). Checks catch both deliberately bad replies |
 | 2026-11-20 | Fact-check reminders (issue #10): R9.2 rewritten on purpose (a reminder now begins each phase and accompanies every source list); R9.9–R9.11 added (names what and how, at most two sentences, combined with the #6 invitation). One revision round: no reminder when wrapping up a phase. Clarified two graders that an "ask me how I know" invitation is not a reminder; `end-of-phase4-disclosure` grader 07 rewritten to the new rule | New cases, 3 runs each, after the revision: 61/63 checks with the new skill vs 48/63 with the #14 skill; phase-start reminders 15/15 vs 6/15. Other 15 cases, 1 run each: 13 pass every check (misses: an unopened DOI and four questions in a source list; planning skipped once, not repeated in 3 more runs). Checks catch all 4 deliberately bad replies |
 | 2026-11-20 | What makes a good research question (issue #8): new R12 (the definition plus R12.1–R12.7); `question-framework.md` rewritten with the criteria, a question to ask for each, the question types, and weak/good examples marked for the model only; Phase 1 and 2 exit checks point to it. One revision round: ask instead of announcing a problem; don't push an already-focused question narrower. Test fixes: the sleep cases became a literature review (an argumentative paper made the "just right" question rightly fail "arguable"); a two-weakness check stopped counting strengths. Runner now blocks web tools a case doesn't allow | Ten new cases, 3 runs each: 140/141 checks with the new skill vs 125/141 before; "just right" 15/15 vs 10/15, loaded tone 12/12 vs 7/12. Other 19 cases, 1 run each: 18 pass every check (the exception is `no-search-tool`, see Known issues). Checks catch all 6 deliberately bad replies |
+| 2026-11-22 | Research-question frameworks by discipline (issue #7): R12.8–R12.12 added; 11 frameworks (FINER, PICO, PEO/PECO, SPIDER, SPICE, ECLIPSE, CoCoPop, PCC, CIMO, BeHEMoTh, the five Ws) added to `question-framework.md` with a question per part and a checked source each; `research-types.md` maps types to frameworks. Two frameworks from the notes couldn't be confirmed and were left out, per Noa | Five new cases, 3 runs each: 77/78 checks vs 76/78 before (most behavior was already covered by #8). Regression, 26 cases once: 24 pass every check. Checks catch all 4 deliberately bad replies |

@@ -1,0 +1,33 @@
+{
+  "case": "fw-strong-covers-framework",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 24.2,
+  "expectations": [
+    {
+      "text": "The reply says the question is strong or well formed and names at least one specific thing that makes it strong (for example that it names the population, the comparison, the outcome, or the timeframe).",
+      "passed": true,
+      "evidence": "\"Your draft is strong. It covers every part of PICO\" and it lists population, intervention, comparison, outcome, plus \"It also sets a six-month timeframe.\""
+    },
+    {
+      "text": "The reply does not ask the user to add, narrow, or rewrite any part of the question, and does not call it weak or incomplete. (A forward-looking question about their next step is fine.)",
+      "passed": true,
+      "evidence": "No request to add, narrow, or rewrite anything, and the question is never called weak. The only probe is \"what would that number tell you, and what could it miss?\", which asks the user to reflect, not to revise."
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The PICO breakdown is filled in with the user's own words (\"Population: adults with type 2 diabetes at rural clinics\"). There are no bracketed blanks, no generic pattern, and no example question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply offers no rewritten or example question and no sentence starter. It only analyzes the user's draft."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"Over six months, what would that number tell you, and what could it miss?\""
+    }
+  ]
+}

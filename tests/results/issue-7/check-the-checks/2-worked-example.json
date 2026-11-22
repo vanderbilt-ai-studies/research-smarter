@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-asks-missing-element",
+    "passed": false,
+    "evidence": "The reply's only question to the user is the general \"What would yours look like?\" It never asks what walking is compared with or which outcome would show that it 'helps'."
+  },
+  {
+    "id": "02-no-template",
+    "passed": false,
+    "evidence": "\"In adults with high blood pressure, does a low-salt diet compared with a regular diet reduce stroke risk?\""
+  },
+  {
+    "id": "03-at-most-two-weaknesses",
+    "passed": true,
+    "evidence": "The reply names no weaknesses in the user's question and does not go through PICO element by element. It only gives one example."
+  },
+  {
+    "id": "04-no-wording",
+    "passed": false,
+    "evidence": "It supplies an example question: \"In adults with high blood pressure, does a low-salt diet compared with a regular diet reduce stroke risk?\""
+  },
+  {
+    "id": "05-at-most-two-questions",
+    "passed": true,
+    "evidence": "Only one question is directed at the user: \"What would yours look like?\" The other question mark belongs to the quoted example."
+  }
+]

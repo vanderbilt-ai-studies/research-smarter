@@ -1,0 +1,33 @@
+{
+  "case": "fw-clinical-no-comparison",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 21.4,
+  "expectations": [
+    {
+      "text": "The reply asks the user, as a question, about at least one element their question is missing that a clinical question usually needs: what walking is being compared with, or what outcome would show it 'helps'.",
+      "passed": true,
+      "evidence": "\"If you were reading a study about people like your aunt, what would you look for to decide whether walking had actually helped them?\""
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply has no template, fill-in frame or example question; it only says \"rewrite the question yourself if you want to.\""
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses or missing elements in the user's question. Strengths it names don't count, but the reply must not walk through a framework's elements one by one as a checklist.",
+      "passed": true,
+      "evidence": "It raises two weaknesses, not a framework checklist: the question can be answered in one word (\"answers it with a single word\") and \"'Help' is doing a lot of work in your question.\""
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "It offers no rewritten question or sentence starter; it says \"rewrite the question yourself if you want to.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only two question marks: \"What would be left for the other nine and a half pages?\" and \"what would you look for to decide whether walking had actually helped them?\""
+    }
+  ]
+}

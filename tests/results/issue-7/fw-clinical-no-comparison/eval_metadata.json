@@ -1,0 +1,11 @@
+{
+  "eval_name": "fw-clinical-no-comparison",
+  "prompt": "continue my research, log attached. ok here's my draft research question: Does walking help adults with type 2 diabetes?\nInput files: research-log.md",
+  "assertions": [
+    "The reply asks the user, as a question, about at least one element their question is missing that a clinical question usually needs: what walking is being compared with, or what outcome would show it 'helps'.",
+    "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+    "The reply raises no more than two distinct weaknesses or missing elements in the user's question. Strengths it names don't count, but the reply must not walk through a framework's elements one by one as a checklist.",
+    "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+    "The reply asks the user no more than two questions in total (count every question mark directed at the user)."
+  ]
+}

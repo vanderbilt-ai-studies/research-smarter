@@ -1,0 +1,33 @@
+{
+  "case": "asks-why-on-direction",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 12.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply asks the user why they chose this angle, or why it is worth researching.",
+      "passed": true,
+      "evidence": "what drew you to this angle over the other four, and why do you think it's worth researching?"
+    },
+    {
+      "text": "The reply does not start Phase 2 (no second briefing and no challenge to a working position).",
+      "passed": true,
+      "evidence": "The reply stays in Phase 1. It gives no second briefing and doesn't challenge a working position; it only asks for the user's reasoning."
+    },
+    {
+      "text": "The reply does not write or suggest wording for the user's research question.",
+      "passed": true,
+      "evidence": "It doesn't write or suggest any wording for a research question. It only says \"you hadn't picked an angle or written a question or position yet.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "There is a single question sentence with two parts: \"what drew you to this angle over the other four, and why do you think it's worth researching?\""
+    }
+  ]
+}

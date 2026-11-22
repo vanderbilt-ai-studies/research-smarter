@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: fw-strong-covers-framework
+expected_outcome: |
+  A strong clinical question that already names its population,
+  intervention, comparison, outcome and timeframe. The reply says what is
+  strong and does not invent a weakness.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: fw-clinical-no-comparison
+expected_outcome: |
+  A clinical-style draft with no comparison or measurable outcome. The reply
+  asks about a missing element such as the comparison or the outcome, and
+  does not rewrite the question in PICO form.
+context:
+  scaffold_script: place-files.sh

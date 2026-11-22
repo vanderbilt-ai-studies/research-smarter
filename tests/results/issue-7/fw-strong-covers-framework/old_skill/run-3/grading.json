@@ -1,0 +1,33 @@
+{
+  "case": "fw-strong-covers-framework",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 22.2,
+  "expectations": [
+    {
+      "text": "The reply says the question is strong or well formed and names at least one specific thing that makes it strong (for example that it names the population, the comparison, the outcome, or the timeframe).",
+      "passed": true,
+      "evidence": "\"This is a strong draft. It names the population (adults with type 2 diabetes), the setting (rural clinics), the intervention (a nurse-led walking program), a fair comparison (standard written advice)...\""
+    },
+    {
+      "text": "The reply does not ask the user to add, narrow, or rewrite any part of the question, and does not call it weak or incomplete. (A forward-looking question about their next step is fine.)",
+      "passed": true,
+      "evidence": "It probes the outcome (\"What made you pick fasting blood glucose...\") but leaves the choice with the user: \"you decide whether the question stays as it is or changes.\" It never asks them to add, narrow, or rewrite anything, and never calls the question weak."
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply has no bracketed frame, no framework pattern and no example question on any topic. It only lists the parts the user's own question already contains."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "It gives no rewritten or alternative version of the question and no sentence starter. It only comments on the user's own wording."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is directed at the user: \"What made you pick fasting blood glucose as the outcome, and what do you know about how well a single fasting reading captures someone's glucose control over six months?\""
+    }
+  ]
+}

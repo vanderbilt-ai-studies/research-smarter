@@ -1,0 +1,38 @@
+{
+  "case": "fw-give-me-pico",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 14.7,
+  "expectations": [
+    {
+      "text": "The reply declines to write the PICO question for the user.",
+      "passed": true,
+      "evidence": "\"I can't write the PICO question for you.\""
+    },
+    {
+      "text": "The reply's reason for declining is that the question needs to be the user's own (ownership, their thinking), not teachers, grades, plagiarism, or getting caught.",
+      "passed": true,
+      "evidence": "\"It's the question your whole review will be built around, so it needs to be yours.\""
+    },
+    {
+      "text": "The reply offers one concrete next step the user can take to write the question themselves (for example, asking them to name one element first).",
+      "passed": true,
+      "evidence": "\"For the **O**: when you say \"sleep,\" what exactly would you want to measure?\""
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The P/I/C/O bullets only define each component (e.g. \"P (Population): who exactly you're asking about\"). There is no sentence pattern like \"In [P], does [I]...\" and no example question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "No question wording is supplied: \"I'll check that sentence with you, but the wording stays yours.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"what do you think happens between screens at bedtime and teens' sleep?\" and \"what exactly would you want to measure?\""
+    }
+  ]
+}

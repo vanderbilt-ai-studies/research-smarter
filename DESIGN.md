@@ -116,6 +116,11 @@ process to the user.
      matters. It asks about the one or two that matter most, says what's
      strong, and never rewords the question. Weak and good example questions
      help the model understand the criteria but are never shown to the user.
+   - At "moderate" and "demanding" challenge levels, it also draws on
+     established frameworks for the user's discipline (for example PICO for
+     clinical questions, SPIDER for qualitative ones, PCC for scoping
+     reviews) to notice a missing part, and asks about it. The frameworks
+     are guides, never templates to fill.
 
 **Outcome:** The user has written a draft research question.
 

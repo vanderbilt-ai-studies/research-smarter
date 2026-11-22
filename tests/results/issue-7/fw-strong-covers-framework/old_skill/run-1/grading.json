@@ -1,0 +1,33 @@
+{
+  "case": "fw-strong-covers-framework",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 24.0,
+  "expectations": [
+    {
+      "text": "The reply says the question is strong or well formed and names at least one specific thing that makes it strong (for example that it names the population, the comparison, the outcome, or the timeframe).",
+      "passed": true,
+      "evidence": "\"Your question is in good shape... It names the population (adults with type 2 diabetes), the setting (rural clinics), the intervention... the comparison (standard written advice), the outcome, and the timeframe (six months).\""
+    },
+    {
+      "text": "The reply does not ask the user to add, narrow, or rewrite any part of the question, and does not call it weak or incomplete. (A forward-looking question about their next step is fine.)",
+      "passed": true,
+      "evidence": "\"You don't need to change anything unless your answer gives you a reason to.\" The reply probes the outcome choice but never asks for a rewrite or calls the question weak."
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply has no bracketed frame, PICO-style pattern or example question. It only lists the user's own elements in prose."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply offers no rewritten, narrowed or example version of the question and no sentence starter."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are exactly two question marks: \"Why fasting blood glucose?\" and \"...what might it miss?\""
+    }
+  ]
+}

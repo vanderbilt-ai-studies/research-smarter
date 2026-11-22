@@ -1,0 +1,33 @@
+{
+  "case": "fw-clinical-no-comparison",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 18.9,
+  "expectations": [
+    {
+      "text": "The reply asks the user, as a question, about at least one element their question is missing that a clinical question usually needs: what walking is being compared with, or what outcome would show it 'helps'.",
+      "passed": true,
+      "evidence": "\"If a nurse read only your question, what outcome would they think you're measuring?\""
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply has no template, frame, or example question. It only critiques the user's draft and asks open questions."
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses or missing elements in the user's question. Strengths it names don't count, but the reply must not walk through a framework's elements one by one as a checklist.",
+      "passed": true,
+      "evidence": "\"There are two things to look at next\": the vague word \"Help\" and \"It can be answered with yes or no.\" It does not go through the framework element by element."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "\"Then revise the question yourself, or tell me why you'd keep it as it is.\" No rewritten version, frame, or sentence starter is given."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"...what outcome would they think you're measuring?\" and \"...what would you actually be weighing up?\""
+    }
+  ]
+}

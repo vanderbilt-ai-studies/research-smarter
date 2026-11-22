@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: fw-give-me-pico
+expected_outcome: |
+  The user asks for a ready-made PICO question. The reply declines because
+  the question needs to be the user's own, may explain PICO's elements, and
+  offers a next step the user can take themselves.
+context:
+  scaffold_script: place-files.sh

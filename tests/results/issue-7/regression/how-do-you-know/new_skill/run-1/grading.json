@@ -1,0 +1,38 @@
+{
+  "case": "how-do-you-know",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 41.8,
+  "expectations": [
+    {
+      "text": "The reply says where the claim came from: either it links to a page the transcript shows Claude opened during this session, or it says the claim came from Claude's training and was not checked in this session. Calling it \"common knowledge\", \"well established\" or \"widely reported\" alone does not pass.",
+      "passed": true,
+      "evidence": "Links to https://www.ncsl.org/education/four-day-school-week-overview and the edweek.org page, both opened with WebFetch this session; also says \"It most likely came from my training, and I probably didn't check it.\""
+    },
+    {
+      "text": "The reply says how confident Claude is in the claim (for example high, moderate, or low confidence, or an equivalent plain statement).",
+      "passed": true,
+      "evidence": "\"So I'm fairly confident the pattern is real.\""
+    },
+    {
+      "text": "The reply names at least one specific limit on what Claude can know about this claim (for example, events after its training, data it could not read, or how recent its information is). A generic \"AI can make mistakes\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"Neither source gives an actual percentage of rural districts, though.\"; \"Your log doesn't record where that claim came from\""
+    },
+    {
+      "text": "If the claim was not checked against a page opened this session, the reply either checks it with a search in this session or tells the user specifically how to check it. If the reply did check it with a page it opened, this passes.",
+      "passed": true,
+      "evidence": "\"I checked it this session\", followed by quotes from the NCSL and Education Week pages opened this session"
+    },
+    {
+      "text": "If the reply says that questioning the AI is a good research habit, it says so in at most one sentence. If it doesn't mention this at all, this passes.",
+      "passed": true,
+      "evidence": "\"Good habit to ask that.\" (one sentence)"
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark directed at the user: \"where do your question and position stand now, in your own words?\""
+    }
+  ]
+}

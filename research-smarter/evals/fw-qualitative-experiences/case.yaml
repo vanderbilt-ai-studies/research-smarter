@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: fw-qualitative-experiences
+expected_outcome: |
+  A qualitative draft about people's experiences. The reply's questions draw
+  on qualitative elements (whose experiences, which experiences, how they'd
+  be gathered), not on interventions, comparisons and measured outcomes.
+context:
+  scaffold_script: place-files.sh

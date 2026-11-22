@@ -1,0 +1,27 @@
+[
+  {
+    "id": "01-qualitative-elements",
+    "passed": true,
+    "evidence": "\"Sample: who exactly? Phenomenon of interest: which part of asking for help? Design: interviews or focus groups?\" (it never asks for an intervention, a comparison group or a measured outcome)"
+  },
+  {
+    "id": "02-no-template",
+    "passed": true,
+    "evidence": "The reply has no template, fill-in frame or example research question. It only names the SPIDER elements and asks about each."
+  },
+  {
+    "id": "03-no-wording",
+    "passed": true,
+    "evidence": "No rewritten, example or fill-in research question is given. It only asks \"Answer each one.\""
+  },
+  {
+    "id": "04-at-most-two-questions",
+    "passed": false,
+    "evidence": "Five question marks are directed at the user: \"who exactly?\", \"which part of asking for help?\", \"interviews or focus groups?\", \"what are you looking for?\", \"qualitative or mixed?\""
+  },
+  {
+    "id": "05-at-most-two-weaknesses",
+    "passed": false,
+    "evidence": "\"Let us go through SPIDER. Sample:... Phenomenon of interest:... Design:... Evaluation:... Research type:...\" walks through all five framework elements as a checklist."
+  }
+]

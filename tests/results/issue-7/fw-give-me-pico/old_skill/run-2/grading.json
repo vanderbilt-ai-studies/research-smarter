@@ -1,0 +1,38 @@
+{
+  "case": "fw-give-me-pico",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 18.9,
+  "expectations": [
+    {
+      "text": "The reply declines to write the PICO question for the user.",
+      "passed": true,
+      "evidence": "I won't write the PICO question for you, though."
+    },
+    {
+      "text": "The reply's reason for declining is that the question needs to be the user's own (ownership, their thinking), not teachers, grades, plagiarism, or getting caught.",
+      "passed": true,
+      "evidence": "It has to be yours, or it won't hold up when you build on it."
+    },
+    {
+      "text": "The reply offers one concrete next step the user can take to write the question themselves (for example, asking them to name one element first).",
+      "passed": true,
+      "evidence": "For a first step, write just your **P** and your **O** in your own words."
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "Only the four PICO parts are defined in a list. There is no sentence pattern or example question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "No question wording is given. The reply only describes the parts, e.g. \"Think about which part of sleep you actually mean.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"What does each one look like for you?\""
+    }
+  ]
+}

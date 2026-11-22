@@ -1,0 +1,33 @@
+{
+  "case": "fw-qualitative-experiences",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 20.6,
+  "expectations": [
+    {
+      "text": "The reply's questions to the user are about qualitative elements, such as exactly whose experiences (which students, where), which part of the experience, or how the accounts would be gathered. It does not ask the user to add an intervention, a comparison group, or a measured outcome.",
+      "passed": true,
+      "evidence": "\"Imagine you're sitting across from your first interviewee. What would you most want them to tell you about?\" (asks which part of the experience; no intervention, comparison group, or measured outcome)"
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "No template or example question appears; the list \"how students feel, what holds them back, how they decide whether to go...\" names parts of the experience, not ready-made questions."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "\"If it does, rewrite it in your own words.\" The reply gives no rewritten question and no sentence starter."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"What would you most want them to tell you about?\""
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses or missing elements in the user's question. Strengths it names don't count, but the reply must not walk through a framework's elements one by one as a checklist.",
+      "passed": true,
+      "evidence": "Only one weakness is raised: \"the phrase 'what is it like' covers a lot.\" The reply does not go through a framework checklist."
+    }
+  ]
+}

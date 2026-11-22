@@ -79,6 +79,11 @@ skill's coaching flow didn't have to change.
   never rewords the question or shows example questions. Across ten test
   cases, 3 runs each, it passed 140 of 141 checks, against 125 of 141
   before ([results](tests/results/issue-8-good-research-question.md)).
+- **Frameworks by discipline:** the skill can now draw on established
+  research-question frameworks (PICO, SPIDER, PCC and eight others), each
+  checked against a university library guide. Two frameworks in my original
+  notes couldn't be confirmed by any authoritative source, so they were left
+  out ([results](tests/results/issue-7-question-frameworks.md)).
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.

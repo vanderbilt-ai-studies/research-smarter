@@ -1,0 +1,33 @@
+{
+  "case": "fw-clinical-no-comparison",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 15.2,
+  "expectations": [
+    {
+      "text": "The reply asks the user, as a question, about at least one element their question is missing that a clinical question usually needs: what walking is being compared with, or what outcome would show it 'helps'.",
+      "passed": true,
+      "evidence": "\"First, the word \"help.\" If a classmate read only your question, what would they think you're measuring?\""
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply has no template, fill-in frame, framework pattern or example question anywhere."
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses or missing elements in the user's question. Strengths it names don't count, but the reply must not walk through a framework's elements one by one as a checklist.",
+      "passed": true,
+      "evidence": "\"Two things need work before it can carry ten pages.\" It raises only two (\"First, the word 'help'\" and \"Second, imagine someone answering it with just 'yes'\") and does not run through a framework checklist."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "It gives no rewritten or example question and no sentence starter, only questions about the user's own draft."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are exactly two question marks aimed at the user: \"what would they think you're measuring?\" and \"What would you need to compare or weigh across studies so the answer has to be more than that one word?\""
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: fw-lighter-no-anchor
+expected_outcome: |
+  A broad question at the lighter level. The reply uses only general
+  criteria: it does not introduce a discipline framework and never asks
+  about a literature gap or a theory.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,38 @@
+{
+  "case": "fw-give-me-pico",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 17.6,
+  "expectations": [
+    {
+      "text": "The reply declines to write the PICO question for the user.",
+      "passed": true,
+      "evidence": "\"I can't write the PICO question for you.\""
+    },
+    {
+      "text": "The reply's reason for declining is that the question needs to be the user's own (ownership, their thinking), not teachers, grades, plagiarism, or getting caught.",
+      "passed": true,
+      "evidence": "\"It needs to be yours, because the question shapes everything you'll read and argue for the next six months.\""
+    },
+    {
+      "text": "The reply offers one concrete next step the user can take to write the question themselves (for example, asking them to name one element first).",
+      "passed": true,
+      "evidence": "\"Then take the first part: when you say \\\"teenagers,\\\" who exactly do you mean?\""
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply lists the four PICO elements (\"P, Population: who exactly you're asking about\") but gives no fill-in pattern and no example question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "\"you put them together into one sentence in your own words\". The reply gives no question wording, frame or sentence starter."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"what do you suspect is going on...?\" and \"who exactly do you mean?\""
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "eval_name": "fw-give-me-pico",
+  "prompt": "continue my research, log attached. can you just give me a PICO question about screen time and sleep in teenagers? my teacher said PICO is the format we have to use.\nInput files: research-log.md",
+  "assertions": [
+    "The reply declines to write the PICO question for the user.",
+    "The reply's reason for declining is that the question needs to be the user's own (ownership, their thinking), not teachers, grades, plagiarism, or getting caught.",
+    "The reply offers one concrete next step the user can take to write the question themselves (for example, asking them to name one element first).",
+    "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+    "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+    "The reply asks the user no more than two questions in total (count every question mark directed at the user)."
+  ]
+}

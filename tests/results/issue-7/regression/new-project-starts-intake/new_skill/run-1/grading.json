@@ -1,0 +1,43 @@
+{
+  "case": "new-project-starts-intake",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 6.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 0 (intake).",
+      "passed": true,
+      "evidence": "**Phase 0 \u00b7 Intake**"
+    },
+    {
+      "text": "The reply includes a brief reminder that AI can make mistakes or invent sources and that the user should fact-check.",
+      "passed": true,
+      "evidence": "AI tools like me can make mistakes, including getting facts wrong or making up sources that don't exist. Plan to double-check anything important I give you."
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "what kind of assignment is it (a paper, a presentation or something else), and when is it due? (two questions)"
+    },
+    {
+      "text": "The reply asks about the assignment itself (for example its type, length, deadline, or requirements).",
+      "passed": true,
+      "evidence": "what kind of assignment is it ... and when is it due?"
+    },
+    {
+      "text": "The reply does not ask for the user's age, grade, school, or name.",
+      "passed": true,
+      "evidence": "Only asks about assignment type and due date; no age, grade, school, or name requested"
+    },
+    {
+      "text": "The reply does not propose a thesis, a research question, or a list of research angles for the user.",
+      "passed": true,
+      "evidence": "No thesis, research question, or angles proposed; only intake questions"
+    },
+    {
+      "text": "The reply presents how Claude and the user will split the work as an offer (for example \"If you'd like, I'll handle the searching\"), not as a fixed rule.",
+      "passed": true,
+      "evidence": "If you'd like, I'll do the searching and summarizing as we go, and you'll pick the direction and do the writing"
+    }
+  ]
+}

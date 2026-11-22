@@ -1,8 +1,8 @@
 # What makes a good research question
 
-> **Still to come.** These criteria are the project's own. Frameworks for
-> building questions in particular disciplines (such as PICO) will be added
-> later.
+This file has three parts: the project's criteria for a good research
+question, frameworks for building one in particular disciplines, and
+calibration examples for your understanding only.
 
 ## How to use this file
 
@@ -91,6 +91,135 @@ evidence fit it. Don't ask the user to classify it.
 The most common mismatch is a causal question with only correlational
 evidence (for example, surveys comparing usage with outcomes). Ask what
 evidence could show cause; don't just name the problem.
+
+## Frameworks by discipline
+
+Established frameworks name the parts a question in a field usually needs.
+Use them as guides for what to ask, not procedures: notice which part that
+matters is missing from the user's question, and ask about that. You don't
+have to cover every part, follow the order, or name the framework. You may
+name one and say what its parts are when that helps the user see what's
+missing. Never fill a framework in for them, and never show a framework's
+template ("In [population], does [intervention]...") or an example question.
+
+**Depth follows the challenge level:**
+
+- **Lighter:** the general criteria above only (focus, feasibility, why it
+  matters). Don't bring in a discipline framework, and don't ask about a
+  literature gap or theory.
+- **Moderate:** add the framework that fits, if one does.
+- **Demanding:** you may also ask what gap in the research the question
+  fills ("What hasn't been answered yet that your question would answer?")
+  and what theory or model it tests or uses ("What explanation of this are
+  you testing?"). These two questions are the project's own guidance, not a
+  named framework.
+
+**Choosing.** Pick from the research type and discipline intake recorded;
+don't ask the user which framework they want. Many questions fit none of
+these, especially in the humanities; then use the criteria above.
+
+| The question is about... | Framework |
+|---|---|
+| Whether a treatment or intervention works (clinical, quantitative) | PICO |
+| Whether an exposure or risk factor is linked to an outcome | PEO or PECO |
+| People's experiences, views, or behaviors (qualitative, mixed methods) | SPIDER |
+| How well a service, program, or project works | SPICE |
+| A policy or how a service is delivered | ECLIPSE |
+| How common a condition or problem is | CoCoPop |
+| Mapping what's known in a field (scoping or broad review) | PCC |
+| How and why something works in an organization (business, management) | CIMO |
+| Which theories explain a behavior (theory-focused review) | BeHEMoTh |
+| Any topic, early on, when the user is still narrowing | The five Ws |
+| Any question, as a final check | FINER |
+
+**The frameworks, with a question you might ask about each part.**
+
+- **PICO** (clinical, intervention, effectiveness questions).
+  - Population: "Who exactly are you asking about?"
+  - Intervention: "What treatment or change are you looking at?"
+  - Comparison: "Compared with what?"
+  - Outcome: "What would show it worked?"
+- **PEO / PECO** (exposures, risks, causes).
+  - Population: "Who exactly?"
+  - Exposure: "What are they exposed to?"
+  - Comparator (PECO only): "Compared with people exposed to what, or to
+    less of it?"
+  - Outcome: "What effect are you looking for?"
+- **SPIDER** (qualitative and mixed-methods questions about experience).
+  - Sample: "Whose experiences, exactly?"
+  - Phenomenon of interest: "Which part of their experience?"
+  - Design: "How would you hear from them: interviews, focus groups,
+    something else?"
+  - Evaluation: "What are you hoping to learn: feelings, reasons, views?"
+  - Research type: "Are you looking at qualitative accounts, numbers, or
+    both?"
+- **SPICE** (evaluating a service, program, or project).
+  - Setting: "Where does it happen?"
+  - Perspective: "Whose point of view: the people using it, running it,
+    paying for it?"
+  - Intervention or interest: "What exactly is being offered?"
+  - Comparison: "Compared with what, or with not having it?"
+  - Evaluation: "How would you judge whether it's working?"
+- **ECLIPSE** (policy and service delivery).
+  - Expectation: "What is the policy or service supposed to change?"
+  - Client group: "Who is it for?"
+  - Location: "Where?"
+  - Impact: "What would success look like?"
+  - Professionals: "Who delivers it?"
+  - Service: "Which specific service or policy?"
+- **CoCoPop** (how common something is).
+  - Condition: "What exactly are you counting?"
+  - Context: "In what setting or place?"
+  - Population: "Among whom?"
+- **PCC** (scoping and broad reviews).
+  - Population: "Who?"
+  - Concept: "What idea or issue are you mapping?"
+  - Context: "Where, when, in what setting?"
+- **CIMO** (management and organizations).
+  - Context: "In what kind of organization or situation?"
+  - Intervention: "What change or practice?"
+  - Mechanism: "Why would it work: what does it set in motion?"
+  - Outcome: "What result would you look for?"
+- **BeHEMoTh** (theory-focused reviews).
+  - Behavior of interest: "Which behavior?"
+  - Health context: "In what health setting?"
+  - Exclusions: "What's out of scope?"
+  - Models or theories: "Which explanations of this behavior will you look
+    at?"
+- **The five Ws** (early narrowing, any topic). A question that's too broad
+  usually leaves several open; one that's too narrow pins down all of them.
+  - Why: "What draws you to this?"
+  - What: "Which issue or debate within it?"
+  - Where: "Local, national, or global? Which place?"
+  - When: "Now, or a particular period or change over time?"
+  - Who: "Which people or groups are affected or involved?"
+- **FINER** (a final check on any question). Ask about the one that's
+  weakest, never all five at once.
+  - Feasible: "Can you get the sources or data in time?"
+  - Interesting: "Will this hold your interest for the whole project?"
+  - Novel: "What would it add?"
+  - Ethical: "Could answering it harm anyone?"
+  - Relevant: "Who would the answer matter to?"
+
+**Sources** (each opened and checked on 2026-11-20; issue #7):
+
+- PICO, PEO, SPIDER, CoCoPop, PCC, FINER, SPICE, ECLIPSE: Midwestern
+  University Library, "Question Frameworks,"
+  https://library.midwestern.edu/evidence-synthesis/question-frameworks
+- SPIDER (Cooke, Smith & Booth, 2012), SPICE (Booth, 2006), ECLIPSE
+  (Wildridge & Bell, 2002), BeHEMoTh (Booth & Carroll, 2015), PCC: University
+  College Dublin Library, "Systematic Reviews: Frameworks,"
+  https://libguides.ucd.ie/systematic/frameworks
+- PECO (Morgan et al., 2018): UC Merced Library, "Systematic Reviews:
+  Question," https://libguides.ucmerced.edu/systematic-reviews/question
+- CIMO (Denyer & Tranfield, 2009, in *The SAGE Handbook of Organizational
+  Research Methods*) and CoCoPop (Munn et al., 2015): Virginia Tech
+  Libraries,
+  https://guides.lib.vt.edu/EvidenceSynthesis/RQdevelop
+- FINER (Hulley et al., *Designing Clinical Research*): University of
+  Waikato Library, https://libraryguides.waikato.ac.nz/researchquestion
+- The five Ws: Washington and Lee University Library, "Choose a topic,"
+  https://libguides.wlu.edu/learn/choose-topic
 
 ## Calibration examples: for your understanding only
 

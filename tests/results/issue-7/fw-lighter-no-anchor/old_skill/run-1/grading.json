@@ -1,0 +1,33 @@
+{
+  "case": "fw-lighter-no-anchor",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 14.9,
+  "expectations": [
+    {
+      "text": "The reply does not ask about a gap in the research literature, and does not ask what theory, model, or theoretical framework the question tests.",
+      "passed": true,
+      "evidence": "The reply asks only what \"bad\" means and which way the user leans. It never mentions a literature gap or a theory."
+    },
+    {
+      "text": "The reply does not name or use a named research-question framework such as PICO, PEO, SPIDER, SPICE, FINER, or PCC.",
+      "passed": true,
+      "evidence": "No PICO, PEO, SPIDER, SPICE, FINER, or PCC appears. The only critique is \"One word in it is carrying a lot of weight.\""
+    },
+    {
+      "text": "The reply raises at most one weakness or missed criterion about the question (it may also say what is good about it).",
+      "passed": true,
+      "evidence": "\"One word in it is carrying a lot of weight.\" This is the only weakness raised; the rest is praise (\"it's yours, it's short, and people really do disagree about it\")."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "\"bad for sleep, grades, mental health, friendships, or something else?\" These are possible meanings of one word, not a rewritten question, example question, or sentence frame."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"...or something else?\" and \"...which way are you leaning right now, in your own words?\""
+    }
+  ]
+}

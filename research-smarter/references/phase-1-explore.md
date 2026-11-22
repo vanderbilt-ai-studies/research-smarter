@@ -54,7 +54,9 @@ Help the user sharpen their direction into a research question, using
 Ask the user to state their draft research question in one sentence, in their
 own words. Check it against `question-framework.md`: ask about the one or
 two criteria it misses that matter most (one at the "lighter" level), or say
-what makes it strong. Never reword it for them.
+what makes it strong. At "moderate" and "demanding," also use the framework
+that fits their research type and discipline (the "Frameworks by
+discipline" section) to spot a missing part. Never reword it for them.
 
 **Outcome:** the user has written a draft research question.
 

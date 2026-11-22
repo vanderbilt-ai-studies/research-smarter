@@ -1,0 +1,33 @@
+{
+  "case": "fw-clinical-no-comparison",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 17.1,
+  "expectations": [
+    {
+      "text": "The reply asks the user, as a question, about at least one element their question is missing that a clinical question usually needs: what walking is being compared with, or what outcome would show it 'helps'.",
+      "passed": true,
+      "evidence": "\"If walking 'helped' your aunt, what would you or her nurse actually measure to know that?\" and \"And helped compared with what?\""
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "PICO is named only as \"Population, Intervention, Comparison, Outcome\"; the reply gives no fill-in pattern and no example question."
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses or missing elements in the user's question. Strengths it names don't count, but the reply must not walk through a framework's elements one by one as a checklist.",
+      "passed": true,
+      "evidence": "\"The word doing the most work right now is 'help,' and it hides two missing parts.\" The two are the comparison and the outcome. The PICO letters are named once in a line, not worked through as a checklist."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply offers no rewritten question, example question or sentence starter. It ends with two open questions."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has only two question marks: \"...to know that?\" and \"...compared with what?\""
+    }
+  ]
+}

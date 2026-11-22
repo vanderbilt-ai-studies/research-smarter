@@ -1,0 +1,33 @@
+{
+  "case": "fw-clinical-no-comparison",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 17.5,
+  "expectations": [
+    {
+      "text": "The reply asks the user, as a question, about at least one element their question is missing that a clinical question usually needs: what walking is being compared with, or what outcome would show it 'helps'.",
+      "passed": true,
+      "evidence": "If a nurse read your question, what would they think counts as walking \"helping\"?"
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply names PICO (\"Population, Intervention, Comparison, Outcome\") but gives no fill-in pattern and no example question."
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses or missing elements in the user's question. Strengths it names don't count, but the reply must not walk through a framework's elements one by one as a checklist.",
+      "passed": false,
+      "evidence": "\"PICO: Population, Intervention, Comparison, Outcome. You have the P and the I. The other two parts are where I'd push\" goes through the framework's elements one by one and marks C and O as missing. It then adds a separate complexity weakness, so the reply raises more than two weaknesses in checklist form."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "\"Take one or both and revise the question in your own words.\" The reply gives no rewritten question, example or sentence starter."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"...counts as walking \"helping\"?\" and \"...compare or weigh across studies?\""
+    }
+  ]
+}

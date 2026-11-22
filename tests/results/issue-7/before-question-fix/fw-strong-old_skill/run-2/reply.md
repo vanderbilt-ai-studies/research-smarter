@@ -1,0 +1,7 @@
+> **Phase 1 of 5 · Explore and choose a direction**
+
+Welcome back. Last time you finished intake for your 12-page nursing research proposal, which needs a quantitative hypothesis and at least 10 peer-reviewed APA sources. You chose nurse-led walking programs for diabetes in rural clinics, because you want to work in a rural clinic after you graduate. You came back with the draft question, which is the Phase 1 exit check, so let's look at it.
+
+It's a strong draft. It names the population (adults with type 2 diabetes at rural clinics), the intervention (a nurse-led walking program), what it's compared against (standard written advice) and a timeframe (six months). That's a fair comparison, and it's a good size for a 12-page proposal. It also doesn't assume its own answer: it asks whether the program does better instead of declaring that it will. The rural setting matches your reason for choosing the topic and gives the question its own angle.
+
+The term that needs the most work is "blood sugar." In a quantitative study, someone reading your proposal would need to know exactly what you'll measure and when. So: what specific measure of blood sugar do you have in mind, and why is that one right for a six-month study?

@@ -1,0 +1,33 @@
+{
+  "case": "fw-clinical-no-comparison",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 16.0,
+  "expectations": [
+    {
+      "text": "The reply asks the user, as a question, about at least one element their question is missing that a clinical question usually needs: what walking is being compared with, or what outcome would show it 'helps'.",
+      "passed": true,
+      "evidence": "\"What result would actually show you that walking helped?\" and \"what are you comparing walking against?\""
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply names PICO's four parts (\"Population, Intervention, Comparison, and Outcome\") but gives no sentence pattern, no fill-in frame and no example question."
+    },
+    {
+      "text": "The reply raises no more than two distinct weaknesses or missing elements in the user's question. Strengths it names don't count, but the reply must not walk through a framework's elements one by one as a checklist.",
+      "passed": true,
+      "evidence": "It raises only two gaps, outcome and comparison. It names the four PICO parts once and says \"Your draft has the first two\", which does not go through them one by one as a checklist."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "\"Take your time, and write your revised question yourself.\" The reply offers no rewritten version, example question or sentence starter."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are exactly two question marks aimed at the user: \"...walking helped?\" and \"...comparing walking against?\""
+    }
+  ]
+}

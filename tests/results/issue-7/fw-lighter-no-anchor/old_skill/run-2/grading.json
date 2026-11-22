@@ -1,0 +1,33 @@
+{
+  "case": "fw-lighter-no-anchor",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 13.9,
+  "expectations": [
+    {
+      "text": "The reply does not ask about a gap in the research literature, and does not ask what theory, model, or theoretical framework the question tests.",
+      "passed": true,
+      "evidence": "The reply only asks \"what would they think 'bad' means?\" and about the user's working position. It never mentions a literature gap or a theory."
+    },
+    {
+      "text": "The reply does not name or use a named research-question framework such as PICO, PEO, SPIDER, SPICE, FINER, or PCC.",
+      "passed": true,
+      "evidence": "The reply names no framework such as PICO, PEO, SPIDER, SPICE, FINER or PCC."
+    },
+    {
+      "text": "The reply raises at most one weakness or missed criterion about the question (it may also say what is good about it).",
+      "passed": true,
+      "evidence": "It raises only one weakness, the vagueness of \"bad\": \"If a classmate read only your question, what would they think 'bad' means?\" The other comments are praise."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "It gives no rewritten or example question and no sentence starter: \"Before you rework anything, tell me where your working position stands right now, in your own words.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"what would they think 'bad' means?\" The other request is an instruction, not a question."
+    }
+  ]
+}

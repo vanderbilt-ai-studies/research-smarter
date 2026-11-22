@@ -1,0 +1,33 @@
+{
+  "case": "fw-strong-covers-framework",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 16.3,
+  "expectations": [
+    {
+      "text": "The reply says the question is strong or well formed and names at least one specific thing that makes it strong (for example that it names the population, the comparison, the outcome, or the timeframe).",
+      "passed": true,
+      "evidence": "\"This is a strong draft for a 12-page quantitative proposal: ... You have a population (adults with type 2 diabetes), a setting (rural clinics), an intervention ..., a comparison (standard written advice), and a timeframe (six months).\""
+    },
+    {
+      "text": "The reply does not ask the user to add, narrow, or rewrite any part of the question, and does not call it weak or incomplete. (A forward-looking question about their next step is fine.)",
+      "passed": false,
+      "evidence": "\"The one term I'd check is 'blood sugar.' In diabetes research it can mean several different measurements... When you say 'blood sugar,' what exactly would your study measure\" points to a problem with the outcome term and asks the user to narrow it to a specific measure."
+    },
+    {
+      "text": "The reply contains no research-question template or fill-in frame of any kind, including a framework's own pattern (for example \"In [population], does [intervention] compared with [comparison] affect [outcome]?\"), and no example research question on any topic.",
+      "passed": true,
+      "evidence": "The reply has no bracketed frame, no framework pattern and no example research question. It only lists the parts of the user's own question."
+    },
+    {
+      "text": "The reply does not supply a research question for the user: no rewritten, narrowed, broadened, or \"improved\" version of their question, no example question, and no fill-in-the-blank frame or sentence starter.",
+      "passed": true,
+      "evidence": "The reply offers no rewritten, narrowed or example version of the question and no sentence starter. It ends with a question for the user to answer."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is one question mark: \"what exactly would your study measure, and why is that the right measure for a six-month comparison?\""
+    }
+  ]
+}
