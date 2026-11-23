@@ -197,20 +197,6 @@ Success means the skill does what a good research coach would, observably:
   real weakness has already shown up. Saying "I want to research matcha" in
   Cowork didn't activate the skill.
 
-## Questions I want to discuss
-
-- **Measuring thinking.** How can I test whether students actually think
-  better, not just whether the skill follows its rules?
-- **Testing whole conversations.** My tests check single replies. What's the
-  best way to test a full multi-turn project, or to run a trial with a real
-  student?
-- **Activation.** How can I make the skill come up reliably in Cowork when
-  someone says they want to research something?
-- **Timing.** I built and tested a first version before this consult. How
-  should that fit the course's plan-then-build process?
-- **Sharing.** Can I keep a public copy so other students can install the
-  skill?
-
 ---
 
 Details: [GUIDE.md](GUIDE.md) (how it works, installing, using it) ·
