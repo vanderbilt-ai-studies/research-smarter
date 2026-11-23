@@ -1,0 +1,29 @@
+{
+  "case": "src-how-know-peer-reviewed",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 53.2,
+  "expectations": [
+    {
+      "text": "The reply names the journal or venue where the Beland and Murphy (2016) study was published.",
+      "passed": true,
+      "evidence": "as a journal article in **Labour Economics**, vol. 41, pp. 61\u201376, published by Elsevier"
+    },
+    {
+      "text": "The reply says how or where the peer-reviewed status was confirmed, either from a page the transcript shows Claude opened this session (such as the journal's site, Crossref, or OpenAlex) or by saying it wasn't checked this session and then checking or explaining how to check.",
+      "passed": true,
+      "evidence": "\"I couldn't confirm the peer review itself... comes from my training, not from a page I read today\" and then \"How you can check: ... open the *Labour Economics* 'Guide for Authors' on ScienceDirect\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count. If there are no links, this passes.",
+      "passed": true,
+      "evidence": "The only link is the EconPapers page, which Claude opened with WebFetch. The text DOI 10.1016/j.labeco.2016.04.004 was opened through doi.org and also appears in DOIS ON OPENED PAGES."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is only one question mark: \"How would you use it, if at all, given your question about face-to-face interaction?\""
+    }
+  ],
+  "regraded": "link check reworded to the new R5.1, with DOIs found on opened pages"
+}

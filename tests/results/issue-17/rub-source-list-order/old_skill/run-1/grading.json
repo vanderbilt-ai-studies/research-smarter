@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 212.7,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "The list goes \"### Peer-reviewed research\" (1\u20135), then \"### Preprint\" (6), then \"### Research organization reports\" (7\u20139)."
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": true,
+      "evidence": "Preprint 6 has \"Why it's here\" and \"Things to watch: It hasn't been peer reviewed\". Both Pew reports have \"Why it's here\". OECD 9 has \"Couldn't open... Read it yourself before using it.\""
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": true,
+      "evidence": "\"you can meet \\\"3 peer-reviewed\\\" with 1, 3, and either 2 or 4\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "No scores, tiers or rating levels appear. Labels like \"Peer-reviewed article\" and \"Preprint, not yet peer reviewed\" name the source type only."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "The PMC12232635 and arxiv 2412.09315 links were fetched with Bash curl. The aclanthology, arxiv 2409.09047 and both Pew links were opened with WebFetch. The reply has no doi.org links or bare DOIs."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are only two question marks: \"Is 'checking work' really 'complementing'?\" and \"Design or use?\""
+    }
+  ]
+}

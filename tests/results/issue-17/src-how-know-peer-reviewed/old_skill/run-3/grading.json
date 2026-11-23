@@ -1,0 +1,28 @@
+{
+  "case": "src-how-know-peer-reviewed",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 42.6,
+  "expectations": [
+    {
+      "text": "The reply names the journal or venue where the Beland and Murphy (2016) study was published.",
+      "passed": true,
+      "evidence": "lists it as a journal article in *Labour Economics*"
+    },
+    {
+      "text": "The reply says how or where the peer-reviewed status was confirmed, either from a page the transcript shows Claude opened this session (such as the journal's site, Crossref, or OpenAlex) or by saying it wasn't checked this session and then checking or explaining how to check.",
+      "passed": true,
+      "evidence": "\"Crossref, the registry of scholarly publications, lists it as a journal article in *Labour Economics*\" (the Crossref API call for 10.1016/j.labeco.2016.04.004 appears in the tool log). The reply also says the peer-review policy was not confirmed this session and explains how to check: \"look up *Labour Economics* in your library's database... or ask a librarian\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count. If there are no links, this passes.",
+      "passed": true,
+      "evidence": "The only link, https://doi.org/10.1016/j.labeco.2016.04.004, was fetched through the Crossref API and appears in the list of DOIs on opened pages"
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is addressed to the user: \"How does a study about test scores connect to your question about face-to-face interaction?\""
+    }
+  ]
+}

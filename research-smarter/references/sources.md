@@ -12,10 +12,26 @@ details before presenting it.
   mirror sites can be wrong; if you only saw a source secondhand, say so
   instead of linking it.
 - **Open every link you give, exactly as you give it, before you present
-  it.** This includes DOI links (`https://doi.org/...`): open the DOI link
-  itself, not just a search result or another page that mentions it. A
-  DOI copied from search results is a guess until you've opened it. This
-  matters most in a long source list, where it's tempting to skip.
+  it.** A link from search results is a guess until you've opened it.
+- **A DOI must be one you've seen on an opened page.** Either you opened its
+  `doi.org` link, or the exact DOI appears on an official page you opened
+  this session: the publisher's or journal's page, PubMed or PubMed Central,
+  Crossref, or OpenAlex. Copy it character for character. Never take a DOI
+  from a search snippet, a mirror site, or memory, and never build one from
+  a page's web address or a journal's numbering pattern; that's a guess.
+- **Take notes as you open.** When you open a source's page, write down
+  right then its exact title, authors, year, venue, link, and the DOI exactly
+  as the page shows it. Build the source list only from these notes, never
+  from memory of the search, so one article's DOI can't drift onto another
+  from the same journal.
+- **A page you only saw in search results isn't opened.** Don't link it,
+  even a familiar one like Wikipedia, unless you open it.
+- **Check before you send.** Before sending any reply with links or DOIs,
+  go through each one and match it against what you actually opened,
+  character for character. Anything you can't match, remove the link or
+  DOI and say so in the same line ("found in search results; I couldn't
+  open it"). This matters most in a long source list and in the mind map,
+  where it's tempting to skip.
 - If a source's page won't open (paywall, blocked, error), you may still
   list it, but without a link or DOI, and say so in the same line: "Found
   in search results; I couldn't open it, so check it before relying on it."

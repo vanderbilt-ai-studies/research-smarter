@@ -62,9 +62,9 @@ so the map looks and works the same every time. You only supply the data.
 - **sources:** only sources you actually found (with the rules in
   `sources.md`), or general descriptions of kinds of sources ("early
   evaluations of school phone policies"). Never invent a specific citation.
-  The link rule applies here too: give only a link or DOI you opened
-  yourself, exactly as written. If you opened an article's page but not its
-  DOI link, give the page's link, not the DOI.
+  The link rule in `sources.md` applies here too: give only a link you
+  opened, and only a DOI you opened or saw exactly on an official page you
+  opened. Include the mind map in your final check before sending.
 - **questions:** open questions that make the user think, not hints toward a
   particular answer.
 - Escape quotes properly; the result must be valid JSON.

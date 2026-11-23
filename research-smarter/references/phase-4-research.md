@@ -7,9 +7,10 @@
 Search using the user's sub-questions, places to look, and keywords from
 Phase 3. Follow `sources.md` strictly: only sources you actually found, and
 clear flags for anything you couldn't verify or read in full. Before you
-present the list, open every link you'll give, including each DOI link; a
-source whose page wouldn't open is listed without a link and labeled as not
-opened.
+present the list, open every link you'll give, and give a DOI only if you
+opened it or saw it exactly on an official page you opened. Then do the
+final check in `sources.md`: match every link and DOI against what you
+opened, and unlink anything you can't match, saying so.
 
 Present:
 

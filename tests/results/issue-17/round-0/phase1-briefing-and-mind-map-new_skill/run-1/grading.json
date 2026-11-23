@@ -1,0 +1,59 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 179.4,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "The briefing has four headings: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\", \"**Open questions**\""
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "The four sections run to roughly 400 words in total (estimated, not counted exactly), which is inside the 300\u2013500 range."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved an interactive map to .../mind-map.html\", built from templates/mind-map.html"
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "The visible data has 5 top-level branches (e.g. \"Student achievement and test scores\" saturation 0.85, with 3 children). The others have 2 children each, and every node has a saturation value between 0 and 1. The file excerpt is cut off, so the last branch's children are only partly shown."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Labels are short topics, e.g. \"Teacher recruitment and retention\" and \"Sleep, fatigue, and longer days\""
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "The reply recommends no angle; it only asks \"which direction pulls you most, and why?\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count. Links and DOIs in the mind map count too.",
+      "passed": false,
+      "evidence": "The reply links https://doi.org/10.1016/j.econedurev.2018.03.010, https://doi.org/10.1002/pam.70101 and https://doi.org/10.63302/acqw5993. None of these was opened, and none appears in the list of DOIs on opened pages. The mind map's DOI 10.1016/j.econedurev.2024.102524 is also missing from that list."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"which direction pulls you most, and why?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Exactly two questions: \"what do you currently think about four-day school weeks...?\" and \"which direction pulls you most, and why?\""
+    }
+  ],
+  "regraded": "link check reworded to the new R5.1, with DOIs found on opened pages"
+}

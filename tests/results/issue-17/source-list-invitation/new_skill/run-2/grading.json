@@ -1,0 +1,29 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 201.9,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"Feel free to ask me how I know what's in the Bar et al. study, since that's the summary I'm least sure of.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"Feel free to ask me how I know what's in the Bar et al. study...\" is an offer that ends with a period and invites the user to question the source."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "The Lancet DOI link and the DCU page were both fetched. The other seven DOIs (s10964-025-02313-6, 2006.2024.00058, aea-05-2021-0112, jhr.0224-13403r2, chb.2025.108603, socscimed.2026.119094, 20556365241270394) all appear in the DOIs found on opened pages. Two differ only in letter case, and DOIs are case-insensitive."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The only question mark in the reply is in the report title \"Restriction or resilience?\", which is not a question to the user. The reply asks the user 0 questions."
+    }
+  ],
+  "regraded": "DOI list now reads escaped slashes in JSON pages"
+}

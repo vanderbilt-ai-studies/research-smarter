@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 208.0,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "The six items labelled \"Peer-reviewed article\" are listed first (1\u20136). They are followed by \"Working paper, not yet peer reviewed\", then \"Preprints, not yet peer reviewed\", then \"Research organization reports\"."
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": true,
+      "evidence": "Working paper and preprints: \"Why it's here: ... Watch for two things: it hasn't been peer reviewed\". Pew reports: \"A survey, not a study of learning: it tells you how teens use chatbots, not whether chatbots help them learn.\""
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": true,
+      "evidence": "\"All six are confirmed as journal articles in Crossref and OpenAlex, so together they cover your requirement of at least 3 peer-reviewed sources.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The labels are source types only (\"Peer-reviewed article\", \"Preprint, not yet peer reviewed\"). There are no scores, tiers or named evidence levels."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": false,
+      "evidence": "The reply links to https://econpapers.repec.org/RePEc:wbk:wbrwps:11125, but the visible tool log never shows that page being opened. Only openknowledge.worldbank.org was fetched for the World Bank paper."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is only one question mark aimed at the user: \"Which of these sources go with each of your two sub-questions, and which support your position or complicate it?\""
+    }
+  ]
+}

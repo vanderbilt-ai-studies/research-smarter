@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 252.9,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "Items 1\u20136 are listed under \"**Peer-reviewed articles.**\", then come \"**Preprint, not yet peer reviewed**\" (7), then \"**Research organization reports**\" (8\u20139), then the OECD report (10)."
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": true,
+      "evidence": "Preprint: \"*Why it's here:* it is one of the few studies that compares different ways of using a chatbot. *What to watch for:* it hasn't been peer reviewed\". Both Pew reports have \"*Why it's here:*\". OECD: \"I can't tell you what the report says... Open it yourself before relying on it.\""
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": true,
+      "evidence": "\"All six meet your requirement of at least 3 peer-reviewed sources.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "There are no scores, tiers or rating labels. Sources are grouped only by type (peer-reviewed, preprint, organization report)."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "The PMC12232635, PMC12179260, arXiv 2409.09047 and both Pew pages were fetched. DOIs pnas.2422633122, chb.2024.108386, bjet.13544 and 062a7394-en were opened. DOIs compedu.2024.105224, s41598-025-97652-6, soc15010006 and 10.48550/arXiv.2409.09047 appear in the list of DOIs on opened pages. The list writes the last one as lowercase \"arxiv\"; DOIs are case-insensitive, so I counted it as a match."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are no question marks directed at the user. \"Feel free to ask me how I know the 17% figure...\" is a statement, not a question."
+    }
+  ]
+}

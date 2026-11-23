@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 170.0,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "> **Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "The reply has four labeled sections: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\" and \"**Open questions**\"."
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "By my rough count, the briefing from \"## Briefing\" through the end of Open questions is about 360 words, which is inside 300\u2013500."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved an interactive map to **.../mind-map.html**\". The tool log shows it was built from templates/mind-map.html."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "In the visible part of the file, each top-level branch has 3 children, and every branch and child has a saturation value between 0 and 1 (e.g. \"Academic achievement\", \"saturation\": 0.85). The file is cut off, so I couldn't confirm the total number of top-level branches. The reply's own mention of the families and fifth-day branches is consistent with 4\u20136."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Labels are short topics with no question marks, e.g. \"Academic achievement\", \"Juvenile crime\", \"Why districts adopt it and what it costs\". Questions appear only in the separate \"questions\" fields."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "It only describes how crowded branches are (\"Academic achievement is the most crowded branch\"), then asks: \"which direction pulls you most\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count. Links and DOIs in the mind map count too.",
+      "passed": true,
+      "evidence": "Every visible mind-map URL was fetched this session: iza.org/dp/12204, edworkingpapers ai22-630, the nwea RAND page, scholarsjunction, both edweek articles, and both ideas.repec pages. No DOIs appear in the reply."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"which direction pulls you most, and why does it seem worth researching?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "There is only one question, at the end: \"which direction pulls you most, and why...\""
+    }
+  ]
+}

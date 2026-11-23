@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 207.3,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"Feel free to ask me how I know anything about the Goodyear et al. (2026) focus-group findings\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"Feel free to ask me how I know anything about the Goodyear et al. (2026) focus-group findings, since I got those from a press release rather than the paper.\" This sentence has no question mark and invites the user to question the source."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "The log shows a WebFetch for every link in the reply. That covers all seven doi.org links (lanepe.2025.101211, socscimed.2026.119094, s10964-025-02313-6, 2006.2024.00058, AEA-05-2021-0112, jhr.0224-13403R2, 20556365241270394), PMC11984610, PMC11737419, the research.birmingham.ac.uk record, the birmingham.ac.uk news page, the publications.tno.nl PDF, eprints.qut.edu.au/251231 and the dcu.ie restriction-or-resilience page."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has only one question mark: \"Which sources do you put under the second sub-question, about conflict moving after school?\" The bullets under \"Questions the results raise\" have no question marks."
+    }
+  ]
+}

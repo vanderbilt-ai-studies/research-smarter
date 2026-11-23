@@ -1,0 +1,15 @@
+src-popular-ai [new_skill run 1] 6/6 in 108.4s
+src-popular-ai [new_skill run 2] 5/6 in 184.9s
+src-popular-ai [new_skill run 3] 5/6 in 214.5s
+rub-source-list-order [new_skill run 1] 0/6 in 154.9s
+rub-source-list-order [new_skill run 2] 0/6 in 603.9s
+rub-source-list-order [new_skill run 3] 0/6 in 575.0s
+source-list-invitation [new_skill run 1] 0/4 in 1.4s
+source-list-invitation [new_skill run 2] 0/4 in 2.0s
+source-list-invitation [new_skill run 3] 0/4 in 1.7s
+src-how-know-peer-reviewed [new_skill run 1] 0/4 in 57.7s
+src-how-know-peer-reviewed [new_skill run 2] 0/4 in 1.1s
+src-how-know-peer-reviewed [new_skill run 3] 0/4 in 1.0s
+phase1-briefing-and-mind-map [new_skill run 1] 0/10 in 1.1s
+phase1-briefing-and-mind-map [new_skill run 3] 0/10 in 1.4s
+phase1-briefing-and-mind-map [new_skill run 2] 0/10 in 1.5s

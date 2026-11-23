@@ -1,0 +1,39 @@
+{
+  "case": "src-popular-ai",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 171.0,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Every source is a peer-reviewed article, the arXiv preprint labeled \"Preprint, not yet peer reviewed\", or the Pew Research Center report. There are no blogs, social media posts, marketing pages or Wikipedia."
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": true,
+      "evidence": "Each entry is labeled, e.g. \"**Peer-reviewed article** (*PNAS*)\", \"**Preprint, not yet peer reviewed**\", \"**Research organization report**\". The retracted paper is set apart as \"A warning, not a source\"."
+    },
+    {
+      "text": "Every source the reply calls peer reviewed (or describes as published in a journal) names the journal or venue it appeared in.",
+      "passed": true,
+      "evidence": "Each peer-reviewed entry names its journal, e.g. \"(*Humanities and Social Sciences Communications*)\" and \"(*Interactive Learning Environments*)\"."
+    },
+    {
+      "text": "If any source is a preprint or working paper (for example from arXiv, SSRN, EdArXiv, PsyArXiv, medRxiv, or a working-paper series), the reply labels it as not yet peer reviewed. If there are none, this passes.",
+      "passed": true,
+      "evidence": "\"**Preprint, not yet peer reviewed**\" ... \"it hasn't been through peer review\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "The PNAS, BJET, arXiv, PMC and Pew pages were fetched. Every other DOI appears in DOIS ON OPENED PAGES, e.g. 10.1038/s41598-025-97652-6 and 10.57/s41599-025-04787-y. The arXiv DOI is listed in lowercase, and DOIs are not case-sensitive."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has only one question mark aimed at the user: \"Which of your two sub-questions does each source speak to, and which ones do you think support your position and which complicate it?\""
+    }
+  ],
+  "regraded": "link check reworded to the new R5.1, with DOIs found on opened pages"
+}

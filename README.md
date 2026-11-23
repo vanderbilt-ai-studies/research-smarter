@@ -95,6 +95,14 @@ skill's coaching flow didn't have to change.
   enough; a 1918 newspaper is strong evidence for a history paper). Across
   six test cases, 3 runs each, it passed 77 of 78 checks, against 68 of 78
   before ([results](tests/results/issue-15-credibility-rubric.md)).
+- **Unopened links were mostly a measurement problem:** a deeper check
+  (issue #17) found that the skill wasn't really linking pages it hadn't
+  opened. The old rule counted a DOI read from the article's own page as
+  unopened, and the grader couldn't see what pages said. With the rule
+  clarified and every link checked against the pages' actual text, the skill
+  had no unopened links in 15 runs, both before and after the change
+  ([results](tests/results/issue-17-unopened-links.md)). Earlier results
+  that reported this problem overstated it.
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.

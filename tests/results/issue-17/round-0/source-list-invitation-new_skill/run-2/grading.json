@@ -1,0 +1,29 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 188.8,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"You can also ask me how I know anything about Abrahamsson's bullying finding, since I've only seen the abstract.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"You can also ask me how I know anything about Abrahamsson's bullying finding, since I've only seen the abstract.\" This sentence has no question mark and invites the user to question the source."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "The log shows Claude opened the NBER, Birmingham news and PMC13714660 pages, PMC11984610 (via curl), and the fdpys, lanepe, socscimed, jhr and sagepub DOIs. The other two DOIs, 10.1001/jamanetworkopen.2026.40893 and 10.1007/s10964-025-02313-6, appear exactly in the list of DOIs on opened pages, and 10.3390/educsci14080906 appears there too."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has only one question mark: \"Which ones look like they support your position, and which complicate it?\""
+    }
+  ],
+  "regraded": "link check reworded to the new R5.1, with DOIs found on opened pages"
+}

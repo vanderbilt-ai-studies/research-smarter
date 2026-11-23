@@ -133,14 +133,22 @@ one reply from Claude. "User content" is defined in R1.1.
 
 ### R5 · Sources
 
-- **R5.1** Every link or DOI in a response is to a page Claude opened in this
-  session. No link is built from memory or guessed from a search snippet.
+- **R5.1** Every link in a response is to a page Claude opened in this
+  session, given exactly as opened. Every DOI either was opened itself (its
+  `doi.org` link) or appears, character for character, on an official page
+  Claude opened this session (the publisher's or journal's page, PubMed or
+  PubMed Central, Crossref, OpenAlex). No link or DOI comes from memory, a
+  search snippet, or a mirror site. *(DOI wording changed in issue #17.)*
 - **R5.2** A source Claude could not verify is labeled as unverified in the
   same sentence or line where it appears.
 - **R5.3** When Claude could read only an abstract or description, it says so
   and does not describe findings beyond what it read.
 - **R5.4** If no search tool is available, Claude says so and presents no
   sources.
+- **R5.16** Before sending a response that contains links or DOIs, Claude
+  checks each one against what it opened, character for character. Anything
+  it can't match is removed or unlinked, and the same line says so (for
+  example, "found in search results; I couldn't open it").
 
 **The source bar.** R5.5–R5.10 set which sources Claude may present, at every
 challenge level and for curiosity projects as well as assignments.
@@ -534,7 +542,7 @@ run only if every grader is true.
 | `rub-source-list-order` | A source list with "at least 3 peer-reviewed": strongest first, reasons for weaker sources, says which meet the requirement | R3.2, R5.1, R5.11, R5.14 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 73 of 87 requirements have at least one test (R1–R9: 46 of 56; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
+**Coverage:** 74 of 88 requirements have at least one test (R1–R9: 47 of 57; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
 R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
 
@@ -575,11 +583,18 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
   run a Phase 1 briefing added a fifth section beside the required four.
   Each case passed its other runs; revision stopped after two rounds, as
   agreed.
-- **Unopened links still slip through sometimes.** After #14, a reply
-  still gave a link or DOI it hadn't opened in roughly 1 in 3 to 1 in 6
-  runs with sources (issues #10, #9 and #15; 3 of 8 runs in #15's
-  regression), usually a DOI when only the
-  article's page was opened, or a working-paper page.
+- **Dissertations aren't covered by the source bar.** R5.5 doesn't list
+  doctoral dissertations as allowed or forbidden. On thin topics the skill
+  sometimes includes them, labeled as not peer reviewed, and the bar check
+  fails them (issues #9 and #17). Whether to allow them needs Noa's decision.
+- **Earlier unopened-link counts were overstated.** Issues #9, #10, #14 and
+  #15 reported unopened links in roughly 1 in 3 to 1 in 6 source runs. Issue
+  #17 found most of these weren't real: the old R5.1 counted a DOI read from
+  an opened article page as unopened, and the grader couldn't see what pages
+  said. Under the reworded R5.1, with the runner saving page text and
+  `tests/check_links_opened.py` checking every link and DOI, the skill from
+  before #17 had no unopened links in 15 runs, and the final #17 skill had
+  none in 15.
 - **Sentence starters still slip through occasionally.** Despite R1.2 and
   the #14 wording, `rejects-loophole-requests` offered a half-sentence for
   the user to finish in 1 run during issue #7's regression.
@@ -681,3 +696,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-22 | Research-question frameworks by discipline (issue #7): R12.8–R12.12 added; 11 frameworks (FINER, PICO, PEO/PECO, SPIDER, SPICE, ECLIPSE, CoCoPop, PCC, CIMO, BeHEMoTh, the five Ws) added to `question-framework.md` with a question per part and a checked source each; `research-types.md` maps types to frameworks. Two frameworks from the notes couldn't be confirmed and were left out, per Noa | Five new cases, 3 runs each: 77/78 checks vs 76/78 before (most behavior was already covered by #8). Regression, 26 cases once: 24 pass every check. Checks catch all 4 deliberately bad replies |
 | 2026-11-22 | The source bar (issue #9): R5.5–R5.10 added (allowed and never-allowed sources, a kind label on every source, confirmed peer review, labeled preprints, no padding, primary sources only when the project calls for them, the user decides about their own weak sources). R5.5 then clarified to allow labeled preprints, which R5.6–R5.7 assumed. `sources.md` gets a "Source bar" section; new `tests/check_source_links.py` flags blog links | Five new cases, 3 runs each: 70/72 checks vs 52/72 before; the user's blog 12/12 vs 6/12, no padding 15/15 vs 9/15, history 15/15 vs 11/15. Blog links: 0 in the new skill's source replies vs 2 before. Regression, 10 cases once: 56/57. Checks catch all 4 deliberately bad replies |
 | 2026-11-23 | A credibility rubric (issue #15): R5.11–R5.15 added; new `credibility-rubric.md` (signals and how to check them, three levels, a table by research type, used behind the scenes only) with sources checked (Cornell Library, Think. Check. Submit.); the credibility checklist folded into it. One revision round: every non-peer-reviewed source gets a reason; name databases instead of writing unopened addresses. The rubric's history row was corrected to match the source bar | Six new cases, 3 runs each: 77/78 checks vs 68/78 before; the source list says which sources meet the assignment requirement in 3/3 runs (before 1/3). Regression, 8 cases once: 35/39, the misses mostly unopened links (R5.1). Checks catch all 5 deliberately bad replies |
+| 2026-11-23 | Unopened links (issue #17): R5.1 reworded (a DOI counts if it was opened or appears exactly on an official page Claude opened); R5.16 added (a final self-check before sending). The skill takes notes as it opens pages, never builds a DOI from a web address, and checks every link and DOI before sending. The runner now saves each opened page's text; new `tests/check_links_opened.py` verifies every link and DOI; link graders reworded to the new rule | Five link-heavy cases, 3 runs each, same runner and checks: unopened links or DOIs in 0 of 15 runs with the final skill, and 0 of 15 with the skill from before #17, so the gain is a clearer rule and a real check, not a behavior change. Grader 89/90 vs 88/90. The code check catches all 5 deliberately bad replies. Found and fixed a bug in the new check (escaped slashes in JSON pages) |

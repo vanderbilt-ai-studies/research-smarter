@@ -1,0 +1,29 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 283.7,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"You can also ask me how I know what Abrahamsson found.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"You can also ask me how I know what Abrahamsson found.\" This is an offer with no question mark, and it invites the user to question the source."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "All 9 non-DOI links (Flinders PDF, two PMC pages, the Birmingham record and press release, the TNO PDF, Emerald, EconPapers, Augsburg, NBER) were fetched. Four doi.org links (chb.2025.108603, 2006.2024.00058, lanepe.2025.101211, socscimed.2026.119094) were fetched directly. The other five DOIs (s10964-025-02313-6, AEA-05-2021-0112, jhr.0224-13403R2, educsci14080906, w35132) are in the DOIS ON OPENED PAGES list, which differs only in letter case; DOIs are case-insensitive."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question is directed at the user: \"which sub-question does each source speak to, and which ones support your position and which complicate it?\" The other question mark is in a report title, \"Restriction or Resilience?\""
+    }
+  ],
+  "regraded": "link check reworded to the new R5.1, with DOIs found on opened pages"
+}

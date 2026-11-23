@@ -7,6 +7,11 @@ Skill tool is turned off so the installed copy in ~/.claude/skills can't be used
 instead. A separate Claude call grades every grader statement with quoted
 evidence.
 
+Each run also saves opened.jsonl: the text of every page Claude opened, so
+tests/check_links_opened.py can verify links and DOIs. Those pages are often
+copyrighted articles, so keep opened.jsonl in the gitignored workspace and
+never commit it.
+
 Usage (from the repo root):
   python3 tests/run_skill_eval.py --skill research-smarter --label new \
       --cases how-do-you-know common-knowledge-challenge --runs 3 \
@@ -55,6 +60,18 @@ def build_prompt(case, skill):
     )
 
 
+def expand_loop_urls(command):
+    """URLs in a shell command, with simple `for x in a b c; do ... $x ...` loops expanded."""
+    urls = re.findall(r"https?://[^\s'\"]+", command)
+    for var, values in re.findall(r"for\s+(\w+)\s+in\s+(.+?);\s*do", command):
+        vals = [v.strip("'\"") for v in values.split()]
+        for u in list(urls):
+            for form in ("${%s}" % var, "$" + var):
+                if form in u:
+                    urls += [u.replace(form, v) for v in vals]
+    return urls
+
+
 def run_once(case, skill, out_dir):
     work = tempfile.mkdtemp(prefix="rs-eval-")
     files = os.path.join(case["dir"], "files")
@@ -70,6 +87,7 @@ def run_once(case, skill, out_dir):
                        text=True, cwd=work, timeout=900)
     secs = round(time.time() - t0, 1)
     reply, tool_log = "", []
+    calls, opened = {}, []  # tool_use id -> (name, input); pages Claude opened, with what it saw
     for line in r.stdout.splitlines():
         try:
             ev = json.loads(line)
@@ -79,8 +97,24 @@ def run_once(case, skill, out_dir):
             for c in ev["message"].get("content", []):
                 if c.get("type") == "tool_use":
                     inp = c.get("input", {})
+                    calls[c.get("id")] = (c["name"], inp)
                     detail = inp.get("url") or inp.get("query") or inp.get("file_path") or inp.get("command") or ""
                     tool_log.append(f"{c['name']}: {str(detail)[:200]}")
+        if ev.get("type") == "user":
+            content = ev.get("message", {}).get("content", [])
+            for c in content if isinstance(content, list) else []:
+                if c.get("type") != "tool_result":
+                    continue
+                name, inp = calls.get(c.get("tool_use_id"), ("", {}))
+                body = c.get("content", "")
+                if isinstance(body, list):
+                    body = "\n".join(b.get("text", "") for b in body if isinstance(b, dict))
+                if name == "WebFetch":
+                    opened.append({"tool": name, "urls": [inp.get("url", "")], "text": str(body)[:400000]})
+                elif name == "Bash" and re.search(r"\b(curl|wget)\b", inp.get("command", "")):
+                    urls = expand_loop_urls(inp.get("command", ""))
+                    opened.append({"tool": name, "urls": urls, "command": inp.get("command", "")[:4000],
+                                   "text": str(body)[:400000]})
         if ev.get("type") == "result":
             reply = ev.get("result", "")
     os.makedirs(out_dir, exist_ok=True)
@@ -93,6 +127,9 @@ def run_once(case, skill, out_dir):
             continue
         os.makedirs(made, exist_ok=True)
         shutil.copy(src, made)
+    with open(os.path.join(out_dir, "opened.jsonl"), "w") as f:
+        for page in opened:
+            f.write(json.dumps(page) + "\n")
     open(os.path.join(out_dir, "reply.md"), "w").write(reply)
     open(os.path.join(out_dir, "tool_log.md"), "w").write(
         "# Tool log\n\n" + "\n".join(f"{i+1}. {t}" for i, t in enumerate(tool_log)) + "\n")
@@ -109,6 +146,9 @@ THE USER'S MESSAGE:
 
 TOOLS THE ASSISTANT USED THIS SESSION (searches and pages opened):
 {tools}
+
+DOIS ON OPENED PAGES (found in the text of pages the assistant opened; search results excluded):
+{dois}
 
 THE REPLY:
 <<<
@@ -139,9 +179,22 @@ def made_files(out_dir):
     return "\n".join(parts)
 
 
+def opened_dois(out_dir):
+    path = os.path.join(out_dir or "", "opened.jsonl")
+    if not out_dir or not os.path.exists(path):
+        return "(not recorded for this run)"
+    found = set()
+    for line in open(path):
+        page = json.loads(line)
+        text = page.get("text", "").replace("\\/", "/") + " " + " ".join(page.get("urls", []))
+        found.update(d.rstrip(".,;:").lower() for d in re.findall(r"10\.\d{4,9}/[^\s)<>\]\"'`,;]+", text))
+    return "\n".join(sorted(found)) or "(none)"
+
+
 def grade(case, reply, tool_log, out_dir=None):
     statements = "\n".join(f'- id "{g["id"]}": {g["text"]}' for g in case["graders"])
     prompt = GRADER_PROMPT.format(prompt=case["prompt"], reply=reply, files=made_files(out_dir),
+                                  dois=opened_dois(out_dir),
                                   tools="\n".join(tool_log) or "(none)", statements=statements)
     for _ in range(2):
         r = subprocess.run([CLAUDE, "-p", "--no-session-persistence", "--strict-mcp-config",

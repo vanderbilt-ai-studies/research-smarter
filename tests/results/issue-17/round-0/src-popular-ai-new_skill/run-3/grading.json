@@ -1,0 +1,39 @@
+{
+  "case": "src-popular-ai",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 244.7,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Six journal articles (PNAS, Computers & Education, etc.), one arXiv preprint labeled \"Preprint, not yet peer reviewed\", and reports from RAND and Pew Research Center. There are no blogs, social media posts, marketing pages or Wikipedia articles."
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": true,
+      "evidence": "Each entry is labeled: \"**Peer-reviewed article** (*Proceedings of the National Academy of Sciences*)\", \"**Preprint, not yet peer reviewed.**\", \"**Research organization report.**\""
+    },
+    {
+      "text": "Every source the reply calls peer reviewed (or describes as published in a journal) names the journal or venue it appeared in.",
+      "passed": true,
+      "evidence": "Every peer-reviewed entry names its journal, for example \"(*Computers in Human Behavior*)\" and \"(*Societies*)\""
+    },
+    {
+      "text": "If any source is a preprint or working paper (for example from arXiv, SSRN, EdArXiv, PsyArXiv, medRxiv, or a working-paper series), the reply labels it as not yet peer reviewed. If there are none, this passes.",
+      "passed": true,
+      "evidence": "\"Preprint, not yet peer reviewed.\" Lehmann ... arXiv"
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "The assistant opened every DOI link (pnas, compedu, caeai, bjet, chb). It reached soc15010006 through OpenAlex. The arXiv and RAND DOIs match the found-DOI list except for letter case (DOIs are case-insensitive), and both pages were opened. Both Pew URLs were fetched."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"Which of these sources go with each of your two sub-questions, and for each one, does it support your position or complicate it?\""
+    }
+  ],
+  "regraded": "link check reworded to the new R5.1, with DOIs found on opened pages"
+}

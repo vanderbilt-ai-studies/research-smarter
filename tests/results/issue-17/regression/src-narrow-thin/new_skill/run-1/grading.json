@@ -1,0 +1,33 @@
+{
+  "case": "src-narrow-thin",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 201.4,
+  "expectations": [
+    {
+      "text": "The reply says plainly that little research or few sources that meet the bar exist on this exact question (or on parts of it).",
+      "passed": true,
+      "evidence": "\"No study looks directly at four-day weeks and marching bands, or at music programs at all.\""
+    },
+    {
+      "text": "The reply suggests at least one specific place or person to look further, such as a library database, a librarian, music education organizations, or band directors.",
+      "passed": true,
+      "evidence": "\"Library databases: ERIC, RILM Abstracts of Music Literature... A librarian can help\" and \"People: band directors in four-day districts.\""
+    },
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": false,
+      "evidence": "Sources 7 and 8 are doctoral dissertations (\"university-reviewed but not peer-reviewed\"). A dissertation does not fit any of the allowed categories."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "Every URL appears in the WebFetch log. The DOIs 10.3102/01623737221097420, 10.1162/edfp_a_00316, 10.35608/ruraled.v40i1.529 and 10.7249/RR-A373-1 are on the list of DOIs from opened pages. The last one is listed in lowercase as rr-a373-1, and DOIs are case-insensitive."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The only question mark directed at the user is in \"Does the day off really remove rehearsal time, or does it move it?\", so there is one question."
+    }
+  ]
+}

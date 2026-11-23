@@ -1,0 +1,28 @@
+{
+  "case": "src-how-know-peer-reviewed",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 60.8,
+  "expectations": [
+    {
+      "text": "The reply names the journal or venue where the Beland and Murphy (2016) study was published.",
+      "passed": true,
+      "evidence": "\"Ill Communication: Technology, distraction & student performance,\" *Labour Economics*, volume 41, pages 61\u201376, August 2016, published by Elsevier"
+    },
+    {
+      "text": "The reply says how or where the peer-reviewed status was confirmed, either from a page the transcript shows Claude opened this session (such as the journal's site, Crossref, or OpenAlex) or by saying it wasn't checked this session and then checking or explaining how to check.",
+      "passed": true,
+      "evidence": "\"I found it in Crossref and in OpenAlex... I didn't read that in the journal's own policy, because its guide for authors on ScienceDirect blocked me.\" ... \"open the journal's 'Guide for Authors' in your browser and look for its peer review section. Or ask your librarian to look up *Labour Economics* in Ulrichsweb\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count. If there are no links, this passes.",
+      "passed": false,
+      "evidence": "The reply links https://api.openalex.org/works/doi:10.1016/j.labeco.2016.04.004, but the tool log shows only an OpenAlex search query (api.openalex.org/works?search=...), not a fetch of this record URL. The doi.org and Crossref links were opened."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question is put to the user: \"How do you see a study like this fitting into your research, if it fits at all?\" The bold \"How do I know...\" line repeats the user's own question as a heading."
+    }
+  ]
+}

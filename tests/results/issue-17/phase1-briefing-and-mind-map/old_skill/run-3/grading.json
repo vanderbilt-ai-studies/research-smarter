@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 136.8,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "**Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "Section headings: \"**Key debates**\", \"**Major voices**\", \"**Patterns**\", \"**Open questions**\""
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "By estimate the briefing is about 390 words across the four sections, or about 455 with the closing caveat paragraph. Both are within 300\u2013500."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "\"I saved it at `.../mind-map.html`. Open it in your browser.\" The file holds a template DATA object with branches."
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "The reply says \"It has six angles\". The visible branches have 3, 2, 2 and 3 children, and every visible node has a saturation from 0.2 to 0.8. The last two branches are cut off in the file excerpt, so they could not be checked."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "All labels are short topics, e.g. \"Academic achievement\", \"Hidden costs shifted to families\", \"Juvenile crime on the off day\". None is phrased as a question."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "\"tell me which direction pulls you most, and why\". No angle is recommended."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count. Links and DOIs in the mind map count too.",
+      "passed": true,
+      "evidence": "Every link (rand.org RRA373-1, ideas.repec.org, journalistsresource.org, edworkingpapers.com/ai22-630, pmc.ncbi.nlm.nih.gov PMC9979633) appears in the WebFetch log. Neither the reply nor the mind map contains a DOI."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"tell me which direction pulls you most, and why.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Exactly two questions: \"where does your thinking ... stand right now, in your own words?\" and \"which direction pulls you most, and why\". The 'feel free to ask me' line is an offer, not a question."
+    }
+  ]
+}

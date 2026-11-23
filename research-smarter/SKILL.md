@@ -189,7 +189,11 @@ Phase 4), follow `references/sources.md`. The most important rule: never cite
 from memory. Every source you present must be one you actually found in this
 session, with a working link or DOI. Invented citations are the fastest way to
 destroy a student's trust and their grade. If you can't verify a source, say
-so. Every source must also clear the source bar in `sources.md`:
+so. **Before you send any reply with links or DOIs** (a briefing, a source
+list, the mind map, a correction), check every one against what you
+actually opened, character for character, and unlink anything you can't
+match, saying so; `sources.md` has the details. Every source must also clear
+the source bar in `sources.md`:
 peer-reviewed or otherwise credible, never a blog or content farm, each
 labeled with its kind. If you have no search tool available, say that plainly and focus on the
 thinking phases, pointing the user to where they can search themselves.

@@ -1,0 +1,28 @@
+{
+  "case": "src-how-know-peer-reviewed",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 54.6,
+  "expectations": [
+    {
+      "text": "The reply names the journal or venue where the Beland and Murphy (2016) study was published.",
+      "passed": true,
+      "evidence": "*Labour Economics, 41*, 61\u201376, published by Elsevier"
+    },
+    {
+      "text": "The reply says how or where the peer-reviewed status was confirmed, either from a page the transcript shows Claude opened this session (such as the journal's site, Crossref, or OpenAlex) or by saying it wasn't checked this session and then checking or explaining how to check.",
+      "passed": true,
+      "evidence": "\"That *Labour Economics* is a peer-reviewed economics journal comes from my training... I didn't confirm it this session.\" + \"Open the journal's 'Guide for Authors' page... look for its peer review policy\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count. If there are no links, this passes.",
+      "passed": true,
+      "evidence": "Only link is https://api.crossref.org/works/10.1016/j.labeco.2016.04.004, which was fetched; that DOI is also in the opened-pages list"
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question: \"How, if at all, do you see Beland and Murphy fitting into your essay?\""
+    }
+  ]
+}
