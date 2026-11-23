@@ -156,7 +156,8 @@ challenge level and for curiosity projects as well as assignments.
 - **R5.5** Every source Claude presents is one of: a peer-reviewed article;
   a scholarly book; a report or data from a government or international
   agency; a report from an established research organization; a preprint
-  labeled as not yet peer reviewed (R5.7); or, for current events or
+  labeled as not yet peer reviewed (R5.7); a doctoral dissertation (not a
+  master's thesis) labeled as not peer reviewed; or, for current events or
   background, a reputable news outlet. Claude never
   presents a blog, content farm, opinion site, social media post,
   AI-generated page, or Wikipedia article as a source (R5.9 is the only
@@ -583,10 +584,6 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
   run a Phase 1 briefing added a fifth section beside the required four.
   Each case passed its other runs; revision stopped after two rounds, as
   agreed.
-- **Dissertations aren't covered by the source bar.** R5.5 doesn't list
-  doctoral dissertations as allowed or forbidden. On thin topics the skill
-  sometimes includes them, labeled as not peer reviewed, and the bar check
-  fails them (issues #9 and #17). Whether to allow them needs Noa's decision.
 - **Earlier unopened-link counts were overstated.** Issues #9, #10, #14 and
   #15 reported unopened links in roughly 1 in 3 to 1 in 6 source runs. Issue
   #17 found most of these weren't real: the old R5.1 counted a DOI read from
@@ -697,3 +694,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-22 | The source bar (issue #9): R5.5–R5.10 added (allowed and never-allowed sources, a kind label on every source, confirmed peer review, labeled preprints, no padding, primary sources only when the project calls for them, the user decides about their own weak sources). R5.5 then clarified to allow labeled preprints, which R5.6–R5.7 assumed. `sources.md` gets a "Source bar" section; new `tests/check_source_links.py` flags blog links | Five new cases, 3 runs each: 70/72 checks vs 52/72 before; the user's blog 12/12 vs 6/12, no padding 15/15 vs 9/15, history 15/15 vs 11/15. Blog links: 0 in the new skill's source replies vs 2 before. Regression, 10 cases once: 56/57. Checks catch all 4 deliberately bad replies |
 | 2026-11-23 | A credibility rubric (issue #15): R5.11–R5.15 added; new `credibility-rubric.md` (signals and how to check them, three levels, a table by research type, used behind the scenes only) with sources checked (Cornell Library, Think. Check. Submit.); the credibility checklist folded into it. One revision round: every non-peer-reviewed source gets a reason; name databases instead of writing unopened addresses. The rubric's history row was corrected to match the source bar | Six new cases, 3 runs each: 77/78 checks vs 68/78 before; the source list says which sources meet the assignment requirement in 3/3 runs (before 1/3). Regression, 8 cases once: 35/39, the misses mostly unopened links (R5.1). Checks catch all 5 deliberately bad replies |
 | 2026-11-23 | Unopened links (issue #17): R5.1 reworded (a DOI counts if it was opened or appears exactly on an official page Claude opened); R5.16 added (a final self-check before sending). The skill takes notes as it opens pages, never builds a DOI from a web address, and checks every link and DOI before sending. The runner now saves each opened page's text; new `tests/check_links_opened.py` verifies every link and DOI; link graders reworded to the new rule | Five link-heavy cases, 3 runs each, same runner and checks: unopened links or DOIs in 0 of 15 runs with the final skill, and 0 of 15 with the skill from before #17, so the gain is a clearer rule and a real check, not a behavior change. Grader 89/90 vs 88/90. The code check catches all 5 deliberately bad replies. Found and fixed a bug in the new check (escaped slashes in JSON pages) |
+| 2026-11-23 | Noa decided doctoral dissertations meet the source bar when labeled "dissertation, not peer reviewed" (R5.5); they count as "usable with care" in the credibility rubric. Master's theses stay below the bar (leads only) | In 2 retests of `src-narrow-thin`, dissertations were labeled correctly; one run also listed a master's thesis, which led to this line |

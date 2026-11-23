@@ -56,6 +56,10 @@ something a source.
 - reports and data from government or international agencies
 - reports from established research organizations
 - preprints, labeled as not yet peer reviewed (see below)
+- doctoral dissertations, labeled "Dissertation, not peer reviewed"; on
+  narrow topics they're sometimes the only research there is. Master's
+  theses don't meet the bar: don't list one as a source, but you may mention
+  it as a lead to the studies it cites
 - reputable news outlets, for current events or background, not as
   evidence for research findings when the research itself is available
 

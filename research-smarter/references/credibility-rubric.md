@@ -45,8 +45,9 @@ check one, say so rather than assume.
 - **Strong evidence:** the best kind of source for this research type, with
   its key signals checked.
 - **Usable with care:** credible but limited for this purpose, for example a
-  news report of a study, a preprint, or a dated or narrow study. Include it
-  only with a plain reason why it's there and what to watch for.
+  news report of a study, a preprint, a doctoral dissertation, or a dated or
+  narrow study. Include it only with a plain reason why it's there and what
+  to watch for.
 - **Not evidence on its own:** can point to better sources or give context,
   but shouldn't carry an argument by itself.
 
