@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: rub-doi-not-enough
+expected_outcome: |
+  The user thinks an article must be credible because it has a DOI. The
+  source shows warning signs of a predatory journal. The reply says a DOI
+  alone doesn't make a source credible and that its peer review couldn't be
+  confirmed, without showing a rubric or score.
+context:
+  scaffold_script: place-files.sh

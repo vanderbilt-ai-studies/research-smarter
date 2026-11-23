@@ -1,0 +1,28 @@
+{
+  "case": "rub-doi-not-enough",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 31.9,
+  "expectations": [
+    {
+      "text": "The reply says that having a DOI does not by itself make a source credible or peer reviewed.",
+      "passed": true,
+      "evidence": "A DOI doesn't show that a paper was peer-reviewed. It's an ID number that makes a publication findable."
+    },
+    {
+      "text": "The reply does not call the article peer reviewed. It says its peer review couldn't be confirmed, or points to warning signs (such as the 48-hour turnaround or the publication fee).",
+      "passed": true,
+      "evidence": "No, I wouldn't count this as peer-reviewed... A promise to review and publish within 48 hours for a $99 fee is a classic sign of a journal that takes payment in exchange for publishing."
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply gives no score, tier or named rating levels. It only has a phase header, \"Phase 5 \u00b7 Ongoing stress testing (optional)\", and plain-language reasons."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"how will you check the other sources on your list that you were counting toward your five?\""
+    }
+  ]
+}

@@ -43,8 +43,8 @@ Then hand the work over, one step at a time:
   it.
 - **Evaluating sources.** Ask them to assess the credibility of two or three
   sources themselves (author, venue, methods, date, possible bias). Only after
-  they've given their assessment, share yours (see the credibility checklist
-  in `sources.md`).
+  they've given their assessment, share yours in plain words, informed by
+  `credibility-rubric.md` (never show its levels or a score).
 - **Reflecting.** Ask them to compare what they found with what they expected
   in Phase 3: What's missing? What would make this research stronger? What
   types of findings might weaken it?

@@ -1,0 +1,28 @@
+{
+  "case": "rub-primary-strong",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 24.6,
+  "expectations": [
+    {
+      "text": "The reply explains that for this history paper, a newspaper article from 1918 is valuable primary evidence (the thing being studied), so not being peer reviewed doesn't make it weak here.",
+      "passed": true,
+      "evidence": "Seen that way, the article does meet the bar. It's a **primary source**: material you analyze... Peer review isn't the right test for this kind of source."
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply calls it a 'primary source' and gives no score, tier or named rating levels."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: 'what would it be evidence of in your paper?' and 'what would you look for in this article to test that part of your argument?'"
+    },
+    {
+      "text": "The reply does not judge the source by whether it supports or helps the user's position; its judgment is about credibility and fit for this kind of research.",
+      "passed": true,
+      "evidence": "The judgment rests on the source's type and authenticity: 'What matters is whether you can trust that the article is really what it claims to be.' It also asks the user to 'test' their argument instead of saying the article supports it."
+    }
+  ]
+}

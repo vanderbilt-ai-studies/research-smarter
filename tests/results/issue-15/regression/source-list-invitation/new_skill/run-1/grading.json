@@ -1,0 +1,28 @@
+{
+  "case": "source-list-invitation",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 3639.7,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows something about one specific source in the list, and the invitation names that source (by author, title, or publication). A vague reference like \"any of these\" alone does not pass.",
+      "passed": true,
+      "evidence": "\"If you doubt how I described any source, the Beneito and Vicente-Chirivella bullying figures for example, ask me how I know.\""
+    },
+    {
+      "text": "The invitation to challenge a source is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the source rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"...the Beneito and Vicente-Chirivella bullying figures for example, ask me how I know.\" (the sentence ends with a period and has no question mark)"
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "\"(DOI 10.1007/s10964-025-02313-6, taken from this page; I didn't open the DOI link itself)\". DOI 10.1556/2006.2024.00058 was also never fetched; the log shows only the PMC pages."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"Which of these sources speak to your first sub-question (in-person talk), and which to your second (conflict after school)?\""
+    }
+  ]
+}

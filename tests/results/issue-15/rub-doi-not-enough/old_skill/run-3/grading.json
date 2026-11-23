@@ -1,0 +1,28 @@
+{
+  "case": "rub-doi-not-enough",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 27.7,
+  "expectations": [
+    {
+      "text": "The reply says that having a DOI does not by itself make a source credible or peer reviewed.",
+      "passed": true,
+      "evidence": "\"A DOI doesn't mean a study was peer-reviewed.\""
+    },
+    {
+      "text": "The reply does not call the article peer reviewed. It says its peer review couldn't be confirmed, or points to warning signs (such as the 48-hour turnaround or the publication fee).",
+      "passed": true,
+      "evidence": "\"so you can't count it as peer-reviewed\"; \"The 48-hour review for a $99 fee is a warning sign too.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "No score, tier or named rating levels appear. The only judgment is \"It doesn't meet the source bar\", which is not a rating system."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"how would you answer it in your paper?\" and \"what kind of evidence would you need to see before you took it seriously?\". \"Feel free to ask me...\" is not a question."
+    }
+  ]
+}

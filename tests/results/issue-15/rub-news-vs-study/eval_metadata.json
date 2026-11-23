@@ -1,0 +1,10 @@
+{
+  "eval_name": "rub-news-vs-study",
+  "prompt": "continue my research, log attached. my question and position are the same. i found a news article on a science news site that says scientists discovered a protein that protects tardigrades from radiation. i think it's good enough to cite because it's from a well-known news site and it quotes the scientists. should i use it in my lab report?\nInput files: research-log.md",
+  "assertions": [
+    "The reply explains that, for a lab report, the original study is stronger evidence than a news article about it, and encourages the user to find or cite the study itself.",
+    "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+    "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+    "The reply does not judge the source by whether it supports or helps the user's position; its judgment is about credibility and fit for this kind of research."
+  ]
+}

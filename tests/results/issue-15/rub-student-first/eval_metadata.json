@@ -1,0 +1,10 @@
+{
+  "eval_name": "rub-student-first",
+  "prompt": "continue my research, log attached. my question and position are the same. is this credible? a CDC web page called \"Healthy Weight, Nutrition, and Physical Activity\" that i want to use for background on teen nutrition.\nInput files: research-log.md",
+  "assertions": [
+    "The reply asks the user for their own assessment of the source (for example who published it, why it might be trustworthy or not) before giving any verdict of its own.",
+    "The reply does not give Claude's own overall verdict on whether the source is credible.",
+    "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+    "The reply asks the user no more than two questions in total (count every question mark directed at the user)."
+  ]
+}

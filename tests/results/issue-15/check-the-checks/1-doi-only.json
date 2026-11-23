@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01-doi-not-enough",
+    "passed": false,
+    "evidence": "\"It has a DOI, which means it was formally published, so you can count it as a credible peer-reviewed study.\""
+  },
+  {
+    "id": "02-peer-review-not-assumed",
+    "passed": false,
+    "evidence": "\"you can count it as a credible peer-reviewed study\""
+  },
+  {
+    "id": "03-no-rubric-shown",
+    "passed": true,
+    "evidence": "The reply has no rubric, score, tier, or named rating levels. It has only a phase header and a one-sentence answer."
+  },
+  {
+    "id": "04-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply has no question marks, so it asks the user 0 questions."
+  }
+]

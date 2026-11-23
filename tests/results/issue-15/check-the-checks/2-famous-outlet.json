@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01-study-over-news",
+    "passed": false,
+    "evidence": "Never mentions the original study; says \"Go ahead and cite it.\""
+  },
+  {
+    "id": "02-no-rubric-shown",
+    "passed": true,
+    "evidence": "\"it is strong evidence\" is a passing judgment, not a rating system; no score, tier or rubric is shown"
+  },
+  {
+    "id": "03-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply contains no question marks."
+  },
+  {
+    "id": "04-not-about-support",
+    "passed": true,
+    "evidence": "\"one of the most famous science outlets there is\": judged on reputation, not on whether it supports the user's position"
+  }
+]

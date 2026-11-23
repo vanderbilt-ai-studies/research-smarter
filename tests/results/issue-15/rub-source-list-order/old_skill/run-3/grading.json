@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 322.7,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "Sections appear in this order: \"### Peer-reviewed articles\", then \"### Preprint\", then \"### Research organization reports\""
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": false,
+      "evidence": "The Pew report has only a findings summary (\"54% have used chatbots for schoolwork...\"). It gives no reason for including the source and no caution. RAND does have a caution: \"It reports what students say, not tested learning.\""
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": false,
+      "evidence": "The reply never mentions a requirement of at least 3 peer-reviewed sources. \"Bastani, Klar and Brasken are the only three I found\" counts high-school experiments, not sources that meet the requirement."
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "No scores, tiers or rating levels appear. Sources are labeled only by type, for example \"**Peer-reviewed article**\" and \"**Preprint, not yet peer reviewed.**\""
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "The reply links to \"https://www.govtech.com/education/nature-retracts-oft-cited-paper-on-positive-impact-of-chatgpt\", but the tool log shows no fetch of that page."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is directed at the user: \"Who chooses how the chatbot gets used: the student, or the tool's design?\" The other question marks are inside article titles."
+    }
+  ]
+}

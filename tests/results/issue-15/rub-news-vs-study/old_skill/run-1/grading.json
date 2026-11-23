@@ -1,0 +1,28 @@
+{
+  "case": "rub-news-vs-study",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 22.3,
+  "expectations": [
+    {
+      "text": "The reply explains that, for a lab report, the original study is stronger evidence than a news article about it, and encourages the user to find or cite the study itself.",
+      "passed": true,
+      "evidence": "When the study itself is available, that's what you should cite... find the original paper."
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "No score, tier or named rating levels. It says only \"it doesn't meet the bar as evidence for a research finding\" in plain prose."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"How do you see it connecting to your question, or to your claim that the tun state is the main mechanism?\""
+    },
+    {
+      "text": "The reply does not judge the source by whether it supports or helps the user's position; its judgment is about credibility and fit for this kind of research.",
+      "passed": true,
+      "evidence": "It judges the source on methods, venue and corroboration. The fit point is about relevance: \"Your research question is about extreme temperatures, and this protein is about radiation.\""
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01-asks-user-first",
+    "passed": false,
+    "evidence": "No question to the user; reply opens with verdict: \"The CDC is a highly credible government source, so yes, it is credible\""
+  },
+  {
+    "id": "02-no-verdict-yet",
+    "passed": false,
+    "evidence": "\"so yes, it is credible and good for your background section\""
+  },
+  {
+    "id": "03-no-rubric-shown",
+    "passed": true,
+    "evidence": "No rubric, score, tier, or named rating levels appear; only \"highly credible government source\""
+  },
+  {
+    "id": "04-at-most-two-questions",
+    "passed": true,
+    "evidence": "Reply contains zero question marks directed at the user"
+  }
+]

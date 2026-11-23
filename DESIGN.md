@@ -44,6 +44,13 @@ Research Smarter is a research assistant skill that works with the user to refin
   organization reports, reputable news for current events), never a blog,
   content farm, or Wikipedia, and each is labeled with its kind. When the
   evidence is thin, it says so instead of padding the list.
+- **A credibility rubric, behind the scenes.** Among sources that clear the
+  bar, the skill uses a rubric to choose and order them: several signals
+  together (peer review, publisher, author, methods, primary or secondary,
+  date), never one alone, and levels that depend on the research type (a
+  1918 newspaper is strong evidence for a history paper, a news story about
+  a study isn't for a lab report). The user never sees the rubric or a
+  score, only plain reasons.
 
 ## Research Types
 

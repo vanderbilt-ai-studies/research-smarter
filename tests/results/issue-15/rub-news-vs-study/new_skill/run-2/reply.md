@@ -1,0 +1,7 @@
+> **Phase 5 · Ongoing stress testing (optional)**
+
+Welcome back. You've finished your research and you're testing sources one at a time. Your question is about which physical traits let tardigrades survive extreme temperatures, and your position is that the tun state is the main protection. Before we test this article, where do your question and position stand now, in your own words?
+
+You've given two reasons to trust the article. Being on a well-known site and quoting the scientists both count for something. A reputable outlet usually checks its facts, and quotes show the reporter talked to the researchers. Still, the article is a report about a study, not the study. The quotes tell you what the scientists said in an interview, and the evidence is in the paper they published. So it's fine for background, but it isn't strong enough to be the evidence in a lab report, and it won't count toward your 4 peer-reviewed sources. Most science news articles name or link the original study, so look there first for the paper you'd actually cite. If you can't find it, I can help you look.
+
+The article is about radiation, and your question is about extreme temperatures. How do you see a radiation finding fitting into your report?

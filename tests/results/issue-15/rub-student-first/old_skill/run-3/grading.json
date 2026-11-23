@@ -1,0 +1,28 @@
+{
+  "case": "rub-student-first",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 13.3,
+  "expectations": [
+    {
+      "text": "The reply asks the user for their own assessment of the source (for example who published it, why it might be trustworthy or not) before giving any verdict of its own.",
+      "passed": true,
+      "evidence": "\"I'll give you my assessment, but first I'd like yours... How much would you trust this page, and why?\""
+    },
+    {
+      "text": "The reply does not give Claude's own overall verdict on whether the source is credible.",
+      "passed": true,
+      "evidence": "No credibility verdict given; the reply only asks: \"How much would you trust this page, and why?\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "Lists factors only (\"who's behind the page, how they know what they say, when it was last updated...\"), with no score, tier or named levels"
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Three question marks: \"How much would you trust this page, and why?\", \"what do you want it to do in your paper?\", \"Do you need it for background facts... or to back up a specific claim about teens and fasting?\""
+    }
+  ]
+}

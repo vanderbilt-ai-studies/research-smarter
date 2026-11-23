@@ -132,6 +132,8 @@ Also read, when relevant:
   (end of Phase 1, or when a user skips ahead).
 - `references/sources.md` — before any research step (Phases 1, 2, 4) and
   whenever you evaluate a source.
+- `references/credibility-rubric.md` — when choosing, ordering, or
+  assessing sources. It's for you only; never show its levels or a score.
 - `references/mind-map.md` — in Phase 1, to build the mind map.
 
 ### Progress marker

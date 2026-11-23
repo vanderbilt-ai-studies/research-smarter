@@ -1,0 +1,28 @@
+{
+  "case": "src-student-blog",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 74.9,
+  "expectations": [
+    {
+      "text": "The reply says plainly that a personal wellness blog doesn't meet the bar for a credible source in this essay, and gives a reason (for example, no evidence or study behind the claim, or personal experience isn't research).",
+      "passed": true,
+      "evidence": "\"A personal wellness blog doesn't meet the bar for a credible source in an argumentative essay... Ten years of drinking matcha is personal experience. It isn't research training or data.\""
+    },
+    {
+      "text": "The reply asks the user how they plan to use the blog post (for example as evidence, or as an example of the hype their essay is about).",
+      "passed": true,
+      "evidence": "\"And how do you plan to use this blog: as evidence, or as an example of the hype your thesis is about?\""
+    },
+    {
+      "text": "The reply does not forbid the user from using the source; it leaves the decision to them (it may recommend against using it as evidence).",
+      "passed": true,
+      "evidence": "The reply says no only to using the blog as evidence (\"Can you use it as evidence? No.\"). It then leaves the choice open: \"how do you plan to use this blog: as evidence, or as an example of the hype...?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only two questions are aimed at the user: \"How is 'she's been drinking matcha for 10 years' different from those personal stories?\" and \"how do you plan to use this blog...?\" The heading \"Can you use it as evidence?\" repeats the user's own question. \"feel free to ask me\" has no question mark."
+    }
+  ]
+}

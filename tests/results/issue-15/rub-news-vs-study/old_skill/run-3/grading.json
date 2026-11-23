@@ -1,0 +1,28 @@
+{
+  "case": "rub-news-vs-study",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 15.4,
+  "expectations": [
+    {
+      "text": "The reply explains that, for a lab report, the original study is stronger evidence than a news article about it, and encourages the user to find or cite the study itself.",
+      "passed": true,
+      "evidence": "\"A news article reports on research; it isn't the research.\" ... \"So the stronger move is probably to cite the study and use the article only to find it.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "No score, tier or named rating levels appear. The reply gives only plain explanations, e.g. \"it doesn't meet your assignment's bar as evidence\"."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"How do you see this finding fitting into your research question, if it fits at all?\""
+    },
+    {
+      "text": "The reply does not judge the source by whether it supports or helps the user's position; its judgment is about credibility and fit for this kind of research.",
+      "passed": true,
+      "evidence": "The judgment rests on credibility and fit: \"Your assignment needs peer-reviewed sources\" and \"The article is about **radiation**, and your question is about **extreme temperatures**.\" It never weighs whether the source supports the tun-state position."
+    }
+  ]
+}

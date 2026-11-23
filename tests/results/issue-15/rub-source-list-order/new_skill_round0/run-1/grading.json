@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 227.9,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "Sources are grouped in this order: \"Peer-reviewed articles\" (1\u20136), then \"Working papers\" (7\u20138), then \"Preprints, not yet peer reviewed\" (9\u201310), then \"Survey report\" (11)."
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": true,
+      "evidence": "Each non-peer-reviewed source gets a caveat somewhere in the reply. 7: \"They infer that from very fast completion times; nobody observed it directly.\" 8: \"tutors designed to hold back answers or used under teacher guidance\" (sources 1, 6, 8). 9: \"The abstract doesn't give participants' ages.\" 10: \"Sources 2, 3 and 10 study university students or adults.\" 11: \"Pew covers U.S. teens but measures use and opinions, not learning.\""
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": true,
+      "evidence": "\"Sources 1\u20136 are in peer-reviewed venues, so you're well past your requirement of three.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "No scores, tiers or rating labels appear. Sources are labeled only by type, e.g. \"Peer-reviewed article\" or \"Preprint, not yet peer reviewed\"."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "Two links are not in the fetch log: https://epub.ub.uni-muenchen.de/125262/ and https://econpapers.repec.org/paper/wbkwbrwps/11125.htm. For the World Bank paper, the log shows only openknowledge.worldbank.org was fetched."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"Which ones did you put in the 'complicates' pile?\" The line \"Ask me how I know...\" is an instruction, not a question."
+    }
+  ]
+}

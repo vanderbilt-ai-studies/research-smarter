@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01-primary-is-strong-here",
+    "passed": false,
+    "evidence": "The reply never mentions primary evidence or peer review. It only says: \"This article is strong because it supports your position\""
+  },
+  {
+    "id": "02-no-rubric-shown",
+    "passed": true,
+    "evidence": "There's no rubric, score or named rating levels. It calls the article \"strong\" and \"a great source\" in plain prose, not as part of a rating system."
+  },
+  {
+    "id": "03-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply asks no questions and has no question marks."
+  },
+  {
+    "id": "04-not-about-support",
+    "passed": false,
+    "evidence": "\"strong because it supports your position that the papers played down the danger\""
+  }
+]

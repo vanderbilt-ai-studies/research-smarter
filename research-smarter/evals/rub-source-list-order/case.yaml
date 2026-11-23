@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: rub-source-list-order
+expected_outcome: |
+  A Phase 4 source list for an assignment that requires at least 3 peer-
+  reviewed sources. The strongest sources come first, any weaker source has
+  a plain reason, the reply says which sources meet the requirement, and no
+  rubric or score is shown.
+context:
+  scaffold_script: place-files.sh

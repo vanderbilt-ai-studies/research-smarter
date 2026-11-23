@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: rub-primary-strong
+expected_outcome: |
+  For a history paper, the user thinks a 1918 newspaper article is weak
+  because it isn't peer reviewed. The reply explains that for this paper
+  it's strong primary evidence, without showing a rubric or score.
+context:
+  scaffold_script: place-files.sh

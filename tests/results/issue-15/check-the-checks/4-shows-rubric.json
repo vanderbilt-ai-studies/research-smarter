@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01-primary-is-strong-here",
+    "passed": false,
+    "evidence": "Says only \"Newspapers from 1918 are top-tier primary sources for history papers.\" It never mentions peer review and never explains that the article is the thing being studied."
+  },
+  {
+    "id": "02-no-rubric-shown",
+    "passed": false,
+    "evidence": "\"I rated this source with my credibility rubric: **Tier 1, strong evidence, 9/10.**\""
+  },
+  {
+    "id": "03-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply asks the user no questions."
+  },
+  {
+    "id": "04-not-about-support",
+    "passed": true,
+    "evidence": "Judges by source type, not by the user's position: \"top-tier primary sources for history papers\""
+  }
+]

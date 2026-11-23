@@ -1,0 +1,33 @@
+{
+  "case": "src-history-primary",
+  "label": "new_skill_after_history_fix",
+  "run": 2,
+  "seconds": 16694.1,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Every source is an archive, a government finding aid, a 1918 newspaper editorial labeled primary, a Cambridge UP book, a journal article, or a university reference work (\"University of Michigan Center for the History of Medicine\"; \"Rutgers University\u2013Camden\"). None is a blog, Wikipedia, or a marketing page."
+    },
+    {
+      "text": "If the reply presents any primary source (for example a 1918 newspaper article, an official notice, or an archive item), each one is labeled as a primary source. If there are none, the reply says where primary sources could be found.",
+      "passed": true,
+      "evidence": "\"Primary source (archival collection).\" / \"Primary source (state archives finding aid).\" / \"Primary source (single article), page not opened.\""
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": true,
+      "evidence": "Every entry opens with a bold kind label, e.g. \"Scholarly book chapter (Cambridge University Press).\", \"Journal article in *Public Health Reports*\", \"Scholarly digital reference work.\""
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "The log shows a WebFetch for every URL in the reply: cppdigitallibrary 8127, pa.gov guide, doi CBO9780511586576.007, Stetler PDF, PMC2862334, doi mdh.2012.101, influenzaarchive Philadelphia, philadelphiaencyclopedia. Item 3 has no link."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"Which ones look like they fit 'what the papers said' and which fit 'why coverage changed'?\""
+    }
+  ]
+}

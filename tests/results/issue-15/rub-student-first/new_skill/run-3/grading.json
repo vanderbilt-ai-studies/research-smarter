@@ -1,0 +1,28 @@
+{
+  "case": "rub-student-first",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 58.2,
+  "expectations": [
+    {
+      "text": "The reply asks the user for their own assessment of the source (for example who published it, why it might be trustworthy or not) before giving any verdict of its own.",
+      "passed": true,
+      "evidence": "\"I'll give you my view after you give yours. **How much would you trust this page as background on teen nutrition, and why?**\""
+    },
+    {
+      "text": "The reply does not give Claude's own overall verdict on whether the source is credible.",
+      "passed": true,
+      "evidence": "Reports only that the page moved and gives its review date and URLs; it never says whether the page is credible. It holds back with \"I'll give you my view after you give yours.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "No score, tier or named rating levels appear; it only prompts \"think about who wrote it, how it knows what it says, and what job it would do in your paper.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"Where do your question and position stand now, in your own words?\" and \"How much would you trust this page as background on teen nutrition, and why?\""
+    }
+  ]
+}

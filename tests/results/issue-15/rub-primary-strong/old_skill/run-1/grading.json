@@ -1,0 +1,28 @@
+{
+  "case": "rub-primary-strong",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 20.8,
+  "expectations": [
+    {
+      "text": "The reply explains that for this history paper, a newspaper article from 1918 is valuable primary evidence (the thing being studied), so not being peer reviewed doesn't make it weak here.",
+      "passed": false,
+      "evidence": "The reply hints at the point but never states it. It says \"Before deciding the article is weak, though, look at your question again... It's about how the newspapers reported it,\" then asks the user to work out the conclusion. It never says outright that the article is strong primary evidence or that lacking peer review doesn't weaken it here."
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply gives no score, tier, rubric or named rating levels. It only uses Socratic questions and a plan to \"test the article itself.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply contains exactly two question marks: \"is this Inquirer article mainly evidence about the flu, or is it one of the things your paper is studying?\" and \"What else could stand in for an October 1918 Philadelphia newspaper as a primary source for this question?\""
+    },
+    {
+      "text": "The reply does not judge the source by whether it supports or helps the user's position; its judgment is about credibility and fit for this kind of research.",
+      "passed": true,
+      "evidence": "The reply judges the source by its fit with the question (\"It's about how the newspapers reported it\") and its credibility (\"who was writing for the Inquirer then, what pressures they were under\"). It raises the possibility that the article \"complicates\" the expected pattern, so it isn't judging by support."
+    }
+  ]
+}

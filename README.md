@@ -90,6 +90,11 @@ skill's coaching flow didn't have to change.
   of 72 before. It stopped padding thin topics with weak sources and now
   says plainly when a student's own source falls short, while leaving the
   decision to them ([results](tests/results/issue-9-source-bar.md)).
+- **A credibility rubric:** behind the scenes, the skill now judges sources
+  on several signals together and by research type (a DOI alone isn't
+  enough; a 1918 newspaper is strong evidence for a history paper). Across
+  six test cases, 3 runs each, it passed 77 of 78 checks, against 68 of 78
+  before ([results](tests/results/issue-15-credibility-rubric.md)).
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.

@@ -170,6 +170,32 @@ challenge level and for curiosity projects as well as assignments.
   whether the source meets the bar and why, and asks how they plan to use
   it. The user decides.
 
+**The credibility rubric.** R5.11–R5.15 cover how Claude judges sources that
+clear the bar, using a rubric in
+`research-smarter/references/credibility-rubric.md`. It sorts sources into
+three levels ("strong evidence," "usable with care," "not evidence on its
+own"), and what counts as strong depends on the research type (for example,
+a peer-reviewed study for an empirical study, a letter from the period for a
+history paper). The rubric works behind the scenes.
+
+- **R5.11** No response shows the user the rubric, its level names, or a
+  credibility score. When it helps, Claude explains in plain words why a
+  particular source is strong or weak for this kind of research.
+- **R5.12** No single signal makes a source strong. A DOI, a famous name, or
+  a "peer reviewed" label alone is never given as the reason a source is
+  credible.
+- **R5.13** Every signal Claude relies on (peer review, a working DOI, the
+  publisher, the author's expertise) was checked in this session. If one
+  couldn't be checked, Claude says so instead of assuming.
+- **R5.14** A source list leads with the strongest sources for the research
+  type. A "usable with care" source is included only with a plain reason
+  why it's there and what to watch for. When intake recorded a source
+  requirement (for example, "at least 3 peer-reviewed"), the response says
+  which sources meet it.
+- **R5.15** Claude's own view of a source, informed by the rubric, still
+  comes only after the user's assessment (R2.3), and is about credibility,
+  not about whether the source supports the user's position (R2.4).
+
 ### R6 · Phases and progress
 
 - **R6.1** A new project starts at Phase 0.
@@ -500,9 +526,15 @@ run only if every grader is true.
 | `src-narrow-thin` | A narrow topic: says evidence is thin, suggests where else to look, no padding | R3.2, R5.1, R5.5, R5.8 |
 | `src-student-blog` | The user brings a wellness blog, with their own view: says plainly it's below the bar, asks how they'll use it, user decides | R3.2, R5.10 |
 | `src-how-know-peer-reviewed` | "How do you know it's peer reviewed?": names the journal and how it was confirmed | R3.2, R5.1, R5.7, R9.7 |
+| `rub-doi-not-enough` | "It has a DOI, so it's peer reviewed": a DOI alone isn't enough; peer review not assumed; no rubric shown | R3.2, R5.11, R5.12, R5.13 |
+| `rub-news-vs-study` | A lab report citing news about a study: the study itself is stronger evidence; judged on credibility, not support | R3.2, R5.11, R5.15 |
+| `rub-primary-strong` | A 1918 newspaper for a history paper: strong primary evidence here; no rubric shown | R3.2, R5.9, R5.11, R5.15 |
+| `rub-student-first` | "Is this credible?" with no view given: asks the user first, no verdict yet | R2.3, R3.2, R5.11, R5.15 |
+| `rub-unconfirmed-peer-review` | An unfamiliar journal: says peer review couldn't be confirmed instead of assuming | R3.2, R5.11, R5.13 |
+| `rub-source-list-order` | A source list with "at least 3 peer-reviewed": strongest first, reasons for weaker sources, says which meet the requirement | R3.2, R5.1, R5.11, R5.14 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 68 of 82 requirements have at least one test (R1–R9: 41 of 51; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
+**Coverage:** 73 of 87 requirements have at least one test (R1–R9: 46 of 56; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
 R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
 
@@ -545,7 +577,8 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
   agreed.
 - **Unopened links still slip through sometimes.** After #14, a reply
   still gave a link or DOI it hadn't opened in roughly 1 in 3 to 1 in 6
-  runs with sources (issues #10 and #9), usually a DOI when only the
+  runs with sources (issues #10, #9 and #15; 3 of 8 runs in #15's
+  regression), usually a DOI when only the
   article's page was opened, or a working-paper page.
 - **Sentence starters still slip through occasionally.** Despite R1.2 and
   the #14 wording, `rejects-loophole-requests` offered a half-sentence for
@@ -647,3 +680,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-20 | What makes a good research question (issue #8): new R12 (the definition plus R12.1–R12.7); `question-framework.md` rewritten with the criteria, a question to ask for each, the question types, and weak/good examples marked for the model only; Phase 1 and 2 exit checks point to it. One revision round: ask instead of announcing a problem; don't push an already-focused question narrower. Test fixes: the sleep cases became a literature review (an argumentative paper made the "just right" question rightly fail "arguable"); a two-weakness check stopped counting strengths. Runner now blocks web tools a case doesn't allow | Ten new cases, 3 runs each: 140/141 checks with the new skill vs 125/141 before; "just right" 15/15 vs 10/15, loaded tone 12/12 vs 7/12. Other 19 cases, 1 run each: 18 pass every check (the exception is `no-search-tool`, see Known issues). Checks catch all 6 deliberately bad replies |
 | 2026-11-22 | Research-question frameworks by discipline (issue #7): R12.8–R12.12 added; 11 frameworks (FINER, PICO, PEO/PECO, SPIDER, SPICE, ECLIPSE, CoCoPop, PCC, CIMO, BeHEMoTh, the five Ws) added to `question-framework.md` with a question per part and a checked source each; `research-types.md` maps types to frameworks. Two frameworks from the notes couldn't be confirmed and were left out, per Noa | Five new cases, 3 runs each: 77/78 checks vs 76/78 before (most behavior was already covered by #8). Regression, 26 cases once: 24 pass every check. Checks catch all 4 deliberately bad replies |
 | 2026-11-22 | The source bar (issue #9): R5.5–R5.10 added (allowed and never-allowed sources, a kind label on every source, confirmed peer review, labeled preprints, no padding, primary sources only when the project calls for them, the user decides about their own weak sources). R5.5 then clarified to allow labeled preprints, which R5.6–R5.7 assumed. `sources.md` gets a "Source bar" section; new `tests/check_source_links.py` flags blog links | Five new cases, 3 runs each: 70/72 checks vs 52/72 before; the user's blog 12/12 vs 6/12, no padding 15/15 vs 9/15, history 15/15 vs 11/15. Blog links: 0 in the new skill's source replies vs 2 before. Regression, 10 cases once: 56/57. Checks catch all 4 deliberately bad replies |
+| 2026-11-23 | A credibility rubric (issue #15): R5.11–R5.15 added; new `credibility-rubric.md` (signals and how to check them, three levels, a table by research type, used behind the scenes only) with sources checked (Cornell Library, Think. Check. Submit.); the credibility checklist folded into it. One revision round: every non-peer-reviewed source gets a reason; name databases instead of writing unopened addresses. The rubric's history row was corrected to match the source bar | Six new cases, 3 runs each: 77/78 checks vs 68/78 before; the source list says which sources meet the assignment requirement in 3/3 runs (before 1/3). Regression, 8 cases once: 35/39, the misses mostly unopened links (R5.1). Checks catch all 5 deliberately bad replies |

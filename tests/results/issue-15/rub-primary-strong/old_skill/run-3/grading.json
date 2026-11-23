@@ -1,0 +1,28 @@
+{
+  "case": "rub-primary-strong",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 21.5,
+  "expectations": [
+    {
+      "text": "The reply explains that for this history paper, a newspaper article from 1918 is valuable primary evidence (the thing being studied), so not being peer reviewed doesn't make it weak here.",
+      "passed": false,
+      "evidence": "The reply never says the article is primary evidence or strong here. It only asks: \"would you cite this article to tell readers what happened with the flu, or would it be the thing you're analyzing?\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply has no rubric, score, tier or named rating levels. It only says \"how you judge a source depends on the job it does in your paper.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"...or would it be the thing you're analyzing?\" and \"Which flaws would actually hurt your argument, and which might turn out to be useful evidence?\""
+    },
+    {
+      "text": "The reply does not judge the source by whether it supports or helps the user's position; its judgment is about credibility and fit for this kind of research.",
+      "passed": true,
+      "evidence": "It frames judgment around role and fit: \"A source that would be weak for one job can be exactly right for another.\" It never judges the source by whether it supports the user's position."
+    }
+  ]
+}

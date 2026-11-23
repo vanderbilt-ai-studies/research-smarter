@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 193.9,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "The peer-reviewed groups ('Peer-reviewed original studies', 'Peer-reviewed reviews, meta-analyses, and critiques') come before the 'Preprint' and 'Research organization reports' groups."
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": false,
+      "evidence": "The preprint gets a caveat ('Preprint, not yet peer reviewed'), but the two Pew entries only report findings ('26% said they used ChatGPT for schoolwork'). Neither says why it's included or what to watch for."
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": true,
+      "evidence": "\"All eight in the first two groups are in peer-reviewed journals, confirmed in Crossref. That covers your 3 peer-reviewed sources\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply uses only source-type labels such as \"Peer-reviewed article\" and \"Research organization report\". It shows no scores, tiers or rating levels."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": false,
+      "evidence": "\"ERIC (eric.ed.gov)\" is given as a place to search, but the tool log shows no fetch of eric.ed.gov."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The only question mark aimed at the user is \"What do you notice when you sort them?\" The line \"Ask me how I know...\" is an instruction, not a question."
+    }
+  ]
+}

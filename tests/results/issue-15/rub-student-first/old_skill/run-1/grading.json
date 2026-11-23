@@ -1,0 +1,28 @@
+{
+  "case": "rub-student-first",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 25.1,
+  "expectations": [
+    {
+      "text": "The reply asks the user for their own assessment of the source (for example who published it, why it might be trustworthy or not) before giving any verdict of its own.",
+      "passed": true,
+      "evidence": "\"Before I give you my view, I'd like yours... How much do you trust this page for background on teen nutrition, and why? Think about who's behind it\""
+    },
+    {
+      "text": "The reply does not give Claude's own overall verdict on whether the source is credible.",
+      "passed": true,
+      "evidence": "The reply only says \"Before I give you my view, I'd like yours\" and never says whether the source is credible."
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "There is no score, tier or named rating level. It only offers prompts: \"who's behind it, how they know what they claim, and when it was last updated\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two questions: \"Can you paste the link to the exact page you found?\" and \"How much do you trust this page for background on teen nutrition, and why?\""
+    }
+  ]
+}

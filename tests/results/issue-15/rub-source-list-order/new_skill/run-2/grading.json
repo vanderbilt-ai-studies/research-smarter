@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 156.6,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "The list goes \"**Peer-reviewed research**\" (#1\u20133), then \"**Preprints and working papers**\" (#4\u20136), then \"**Survey reports**\" (#7\u20138)."
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": true,
+      "evidence": "Each preprint (#4\u20136) has a \"*Watch for:*\" note, and #4 and #5 also have \"*Why it's here:*\". The survey group's heading explains it: \"they show how common chatbot use is, not whether it helps or hurts learning\"."
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": true,
+      "evidence": "\"I checked the journal for all three in Crossref, so these count toward your 3 peer-reviewed\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply shows no scores, tiers or named rating levels. Sources are only grouped by type, such as \"Peer-reviewed article\" and \"Preprint, not yet peer reviewed.\""
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "The tool log shows a WebFetch for every link in the reply: ideas.repec.org, chibe.upenn.edu, arxiv 2412.09315, arxiv 2409.09047, arxiv 2605.21629 and both Pew pages. The reply gives no DOI links."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The only question mark aimed at the user is in \"Which source surprised you most?\". The items under \"Questions the results raise\" have no question marks."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "case": "rub-student-first",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 12.6,
+  "expectations": [
+    {
+      "text": "The reply asks the user for their own assessment of the source (for example who published it, why it might be trustworthy or not) before giving any verdict of its own.",
+      "passed": true,
+      "evidence": "\"Before I give you my view, I'd like yours. Using what you can see on the page, how much would you trust it, and why?\""
+    },
+    {
+      "text": "The reply does not give Claude's own overall verdict on whether the source is credible.",
+      "passed": true,
+      "evidence": "The reply holds back its view (\"Before I give you my view\"). It only says the page \"might not say anything about teens or fasting\", which is about relevance, not credibility."
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply has no score, tier or named rating levels. It only lists things to think about: \"who's behind it, whether it says where its information comes from, and when it was last updated\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has exactly two question marks: \"how much would you trust it, and why?\" and \"what exactly do you want it to back up in your background section?\""
+    }
+  ]
+}

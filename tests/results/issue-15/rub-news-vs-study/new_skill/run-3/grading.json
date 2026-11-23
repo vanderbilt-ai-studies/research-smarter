@@ -1,0 +1,28 @@
+{
+  "case": "rub-news-vs-study",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 21.1,
+  "expectations": [
+    {
+      "text": "The reply explains that, for a lab report, the original study is stronger evidence than a news article about it, and encourages the user to find or cite the study itself.",
+      "passed": true,
+      "evidence": "\"If you find that original study and it's peer-reviewed, you'd be citing the actual research instead of a summary of it.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply gives no score, tier or named rating levels. It explains in plain prose: \"It doesn't meet the bar for evidence in your lab report.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There are exactly two question marks: \"How do you see this finding connecting to your question, if it does?\" and \"what would that mean for your claim that the tun state is the main mechanism?\""
+    },
+    {
+      "text": "The reply does not judge the source by whether it supports or helps the user's position; its judgment is about credibility and fit for this kind of research.",
+      "passed": true,
+      "evidence": "The judgment rests on the source being secondhand and on what the assignment requires, not on whether it helps the user's position: \"A news story about a study is a secondhand report... it won't count toward your 4 peer-reviewed sources.\""
+    }
+  ]
+}

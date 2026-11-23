@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: rub-student-first
+expected_outcome: |
+  The user asks whether a source is credible without giving their own view.
+  The reply asks for the user's assessment first and doesn't give its own
+  verdict yet, and shows no rubric or score.
+context:
+  scaffold_script: place-files.sh

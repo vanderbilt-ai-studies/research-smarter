@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 169.7,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "The list runs in this order: \"### Peer-reviewed articles (7...)\", then \"### Working paper and preprint (not peer reviewed)\", then \"### Research organization reports\""
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": true,
+      "evidence": "Every source that isn't peer-reviewed has a reason or a caution. #8: \"*Why it's here:* it's one of very few high school trials. *Watch for:* it hasn't been peer reviewed\". #9: \"*Why it's here:*... *Watch for:* it isn't peer reviewed\". #10: \"*Why it's here:*... *Watch for:* it's a survey\". #11: \"*Watch for:* the same as above\""
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": true,
+      "evidence": "\"Peer-reviewed articles (7, so these cover your 'at least 3')\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "Sources carry type labels only, such as \"Peer-reviewed article\" and \"Preprint, not yet peer reviewed\". The reply gives no scores, tiers or named rating levels."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "Most links were opened with WebFetch: the PNAS, Computers & Education, BJET, Societies and Scientific Reports DOIs, arXiv 2409.09047 and both Pew pages. The IRRODL and CAEAI DOIs were not fetched directly, but their article pages were (irrodl.org and sciencedirect S2666920X24001632), and the Bash loops checked both DOIs. The econpapers page was fetched with curl."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply asks the user no direct questions. The closing lines are instructions (\"take these 11 sources and match each one...\") and an offer (\"You can also ask me how I know anything here\")."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "case": "rub-primary-strong",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 19.0,
+  "expectations": [
+    {
+      "text": "The reply explains that for this history paper, a newspaper article from 1918 is valuable primary evidence (the thing being studied), so not being peer reviewed doesn't make it weak here.",
+      "passed": true,
+      "evidence": "\"For a history paper, a newspaper from the time counts as a primary source, which is about as strong as evidence gets for a question like yours... Peer review isn't the right test for a primary source.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply gives no score, tier or named rating levels. It uses only plain wording such as \"good evidence of what the Inquirer chose to tell readers. It's weak evidence of what was actually happening.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"How are you planning to use it...?\" and \"what would you need to see in its tone or wording...?\""
+    },
+    {
+      "text": "The reply does not judge the source by whether it supports or helps the user's position; its judgment is about credibility and fit for this kind of research.",
+      "passed": true,
+      "evidence": "The reply judges the source by what kind of source it is and how well it fits the question: \"it's the material your paper analyzes.\" It leaves the question of whether the article supports or complicates the position to the user and does not rate the source on that basis."
+    }
+  ]
+}

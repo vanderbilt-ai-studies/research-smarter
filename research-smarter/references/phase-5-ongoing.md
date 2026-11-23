@@ -22,8 +22,9 @@ they bring:
 
 - **Credibility (for a source).** First ask for the user's own assessment:
   who wrote it, where it was published, how they know what they claim, when,
-  and any possible bias. Then share yours, using the checklist in
-  `sources.md`. Check that the source exists; if you can't verify it, say so.
+  and any possible bias. Then share yours in plain words, informed by
+  `credibility-rubric.md` (never show its levels or a score). Check that the
+  source exists; if you can't verify it, say so.
 - **Logical fallacies (for an argument).** Ask questions that lead the user
   to any gaps in reasoning. Name the fallacy only if they don't find it.
 - **Evidence and perspectives.** Phase 2 tested reasoning before the evidence;

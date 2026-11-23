@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 161.9,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "Sources 1\u20137 are listed under \"Peer-reviewed articles\" first, then \"Preprint, not yet peer reviewed\" (8), then \"Research organization reports\" (9\u201310)."
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": false,
+      "evidence": "The preprint gives a reason (\"I'm including it because it's the closest study to your second sub-question\") and RAND has a caveat (\"This is the press release; the full report (RRA4742-1) blocked me\"), but the Pew report (#9) has only a summary, with no reason for including it and nothing to watch for."
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": true,
+      "evidence": "\"All seven count toward your requirement of at least 3 peer-reviewed sources.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "No scores, tiers, or named rating levels appear; sources are labeled only by type (\"Peer-reviewed article\", \"Preprint\", \"Research organization reports\")."
+    },
+    {
+      "text": "Every link or DOI in the reply points to a page the transcript shows Claude opened (fetched) during this session.",
+      "passed": true,
+      "evidence": "The reply contains no DOIs. Its links (PMC12232635, arxiv 2412.09315, epub.ub.uni-muenchen.de/125262, arxiv 2409.09047, Pew, RAND) were each opened, either by WebFetch or by a Bash curl call."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "The \"Questions these results raise\" section puts three questions to the user: \"How well do findings about college students apply to high schoolers?\", \"Is 'checking your work' something students choose...?\", and \"Do the meta-analyses' positive averages hide differences...?\""
+    }
+  ]
+}

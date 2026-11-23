@@ -1,0 +1,28 @@
+{
+  "case": "rub-news-vs-study",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 19.1,
+  "expectations": [
+    {
+      "text": "The reply explains that, for a lab report, the original study is stronger evidence than a news article about it, and encourages the user to find or cite the study itself.",
+      "passed": true,
+      "evidence": "\"For a lab report, the study itself is the evidence.\" ... \"If you cite the original paper instead, it could count.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "No score, tier, or rating labels appear; the judgment is given in plain words: \"it isn't strong enough to cite as evidence in a lab report\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only two question marks: \"Would you use this article as evidence itself, or as a way to find the original study?\" and \"how does a protein that protects against radiation connect to your question about extreme temperatures?\""
+    },
+    {
+      "text": "The reply does not judge the source by whether it supports or helps the user's position; its judgment is about credibility and fit for this kind of research.",
+      "passed": true,
+      "evidence": "The judgment rests on credibility and fit, not on support for the position: \"It's secondhand.\" / \"It doesn't count toward your requirement.\" The radiation-vs-temperature question is about relevance."
+    }
+  ]
+}

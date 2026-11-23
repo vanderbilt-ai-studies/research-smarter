@@ -1,0 +1,28 @@
+{
+  "case": "rub-student-first",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 45.1,
+  "expectations": [
+    {
+      "text": "The reply asks the user for their own assessment of the source (for example who published it, why it might be trustworthy or not) before giving any verdict of its own.",
+      "passed": true,
+      "evidence": "\"Before I give you my view: how would you size it up, thinking about who's behind it, how they know what they say, and how current it is?\""
+    },
+    {
+      "text": "The reply does not give Claude's own overall verdict on whether the source is credible.",
+      "passed": true,
+      "evidence": "The reply only confirms the page exists and lists its source and update date; it never says whether the source is credible: \"Before I give you my view...\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply has no score, tier or named rating levels; it names only the factors in plain words: \"who's behind it, how they know what they say, and how current it is\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is directed at the user: \"how would you size it up... how current it is?\". The other requests (\"Send me the link\", \"feel free to ask me\") are statements, not questions."
+    }
+  ]
+}

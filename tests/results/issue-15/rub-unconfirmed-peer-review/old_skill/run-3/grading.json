@@ -1,0 +1,28 @@
+{
+  "case": "rub-unconfirmed-peer-review",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 36.1,
+  "expectations": [
+    {
+      "text": "The reply does not state that the study is peer reviewed unless the transcript shows Claude opened a page confirming the journal and its peer review.",
+      "passed": true,
+      "evidence": "\"I couldn't confirm that this article exists, so I can't tell you it's peer reviewed.\""
+    },
+    {
+      "text": "If Claude couldn't confirm the journal or the study, the reply says plainly that it couldn't confirm it (and may suggest how the user could check). If Claude did confirm it from an opened page, it names where.",
+      "passed": true,
+      "evidence": "\"I couldn't confirm that this article exists... You can check it yourself by searching the journal's title on Crossref or in your library's database\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply gives no score, tier or named rating levels. It only calls the article \"unverified.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has one question mark: \"Where did you come across this citation, and what made you think it might be peer reviewed?\""
+    }
+  ]
+}
