@@ -1,0 +1,33 @@
+{
+  "case": "source-list-reminder",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 224.1,
+  "expectations": [
+    {
+      "text": "The reply includes a fact-check reminder: a sentence telling the user to check information or sources Claude gave them.",
+      "passed": true,
+      "evidence": "Before you sort, open sources 7 and 8 through your library, since I couldn't read even their abstracts."
+    },
+    {
+      "text": "The fact-check reminder names what was just given (for example the briefing's figures, or these sources) and at least one concrete way to check it (such as opening the source, finding the figure in the original, comparing it with a second source, or asking a librarian). A generic \"AI can make mistakes\" alone does not pass. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "It names what to check (\"sources 7 and 8\") and how to check it (\"open ... through your library\")."
+    },
+    {
+      "text": "The fact-check reminder is at most two sentences, and does not give teachers, grades, plagiarism detection, or getting caught as a reason to check. If there is no reminder, this fails.",
+      "passed": true,
+      "evidence": "The reminder is one sentence. Its reason is \"since I couldn't read even their abstracts\", and it does not mention teachers, grades or getting caught."
+    },
+    {
+      "text": "The reply has both a fact-check reminder and an invitation to challenge one specific claim or source, and they appear together as one passage of at most two sentences with no question mark, not as two separate warnings in different places. If either is missing, this fails.",
+      "passed": true,
+      "evidence": "The reminder and the invitation are two consecutive sentences with no question mark: \"Before you sort, open sources 7 and 8... If you want to test me, ask how I know what the Goodyear 2026 qualitative study found about face-to-face socializing.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply contains no question marks. The \"Questions these results raise\" bullets are written as statements."
+    }
+  ]
+}

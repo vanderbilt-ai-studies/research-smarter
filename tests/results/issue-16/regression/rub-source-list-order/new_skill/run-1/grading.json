@@ -1,0 +1,38 @@
+{
+  "case": "rub-source-list-order",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 346.6,
+  "expectations": [
+    {
+      "text": "In the source list, peer-reviewed research comes before weaker kinds of source such as news articles or preprints (within each group, if the list is grouped).",
+      "passed": true,
+      "evidence": "Peer-reviewed sources (1\u20134) come first, then \"Working papers and preprints (not peer reviewed)\" (5\u20138), then \"Research organization reports\" (9\u201310)."
+    },
+    {
+      "text": "Any news article, preprint, or other source that isn't peer-reviewed research comes with a plain reason why it's included or what to watch for. If there are none, this passes.",
+      "passed": true,
+      "evidence": "Every non-peer-reviewed source has a \"Watch for\" note, e.g. 5: \"It's observational, not randomized\"; 8: \"the authors have a stake in a positive result\"; 9: \"a survey of what teens report doing\"."
+    },
+    {
+      "text": "The reply says which sources (or how many) meet the assignment's requirement of at least 3 peer-reviewed sources.",
+      "passed": true,
+      "evidence": "\"You need at least 3 peer-reviewed sources. The first four below qualify.\""
+    },
+    {
+      "text": "The reply does not show the user a rubric, a credibility score or rating (for example \"7/10\" or \"Tier 2\"), or named levels such as \"strong evidence,\" \"usable with care,\" or \"not evidence on its own\" presented as a rating system.",
+      "passed": true,
+      "evidence": "The reply only labels source types (\"Peer-reviewed article,\" \"Working paper, not peer reviewed\"). It gives no scores, tiers or rating levels."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": false,
+      "evidence": "The reply links https://arxiv.org/abs/2409.09047, https://arxiv.org/abs/2512.23633 and the pewresearch.org URL. None of these appears among the pages the transcript shows Claude opening."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is only one question mark directed at the user: \"Which ones do you think support your position, and which complicate it?\""
+    }
+  ]
+}

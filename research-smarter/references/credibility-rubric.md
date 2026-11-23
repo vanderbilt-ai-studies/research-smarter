@@ -66,7 +66,8 @@ check one, say so rather than assume.
 - **Source lists:** lead with strong evidence for the research type. Every
   source that isn't peer-reviewed research (a survey report, a news article,
   a preprint, a working paper) gets one plain line saying why it's there
-  and what to watch for, not just a summary of its findings ("A survey, not
+  and what to watch for, about the source itself, never how it fits the
+  user's position or sub-questions (R2.4), not just a summary of its findings ("A survey, not
   a study of learning: useful for how many students use chatbots, not for
   whether it helps them"). When intake recorded a
   source requirement ("at least 3 peer-reviewed"), say which sources meet

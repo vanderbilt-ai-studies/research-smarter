@@ -103,6 +103,12 @@ skill's coaching flow didn't have to change.
   had no unopened links in 15 runs, both before and after the change
   ([results](tests/results/issue-17-unopened-links.md)). Earlier results
   that reported this problem overstated it.
+- **A deeper research phase:** Phase 4 now opens about two to three times
+  as many pages per search (about 46–51 against 15–27), reports what it
+  searched and couldn't reach, keeps the chat to a manageable set, and puts
+  the full list (16–18 sources) into the research log, which still loads in
+  the notebook. On the deep-dive test it passed 32 of 33 checks, against 26
+  of 33 before ([results](tests/results/issue-16-deep-dive.md)).
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.

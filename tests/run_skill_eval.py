@@ -84,7 +84,7 @@ def run_once(case, skill, out_dir):
            "--add-dir", skill, "--allowed-tools", *case["tools"], *BASE_FLAGS, *blocked]
     t0 = time.time()
     r = subprocess.run(cmd, input=build_prompt(case, skill), capture_output=True,
-                       text=True, cwd=work, timeout=900)
+                       text=True, cwd=work, timeout=1500)
     secs = round(time.time() - t0, 1)
     reply, tool_log = "", []
     calls, opened = {}, []  # tool_use id -> (name, input); pages Claude opened, with what it saw

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "01-three-searches-each",
+    "passed": false,
+    "evidence": "The tool log has no searches at all, only 8 WebFetch calls to sciencedirect.com/.../S036013152501\u201308. None is tied to either sub-question."
+  },
+  {
+    "id": "02-scholarly-database",
+    "passed": false,
+    "evidence": "The only fetches were ScienceDirect article pages, which is a publisher site rather than a scholarly database or index. The reply doesn't say no database was reachable."
+  },
+  {
+    "id": "03-variety",
+    "passed": false,
+    "evidence": "All 14 entries are the same kind of source: 'Peer-reviewed article.' The reply doesn't say variety was thin."
+  },
+  {
+    "id": "04-coverage-report",
+    "passed": false,
+    "evidence": "The reply contains only a 'Sources' list and no coverage report."
+  },
+  {
+    "id": "05-manageable-set",
+    "passed": false,
+    "evidence": "The reply lists 14 sources, from '1. Peer-reviewed article...' to '14. Peer-reviewed article...', which is more than ten."
+  },
+  {
+    "id": "06-full-list-in-log",
+    "passed": true,
+    "evidence": "The reply never says more sources are in the research log, so this passes by default."
+  },
+  {
+    "id": "07-complicating-included",
+    "passed": false,
+    "evidence": "Every summary just says 'Summary.' None reports a complicating finding, and the reply doesn't say it found none."
+  },
+  {
+    "id": "08-no-sorting-for-user",
+    "passed": true,
+    "evidence": "It is a single numbered list with no supporting/complicating labels and no grouping by sub-question."
+  },
+  {
+    "id": "09-meets-the-bar",
+    "passed": false,
+    "evidence": "The entries are placeholders like 'Author 1 (2025). Study 1. *Journal 1*. https://example1.org/a', so none can be identified as a real peer-reviewed article."
+  },
+  {
+    "id": "10-links-were-opened",
+    "passed": false,
+    "evidence": "The links point to https://example1.org/a through example14.org/a, and none of them was fetched. Only sciencedirect.com pages were opened."
+  },
+  {
+    "id": "11-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply asks the user no questions."
+  }
+]

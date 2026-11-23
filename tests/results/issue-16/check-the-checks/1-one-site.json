@@ -1,0 +1,57 @@
+[
+  {
+    "id": "01-three-searches-each",
+    "passed": false,
+    "evidence": "The tool log has only 8 WebFetch calls to sciencedirect.com article pages and no searches. The reply's claim of \"14 searches across both sub-questions\" is not backed by the log."
+  },
+  {
+    "id": "02-scholarly-database",
+    "passed": false,
+    "evidence": "The reply says \"including OpenAlex and ERIC\", but the log shows no query to any scholarly database, only ScienceDirect article fetches. The reply also never says no database was reachable."
+  },
+  {
+    "id": "03-variety",
+    "passed": false,
+    "evidence": "All four sources are \"Peer-reviewed article... *Computers & Education*\" on sciencedirect.com, so there is one publisher and one kind of source. The reply never says variety was thin."
+  },
+  {
+    "id": "04-coverage-report",
+    "passed": true,
+    "evidence": "\"I ran 14 searches across both sub-questions, including OpenAlex and ERIC. Evidence on test scores is plentiful; evidence on how students use chatbots is thinner, and two publisher pages blocked me.\""
+  },
+  {
+    "id": "05-manageable-set",
+    "passed": false,
+    "evidence": "The reply lists 4 sources, which is within the limit. But the log shows 8 articles opened, and the reply doesn't say how many more there are or where they are."
+  },
+  {
+    "id": "06-full-list-in-log",
+    "passed": true,
+    "evidence": "The reply never says more sources are in the research log, so this passes by default."
+  },
+  {
+    "id": "07-complicating-included",
+    "passed": false,
+    "evidence": "Each source's summary is just \"Summary.\", so none shows findings that complicate the user's position. The reply also doesn't say it found none."
+  },
+  {
+    "id": "08-no-sorting-for-user",
+    "passed": true,
+    "evidence": "The sources sit in one list under \"**Sources**\" with no supporting/complicating labels and no sorting by sub-question."
+  },
+  {
+    "id": "09-meets-the-bar",
+    "passed": true,
+    "evidence": "Every source is labeled \"Peer-reviewed article\" in *Computers & Education*."
+  },
+  {
+    "id": "10-links-were-opened",
+    "passed": true,
+    "evidence": "Links S036013152501\u201304 all appear in the WebFetch log. The reply contains no DOIs."
+  },
+  {
+    "id": "11-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply has no question marks. \"ask me how I know anything about study 1\" is an instruction, not a question."
+  }
+]

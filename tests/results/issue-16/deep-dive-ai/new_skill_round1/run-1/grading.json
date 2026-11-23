@@ -1,0 +1,63 @@
+{
+  "case": "deep-dive-ai",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 232.5,
+  "expectations": [
+    {
+      "text": "The tool log shows at least three different searches or lookups (different phrasings, places, or databases) aimed at each of the two sub-questions in the research plan (whether chatbot use changes test scores, and whether how students use them matters).",
+      "passed": true,
+      "evidence": "Test scores: 'Bastani ... harm learning PNAS', 'meta-analysis ChatGPT effect on students' learning performance', 'World Bank Nigeria ... learning gains', 'Stromberg Lei Wu ... exam scores'. How students use them: 'students using large language model to get answers vs explanations ... cognitive offloading', 'Fan \"Beware of metacognitive laziness\"', 'chatbot cognitive offloading students critical thinking', 'high school students AI chatbot use homework \"copying\" OR \"answers\"'"
+    },
+    {
+      "text": "The tool log shows Claude queried at least one scholarly database or index (for example OpenAlex, Semantic Scholar, Crossref, ERIC, PubMed, or Google Scholar) through a search or fetch, or the reply says plainly that none was reachable.",
+      "passed": true,
+      "evidence": "Bash: curl -s \"https://api.crossref.org/works/...\" and curl -s -G \"https://api.openalex.org/works\""
+    },
+    {
+      "text": "The sources presented come from at least four different publishers or sites and include at least two different kinds of source (for example research articles, reviews, government or research-organization reports, books, reputable news); or the reply says plainly where variety was thin.",
+      "passed": true,
+      "evidence": "Sources come from PNAS, Wiley/BJET, MDPI, Elsevier, arXiv, the World Bank, RAND, Pew, the OECD and Al Jazeera. Kinds include peer-reviewed articles, preprints, research-organization reports and news."
+    },
+    {
+      "text": "The reply includes a coverage report that says what was searched (sub-questions or places, and roughly how many searches or databases), where evidence was plentiful or thin, and what couldn't be reached or opened.",
+      "passed": true,
+      "evidence": "'What I searched: both sub-questions, through about a dozen web searches ... and the Crossref scholarly database'; 'Where evidence is strong or thin'; 'What I couldn't reach'"
+    },
+    {
+      "text": "In the chat, the reply lists no more than ten sources in total (five per sub-question; the plan has two). If Claude found more sources than it lists, the reply says how many more there are and where they are (for example, the research log).",
+      "passed": true,
+      "evidence": "Ten sources are listed. 'More found: 2 more sources that didn't make this list ... I'll put them in your log.'"
+    },
+    {
+      "text": "If the reply says more sources are in the research log, Claude created or included an updated research log whose sources table lists them. If the reply doesn't say that, this passes.",
+      "passed": false,
+      "evidence": "The reply says 'I'll put them in your log', but FILES THE ASSISTANT CREATED is '(none)'."
+    },
+    {
+      "text": "At least one listed source reports findings that cut against or complicate the user's position (for example, that chatbots help or hurt students regardless of how they use them), or the reply says it found none.",
+      "passed": true,
+      "evidence": "Fan: 'knowledge gain and transfer weren't significantly different'; Lehmann: 'Overall, LLM access had no effect on learning'"
+    },
+    {
+      "text": "The reply does not label sources as supporting or complicating the user's position and does not sort them by sub-question for the user to accept; it leaves that judgment to the user (grouping by kind of source is fine).",
+      "passed": true,
+      "evidence": "Sources are grouped by kind only: 'Your turn to sort: which sources go with which of your two sub-questions, and which ones support your position versus complicate it?'"
+    },
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, a doctoral dissertation (not a master's thesis) labeled as not peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Every source is a peer-reviewed article, a labeled preprint or working paper, a RAND/Pew/OECD report, or Al Jazeera news. None is a blog or similar."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "All links were fetched: doi.org/10.1073/pnas..., doi.org/10.1111/bjet.13544, doi.org/10.3390/soc15010006, doi.org/10.1016/j.compedu.2024.105224, arxiv 2409.09047, econpapers wbrwps:11125, doi.org/10.7249/RRA4742-1, pewresearch, digital-skills-jobs.europa.eu, aljazeera"
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is only one question mark aimed at the user: 'Your turn to sort: which sources go with which ... versus complicate it?'"
+    }
+  ]
+}

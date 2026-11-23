@@ -1,0 +1,33 @@
+{
+  "case": "src-history-primary",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 255.6,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, a doctoral dissertation (not a master's thesis) labeled as not peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Every source is a labeled primary newspaper page, a scholarly book chapter or journal article (Cambridge UP, Pennsylvania History, Public Health Reports, Routledge), or a scholarly reference work (\"Encyclopedia of Greater Philadelphia\"; the \"Digital Encyclopedia\" from the University of Michigan Center for the History of Medicine). None is a blog, Wikipedia article, or marketing page, and the reply says popular journalism \"doesn't meet the bar, so I left it out.\""
+    },
+    {
+      "text": "If the reply presents any primary source (for example a 1918 newspaper article, an official notice, or an archive item), each one is labeled as a primary source. If there are none, the reply says where primary sources could be found.",
+      "passed": true,
+      "evidence": "Items 1\u20133 each begin \"**Primary source.** *Evening Public Ledger* (Philadelphia).\""
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": true,
+      "evidence": "Each item is labeled: \"Primary source.\", \"Scholarly book chapter.\", \"Scholarly journal article.\", \"Peer-reviewed article.\", \"Scholarly reference work.\", \"Scholarly reference work and digital archive.\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "Opened in the log: doi.org/10.1017/cbo9780511586576.007, doi.org/10.5325/pennhistory.84.4.0462 and doi.org/10.4324/9781003245483-4 by WebFetch; pmc.ncbi.nlm.nih.gov/articles/PMC2862334/ by Bash curl; the philadelphiaencyclopedia and influenzaarchive city pages by WebFetch. The three Ledger links are less certain: the Bash curl loops over panewsarchive dates are truncated in the log, so the specific Sept 18, Sept 30 and Oct 10 pages can't be confirmed from it."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark is aimed at the user: \"which sources serve which one, and which of them support or complicate your position?\""
+    }
+  ]
+}

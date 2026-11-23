@@ -1,0 +1,38 @@
+{
+  "case": "src-popular-ai",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 227.6,
+  "expectations": [
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, a doctoral dissertation (not a master's thesis) labeled as not peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Sources are peer-reviewed journal and ACL articles, a World Bank working paper ('not peer reviewed'), a Pew Research Center report, and arXiv preprints labeled 'not yet peer reviewed'. There are no blogs, marketing pages or Wikipedia."
+    },
+    {
+      "text": "Each source the reply presents is labeled with what kind of source it is (for example peer-reviewed article, government report, news article, preprint, or primary source).",
+      "passed": true,
+      "evidence": "Each entry opens with a label such as 'Peer-reviewed article.', 'Peer-reviewed conference paper.', 'Research report (World Bank working paper, not peer reviewed).', 'Research organization report.' or 'Preprint, not yet peer reviewed.'"
+    },
+    {
+      "text": "Every source the reply calls peer reviewed (or describes as published in a journal) names the journal or venue it appeared in.",
+      "passed": true,
+      "evidence": "All six peer-reviewed items name their venue: *Proceedings of the National Academy of Sciences*, *Proceedings of the 63rd Annual Meeting of the ACL*, *Interactive Learning Environments*, *ZDM \u2013 Mathematics Education*, *Societies* and *Journal of Computer Assisted Learning*."
+    },
+    {
+      "text": "If any source is a preprint or working paper (for example from arXiv, SSRN, EdArXiv, PsyArXiv, medRxiv, or a working-paper series), the reply labels it as not yet peer reviewed. If there are none, this passes.",
+      "passed": true,
+      "evidence": "'World Bank working paper, not peer reviewed' and 'Preprint, not yet peer reviewed.' for both arXiv items."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "All 7 DOIs appear in the opened-pages DOI list (for example 10.1596/1813-9450-11125 and 10.1111/jcal.70105). The arXiv records were fetched through export.arxiv.org with id_list=2409.09047,2605.21629 and through curl of arxiv.org/abs. The Pew page was fetched in the pages curl batch, and the log notes 'Yes (page opened)'. The tool log is cut off in places, so the Pew fetch and the abs page for 2409.09047 can only be inferred, not seen directly."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Two questions: 'Is that the same thing your position is about, or a different one?' and 'Which ones did you put on the \"complicates\" side, and why?'"
+    }
+  ]
+}

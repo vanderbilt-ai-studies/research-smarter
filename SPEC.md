@@ -150,6 +150,32 @@ one reply from Claude. "User content" is defined in R1.1.
   it can't match is removed or unlinked, and the same line says so (for
   example, "found in search results; I couldn't open it").
 
+**The deep dive.** R5.17–R5.20 cover how widely Phase 4 searches and how it
+shows what it found. Quality still comes first: every source meets the bar
+(R5.5), and a thin topic isn't padded (R5.8).
+
+- **R5.17** Phase 4 searches every sub-question at least three different
+  ways (different phrasings, places, or databases) and uses at least one
+  scholarly database (for example OpenAlex, Semantic Scholar, or Crossref)
+  when one is reachable. It keeps searching until new searches stop turning
+  up new relevant sources, not after the first page of results.
+- **R5.18** The sources span the kinds that exist for the topic (for
+  example research articles, reviews, books, government data, reputable
+  reporting, primary sources), more than one method, a range of dates, and
+  at least four different publishers or sites. Where variety is thin, the
+  response says so.
+- **R5.19** The response includes a coverage report: what was searched (the
+  sub-questions, the places, roughly how many searches), where evidence was
+  plentiful or thin, and what couldn't be reached (paywalls, blocked pages).
+- **R5.20** In the chat, the response shows a manageable set: at most five
+  sources per sub-question in total (ten for a plan with two
+  sub-questions), grouped by kind of source, never by sub-question, so the
+  user still does the sorting (R2.4). The set includes any source that
+  complicates the user's position, without labeling it as such. When more
+  sources were found, the full list goes into the research log's sources
+  table, and the response says how many more are there. The phase's flow is
+  unchanged: one deep search, then the step-by-step hand-over.
+
 **The source bar.** R5.5–R5.10 set which sources Claude may present, at every
 challenge level and for curiosity projects as well as assignments.
 
@@ -541,9 +567,10 @@ run only if every grader is true.
 | `rub-student-first` | "Is this credible?" with no view given: asks the user first, no verdict yet | R2.3, R3.2, R5.11, R5.15 |
 | `rub-unconfirmed-peer-review` | An unfamiliar journal: says peer review couldn't be confirmed instead of assuming | R3.2, R5.11, R5.13 |
 | `rub-source-list-order` | A source list with "at least 3 peer-reviewed": strongest first, reasons for weaker sources, says which meet the requirement | R3.2, R5.1, R5.11, R5.14 |
+| `deep-dive-ai` | A Phase 4 deep dive: each sub-question searched several ways, a scholarly database, varied sources, a coverage report, at most ten in the chat, the full list in the log, no sorting for the user | R2.4, R3.2, R5.1, R5.5, R5.17, R5.18, R5.19, R5.20 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 74 of 88 requirements have at least one test (R1–R9: 47 of 57; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
+**Coverage:** 78 of 92 requirements have at least one test (R1–R9: 51 of 61; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
 R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
 
@@ -584,6 +611,11 @@ R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
   run a Phase 1 briefing added a fifth section beside the required four.
   Each case passed its other runs; revision stopped after two rounds, as
   agreed.
+- **The grader sees a shortened tool log.** Each tool call is cut to 200
+  characters, so the grader can miss searches or pages opened in a long
+  `curl` command. For links, `tests/check_links_opened.py` (which reads the
+  full saved commands) is the reliable check; in issue #16 it confirmed
+  links the grader doubted.
 - **Earlier unopened-link counts were overstated.** Issues #9, #10, #14 and
   #15 reported unopened links in roughly 1 in 3 to 1 in 6 source runs. Issue
   #17 found most of these weren't real: the old R5.1 counted a DOI read from
@@ -695,3 +727,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-23 | A credibility rubric (issue #15): R5.11–R5.15 added; new `credibility-rubric.md` (signals and how to check them, three levels, a table by research type, used behind the scenes only) with sources checked (Cornell Library, Think. Check. Submit.); the credibility checklist folded into it. One revision round: every non-peer-reviewed source gets a reason; name databases instead of writing unopened addresses. The rubric's history row was corrected to match the source bar | Six new cases, 3 runs each: 77/78 checks vs 68/78 before; the source list says which sources meet the assignment requirement in 3/3 runs (before 1/3). Regression, 8 cases once: 35/39, the misses mostly unopened links (R5.1). Checks catch all 5 deliberately bad replies |
 | 2026-11-23 | Unopened links (issue #17): R5.1 reworded (a DOI counts if it was opened or appears exactly on an official page Claude opened); R5.16 added (a final self-check before sending). The skill takes notes as it opens pages, never builds a DOI from a web address, and checks every link and DOI before sending. The runner now saves each opened page's text; new `tests/check_links_opened.py` verifies every link and DOI; link graders reworded to the new rule | Five link-heavy cases, 3 runs each, same runner and checks: unopened links or DOIs in 0 of 15 runs with the final skill, and 0 of 15 with the skill from before #17, so the gain is a clearer rule and a real check, not a behavior change. Grader 89/90 vs 88/90. The code check catches all 5 deliberately bad replies. Found and fixed a bug in the new check (escaped slashes in JSON pages) |
 | 2026-11-23 | Noa decided doctoral dissertations meet the source bar when labeled "dissertation, not peer reviewed" (R5.5); they count as "usable with care" in the credibility rubric. Master's theses stay below the bar (leads only) | In 2 retests of `src-narrow-thin`, dissertations were labeled correctly; one run also listed a master's thesis, which led to this line |
+| 2026-11-23 | The deep dive (issue #16): R5.17–R5.20 added (search every sub-question at least three ways with a scholarly database, keep going until nothing new turns up, varied sources, a coverage report, at most five per sub-question in the chat grouped by kind with the full list written into the research log). R5.20 reworded before the skill change to keep R2.4 (no sorting by sub-question), per Noa. Two revision rounds: "why it's here" notes describe the source, not how it fits the user; write the log in the same reply instead of promising it. New `tests/check_log_loads.py`; runner timeout raised to 25 minutes | `deep-dive-ai`, 3 runs each: 32/33 checks vs 26/33 before (the one miss a grader doubt the link check cleared); about 46–51 distinct pages opened per run vs 15–27 before; logs with 16–18 sources load in the notebook. `src-narrow-thin` 14/15 vs 12/15. Regression, 7 Phase 4 cases once: 38/40. Checks catch all 3 deliberately bad replies |

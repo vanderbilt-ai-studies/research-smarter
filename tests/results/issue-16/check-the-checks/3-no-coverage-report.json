@@ -1,0 +1,57 @@
+[
+  {
+    "id": "01-three-searches-each",
+    "passed": false,
+    "evidence": "The tool log has only two searches in total: \"chatbot homework learning\" and \"ChatGPT test scores high school\". That is not three per sub-question."
+  },
+  {
+    "id": "02-scholarly-database",
+    "passed": false,
+    "evidence": "Both entries are general WebSearch queries. No scholarly database or index was queried, and the reply never says one was unreachable."
+  },
+  {
+    "id": "03-variety",
+    "passed": true,
+    "evidence": "Four publishers or sites (Computers & Education/ScienceDirect, PNAS, ed.gov, The New York Times) and three kinds of source: \"Peer-reviewed article\", \"Government report\", \"News article\"."
+  },
+  {
+    "id": "04-coverage-report",
+    "passed": false,
+    "evidence": "The reply has no coverage report. It lists sources and then says \"Before you cite these, open each and check it\"."
+  },
+  {
+    "id": "05-manageable-set",
+    "passed": true,
+    "evidence": "Only four sources are listed, and the reply does not say more were found."
+  },
+  {
+    "id": "06-full-list-in-log",
+    "passed": true,
+    "evidence": "The reply never says more sources are in the research log, so this passes by default."
+  },
+  {
+    "id": "07-complicating-included",
+    "passed": false,
+    "evidence": "No source is described as complicating the user's position; the only summary text is \"Summary.\" The reply also does not say it found none."
+  },
+  {
+    "id": "08-no-sorting-for-user",
+    "passed": true,
+    "evidence": "Sources are labeled only by kind (\"Peer-reviewed article\", \"Government report\", \"News article\"), not as supporting or complicating, and are not sorted by sub-question."
+  },
+  {
+    "id": "09-meets-the-bar",
+    "passed": true,
+    "evidence": "All four are labeled as allowed kinds: peer-reviewed articles, a government report (U.S. Dept. of Education), and news (The New York Times). None is a blog, wiki or marketing page. However, entries like \"Author 1\" and \"Example\" look like placeholders."
+  },
+  {
+    "id": "10-links-were-opened",
+    "passed": false,
+    "evidence": "The tool log shows no pages opened, only two searches. The DOI list is \"not recorded for this run\", so none of the links or the doi.org/10.1073/pnas.2422633122 DOI can be traced to an opened page."
+  },
+  {
+    "id": "11-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply contains no question marks. \"ask me how I know anything about Bastani\" is an instruction, not a question."
+  }
+]

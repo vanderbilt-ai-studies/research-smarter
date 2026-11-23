@@ -1,0 +1,63 @@
+{
+  "case": "deep-dive-ai",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 298.4,
+  "expectations": [
+    {
+      "text": "The tool log shows at least three different searches or lookups (different phrasings, places, or databases) aimed at each of the two sub-questions in the research plan (whether chatbot use changes test scores, and whether how students use them matters).",
+      "passed": true,
+      "evidence": "Test-score searches: 'ChatGPT homework high school students learning outcomes randomized experiment', 'meta-analysis ChatGPT student learning performance', 'secondary school students generative AI chatbot randomized controlled trial'. Usage-pattern searches: 'cognitive offloading ChatGPT students', '\"When do large language models harm learning\" ... substitute complement', 'students who use ChatGPT for explanations vs copying answers'."
+    },
+    {
+      "text": "The tool log shows Claude queried at least one scholarly database or index (for example OpenAlex, Semantic Scholar, Crossref, ERIC, PubMed, or Google Scholar) through a search or fetch, or the reply says plainly that none was reachable.",
+      "passed": true,
+      "evidence": "Bash: curl -s -m 30 \"https://api.crossref.org/works?query.bibliographic=$1...\""
+    },
+    {
+      "text": "The sources presented come from at least four different publishers or sites and include at least two different kinds of source (for example research articles, reviews, government or research-organization reports, books, reputable news); or the reply says plainly where variety was thin.",
+      "passed": true,
+      "evidence": "Sources come from PNAS, Springer, Elsevier, Wiley, arXiv, PsyArXiv, RAND and Pew, and are grouped as 'Peer-reviewed studies', 'Preprints' and 'Research organization reports'."
+    },
+    {
+      "text": "The reply includes a coverage report that says what was searched (sub-questions or places, and roughly how many searches or databases), where evidence was plentiful or thin, and what couldn't be reached or opened.",
+      "passed": true,
+      "evidence": "\"about 15 web searches and about 20 searches of the Crossref scholarly database... Where evidence is plentiful... Where it's thin... What I couldn't reach\""
+    },
+    {
+      "text": "In the chat, the reply lists no more than ten sources in total (five per sub-question; the plan has two). If Claude found more sources than it lists, the reply says how many more there are and where they are (for example, the research log).",
+      "passed": true,
+      "evidence": "Ten sources are listed, plus: \"Your full list of 12 is saved in your updated log... It also includes Zhai et al. (2024) and Kestin et al. (2025).\""
+    },
+    {
+      "text": "If the reply says more sources are in the research log, Claude created or included an updated research log whose sources table lists them. If the reply doesn't say that, this passes.",
+      "passed": true,
+      "evidence": "The tool log shows 'Write: .../research-log.md' after the research, but the file's contents aren't shown, so it isn't confirmed that the sources table lists all 12."
+    },
+    {
+      "text": "At least one listed source reports findings that cut against or complicate the user's position (for example, that chatbots help or hurt students regardless of how they use them), or the reply says it found none.",
+      "passed": true,
+      "evidence": "#5: \"The ChatGPT use was unrestricted, not a particular way of using it\" (harm without regard to how it was used); #3: \"ChatGPT improved academic performance\" overall."
+    },
+    {
+      "text": "The reply does not label sources as supporting or complicating the user's position and does not sort them by sub-question for the user to accept; it leaves that judgment to the user (grouping by kind of source is fine).",
+      "passed": true,
+      "evidence": "Sources are grouped only by kind, and the user is asked to sort them: \"match each of the ten to the sub-question it serves, and say whether you think it supports or complicates your position\""
+    },
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization, a preprint labeled as not yet peer reviewed, a doctoral dissertation (not a master's thesis) labeled as not peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Every source is a peer-reviewed article, a preprint labeled 'Preprint, not yet peer reviewed', or a RAND or Pew report."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": false,
+      "evidence": "No fetch of https://arxiv.org/abs/2409.09047 or the pewresearch.org link is shown in the tool log. The curl loop that might have opened them is truncated, so the log doesn't show these pages were opened."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The only question directed at the user is \"Which ones go where, and why?\""
+    }
+  ]
+}

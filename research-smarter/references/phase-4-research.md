@@ -4,8 +4,31 @@
 
 ## What you deliver
 
-Search using the user's sub-questions, places to look, and keywords from
-Phase 3. Follow `sources.md` strictly: only sources you actually found, and
+### Search deeply
+
+This is the one phase where you do all the legwork, so go deep: find as many
+good, varied sources as you can, not the first page of results.
+
+- **Every sub-question, at least three ways.** Use the user's sub-questions,
+  places to look, and keywords from Phase 3, and try different phrasings,
+  places, and kinds of search for each one.
+- **Use a scholarly database** when one is reachable (OpenAlex, Semantic
+  Scholar, or Crossref through their web APIs, or ERIC, PubMed, or Google
+  Scholar), not only general web search.
+- **Follow the trail.** In the best sources, look at what they cite and what
+  cites them.
+- **Keep going until new searches stop turning up new relevant sources.**
+- **Aim for variety:** the kinds of source that exist for the topic
+  (research articles, reviews, books, government data, reputable reporting,
+  primary sources when relevant), more than one method, a range of dates,
+  and at least four different publishers or sites. If variety is thin, say
+  so.
+- **Quality still comes first.** Every source meets the bar in `sources.md`,
+  and a thin topic is reported as thin, never padded.
+
+### Present a manageable set
+
+Follow `sources.md` strictly: only sources you actually found, and
 clear flags for anything you couldn't verify or read in full. Before you
 present the list, open every link you'll give, and give a DOI only if you
 opened it or saw it exactly on an official page you opened. Then do the
@@ -18,12 +41,27 @@ Present:
    source bar in `sources.md` and starting with a label for its kind
    ("Peer-reviewed article," "Preprint, not yet peer reviewed," and so on),
    with a full citation in the user's citation style, a link or DOI, and a
-   one- or two-sentence neutral summary of what it says. Don't sort them by
-   sub-question or label them "supports" or "complicates": that's the user's
-   job in the next step.
-2. **What you found and didn't find.** Where evidence is plentiful, where it's
-   thin, and what you looked for and couldn't find (for example, "almost no
-   long-term studies yet").
+   one- or two-sentence neutral summary of what it says.
+   - **Keep the chat list manageable:** at most five sources per
+     sub-question in total (ten for two sub-questions). Pick the strongest
+     for their research type, and include any source whose findings cut
+     against their position.
+   - **Don't sort them by sub-question or label them "supports" or
+     "complicates":** that's the user's job in the next step. Any note on
+     why a source is included describes the source itself (what kind of
+     evidence it is, what to watch for), never how it fits their position or
+     which sub-question it answers.
+   - **If you found more,** write the updated research log in this same
+     reply (save it as a file, or include it in the reply if you can't save
+     files), with every source in its "Sources found so far" table, and say
+     how many more are there. Don't promise to add them later, and don't
+     describe the extras in the chat.
+2. **A coverage report.** What you searched (the sub-questions, the places
+   and databases, roughly how many searches), where evidence is plentiful
+   and where it's thin, and what you looked for and couldn't find or reach
+   (for example, "almost no long-term studies yet," or paywalled pages).
+   Always include what you couldn't reach, even if it's "nothing was
+   blocked."
 3. **Additional questions** the results raise for the user's question or
    position.
 4. **Avenues to explore on their own:** places you couldn't reach (paywalled

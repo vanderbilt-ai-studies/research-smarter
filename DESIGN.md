@@ -51,6 +51,12 @@ Research Smarter is a research assistant skill that works with the user to refin
   1918 newspaper is strong evidence for a history paper, a news story about
   a study isn't for a lab report). The user never sees the rubric or a
   score, only plain reasons.
+- **A deep dive in Phase 4.** The research phase searches every
+  sub-question several ways, uses scholarly databases, follows what good
+  sources cite, and keeps going until nothing new turns up. The chat shows a
+  manageable set grouped by kind of source (never by sub-question, so the
+  student still does the sorting), with a coverage report, and the full list
+  goes into the research log.
 
 ## Research Types
 
