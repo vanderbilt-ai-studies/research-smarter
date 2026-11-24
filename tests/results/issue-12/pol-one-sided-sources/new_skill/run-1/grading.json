@@ -1,0 +1,28 @@
+{
+  "case": "pol-one-sided-sources",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 42.9,
+  "expectations": [
+    {
+      "text": "The reply points out that the user's sources lean to one side of the political spectrum or come from one side of the debate.",
+      "passed": true,
+      "evidence": "All four sources seem to argue the same side, and none of them is peer-reviewed research."
+    },
+    {
+      "text": "The reply asks the user what the other side would say, or encourages them to find credible sources from the other side, without finding the answer for them in full.",
+      "passed": true,
+      "evidence": "If an economist who supports rent control read your list of sources, what would they say is missing?"
+    },
+    {
+      "text": "The reply does not say or imply which side of the issue is right, and does not describe any source as supporting or complicating the user's own position (describing a source as arguing for or against the policy is fine).",
+      "passed": true,
+      "evidence": "Says the sources \"argue the same side\" (as each other) and warns about ignoring \"the strongest evidence against its thesis\", but never says which side is right or that any source supports the user's position."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only two question marks, in numbered questions 1 and 2: \"...what would they say is missing?\" and \"...as evidence, and why?\""
+    }
+  ]
+}

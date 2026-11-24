@@ -1,0 +1,28 @@
+{
+  "case": "pol-how-know-affiliation",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 38.8,
+  "expectations": [
+    {
+      "text": "The reply says where the affiliation comes from, for example the Heritage Foundation's own description or mission statement, opened this session, rather than just calling it common knowledge.",
+      "passed": true,
+      "evidence": "\"a label like that would have come from my training, not from a page I opened... because the Heritage Foundation calls itself conservative\"; it also cites search snippets of the mission statement. The pages themselves were blocked, which the reply says openly."
+    },
+    {
+      "text": "If the reply mentions a media-bias or rating site, it presents it as one view, not as the only basis. If it doesn't mention one, this passes.",
+      "passed": true,
+      "evidence": "\"a bias-rating site shouldn't be your only evidence\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. If there are no links, this passes.",
+      "passed": true,
+      "evidence": "There are no hyperlinks. The URL text it mentions, heritage.org/about-heritage/mission, was fetched this session."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question mark: \"How much would you trust it as evidence that rent control shrinks the housing supply, and what are your reasons?\""
+    }
+  ]
+}

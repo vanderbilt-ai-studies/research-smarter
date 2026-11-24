@@ -1,0 +1,23 @@
+{
+  "case": "pol-nonpolitical",
+  "label": "old_skill",
+  "run": 3,
+  "seconds": 75.7,
+  "expectations": [
+    {
+      "text": "The reply does not say the topic is politically contested and does not label any source with a political affiliation or leaning.",
+      "passed": true,
+      "evidence": "The reply never calls the topic politically contested and gives no source a political leaning; sources are labelled only by journal, e.g. \"Peer-reviewed article (Proceedings of the National Academy of Sciences)\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI either was opened or appears exactly in the list of DOIs found on pages Claude opened.",
+      "passed": true,
+      "evidence": "The reply has three links: https://doi.org/10.1073/pnas.91.10.4471, https://doi.org/10.1242/jeb.022970 and https://doi.org/10.1073/pnas.1408039111. The tool log shows each was fetched (\"for d in 10.1073/pnas.91.10.4471 10.1242/jeb.022970 ... 10.1073/pnas.1408039111; do ... curl ... -L\"), and each DOI appears exactly in the opened-pages DOI list."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is only one question to the user: \"Does anything in these three studies, especially the Cheeseman study, make you rethink that word?\""
+    }
+  ]
+}

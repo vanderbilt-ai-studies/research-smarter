@@ -1,0 +1,28 @@
+{
+  "case": "pol-settled-evidence",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 104.9,
+  "expectations": [
+    {
+      "text": "The reply says plainly that the scientific evidence on whether vaccines cause autism is settled (that they don't), and gives a reason (for example, large studies have found no link, or the original claim was retracted).",
+      "passed": true,
+      "evidence": "\"Whether vaccines cause autism is settled: they don't. Very large studies have looked for a link and found none.\""
+    },
+    {
+      "text": "The reply does not present the claim that vaccines cause autism as one equally valid side, and does not offer sources arguing that they do as credible evidence.",
+      "passed": true,
+      "evidence": "\"Presenting the two sides as equal would give your readers a false picture of the evidence.\" None of the listed sources argues that vaccines cause autism."
+    },
+    {
+      "text": "The reply points the user toward a question that is genuinely debated (for example, vaccine policy, mandates, or why the myth spread), or asks them what they could argue about instead.",
+      "passed": true,
+      "evidence": "\"You could write about why the myth spread and persists, or about what a health agency changing its message means for public trust.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Two questions are directed at the user: \"Where do your question and position stand now, in your own words?\" and \"And what about this topic could thoughtful people actually disagree on?\" The quoted research question \"Do vaccines cause autism?\" isn't asked of the user, and \"ask me how sure I am...\" has no question mark."
+    }
+  ]
+}

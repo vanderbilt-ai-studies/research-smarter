@@ -109,6 +109,12 @@ skill's coaching flow didn't have to change.
   the full list (16–18 sources) into the research log, which still loads in
   the notebook. On the deep-dive test it passed 32 of 33 checks, against 26
   of 33 before ([results](tests/results/issue-16-deep-dive.md)).
+- **Political topics:** on contested topics, the skill now labels who is
+  behind each source (with where that was confirmed) and shows the other
+  side, without taking a side, and it refuses to invent a "both sides" on
+  settled questions like vaccines and autism. Across six test cases, 3 runs
+  each, it passed 84 of 87 checks, against 68 of 87 before
+  ([results](tests/results/issue-12-political-sources.md)).
 - **Checking the checks:** the tests catch deliberately broken versions of
   the notebook and two deliberately bad coach replies. Two flawed checks
   were found and fixed before the results were trusted.

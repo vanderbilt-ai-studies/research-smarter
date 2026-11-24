@@ -1,0 +1,23 @@
+{
+  "case": "invites-challenge-briefing",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 162.5,
+  "expectations": [
+    {
+      "text": "The reply includes an invitation for the user to challenge or ask how Claude knows one specific factual claim or source from this reply, and the invitation names that claim or source (a vague reference like \"anything above\" alone does not pass).",
+      "passed": true,
+      "evidence": "\"feel free to ask me how I know what I said about the HEDCO review: I took it from a news summary, not the review itself.\""
+    },
+    {
+      "text": "The invitation to challenge a claim is phrased as an offer, not a question: the sentence containing it has no question mark, and it asks the user to question the claim rather than to accept it. (If there is no invitation at all, this fails.)",
+      "passed": true,
+      "evidence": "\"And feel free to ask me how I know what I said about the HEDCO review\" has no question mark. It is an offer that asks the user to question the claim, not to accept it."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has only one question mark directed at the user: \"When your cousin's district announced the switch, what reason did it give?\" The line \"tell me which direction interests you most, and why\" is an instruction with no question mark."
+    }
+  ]
+}

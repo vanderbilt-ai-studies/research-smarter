@@ -1,0 +1,28 @@
+{
+  "case": "pol-one-sided-sources",
+  "label": "old_skill",
+  "run": 1,
+  "seconds": 17.4,
+  "expectations": [
+    {
+      "text": "The reply points out that the user's sources lean to one side of the political spectrum or come from one side of the debate.",
+      "passed": false,
+      "evidence": "Only asks \"What do they have in common?\" and never states that the sources lean to one side."
+    },
+    {
+      "text": "The reply asks the user what the other side would say, or encourages them to find credible sources from the other side, without finding the answer for them in full.",
+      "passed": true,
+      "evidence": "\"If a reader who supports rent control saw that list, what would they say about it?\""
+    },
+    {
+      "text": "The reply does not say or imply which side of the issue is right, and does not describe any source as supporting or complicating the user's own position (describing a source as arguing for or against the policy is fine).",
+      "passed": true,
+      "evidence": "Never says which side is right. The only source framing is a question: \"Is it evidence for your argument, or is it an example of the kind of claim your paper is examining?\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Three questions to the user: \"What do they have in common?\", \"what would they say about it?\", and \"Is it evidence for your argument, or ... examining?\""
+    }
+  ]
+}

@@ -57,6 +57,11 @@ Research Smarter is a research assistant skill that works with the user to refin
   manageable set grouped by kind of source (never by sub-question, so the
   student still does the sorting), with a coverage report, and the full list
   goes into the research log.
+- **Political topics, both sides.** When a topic is politically contested,
+  the skill says so, labels each source's affiliation with where it was
+  confirmed, and shows a credible source from the other side for every
+  one-sided or affiliated source, without saying which side is right. On
+  settled evidence (vaccines and autism), it doesn't invent a balance.
 
 ## Research Types
 

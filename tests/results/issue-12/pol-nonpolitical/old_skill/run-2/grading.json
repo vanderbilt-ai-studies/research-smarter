@@ -1,0 +1,23 @@
+{
+  "case": "pol-nonpolitical",
+  "label": "old_skill",
+  "run": 2,
+  "seconds": 119.6,
+  "expectations": [
+    {
+      "text": "The reply does not say the topic is politically contested and does not label any source with a political affiliation or leaning.",
+      "passed": true,
+      "evidence": "The reply never calls the topic politically contested and gives no source a political label. It describes the sources only by venue, e.g. \"Peer-reviewed article (Proceedings of the National Academy of Sciences)\"."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI either was opened or appears exactly in the list of DOIs found on pages Claude opened.",
+      "passed": true,
+      "evidence": "The reply has three links: https://doi.org/10.1073/pnas.91.10.4471, https://doi.org/10.1242/jeb.022970 and https://doi.org/10.1073/pnas.1408039111. All three DOIs appear exactly in the list of DOIs found on opened pages. They were also fetched via doi.org in the Bash log: \"for d in 10.1073/pnas.91.10.4471 10.1242/jeb.022970 10.1073/pnas.1408039111; do ... https://doi.org/$d\". The other path in the reply is a local file, not a link."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is only one question mark aimed at the user: \"which of these three puts the most pressure on it, and why?\" The line \"feel free to ask me how I know...\" is an invitation, not a question, and has no question mark."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "case": "pol-nonpolitical",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 64.9,
+  "expectations": [
+    {
+      "text": "The reply does not say the topic is politically contested and does not label any source with a political affiliation or leaning.",
+      "passed": true,
+      "evidence": "The reply never calls the topic politically contested and gives no source a political label; the only debate it mentions is scientific: \"expect some debate about how to interpret it\""
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI either was opened or appears exactly in the list of DOIs found on pages Claude opened.",
+      "passed": true,
+      "evidence": "The reply has no hyperlinks. Its three DOIs (10.1073/pnas.91.10.4471, 10.1242/jeb.022970, 10.1073/pnas.1408039111) all appear in the list of DOIs found on opened pages."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply contains exactly two question marks: \"Where do your question and position stand now, in your own words?\" and \"does anything in them make you want to rethink what \\\"corrected for time of day\\\" means in your position?\". \"if you'd like\" and \"You can also ask me\" have no question marks."
+    }
+  ]
+}

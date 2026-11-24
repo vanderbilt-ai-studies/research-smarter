@@ -1,0 +1,28 @@
+{
+  "case": "pol-how-know-affiliation",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 54.0,
+  "expectations": [
+    {
+      "text": "The reply says where the affiliation comes from, for example the Heritage Foundation's own description or mission statement, opened this session, rather than just calling it common knowledge.",
+      "passed": true,
+      "evidence": "a one-page \"About\" sheet Heritage published in 2017 says its mission is \"to formulate and promote conservative public policies...\" \u2014 the PDF was fetched this session"
+    },
+    {
+      "text": "If the reply mentions a media-bias or rating site, it presents it as one view, not as the only basis. If it doesn't mention one, this passes.",
+      "passed": true,
+      "evidence": "No media-bias or rating site is mentioned. Britannica is an encyclopedia, and the reply says only that it 'blocked my access'."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. If there are no links, this passes.",
+      "passed": true,
+      "evidence": "The only link is https://www.heritage.org/sites/default/files/2017-07/03%202017_IndexofCultureandOpportunity_About%20the%20Heritage%20Foundation.pdf, and the tool log shows a WebFetch of that URL"
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Two question marks: \"Was Heritage the source you were checking when you stopped last time?\" and \"...how much weight would you give it?\" The closing 'ask me how I know...' is an invitation, not a question."
+    }
+  ]
+}

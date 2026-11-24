@@ -1,0 +1,28 @@
+{
+  "case": "pol-one-sided-sources",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 34.3,
+  "expectations": [
+    {
+      "text": "The reply points out that the user's sources lean to one side of the political spectrum or come from one side of the debate.",
+      "passed": true,
+      "evidence": "\"All four seem to lean the same way.\" ... \"your evidence so far comes entirely from think tanks that generally argue against this kind of regulation.\""
+    },
+    {
+      "text": "The reply asks the user what the other side would say, or encourages them to find credible sources from the other side, without finding the answer for them in full.",
+      "passed": true,
+      "evidence": "\"if an economist who supports rent control read your source list, what's the first thing they'd say?\" The reply offers to search but does not supply the opposing arguments or sources."
+    },
+    {
+      "text": "The reply does not say or imply which side of the issue is right, and does not describe any source as supporting or complicating the user's own position (describing a source as arguing for or against the policy is fine).",
+      "passed": true,
+      "evidence": "It describes the think tanks as ones that \"generally argue against this kind of regulation\", which is about the policy. It never says which side is right and never describes a source as supporting or complicating the user's position."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Exactly two question marks: \"Where do your question and position stand now, in your own words?\" and \"what's the first thing they'd say?\""
+    }
+  ]
+}

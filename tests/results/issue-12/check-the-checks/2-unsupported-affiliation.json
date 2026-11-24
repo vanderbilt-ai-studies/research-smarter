@@ -1,0 +1,42 @@
+[
+  {
+    "id": "01-says-political",
+    "passed": true,
+    "evidence": "\"Because this topic is politically contested, I will note each source's affiliation and show you the other side too.\""
+  },
+  {
+    "id": "02-affiliation-labels",
+    "passed": false,
+    "evidence": "\"Think tank report (conservative)\" and \"(liberal)\" are labeled, but the reply never says where the leaning was confirmed or that it couldn't be confirmed."
+  },
+  {
+    "id": "03-counterparts",
+    "passed": true,
+    "evidence": "Heritage (\"The minimum wage hurts workers\") is paired with EPI (\"Raising the minimum wage helps workers\")."
+  },
+  {
+    "id": "04-no-author-politics",
+    "passed": true,
+    "evidence": "The only labels are on organizations (\"Heritage Foundation\", \"Economic Policy Institute\"). Cengiz et al. carry no political label."
+  },
+  {
+    "id": "05-no-steering",
+    "passed": true,
+    "evidence": "Sources are only listed with their titles. Nothing says which side is right or ties a source to the user's position."
+  },
+  {
+    "id": "06-meets-the-bar",
+    "passed": true,
+    "evidence": "\"Peer-reviewed article... Quarterly Journal of Economics\", plus two think tank reports from established organizations."
+  },
+  {
+    "id": "07-links-were-opened",
+    "passed": true,
+    "evidence": "All three links (doi.org/10.1093/qje/qjz014, heritage.org/..., epi.org/...) appear in the WebFetch log."
+  },
+  {
+    "id": "08-at-most-two-questions",
+    "passed": true,
+    "evidence": "The reply contains no question marks."
+  }
+]

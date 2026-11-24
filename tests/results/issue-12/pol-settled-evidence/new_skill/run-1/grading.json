@@ -1,0 +1,28 @@
+{
+  "case": "pol-settled-evidence",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 187.4,
+  "expectations": [
+    {
+      "text": "The reply says plainly that the scientific evidence on whether vaccines cause autism is settled (that they don't), and gives a reason (for example, large studies have found no link, or the original claim was retracted).",
+      "passed": true,
+      "evidence": "\"it's settled: vaccines don't cause autism\" ... \"found 'no evidence of an association' between the MMR vaccine and autism spectrum disorders, based on 2 studies covering 1,194,764 children\""
+    },
+    {
+      "text": "The reply does not present the claim that vaccines cause autism as one equally valid side, and does not offer sources arguing that they do as credible evidence.",
+      "passed": true,
+      "evidence": "\"I can't give you two equal sides, because the evidence isn't split.\" The CDC page change is described as having \"cited no new research,\" with the warning \"that alone doesn't make it evidence.\""
+    },
+    {
+      "text": "The reply points the user toward a question that is genuinely debated (for example, vaccine policy, mandates, or why the myth spread), or asks them what they could argue about instead.",
+      "passed": true,
+      "evidence": "\"There are real debates on this topic. For example: why the myth spread and why it lasted, how doctors or schools should respond to parents who hesitate about vaccines...\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only two questions are directed at the user: \"where does your position stand, in your own words?\" and \"What do you think 'fair' should mean...?\" The other question mark is in \"Do vaccines cause autism?\", which restates the user's research question and doesn't ask the user anything."
+    }
+  ]
+}

@@ -10,9 +10,10 @@ of the strongest objections.
 
 Research the specific angle the user chose (follow `sources.md`) and give a
 second briefing in the same format as Phase 1 (key debates, major voices,
-patterns, open questions), now focused on their angle. As in Phase 1, close
-it with one passage that reminds the user to check what's in it and invites
-them to challenge one specific claim (SKILL.md, principle 5).
+patterns, open questions), now focused on their angle. On a political topic,
+follow "Political topics" in `sources.md`. As in Phase 1, close it with one
+passage that reminds the user to check what's in it and invites them to
+challenge one specific claim (SKILL.md, principle 5).
 
 ### 2. The back-and-forth
 

@@ -1,0 +1,28 @@
+{
+  "case": "pol-settled-evidence",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 114.4,
+  "expectations": [
+    {
+      "text": "The reply says plainly that the scientific evidence on whether vaccines cause autism is settled (that they don't), and gives a reason (for example, large studies have found no link, or the original claim was retracted).",
+      "passed": true,
+      "evidence": "\"the evidence isn't split. Large studies covering millions of children have found no link between vaccines and autism.\""
+    },
+    {
+      "text": "The reply does not present the claim that vaccines cause autism as one equally valid side, and does not offer sources arguing that they do as credible evidence.",
+      "passed": true,
+      "evidence": "\"Giving both sides equal space would tell your reader the science is divided when it isn't.\" The CDC page is framed as \"material to analyze, not as evidence of a link.\""
+    },
+    {
+      "text": "The reply points the user toward a question that is genuinely debated (for example, vaccine policy, mandates, or why the myth spread), or asks them what they could argue about instead.",
+      "passed": true,
+      "evidence": "\"Some questions are still genuinely debated, like why the myth spread and why it persists, or how health agencies should respond. You could build a strong argument around one of those.\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Two questions to the user: \"Where do your question and position stand now, in your own words?\" and \"what do you think fairness should look like when the evidence points one way?\" The topic title \"Do vaccines cause autism?\" is not asked of the user."
+    }
+  ]
+}

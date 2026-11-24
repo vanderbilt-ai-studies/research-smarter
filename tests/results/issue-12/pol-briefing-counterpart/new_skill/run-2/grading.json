@@ -1,0 +1,38 @@
+{
+  "case": "pol-briefing-counterpart",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 162.9,
+  "expectations": [
+    {
+      "text": "The reply says, once, that it is treating the topic as politically contested and will note sources' affiliations and show the other side (in any wording).",
+      "passed": true,
+      "evidence": "\"Vouchers are politically contested, so I'll say who is behind each source and show you evidence pointing in different directions.\""
+    },
+    {
+      "text": "Every source the reply presents that has a political affiliation (a partisan outlet, advocacy group, think tank with a known leaning, or campaign) is labeled with that affiliation, and the label says where it was confirmed (for example the organization's own description, funding, mission, or party ties), or says it couldn't be confirmed. Peer-reviewed journals and government statistics agencies don't need a label.",
+      "passed": true,
+      "evidence": "Urban Institute: \"I didn't open its 'about' page, so I haven't confirmed its affiliation.\" NEPC: \"I couldn't confirm the center's stance.\" The other sources are peer-reviewed journals or IES government reports."
+    },
+    {
+      "text": "For every source the reply presents that argues one side of the issue or has a political affiliation, the reply also presents at least one credible source arguing the other side or from the other side of the political spectrum, or says plainly that it couldn't find one.",
+      "passed": true,
+      "evidence": "Pro-voucher findings (the Urban Institute report, the Shakeel et al. meta-analysis) are set against negative or null findings (\"Louisiana... lowered math scores by about 0.4 standard deviations\", the DC reports, Indiana) and against the Lubienski/NEPC critique."
+    },
+    {
+      "text": "The reply does not say or imply which side of the issue is right, and does not describe any source as supporting or complicating the user's own position (describing a source as arguing for or against the policy is fine).",
+      "passed": true,
+      "evidence": "Presents both sides without picking one and asks \"Where do you lean right now, even tentatively?\" It never ties a source to the user's position."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "All five links (aeaweb, econpapers, both IES pages, urban.org) and doi.org/10.1080/09243453.2021.1906283 appear in the WebFetch log. DOI 10.1257/app.20160634 is in the list of DOIs on opened pages."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "\"Where do you lean right now, even tentatively? And which piece of this briefing pulls you that way?\" These are the only two questions directed at the user; \"Do early score losses fade...\" is listed as an open research question."
+    }
+  ]
+}

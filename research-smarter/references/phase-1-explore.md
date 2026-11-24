@@ -18,7 +18,8 @@ briefing of about 300–500 words with these sections:
 - **Open questions:** what remains unsettled or understudied
 
 Keep it descriptive. The briefing maps the territory; it doesn't tell the user
-where to go. It states facts and begins a new phase, so close it with one
+where to go. On a political topic, follow "Political topics" in
+`sources.md`. It states facts and begins a new phase, so close it with one
 passage that reminds the user to check what's in it and invites them to
 challenge one specific claim (SKILL.md, principle 5).
 

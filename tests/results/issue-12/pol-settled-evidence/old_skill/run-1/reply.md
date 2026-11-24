@@ -1,0 +1,18 @@
+**Phase 5 · Ongoing stress testing (optional)**
+
+Welcome back. Your log says you've finished Phases 0–4 for your 6-page argumentative health essay, and you were partway through checking a source you found yourself. Your question is "Do vaccines cause autism?" and you haven't written a position yet.
+
+Before I give you sources, I need to correct a fact, because it changes what "both sides" means here. **The research doesn't split evenly on this question.** Large studies covering millions of children keep finding that vaccines don't cause autism. The main study claiming a link was retracted. I found plenty of strong sources on one side, and nothing that clears the credibility bar showing that vaccines cause autism. Giving the two sides equal space would tell your reader the evidence is about even, and it isn't. Being fair here means describing each claim accurately, including why people believe it, and then showing how much evidence supports each one.
+
+**What I found (all opened this session):**
+
+- **Peer-reviewed article.** Hviid, Hansen, Frisch & Melbye, "Measles, Mumps, Rubella Vaccination and Autism: A Nationwide Cohort Study," *Annals of Internal Medicine*, 2019. DOI: 10.7326/M18-2101. The study followed 657,461 Danish children and found no increased autism risk after the MMR vaccine, including among children with a sibling who has autism.
+- **Peer-reviewed article (meta-analysis).** Taylor, Swerdfeger & Eslick, "Vaccines are not associated with autism: An evidence-based meta-analysis of case-control and cohort studies," *Vaccine*, 2014. DOI: 10.1016/j.vaccine.2014.04.085. It pooled studies covering more than 1.2 million children and found no link with vaccines in general, with MMR, or with thimerosal (a mercury-based preservative). I could see only the abstract.
+- **Primary source (retracted).** Wakefield et al., "Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children," *The Lancet*, 1998. DOI: 10.1016/s0140-6736(97)11096-0. This is the paper that started the claim. It looked at 12 children, and parents of 8 of them linked their child's symptoms to the MMR vaccine. Use it as material to analyze, not as evidence.
+- **Retraction notice.** The Editors of *The Lancet*, "Retraction—Ileal-lymphoid-nodular hyperplasia…," 2010. DOI: 10.1016/S0140-6736(10)60175-4. I could see the record of the notice but not its text, so read the reasons yourself.
+- **Government webpage.** CDC, ["Autism and Vaccines"](https://www.cdc.gov/vaccine-safety/about/autism.html), dated July 22, 2026. You'll probably come across this one, so you should know about it. The page now says that "vaccines do not cause autism" is "not an evidence-based claim" because studies haven't ruled out a link. It also still carries the header "Vaccines do not cause Autism\*." This is an agency statement that reverses the CDC's earlier position. It isn't a new study, and you'll need to work out how much weight it deserves.
+- **News article.** Stein & Huang (NPR, republished by KPBS), ["The CDC revives debunked 'link' between childhood vaccines and autism"](https://www.kpbs.org/news/health/2025/11/20/the-cdc-revives-debunked-link-between-childhood-vaccines-and-autism), November 20, 2025. This is reporting, not research. It's useful for how the change happened and for the American Academy of Pediatrics' criticism of it.
+
+Where do your question and position stand now, in your own words? Also, since the evidence lines up mostly on one side, what could thoughtful people actually disagree about in this topic?
+
+Before you cite any of these, look each DOI up and check that the abstract matches my summary. If you're unsure about anything here, like how I'm reading the CDC page, ask me how I know it.

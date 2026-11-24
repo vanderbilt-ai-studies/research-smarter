@@ -26,6 +26,9 @@ good, varied sources as you can, not the first page of results.
 - **Quality still comes first.** Every source meets the bar in `sources.md`,
   and a thin topic is reported as thin, never padded.
 
+On a political topic, follow "Political topics" in `sources.md`: label
+affiliations with where you confirmed them, and include the other side.
+
 ### Present a manageable set
 
 Follow `sources.md` strictly: only sources you actually found, and

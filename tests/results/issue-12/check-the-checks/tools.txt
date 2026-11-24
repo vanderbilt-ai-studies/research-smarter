@@ -1,0 +1,4 @@
+WebFetch: https://doi.org/10.1093/qje/qjz014
+WebFetch: https://www.heritage.org/jobs-and-labor/report/x
+WebFetch: https://www.epi.org/publication/y
+WebFetch: https://www.nelp.org/z

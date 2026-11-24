@@ -123,8 +123,10 @@ def run_once(case, skill, out_dir):
     made = os.path.join(out_dir, "outputs")
     for name in os.listdir(work):
         src = os.path.join(work, name)
-        if name in inputs or not os.path.isfile(src):
+        if not os.path.isfile(src):
             continue
+        if name in inputs and open(src, "rb").read() == open(os.path.join(files, name), "rb").read():
+            continue  # an input file Claude didn't change
         os.makedirs(made, exist_ok=True)
         shutil.copy(src, made)
     with open(os.path.join(out_dir, "opened.jsonl"), "w") as f:

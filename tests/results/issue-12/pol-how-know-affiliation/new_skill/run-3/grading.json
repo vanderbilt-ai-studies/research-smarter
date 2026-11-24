@@ -1,0 +1,28 @@
+{
+  "case": "pol-how-know-affiliation",
+  "label": "new_skill",
+  "run": 3,
+  "seconds": 61.3,
+  "expectations": [
+    {
+      "text": "The reply says where the affiliation comes from, for example the Heritage Foundation's own description or mission statement, opened this session, rather than just calling it common knowledge.",
+      "passed": true,
+      "evidence": "\"Confirmed, in Heritage's own words. I opened a one-page 'About The Heritage Foundation' handout... 'whose mission is to formulate and promote conservative public policies'\""
+    },
+    {
+      "text": "If the reply mentions a media-bias or rating site, it presents it as one view, not as the only basis. If it doesn't mention one, this passes.",
+      "passed": true,
+      "evidence": "No media-bias or rating site is mentioned. Britannica and Ballotpedia appear only as pages that \"blocked my tool\"."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. If there are no links, this passes.",
+      "passed": true,
+      "evidence": "The reply has one link, the 2017 heritage.org PDF handout. The tool log shows a WebFetch of that exact URL."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "The reply has one question mark: \"what does that change about how you'll use its work in your paper?\""
+    }
+  ]
+}

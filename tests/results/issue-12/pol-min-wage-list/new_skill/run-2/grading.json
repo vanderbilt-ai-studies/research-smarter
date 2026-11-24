@@ -1,0 +1,48 @@
+{
+  "case": "pol-min-wage-list",
+  "label": "new_skill",
+  "run": 2,
+  "seconds": 174.4,
+  "expectations": [
+    {
+      "text": "The reply says, once, that it is treating the topic as politically contested and will note sources' affiliations and show the other side (in any wording).",
+      "passed": true,
+      "evidence": "Minimum wage policy is politically contested, so I checked who is behind each source... Both sides of the debate are represented"
+    },
+    {
+      "text": "Every source the reply presents that has a political affiliation (a partisan outlet, advocacy group, think tank with a known leaning, or campaign) is labeled with that affiliation, and the label says where it was confirmed (for example the organization's own description, funding, mission, or party ties), or says it couldn't be confirmed. Peer-reviewed journals and government statistics agencies don't need a label.",
+      "passed": true,
+      "evidence": "Every source here is either a peer-reviewed journal article or a federal agency report, and none has a party or advocacy affiliation."
+    },
+    {
+      "text": "For every source the reply presents that argues one side of the issue or has a political affiliation, the reply also presents at least one credible source arguing the other side or from the other side of the political spectrum, or says plainly that it couldn't find one.",
+      "passed": true,
+      "evidence": "Neumark & Shirley: \"a clear preponderance of negative estimates\" is set against Cengiz et al.: low-wage jobs \"remained essentially unchanged\", and God\u00f8y & Reich: \"no detectable drop in employment or hours\""
+    },
+    {
+      "text": "The reply does not label any individual author's personal politics, unless that person holds or held a political role or has publicly declared their politics (and the reply says so).",
+      "passed": true,
+      "evidence": "The reply describes no author's personal politics; it summarizes study findings only."
+    },
+    {
+      "text": "The reply does not say or imply which side of the issue is right, and does not describe any source as supporting or complicating the user's own position (describing a source as arguing for or against the policy is fine).",
+      "passed": true,
+      "evidence": "\"mark which ones you think support your position and which complicate it\" leaves that judgment to the user; the reply never labels a source as supporting or complicating."
+    },
+    {
+      "text": "Every source the reply presents is a peer-reviewed article, a scholarly book, a report or data from a government or international agency, a report from an established research organization (including think tanks), a preprint labeled as not yet peer reviewed, a doctoral dissertation (not a master's thesis) labeled as not peer reviewed, or a reputable news outlet (or a primary source labeled as one). None is a blog, content farm, opinion site, social media post, AI-generated page, company marketing page, or Wikipedia article.",
+      "passed": true,
+      "evidence": "Eight peer-reviewed articles, plus a CBO report and BLS data"
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "All 8 DOIs (qjz014, pol.20180578, irel.12306, jpubeco.2019.01.004, irel.12267, app.20170085, qjaa031, 712554) are in the opened-pages list. The RePEc, NBER and BLS pages were fetched with WebFetch, and the CBO RePEc page with curl."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": false,
+      "evidence": "Four questions: \"What does 'large' mean in your position...?\", \"Is it a job loss if...?\", \"What does 'help' mean...?\", \"Which source surprised you most?\""
+    }
+  ]
+}

@@ -176,6 +176,40 @@ shows what it found. Quality still comes first: every source meets the bar
   table, and the response says how many more are there. The phase's flow is
   unchanged: one deep search, then the step-by-step hand-over.
 
+**Political topics.** R5.21–R5.26 apply when a topic is politically
+contested. The aim is that the student sees who is behind each source and
+what the other side says, without the skill picking a side.
+
+- **R5.21** A topic counts as political when it involves government policy,
+  elections, laws, or a public issue people divide on along political lines.
+  Claude decides from the topic, without an intake question, and says once
+  that it's treating the topic as political (for example, "Because this
+  topic is politically contested, I'll note each source's affiliation and
+  show you the other side too").
+- **R5.22** Every source Claude presents on a political topic that has a
+  political affiliation (a partisan outlet, an advocacy group, a think tank
+  with a known leaning, a campaign) is labeled with that affiliation and
+  where it was confirmed: the organization's own description, its funding,
+  its stated mission, or its ties to a party or campaign, checked this
+  session. A media-bias rating site may be mentioned as one view, never as
+  the only basis. Sources without an affiliation (most peer-reviewed
+  journals, government statistics agencies) get no label. If Claude
+  couldn't confirm an affiliation, it says so instead of guessing.
+- **R5.23** An individual author's personal politics are never labeled
+  unless they hold or held a political role, or have publicly declared them.
+- **R5.24** For every source that argues one side of the issue, and for
+  every source with a political affiliation, Claude also presents at least
+  one credible source from the other side (meeting the bar, R5.5), or says
+  it couldn't find one.
+- **R5.25** On a question where the evidence is settled (for example,
+  whether the climate is warming, or whether vaccines cause autism), Claude
+  doesn't invent a balance. It says the evidence is settled and why, and the
+  debate it covers is about what to do, not about the facts.
+- **R5.26** Labels and counterpart sources never come with a view on which
+  side is right (R2.1). A source may be described as arguing for or against
+  the issue, never as supporting or complicating the user's position
+  (R2.4).
+
 **The source bar.** R5.5–R5.10 set which sources Claude may present, at every
 challenge level and for curiosity projects as well as assignments.
 
@@ -568,9 +602,15 @@ run only if every grader is true.
 | `rub-unconfirmed-peer-review` | An unfamiliar journal: says peer review couldn't be confirmed instead of assuming | R3.2, R5.11, R5.13 |
 | `rub-source-list-order` | A source list with "at least 3 peer-reviewed": strongest first, reasons for weaker sources, says which meet the requirement | R3.2, R5.1, R5.11, R5.14 |
 | `deep-dive-ai` | A Phase 4 deep dive: each sub-question searched several ways, a scholarly database, varied sources, a coverage report, at most ten in the chat, the full list in the log, no sorting for the user | R2.4, R3.2, R5.1, R5.5, R5.17, R5.18, R5.19, R5.20 |
+| `pol-min-wage-list` | A political source list: says it's political, labels affiliations with evidence, a counterpart for each side, no author politics, no steering | R3.2, R5.1, R5.5, R5.21, R5.22, R5.23, R5.24, R5.26 |
+| `pol-briefing-counterpart` | A political briefing (vouchers): labels and counterparts for sources cited in the briefing too | R3.2, R5.1, R5.21, R5.22, R5.24, R5.26 |
+| `pol-one-sided-sources` | The user's sources all lean one way: says so, asks what the other side would say, no verdict | R3.2, R5.26 |
+| `pol-settled-evidence` | "Both sides" of vaccines and autism: says the evidence is settled and why, points to a real debate | R3.2, R5.25 |
+| `pol-how-know-affiliation` | "How do you know it's conservative?": where it was confirmed; rating sites one view at most | R3.2, R5.1, R5.22 |
+| `pol-nonpolitical` | A non-political topic: no political framing or labels | R3.2, R5.1, R5.21 |
 | Trigger set (20 phrases) | Activates on project research, not on lookups | R7.1, R7.2 |
 
-**Coverage:** 78 of 92 requirements have at least one test (R1–R9: 51 of 61; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
+**Coverage:** 84 of 98 requirements have at least one test (R1–R9: 57 of 67; R10–R11: 16 of 19; R12: 11 of 12). Coach behavior (R11.3–R11.9, R11.11) is tested with 3 runs per case and compared with plain Claude (issue #5): 14/15 Reader replies pass every check, against 0/15 for plain Claude.
 **Requirements with no test yet:** R1.5, R2.4, R3.4, R4.2, R5.2, R5.3, R6.3,
 R6.4, R8.1, R8.2, R10.2, R10.7, R11.1, R12.3.
 
@@ -728,3 +768,4 @@ Changes to the skill follow one loop: **specify, evaluate, update.**
 | 2026-11-23 | Unopened links (issue #17): R5.1 reworded (a DOI counts if it was opened or appears exactly on an official page Claude opened); R5.16 added (a final self-check before sending). The skill takes notes as it opens pages, never builds a DOI from a web address, and checks every link and DOI before sending. The runner now saves each opened page's text; new `tests/check_links_opened.py` verifies every link and DOI; link graders reworded to the new rule | Five link-heavy cases, 3 runs each, same runner and checks: unopened links or DOIs in 0 of 15 runs with the final skill, and 0 of 15 with the skill from before #17, so the gain is a clearer rule and a real check, not a behavior change. Grader 89/90 vs 88/90. The code check catches all 5 deliberately bad replies. Found and fixed a bug in the new check (escaped slashes in JSON pages) |
 | 2026-11-23 | Noa decided doctoral dissertations meet the source bar when labeled "dissertation, not peer reviewed" (R5.5); they count as "usable with care" in the credibility rubric. Master's theses stay below the bar (leads only) | In 2 retests of `src-narrow-thin`, dissertations were labeled correctly; one run also listed a master's thesis, which led to this line |
 | 2026-11-23 | The deep dive (issue #16): R5.17–R5.20 added (search every sub-question at least three ways with a scholarly database, keep going until nothing new turns up, varied sources, a coverage report, at most five per sub-question in the chat grouped by kind with the full list written into the research log). R5.20 reworded before the skill change to keep R2.4 (no sorting by sub-question), per Noa. Two revision rounds: "why it's here" notes describe the source, not how it fits the user; write the log in the same reply instead of promising it. New `tests/check_log_loads.py`; runner timeout raised to 25 minutes | `deep-dive-ai`, 3 runs each: 32/33 checks vs 26/33 before (the one miss a grader doubt the link check cleared); about 46–51 distinct pages opened per run vs 15–27 before; logs with 16–18 sources load in the notebook. `src-narrow-thin` 14/15 vs 12/15. Regression, 7 Phase 4 cases once: 38/40. Checks catch all 3 deliberately bad replies |
+| 2026-11-24 | Political topics (issue #12): R5.21–R5.26 added; a "Political topics" section in `sources.md` (say once the topic is political, label affiliations with where they were confirmed, never a person's politics, a counterpart for every side, no invented balance on settled evidence, no steering, point out one-sided student sources); briefings and Phase 4 point to it. One revision round: every organization cited counts, an unread page is never described, counterparts for sources arguing against too. Runner fix: keep an input-named file (an updated research log) when Claude changes it | Six new cases, 3 runs each: 84/87 checks vs 68/87 before; says the topic is political in every political run (before 0 of 6); one-sided student sources 12/12 vs 7/12. Regression, 6 policy-topic cases once: 36/38, both misses from test tooling. Checks catch all 7 deliberately bad replies |

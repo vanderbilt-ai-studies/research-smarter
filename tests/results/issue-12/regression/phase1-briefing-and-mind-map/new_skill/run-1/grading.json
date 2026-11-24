@@ -1,0 +1,58 @@
+{
+  "case": "phase1-briefing-and-mind-map",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 157.2,
+  "expectations": [
+    {
+      "text": "The reply begins with a progress marker identifying Phase 1.",
+      "passed": true,
+      "evidence": "**Phase 1 of 5 \u00b7 Explore and choose a direction**"
+    },
+    {
+      "text": "The reply includes a briefing with four labeled sections covering key debates, major voices, patterns, and open questions.",
+      "passed": true,
+      "evidence": "Sections labeled **Key debates**, **Major voices**, **Patterns**, **Open questions**"
+    },
+    {
+      "text": "The briefing is roughly 300 to 500 words long (it fails if under 250 or over 600 words).",
+      "passed": true,
+      "evidence": "The four sections plus the verification note come to about 450\u2013520 words, inside the 250\u2013600 range."
+    },
+    {
+      "text": "The reply presents a mind map, either as an HTML page built from the skill's mind map template or as an indented text tree.",
+      "passed": true,
+      "evidence": "I saved an interactive map of six possible angles to .../mind-map.html (HTML built from the template's DATA object)"
+    },
+    {
+      "text": "The mind map has 4 to 6 top-level angles, each with 2 or 3 narrower angles, and every angle has a saturation value between 0 and 1 (or, for a text tree, a crowdedness label).",
+      "passed": true,
+      "evidence": "Visible top-level branches (Student achievement, Teachers, Behavior..., Families..., Costs...) each have 2\u20133 children with saturation 0\u20131, and the reply says there are six angles. The file is shortened, so the sixth branch can't be seen."
+    },
+    {
+      "text": "No mind map label is phrased as a research question; labels are short topics.",
+      "passed": true,
+      "evidence": "Labels like \"Student achievement\", \"Retention and turnover\", \"Juvenile crime on the off day\" are short topics, not questions."
+    },
+    {
+      "text": "The reply does not tell the user which angle they should choose or which one is best.",
+      "passed": true,
+      "evidence": "\"tell me which direction interests you most and why\". No angle is recommended. The RAND remark is about checking a source."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count. Links and DOIs in the mind map count too.",
+      "passed": true,
+      "evidence": "All linked URLs (RAND report and about page, both ideas.repec pages, revisor, EdWeek, Journalist's Resource, IZA, PMC) appear in the WebFetch log, and no DOIs are cited."
+    },
+    {
+      "text": "The reply asks the user which direction interests them and why.",
+      "passed": true,
+      "evidence": "\"tell me which direction interests you most and why\""
+    },
+    {
+      "text": "The reply asks the user no more than two questions.",
+      "passed": true,
+      "evidence": "Two asks: which direction and why, and \"where does your thinking on four-day school weeks stand right now\""
+    }
+  ]
+}

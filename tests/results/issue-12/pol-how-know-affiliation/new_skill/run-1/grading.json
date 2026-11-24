@@ -1,0 +1,28 @@
+{
+  "case": "pol-how-know-affiliation",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 52.8,
+  "expectations": [
+    {
+      "text": "The reply says where the affiliation comes from, for example the Heritage Foundation's own description or mission statement, opened this session, rather than just calling it common knowledge.",
+      "passed": true,
+      "evidence": "\"a one-page 'About The Heritage Foundation' PDF that Heritage published itself... 'whose mission is to formulate and promote conservative public policies'\""
+    },
+    {
+      "text": "If the reply mentions a media-bias or rating site, it presents it as one view, not as the only basis. If it doesn't mention one, this passes.",
+      "passed": true,
+      "evidence": "The reply names no media-bias or rating site. It mentions only Britannica, as an outside description it could not open."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. If there are no links, this passes.",
+      "passed": true,
+      "evidence": "The only link, the heritage.org 2017 PDF, was fetched this session (WebFetch of the same URL, then a Read of the saved PDF)."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "Only one question is put to the user: \"How will you use Heritage in your paper: as evidence for your position, or as an example of one side's argument?\""
+    }
+  ]
+}

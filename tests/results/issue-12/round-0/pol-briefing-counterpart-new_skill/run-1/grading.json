@@ -1,0 +1,38 @@
+{
+  "case": "pol-briefing-counterpart",
+  "label": "new_skill",
+  "run": 1,
+  "seconds": 207.7,
+  "expectations": [
+    {
+      "text": "The reply says, once, that it is treating the topic as politically contested and will note sources' affiliations and show the other side (in any wording).",
+      "passed": false,
+      "evidence": "\"Vouchers are politically contested, so I've noted who is behind each source.\" This covers contestedness and affiliations, but the reply never says it will show the other side."
+    },
+    {
+      "text": "Every source the reply presents that has a political affiliation (a partisan outlet, advocacy group, think tank with a known leaning, or campaign) is labeled with that affiliation, and the label says where it was confirmed (for example the organization's own description, funding, mission, or party ties), or says it couldn't be confirmed. Peer-reviewed journals and government statistics agencies don't need a label.",
+      "passed": false,
+      "evidence": "NEPC appears only as \"The National Education Policy Center (University of Colorado)\" under \"Critics\", with no leaning or source of confirmation given. The Learning Policy Institute appears as \"focuses on the cost\", with no affiliation label."
+    },
+    {
+      "text": "For every source the reply presents that argues one side of the issue or has a political affiliation, the reply also presents at least one credible source arguing the other side or from the other side of the political spectrum, or says plainly that it couldn't find one.",
+      "passed": true,
+      "evidence": "Pro-voucher sources (Wolf/Arkansas, EdChoice) are paired with critics: \"The National Education Policy Center... published a critique by Christopher Lubienski\" and \"The Learning Policy Institute focuses on the cost\"."
+    },
+    {
+      "text": "The reply does not say or imply which side of the issue is right, and does not describe any source as supporting or complicating the user's own position (describing a source as arguing for or against the policy is fine).",
+      "passed": true,
+      "evidence": "The reply sets out both sides without picking one, and ends: \"what do you think the evidence shows... A rough, tentative position\"."
+    },
+    {
+      "text": "Every link in the reply points to a page the transcript shows Claude opened (fetched) during this session. Every DOI (as a doi.org link or as text) either was opened itself or appears exactly in the list of DOIs found on pages Claude opened (shown under FILES or DOIS ON OPENED PAGES). A DOI seen only in search results doesn't count.",
+      "passed": true,
+      "evidence": "Every linked URL (econpapers, nber w21839, ideas, ies, educationnext x2, rand, edchoice, LPI, hks) appears in the WebFetch log. The reply gives no DOIs."
+    },
+    {
+      "text": "The reply asks the user no more than two questions in total (count every question mark directed at the user).",
+      "passed": true,
+      "evidence": "There is one question mark: \"what do you think the evidence shows for the students who use vouchers?\""
+    }
+  ]
+}
